@@ -14,7 +14,7 @@
 <h4 align="center">Negibox葱葱盒子 做世界做好的跨平台下载平台</h4>
 
 <p align="center">
-  <a href="https://gitter.im/hugetiny/negibox"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
+  <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://img.shields.io/travis/hugetiny/negibox/master.svg" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
