@@ -53,6 +53,7 @@
 - [x] sftp
 - [ ] ftps
 - [x] magnet
+- [x] bittorrent
 - [x] thunder 迅雷
 - [x] flashget 快车
 - [x] qqdl QQ旋风

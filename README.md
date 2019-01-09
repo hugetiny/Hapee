@@ -56,9 +56,8 @@ Download the latest version of WebTorrent Desktop from
 - [x] sftp
 - [ ] ftps
 - [x] magnet
-- [x] thunder 迅雷
-- [x] flashget 快车
-- [x] qqdl QQ旋风
+- [x] bittorrent
+
 
 ## could & service
 
