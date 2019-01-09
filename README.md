@@ -24,6 +24,9 @@
 
 
 ### Recommended Install
+
+[![Join the chat at https://gitter.im/negibox/community](https://badges.gitter.im/negibox/community.svg)](https://gitter.im/negibox/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Download the latest version of WebTorrent Desktop from
 [Negibox.com](https://negibox.com):
 >[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
