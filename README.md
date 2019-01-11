@@ -34,7 +34,7 @@ Download the latest version of WebTorrent Desktop from
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+    <img src="imgs/MacScreenShot.png" alt="Negibox">
   </a>
 </div>
 
@@ -42,17 +42,19 @@ Download the latest version of WebTorrent Desktop from
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="256">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox">
   </a>
 </div>
 - [x] Ubuntu 18.04
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+    <img src="imgs/MacScreenShot.png" alt="Negibox">
   </a>
 </div>
+
 - [x] CentOS 7
+
 - [x] Fedora 28
 
 - [ ] iOS -- 10%
