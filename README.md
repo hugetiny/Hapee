@@ -30,7 +30,7 @@ Download the latest version of WebTorrent Desktop from
 
 ## Supported OS
 
-- [x] macOS 
+- [x] macOS 10.10 and above
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
@@ -38,27 +38,34 @@ Download the latest version of WebTorrent Desktop from
   </a>
 </div>
 
-- [x] Windows 10,7,8
+- [x] Windows 7 and above
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox">
   </a>
 </div>
-- [x] Ubuntu 18.04
+
+
+
+For Linux users:  App is packaged in AppImage and requires FUSE to run.
+All linux platforms(RHEL, CentOS, openSUSE, SLED, Ubuntu, Fedora, debian and derivatives) could run properly.
+GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
+
+- [x] Ubuntu 12.04 and above
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox">
   </a>
 </div>
 
-- [x] CentOS 7
+- [x] CentOS 7 and above
 
-- [x] Fedora 28
+- [x] Fedora 21 and newer
 
-- [ ] iOS -- 10%
-- [ ] Android -- 10%
+- [ ] iOS -- developing
+- [ ] Android -- developing
 
 - [ ] html5 -- 0%
 

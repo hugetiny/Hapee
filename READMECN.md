@@ -29,7 +29,7 @@
 
 ## 适配进度
 
-- [x] macOS 
+- [x] macOS 10.10 及以上
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
@@ -37,28 +37,35 @@
   </a>
 </div>
 
-- [x] Windows 10,7,8
+
+- [x] Windows 7 及以上
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox">
   </a>
 </div>
-- [x] Ubuntu 18.04
+
+Linux用户:  Negibox用AppImage打包.
+理论上支持所有linux平台(RHEL, CentOS, openSUSE, SLED, Ubuntu, Fedora, debian 和其他衍生平台).
+运行Negibox必须安装GUI,推荐GNOME或KDE.
+
+- [x] Ubuntu 12.04 及以上
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox">
   </a>
 </div>
 
-- [x] CentOS 7
-- [x] Fedora 28
 
-- [ ] iOS -- 10%
-- [ ] Android -- 10%
+- [x] CentOS 7 及以上
+- [x] Fedora 21 及以上
 
-- [ ] 微信小程序 -- 10%
+- [ ] iOS -- 开发中
+- [ ] Android -- 开发中
+
+- [ ] 微信小程序 -- 0%
 - [ ] 支付宝小程序 -- 0%
 - [ ] 百度小程序 -- 0%
 - [ ] 字节跳动小程序 -- 0%
