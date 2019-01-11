@@ -34,7 +34,7 @@ Download the latest version of WebTorrent Desktop from
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 
@@ -42,7 +42,7 @@ Download the latest version of WebTorrent Desktop from
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 
@@ -56,7 +56,7 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/UbuntuScreenShot.png" alt="Negibox">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 

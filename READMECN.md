@@ -33,7 +33,7 @@
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 
@@ -42,7 +42,7 @@
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 
@@ -54,7 +54,7 @@ Linux用户:  Negibox用AppImage打包.
 <div align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="imgs/UbuntuScreenShot.png" alt="Negibox">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="60%">
   </a>
 </div>
 
