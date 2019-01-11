@@ -3,7 +3,7 @@
 <h1 align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="256x256.png" alt="Negibox" width="256">
+    <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
   <br>
   Negibox
@@ -29,9 +29,28 @@
 
 ## 适配进度
 
-- [x] macOS 10.10，10.11，10.12，10.13, 10.14
+- [x] macOS 
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
+
 - [x] Windows 10,7,8
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
 - [x] Ubuntu 18.04
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
 - [x] CentOS 7
 - [x] Fedora 28
 
@@ -44,6 +63,13 @@
 - [ ] 字节跳动小程序 -- 0%
 - [ ] 快应用 -- 0%
 
+- [ ] html5 -- 0%
+
+## 浏览器插件支持
+
+- [ ] chrome，包括（UC浏览器，360浏览器，搜狗浏览器等, QQ浏览器等以chromium为核心的浏览器）
+- [ ] firefox
+- [ ] safari
 
 ## 下载协议支持
 
@@ -72,8 +98,8 @@
 如果有一天能做成比Steam+迅雷+云音乐这样的伟大的跨平台全功能平台，
 所有在众筹期间的赞助者将收到发送3倍价值的无条件抵用券
 
-<img src="wechatsponse.jpeg" width="200px" /> 
-<img src="alipaysponse.jpeg" width="200px" />
+<img src="imgs/wechatsponse.jpeg" width="200px" /> 
+<img src="imgs/alipaysponse.jpeg" width="200px" />
 
 
 

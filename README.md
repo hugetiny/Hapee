@@ -3,7 +3,7 @@
 <h1 align="center">
   <br>
   <a href="https://www.negibox.com">
-    <img src="256x256.png" alt="Negibox" width="256">
+    <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
   <br>
   Negibox
@@ -14,7 +14,7 @@
 <h4 align="center">The best cross-platform(Mac,Windows,Linux,Android,iOS) downloader ever</h4>
 
 <p align="center">
-  <a href="https://gitter.im/hugetiny/negibox"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
+  <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://img.shields.io/travis/hugetiny/negibox/master.svg" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
@@ -31,13 +31,41 @@ Download the latest version of WebTorrent Desktop from
 ## Supported OS
 
 - [x] macOS 
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
+
 - [x] Windows 10,7,8
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
 - [x] Ubuntu 18.04
+<div align="center">
+  <br>
+  <a href="https://www.negibox.com">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="256">
+  </a>
+</div>
 - [x] CentOS 7
 - [x] Fedora 28
 
 - [ ] iOS -- 10%
 - [ ] Android -- 10%
+
+- [ ] html5 -- 0%
+
+## Supported Browser
+
+- [ ] chrome/chromium
+- [ ] firefox
+- [ ] safari
+
 
 ## Supported Protocol
 
