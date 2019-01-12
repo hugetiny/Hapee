@@ -13,9 +13,6 @@
 
 <h4 align="center">The best cross-platform(Mac,Windows,Linux,Android,iOS) downloader ever</h4>
 
-<p align="center">
-[![Join the chat at https://gitter.im/negibox/community](https://badges.gitter.im/negibox/community.svg)](https://gitter.im/negibox/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-</p>
 
 
 
