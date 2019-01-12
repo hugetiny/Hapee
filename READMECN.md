@@ -31,19 +31,21 @@
 
 - [x] macOS 10.10 及以上
 <div align="center">
-  <br>
   <a href="https://www.negibox.com">
     <img src="imgs/MacScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 
 - [x] Windows 7 及以上
 <div align="center">
-  <br>
   <a href="https://www.negibox.com">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 Linux用户:  Negibox用AppImage打包.
@@ -52,10 +54,11 @@ Linux用户:  Negibox用AppImage打包.
 
 - [x] Ubuntu 12.04 及以上
 <div align="center">
-  <br>
   <a href="https://www.negibox.com">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 
@@ -94,8 +97,8 @@ Linux用户:  Negibox用AppImage打包.
 
 ## 云端&后台功能
 
-- [ ] 云端文件同步，网盘
-- [ ] 云视频弹幕播放器
+- [ ] 路由器/NAS/云端文件下载，同步，
+- [ ] 云视频聚合，弹幕播放器
 - [ ] 云音乐聚合 -- 10%
 - [ ] 云软件管家，App市场聚合
 

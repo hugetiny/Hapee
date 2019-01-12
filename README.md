@@ -32,18 +32,22 @@ Download the latest version of WebTorrent Desktop from
 
 - [x] macOS 10.10 and above
 <div align="center">
-  <br>
+
   <a href="https://www.negibox.com">
     <img src="imgs/MacScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 - [x] Windows 7 and above
 <div align="center">
-  <br>
+
   <a href="https://www.negibox.com">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 
@@ -54,10 +58,12 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 - [x] Ubuntu 12.04 and above
 <div align="center">
-  <br>
+
   <a href="https://www.negibox.com">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="60%">
   </a>
+    <br>
+    <br>
 </div>
 
 - [x] CentOS 7 and above
@@ -98,10 +104,10 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 ## could & service
 
-- [ ] could files
-- [ ] could videos player with danmaku
+- [ ] cloud files router/NAS remote control
+- [ ] cloud videos player with danmaku
 - [ ] cloud music
-- [ ] could cross-platform apps
+- [ ] cloud cross-platform apps
 
 ## crowdfunding & sponsor
 
