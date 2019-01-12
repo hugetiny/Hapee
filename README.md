@@ -13,9 +13,6 @@
 
 <h4 align="center">The best cross-platform(Mac,Windows,Linux,Android,iOS) downloader ever</h4>
 
-
-
-
 ### Recommended Install
 Download the latest version of WebTorrent Desktop from
 [Negibox.com](https://negibox.com):
