@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
   <br>
@@ -22,7 +22,7 @@
 </p>
 
 ## Recommended Install
-从[Negibox.com](https://negibox.com)下载最新版客户端
+抢先体验[negibox.com](https://github.com/hugetiny/negibox/releases)下载对应平台最新版客户端
 >[如果发现bug，请在issue提出，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
 
 
@@ -31,7 +31,7 @@
 
 - [x] macOS 10.10 及以上
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
@@ -41,7 +41,7 @@
 
 - [x] Windows 7 及以上
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
@@ -51,19 +51,19 @@
 Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/centos.jpg" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
   </a>
     <br>

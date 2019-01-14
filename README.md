@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
   <br>
@@ -24,8 +24,7 @@
 
 
 ### Recommended Install
-Download the latest version of WebTorrent Desktop from
-[Negibox.com](https://negibox.com):
+Download the latest version of Negibox Desktop from[github](https://github.com/hugetiny/negibox/releases):
 >[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
 
 ## Supported OS
@@ -33,7 +32,7 @@ Download the latest version of WebTorrent Desktop from
 - [x] macOS 10.10 and above
 <div align="center">
 
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
@@ -43,7 +42,7 @@ Download the latest version of WebTorrent Desktop from
 - [x] Windows 7 and above
 <div align="center">
 
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
@@ -55,19 +54,19 @@ Download the latest version of WebTorrent Desktop from
 For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
 GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/centos.jpg" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
-  <a href="https://www.negibox.com">
+  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
   </a>
     <br>
