@@ -55,9 +55,6 @@ Download the latest version of WebTorrent Desktop from
 For Linux users:  App is packaged in AppImage and requires FUSE to run.
 All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
 GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
-
-
-- [x] Ubuntu 12.04 and above
 <div align="center">
   <a href="https://www.negibox.com">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
