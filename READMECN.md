@@ -48,8 +48,7 @@
     <br>
 </div>
 
-Linux用户:  Negibox用AppImage打包.
-理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
+Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
 <div align="center">
   <a href="https://www.negibox.com">
@@ -97,7 +96,8 @@ Linux用户:  Negibox用AppImage打包.
 - [x] sftp
 - [ ] ftps
 - [x] magnet
-- [x] bittorrent
+- [x] BitTorrent
+- [x] MetaLink
 - [x] thunder 迅雷
 - [x] flashget 快车
 - [x] qqdl QQ旋风
