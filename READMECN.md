@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://img.shields.io/travis/hugetiny/negibox/master.svg" alt="travis"></a>
+  <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://www.travis-ci.com/hugetiny/negi.svg" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
@@ -32,7 +32,7 @@
 - [x] macOS 10.10 及以上
 <div align="center">
   <a href="https://www.negibox.com">
-    <img src="imgs/MacScreenShot.png" alt="Negibox" width="60%">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
@@ -42,28 +42,35 @@
 - [x] Windows 7 及以上
 <div align="center">
   <a href="https://www.negibox.com">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="60%">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
 </div>
 
 Linux用户:  Negibox用AppImage打包.
-理论上支持所有linux平台(RHEL, CentOS, openSUSE, SLED, Ubuntu, Fedora, debian 和其他衍生平台).
+理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
-
-- [x] Ubuntu 12.04 及以上
 <div align="center">
   <a href="https://www.negibox.com">
-    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="60%">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
+  </a>
+    <br>
+</div>
+<div align="center">
+  <a href="https://www.negibox.com">
+    <img src="imgs/centos.jpg" alt="Negibox" width="80%">
+  </a>
+    <br>
+</div>
+<div align="center">
+  <a href="https://www.negibox.com">
+    <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
 </div>
 
-
-- [x] CentOS 7 及以上
-- [x] Fedora 21 及以上
 
 - [ ] iOS -- 开发中
 - [ ] Android -- 开发中
