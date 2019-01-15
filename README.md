@@ -15,16 +15,15 @@
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://travis-ci.com/hugetiny/negi.svg" alt="travis"></a>
+  <a href="#"><img src="https://travis-ci.com/hugetiny/negi.svg?token=qvFZsNz4KR57wGKgbK9F&branch=master" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
-  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 </p>
 
 
 
 ### Recommended Install
-Download the latest version of Negibox Desktop from[github](https://github.com/hugetiny/negibox/releases):
+Download the latest version of Negibox Desktop from [github release](https://github.com/hugetiny/negibox/releases):
 >[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
 
 ## Supported OS
@@ -53,7 +52,16 @@ Download the latest version of Negibox Desktop from[github](https://github.com/h
 
 For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
 GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
-<div align="center">
+<ul align="center" style="list-style: none;">
+                <li><img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64"></li>
+                <li><img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128"></li>
+                <li><img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"></li>
+            </ul>
+<ul align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
   </a>
@@ -74,21 +82,19 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 </div>
 
 
-
-
 - [ ] iOS -- developing
 - [ ] Android -- developing
 
 - [ ] html5 -- 0%
 
-## Supported Browser Extension
+## Browser Extension
 
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari
 
 
-## Supported Protocol
+## Protocol
 
 - [x] http
 - [x] https
@@ -98,17 +104,6 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 - [x] magnet
 - [x] BitTorrent
 - [x] MetaLink
-
-## Protocols
-
-- [x] http
-- [x] https
-- [x] ftp
-- [x] sftp
-- [ ] ftps
-- [x] magnet
-- [x] bittorrent
-
 
 ## could & service
 
@@ -121,8 +116,4 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 thank you for supporting my dream to be the next Steam
 
-
-
-
-
-
+[URL=https://info.flagcounter.com/Dy64][IMG]https://s01.flagcounter.com/countxl/Dy64/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_64/viewers_0/labels_0/pageviews_0/flags_0/percent_1/[/IMG][/URL]

@@ -15,14 +15,14 @@
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://travis-ci.org/hugetiny/negibox"><img src="https://travis-ci.com/hugetiny/negi.svg" alt="travis"></a>
+  <a href="#"><https://travis-ci.com/hugetiny/negi.svg?token=qvFZsNz4KR57wGKgbK9F&branch=master" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
-  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+
 </p>
 
 ## Recommended Install
-抢先体验[negibox.com](https://github.com/hugetiny/negibox/releases)下载对应平台最新版客户端
+抢先体验[github release](https://github.com/hugetiny/negibox/releases)下载对应平台最新版客户端
 >[如果发现bug，请在issue提出，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
 
 
@@ -50,6 +50,15 @@
 
 Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
+<ul align="center" style="list-style: none;">
+                <li><img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48"></li>
+                <li><img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64"></li>
+                <li><img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128"></li>
+                <li><img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"></li>
+            </ul>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
@@ -79,7 +88,7 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
 - [ ] 百度小程序 -- 0%
 - [ ] 字节跳动小程序 -- 0%
 - [ ] 快应用 -- 0%
-
+- [ ] QQ轻应用 -- 0%
 - [ ] html5 -- 0%
 
 ## 浏览器插件支持
@@ -120,5 +129,5 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
 <img src="imgs/alipaysponse.jpeg" width="200px" />
 
 
-
+[URL=https://info.flagcounter.com/Dy64][IMG]https://s01.flagcounter.com/countxl/Dy64/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_64/viewers_0/labels_0/pageviews_0/flags_0/percent_1/[/IMG][/URL]
 
