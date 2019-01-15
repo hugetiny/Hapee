@@ -53,6 +53,15 @@ Download the latest version of Negibox Desktop from[github](https://github.com/h
 
 For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
 GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
+<ul class="list-unstyled">
+                <li><img src="images/distributions/arch.svg" alt="Arch Linux" height="48" width="48"></li>
+                <li><img src="images/distributions/centos.svg" alt="CentOS" height="48" width="48"></li>
+                <li><img src="images/distributions/debian.svg" alt="debian" height="48" width="48"></li>
+                <li><img src="images/distributions/fedora.svg" alt="Fedora" height="48" width="48"></li>
+                <li><img src="images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64"></li>
+                <li><img src="images/distributions/rh.svg" alt="Red Hat" height="48" width="128"></li>
+                <li><img src="images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"></li>
+            </ul>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
@@ -75,29 +84,17 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 
 
-
 - [ ] iOS -- developing
 - [ ] Android -- developing
 
 - [ ] html5 -- 0%
 
-## Supported Browser Extension
+## Browser Extension
 
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari
 
-
-## Supported Protocol
-
-- [x] http
-- [x] https
-- [x] ftp
-- [x] sftp
-- [ ] ftps
-- [x] magnet
-- [x] BitTorrent
-- [x] MetaLink
 
 ## Protocols
 
