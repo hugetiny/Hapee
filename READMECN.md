@@ -15,7 +15,6 @@
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="#"><https://travis-ci.com/hugetiny/negi.svg?token=qvFZsNz4KR57wGKgbK9F&branch=master" alt="travis"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
 
@@ -50,15 +49,15 @@
 
 Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
-<ul align="center" style="list-style: none;">
-                <li><img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48"></li>
-                <li><img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48"></li>
-                <li><img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48"></li>
-                <li><img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48"></li>
-                <li><img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64"></li>
-                <li><img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128"></li>
-                <li><img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"></li>
-            </ul>
+<div align="center" >
+                <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
+                <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
+                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48">
+</div>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
@@ -82,7 +81,15 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
 
 - [ ] iOS -- 开发中
 - [ ] Android -- 开发中
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/mobile.png" alt="Negibox" width="80%">
+  </a>
+    <br>
+    <br>
+</div>
 
+非原生平台提供远程控制功能
 - [ ] 微信小程序 -- 0%
 - [ ] 支付宝小程序 -- 0%
 - [ ] 百度小程序 -- 0%
@@ -128,6 +135,7 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
 <img src="imgs/wechatsponse.jpeg" width="200px" /> 
 <img src="imgs/alipaysponse.jpeg" width="200px" />
 
+<a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_32/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 
-[URL=https://info.flagcounter.com/Dy64][IMG]https://s01.flagcounter.com/countxl/Dy64/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_64/viewers_0/labels_0/pageviews_0/flags_0/percent_1/[/IMG][/URL]
+
 
