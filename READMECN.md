@@ -83,13 +83,13 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
 - [ ] Android -- 开发中
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/mobile.png" alt="Negibox" width="80%">
+    <img src="imgs/mobile.png" alt="Negibox" width="40%">
   </a>
     <br>
     <br>
 </div>
 
-非原生平台提供远程控制功能
+###非原生平台提供远程控制功能
 - [ ] 微信小程序 -- 0%
 - [ ] 支付宝小程序 -- 0%
 - [ ] 百度小程序 -- 0%

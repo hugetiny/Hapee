@@ -83,15 +83,16 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 - [ ] iOS -- developing
 - [ ] Android -- developing
+
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/mobile.png" alt="Negibox" width="80%">
+    <img src="imgs/mobile.png" alt="Negibox" width="40%">
   </a>
     <br>
     <br>
 </div>
 
-remote control
+###remote control
 - [ ] html5 -- 0%
 
 ## Browser Extension
