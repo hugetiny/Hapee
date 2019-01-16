@@ -1,15 +1,12 @@
 [English Doc](https://github.com/hugetiny/negibox/blob/master/README.md)
 
 <h1 align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/256x256.png" alt="Negibox" width="256">
-  </a>
   <br>
   Negibox
   <br>
   <br>
 </h1>
-
 <h4 align="center">Negibox葱葱盒子 做世界做好的跨平台下载平台</h4>
 
 <p align="center">
@@ -46,7 +43,7 @@
     <br>
 </div>
 
-Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
+#####Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
 运行Negibox必须安装GUI,推荐GNOME或KDE.
 <div align="center" >
                 <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
@@ -88,7 +85,7 @@ Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|U
     <br>
 </div>
 
-###非原生平台提供远程控制功能
+#####非原生平台提供远程控制功能
 - [ ] 微信小程序 -- 0%
 - [ ] 支付宝小程序 -- 0%
 - [ ] 百度小程序 -- 0%
