@@ -1,7 +1,6 @@
 [中文文档](https://github.com/hugetiny/negibox/blob/master/READMECN.md)
 
 <h1 align="center">
-  <br>
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
@@ -83,7 +82,6 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 - [ ] iOS -- developing
 - [ ] Android -- developing
-
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/mobile.png" alt="Negibox" width="40%">
@@ -96,7 +94,6 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 - [ ] html5 -- 0%
 
 ## Browser Extension
-
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari

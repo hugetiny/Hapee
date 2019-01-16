@@ -1,7 +1,6 @@
 [English Doc](https://github.com/hugetiny/negibox/blob/master/README.md)
 
 <h1 align="center">
-  <br>
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/256x256.png" alt="Negibox" width="256">
   </a>
