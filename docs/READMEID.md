@@ -15,6 +15,23 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/docs/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/docs/READMEID.md)
 
+## Please help us to improve translatation for this page and [Negibox Indonesian](https://github.com/hugetiny/negibox/blob/master/translate/id_ID.js)
+
+#### step1: 
+click the pencil in top right corner <img src="imgs/pencil.png"> to fork this project and edit the file
+
+#### step2:
+fix the text to right translation and click
+<img src="imgs/propose.png">
+
+#### step3:
+click
+<img src="imgs/create-pull-request.png">
+and
+<img src="imgs/create-pull-request1.png">
+
+#### We will merge pull requests to docs and Negibox as soon as we can.
+
 <h1 align="center">
     <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
