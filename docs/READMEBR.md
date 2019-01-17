@@ -15,24 +15,29 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/docs/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/docs/READMEID.md)
 
-##Negibox is a free downloader for everyone in the world.Please help us to improve translatation for this page and [Negibox BR](https://github.com/hugetiny/negibox/blob/master/translate/pt_BR.js)
+### Negibox is a free downloader for everyone in the world.Please help us to improve translatation for this page and [Negibox BR](https://github.com/hugetiny/negibox/blob/master/translate/pt_BR.js)
 
-###step1: 
+#### step1: 
 click the pencil in top right corner
-<a href="/hugetiny/negibox/edit/master/docs/README.md" class="Box-btn-octicon btn-octicon float-right" aria-label="Edit this file"><svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg></a>
+<div>
+<a href="/hugetiny/negibox/edit/master/docs/README.md" class="Box-btn-octicon btn-octicon float-right" aria-label="Edit this file"><svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
+<path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path>
+</svg>
+</a>
+<div>
 to fork this project and edit the file
 
-###step2:
+#### step2:
 fix the text to right translation and click
 <img src="imgs/propose.png">
 
-###step3:
+#### step3:
 click
 <img src="imgs/create-pull-request.png">
 and
 <img src="imgs/create-pull-request1.png">
 
-####We will merge pull requests as soon as we can.
+#### We will merge pull requests as soon as we can.
 
 <h1 align="center">
     <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
