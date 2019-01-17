@@ -15,7 +15,6 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/docs/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/docs/READMEID.md)
 
-
 <h1 align="center">
     <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
