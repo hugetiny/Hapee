@@ -34,7 +34,7 @@
 
 ## Recommended Install
 抢先体验[github release](https://github.com/hugetiny/negibox/releases)下载对应平台最新版客户端
->[如果发现bug，请在issue提出，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
+>[如果发现bug，请在github提交issue，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
 
 
 
