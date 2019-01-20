@@ -1,23 +1,23 @@
-[English]({{ site.baseurl }}{% link index.md %}) |
-[中文简体]({{ site.baseurl }}{% link READMECN.md %}) |
-[中文繁体]({{ site.baseurl }}{% link READMETW.md %}) |
-[Nederlands]({{ site.baseurl }}{% link READMENL.md %}) |
-[Français]({{ site.baseurl }}{% link READMEFR.md %}) |
-[Deutsch]({{ site.baseurl }}{% link READMEDE.md %}) |
-[Italiano]({{ site.baseurl }}{% link READMEIT.md %}) |
-[Protuguês]({{ site.baseurl }}{% link READMEBR.md %}) |
-[Español]({{ site.baseurl }}{% link READMEES.md %}) |
-[Russian]({{ site.baseurl }}{% link READMERU.md %}) |
-[Polski]({{ site.baseurl }}{% link READMEPL.md %}) |
-[ไทย]({{ site.baseurl }}{% link READMETH.md %}) |
-[Türkçe]({{ site.baseurl }}{% link READMETR.md %}) |
-[فارسی]({{ site.baseurl }}{% link READMEIR.md %}) |
-[čeština]({{ site.baseurl }}{% link READMECZ.md %}) |
-[Indonesian]({{ site.baseurl }}{% link READMEID.md %})
+[English](https://github.com/hugetiny/negibox/blob/master/docs/README.md) |
+[中文简体](https://github.com/hugetiny/negibox/blob/master/docs/READMECN.md) |
+[中文繁体](https://github.com/hugetiny/negibox/blob/master/docs/READMETW.md) |
+[Nederlands](https://github.com/hugetiny/negibox/blob/master/docs/READMENL.md) |
+[Français](https://github.com/hugetiny/negibox/blob/master/docs/READMEFR.md) |
+[Deutsch](https://github.com/hugetiny/negibox/blob/master/docs/READMEDE.md) |
+[Italiano](https://github.com/hugetiny/negibox/blob/master/docs/READMEIT.md) |
+[Protuguês](https://github.com/hugetiny/negibox/blob/master/docs/READMEBR.md) |
+[Español](https://github.com/hugetiny/negibox/blob/master/docs/READMEES.md) |
+[Russian](https://github.com/hugetiny/negibox/blob/master/docs/READMERU.md) |
+[Polski](https://github.com/hugetiny/negibox/blob/master/docs/READMEPL.md) |
+[ไทย](https://github.com/hugetiny/negibox/blob/master/docs/READMETH.md) |
+[Türkçe](https://github.com/hugetiny/negibox/blob/master/docs/READMETR.md) |
+[فارسی](https://github.com/hugetiny/negibox/blob/master/docs/READMEIR.md) |
+[čeština](https://github.com/hugetiny/negibox/blob/master/docs/READMECZ.md) |
+[Indonesian](https://github.com/hugetiny/negibox/blob/master/docs/READMEID.md)
 
 
 <h1 align="center">
-    <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
   Negibox
   <br>
@@ -43,7 +43,7 @@
 - [x] macOS 10.10 及以上
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
+    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
@@ -53,7 +53,7 @@
 - [x] Windows 7 及以上
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
+    <img src="docs/imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
@@ -72,19 +72,19 @@
 </div>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
+    <img src="docs/imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/centos.jpg" alt="Negibox" width="80%">
+    <img src="docs/imgs/centos.jpg" alt="Negibox" width="80%">
   </a>
     <br>
 </div>
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
+    <img src="docs/imgs/fedora.jpg" alt="Negibox" width="80%">
   </a>
     <br>
     <br>
@@ -95,7 +95,7 @@
 - [ ] Android -- 开发中
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/mobile.png" alt="Negibox" width="40%">
+    <img src="docs/imgs/mobile.png" alt="Negibox" width="40%">
   </a>
     <br>
     <br>
@@ -144,8 +144,8 @@
 如果有一天能做成比Steam+更好用的跨平台全功能平台，
 所有在众筹期间的赞助者将收到发送3倍价值的无条件抵用券
 
-<img src="imgs/wechatsponse.jpeg" width="200px" />
-<img src="imgs/alipaysponse.jpeg" width="200px" />
+<img src="docs/imgs/wechatsponse.jpeg" width="200px" />
+<img src="docs/imgs/alipaysponse.jpeg" width="200px" />
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 <script>

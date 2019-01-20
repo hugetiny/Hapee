@@ -1,23 +1,25 @@
-[English](https://github.com/hugetiny/negibox/blob/master/docs/README.md) |
-[中文简体](https://github.com/hugetiny/negibox/blob/master/docs/READMECN.md) |
-[中文繁体](https://github.com/hugetiny/negibox/blob/master/docs/READMETW.md) |
-[Nederlands](https://github.com/hugetiny/negibox/blob/master/docs/READMENL.md) |
-[Français](https://github.com/hugetiny/negibox/blob/master/docs/READMEFR.md) |
-[Deutsch](https://github.com/hugetiny/negibox/blob/master/docs/READMEDE.md) |
-[Italiano](https://github.com/hugetiny/negibox/blob/master/docs/READMEIT.md) |
-[Protuguês](https://github.com/hugetiny/negibox/blob/master/docs/READMEBR.md) |
-[Español](https://github.com/hugetiny/negibox/blob/master/docs/READMEES.md) |
-[Russian](https://github.com/hugetiny/negibox/blob/master/docs/READMERU.md) |
-[Polski](https://github.com/hugetiny/negibox/blob/master/docs/READMEPL.md) |
-[ไทย](https://github.com/hugetiny/negibox/blob/master/docs/READMETH.md) |
-[Türkçe](https://github.com/hugetiny/negibox/blob/master/docs/READMETR.md) |
-[فارسی](https://github.com/hugetiny/negibox/blob/master/docs/READMEIR.md) |
-[čeština](https://github.com/hugetiny/negibox/blob/master/docs/READMECZ.md) |
-[Indonesian](https://github.com/hugetiny/negibox/blob/master/docs/READMEID.md)
+[English]({{ site.baseurl }}{% link index.md %}) |
+[中文简体]({{ site.baseurl }}{% link READMECN.md %}) |
+[中文繁体]({{ site.baseurl }}{% link READMETW.md %}) |
+[Nederlands]({{ site.baseurl }}{% link READMENL.md %}) |
+[Français]({{ site.baseurl }}{% link READMEFR.md %}) |
+[Deutsch]({{ site.baseurl }}{% link READMEDE.md %}) |
+[Italiano]({{ site.baseurl }}{% link READMEIT.md %}) |
+[Protuguês]({{ site.baseurl }}{% link READMEBR.md %}) |
+[Español]({{ site.baseurl }}{% link READMEES.md %}) |
+[Russian]({{ site.baseurl }}{% link READMERU.md %}) |
+[Polski]({{ site.baseurl }}{% link READMEPL.md %}) |
+[ไทย]({{ site.baseurl }}{% link READMETH.md %}) |
+[Türkçe]({{ site.baseurl }}{% link READMETR.md %}) |
+[فارسی]({{ site.baseurl }}{% link READMEIR.md %}) |
+[čeština]({{ site.baseurl }}{% link READMECZ.md %}) |
+[Indonesian]({{ site.baseurl }}{% link READMEID.md %})
 
 ## Please help us to improve translatation for this page and [Negibox Türkçe](https://github.com/hugetiny/negibox/blob/master/translate/tr_TR.js)
+#### step0:
+[Github](https://github.com/hugetiny/negibox/blob/master/READMETR.md)
 
-#### step1: 
+#### step1:
 click the pencil in top right corner <img src="imgs/pencil.png"> to fork this project and edit the file
 
 #### step2:
@@ -77,7 +79,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 
 ##### For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
-GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
+##### GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 <div align="center" >
                 <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
                 <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
@@ -85,7 +87,7 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
                 <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
                 <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
                 <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
-                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"><br>
 </div>
 
 <div align="center">
@@ -150,4 +152,4 @@ GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 
 thank you for supporting my dream to be the next Steam
 
-<a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_FFFFFF/txt_000000/border_FFFFFF/columns_8/maxflags_32/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+<a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
