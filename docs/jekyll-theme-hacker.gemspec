@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version       = '0.1.1'
   s.authors       = ['hugetiny', 'Neginegi']
   s.email         = ['hugetiny@hotmail.com']
-  s.homepage      = 'https://negibox.com'
+  s.homepage      = 'https://github.com/hugetiny/negibox'
   s.summary       = 'welcome'
 
   s.files         = `git ls-files -z`.split("\x0").select do |f|
