@@ -1,61 +1,86 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
+<html lang="{{ site.lang | default: " en-US" }}">
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{'/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-{% seo %}
-  </head>
+    {% seo %}
+</head>
 
-  <body>
+<body>
 
-    <!--<header>-->
-      <!--<div class="container">-->
-        <!--<h1>{{ site.title | default: site.github.repository_name }}</h1>-->
-        <!--<h2>{{ site.description | default: site.github.project_tagline }}</h2>-->
+<!--<header>-->
+<!--<div class="container">-->
+<!--<h1>{{ site.title | default: site.github.repository_name }}</h1>-->
+<!--<h2>{{ site.description | default: site.github.project_tagline }}</h2>-->
 
-        <!--<section id="downloads">-->
-          <!--{% if site.show_downloads %}-->
-            <!--<a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>-->
-            <!--<a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>-->
-          <!--{% endif %}-->
-          <!--<a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>-->
-        <!--</section>-->
-      <!--</div>-->
-    <!--</header>-->
+<!--<section id="downloads">-->
+<!--{% if site.show_downloads %}-->
+<!--<a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>-->
+<!--<a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>-->
+<!--{% endif %}-->
+<!--<a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>-->
+<!--</section>-->
+<!--</div>-->
+<!--</header>-->
 
-    <div class="container">
-      <section id="main_content">
+<div class="container">
+    <section id="main_content">
         {{ content }}
-      </section>
-    </div>
+    </section>
+</div>
 
-    {% if site.google_analytics %}
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-      </script>
-    {% endif %}
+{% if site.google_analytics %}
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+</script>
+{% endif %}
 <!--baidu-->
-    <script>
-      (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+<script>
+    (function () {
+        var canonicalURL, curProtocol;
+        //Get the <link> tag
+        var x = document.getElementsByTagName("link");
+        //Find the last canonical URL
+        if (x.length > 0) {
+            for (i = 0; i < x.length; i++) {
+                if (x[i].rel.toLowerCase() == 'canonical' && x[i].href) {
+                    canonicalURL = x[i].href;
+                }
+            }
         }
-        else {
-          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        //Get protocol
+        if (!canonicalURL) {
+            curProtocol = window.location.protocol.split(':')[0];
+        } else {
+            curProtocol = canonicalURL.split(':')[0];
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-      })();
-    </script>
-  </body>
+        //Get current URL if the canonical URL does not exist
+        if (!canonicalURL) canonicalURL = window.location.href;
+        //Assign script content. Replace current URL with the canonical URL
+        !function () {
+            var e = /([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi, r = canonicalURL, t = document.referrer;
+            if (!e.test(r)) {
+                var n = (String(curProtocol).toLowerCase() === 'https') ? "https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif" : "//api.share.baidu.com/s.gif";
+                t ? (n += "?r=" + encodeURIComponent(document.referrer), r && (n += "&l=" + r)) : r && (n += "?l=" + r);
+                var i = new Image;
+                i.src = n
+            }
+        }(window);
+    })();</script>
+</body>
 </html>
