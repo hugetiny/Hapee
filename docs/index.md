@@ -20,7 +20,7 @@ layout: default
 [Indonesian]({% link READMEID.md %})
 
 <h1 align="center">
-    <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="imgs/icon-gif.gif" alt="Negibox" >
   <br>
   Negibox
   <br>

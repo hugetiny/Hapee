@@ -8,7 +8,7 @@ $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
 
 body {
-  margin: 0;
+  //margin: 1%;
   padding: 0;
   background: $body-background url("../images/bkg.png") 0 0;
   color: $body-foreground;
@@ -20,7 +20,7 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
+  //width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }

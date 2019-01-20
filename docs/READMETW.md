@@ -34,7 +34,7 @@
 #### 我們會盡快merge繁體中文。
 
 <h1 align="center">
-    <img src="imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="imgs/icon-gif.gif" alt="Negibox" >
   <br>
   Negibox
   <br>
