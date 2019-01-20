@@ -78,8 +78,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 
 
-- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
-GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
+- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
 <div align="center" >
                 <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
                 <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
