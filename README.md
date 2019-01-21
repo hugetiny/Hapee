@@ -131,7 +131,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 ## crowdfunding & sponsor
 
-thank you for supporting my dream to be the next Steam
+thank you for your support
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 

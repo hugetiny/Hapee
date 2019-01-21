@@ -141,8 +141,7 @@
 ## 众筹&赞助
 
 感谢支持平凡前端的梦想，
-如果有一天能做成比Steam+更好用的跨平台全功能平台，
-所有在众筹期间的赞助者将收到发送3倍价值的无条件抵用券
+
 
 <img src="docs/imgs/wechatsponse.jpeg" width="200px" />
 <img src="docs/imgs/alipaysponse.jpeg" width="200px" />
