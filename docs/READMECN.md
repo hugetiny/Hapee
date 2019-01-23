@@ -142,9 +142,14 @@
 
 感谢支持平凡前端的梦想，
 
-
 <img src="imgs/wechatsponse.jpeg" width="200px" />
 <img src="imgs/alipaysponse.jpeg" width="200px" />
+
+
+## 特别鸣谢
+[aria2](https://github.com/aria2/aria2)
+[webui-aria2](https://github.com/ziahamza/webui-aria2)
+ariang
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 <script>

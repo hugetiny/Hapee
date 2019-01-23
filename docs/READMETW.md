@@ -157,9 +157,12 @@
 
 ## 眾籌&贊助
 
-感謝支持平凡前端的夢想，
-如果有壹天能做成比Steam更好的偉大的跨平臺全功能平臺，
-所有在眾籌期間的贊助者將收到發送3倍價值的無條件抵用券
+感謝支持平凡前端的夢想
+
+## 特別鳴謝
+[aria2](https://github.com/aria2/aria2)
+[webui-aria2](https://github.com/ziahamza/webui-aria2)
+ariang
 
 <img src="imgs/wechatsponse.jpeg" width="200px" />
 <img src="imgs/alipaysponse.jpeg" width="200px" />

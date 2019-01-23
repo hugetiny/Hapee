@@ -142,6 +142,11 @@
 
 感谢支持平凡前端的梦想，
 
+## 特别鸣谢
+[aria2](https://github.com/aria2/aria2)
+[webui-aria2](https://github.com/ziahamza/webui-aria2)
+ariang
+
 
 <img src="docs/imgs/wechatsponse.jpeg" width="200px" />
 <img src="docs/imgs/alipaysponse.jpeg" width="200px" />
