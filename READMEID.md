@@ -122,6 +122,10 @@ Download the latest version of Negibox Desktop from [github release](https://git
 ##### remote control
 - [ ] html5 -- 0%
 
+## Engines
+- [x]aria2
+- [ ]thunder
+
 ## Browser Extension
 - [ ] chrome/chromium
 - [ ] firefox
