@@ -76,8 +76,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 
 
-##### For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD) could run properly.
-##### GUI is required to run Negibox ,GNOME or KDE desktop is recommended.
+- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
 <div align="center" >
                 <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
                 <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
@@ -155,7 +154,9 @@ thank you for your support
 
 ## Special Thanks
 [aria2](https://github.com/aria2/aria2)
+
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
+
 ariang
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
