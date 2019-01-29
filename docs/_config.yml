@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Negibox is the best free cross-platform(Mac,Windows,Linux,Android,iOS)downloader for everyone in the world.Support http https ftp sftp ftps magnet BitTorrent MetaLink.
 keywords:
 #baseurl:  # the subpath of your site, e.g. /blog
-origin: hugetiny/negibox.git
+origin: git@github.com:hugetiny/negibox.git
 url: hugetiny.github.io/negibox # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hugetiny1
 github_username:  hugetiny
