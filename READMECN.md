@@ -23,7 +23,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Negibox葱葱盒子 做世界做好的跨平台下载平台</h4>
+<h4 align="center">Negibox葱葱盒子 做世界最好的跨平台下载平台</h4>
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
