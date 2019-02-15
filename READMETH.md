@@ -15,7 +15,7 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
 
-## Please help us to improve translatation for this page and [Negibox ไทย](https://github.com/hugetiny/negibox/blob/master/translate/th_TH.js)
+## Please help us to improve translation for this page and [Negibox ไทย](https://github.com/hugetiny/negibox/blob/master/translate/th_TH.js)
 
 #### step1:
 click the pencil in top right corner <img src="docs/imgs/pencil.png"> to fork this project and edit the file

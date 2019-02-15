@@ -15,7 +15,7 @@
 [čeština]({% link READMECZ.md %}) |
 [Indonesian]({% link READMEID.md %})
 
-## Please help us to improve translatation for this page and [Negibox فارسی](https://github.com/hugetiny/negibox/blob/master/translate/fa_IR.js)
+## Please help us to improve translation for this page and [Negibox فارسی](https://github.com/hugetiny/negibox/blob/master/translate/fa_IR.js)
 #### step0:
 [Github](https://github.com/hugetiny/negibox/blob/master/READMEIR.md)
 

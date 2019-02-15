@@ -15,7 +15,7 @@
 [čeština]({% link READMECZ.md %}) |
 [Indonesian]({% link READMEID.md %})
 
-## Please help us to improve translatation for this page and [Negibox ไทย](https://github.com/hugetiny/negibox/blob/master/translate/th_TH.js)
+## Please help us to improve translation for this page and [Negibox ไทย](https://github.com/hugetiny/negibox/blob/master/translate/th_TH.js)
 #### step0:
 [Github](https://github.com/hugetiny/negibox/blob/master/READMETH.md)
 
