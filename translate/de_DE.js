@@ -260,7 +260,7 @@ translations.de_DE = {
         'ftp.command.failed': 'FTP Kommando fehlgeschlagen.',
         'http.response.header.bad': 'HTTP response header war fehlerhaft oder unerwartet.',
         'redirects.toomany': 'Zu viele Umleitungen aufgetreten.',
-        'http.authorization.failed': 'HTTP Autorization fehlgeschlagen.',
+        'http.authorization.failed': 'HTTP Autorisierung fehlgeschlagen.',
         'bencoded.file.parse.failed': 'Konnte bencoded Datei nicht parsen (normalerweise ".torrent" Datei).',
         'torrent.file.corrupted': 'The ".torrent" file was corrupted or missing information that aria2 needed.',
         'magnet.uri.bad': 'Magnet URL was fehlerhaft.',
@@ -288,7 +288,7 @@ translations.de_DE = {
         'debug.latest-logs': 'Letzten {{count}} Protokolle'
     },
     'rpc': {
-        'unauthorized': 'Autorization gescheitert!'
+        'unauthorized': 'Autorisierung gescheitert!'
     },
     'option': {
         'true': 'Wahr',
