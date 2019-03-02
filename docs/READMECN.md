@@ -129,6 +129,8 @@
 - [x] thunder 迅雷
 - [x] flashget 快车
 - [x] qqdl QQ旋风
+- [x] fs2you Rayfile
+- [ ] 百度网盘
 
 ## 云端&后台功能
 
