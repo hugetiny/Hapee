@@ -118,6 +118,7 @@
 
 ## 下载协议支持
 
+- [ ] ipfs
 - [x] http
 - [x] https
 - [x] ftp

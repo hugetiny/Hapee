@@ -134,6 +134,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 ## Protocol
 
+- [ ] ipfs
 - [x] http
 - [x] https
 - [x] ftp

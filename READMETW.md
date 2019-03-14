@@ -133,6 +133,8 @@
 
 ## 下載協議支持
 
+
+- [ ] ipfs
 - [x] http
 - [x] https
 - [x] ftp
