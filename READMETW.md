@@ -133,7 +133,6 @@
 
 ## 下載協議支持
 
-
 - [ ] ipfs
 - [x] http
 - [x] https
@@ -143,6 +142,7 @@
 - [x] magnet
 - [x] BitTorrent
 - [x] MetaLink
+- [ ] Baidu网盘
 - [x] thunder 迅雷
 - [x] flashget 快車
 - [x] qqdl QQ旋風
