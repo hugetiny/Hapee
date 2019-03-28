@@ -42,59 +42,8 @@ Download the latest version of Negibox Desktop from [github release](https://git
 ## Supported OS
 
 - [x] macOS 10.10 and above
-<div align="center">
-
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
 - [x] Windows 7 and above
-<div align="center">
-
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
-
-
 - [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
-<div align="center" >
-                <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
-                <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
-                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"><br>
-</div>
-
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/centos.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
-
 - [ ] iOS -- developing
 - [ ] Android -- developing
 <div align="center">
@@ -106,7 +55,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 </div>
 
 ##### remote control
-- [ ] html5 -- 0%
+- [ ] html5
 
 ## Engines
 - [x] aria2

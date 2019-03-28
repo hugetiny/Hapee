@@ -41,56 +41,9 @@
 ## 适配进度
 
 - [x] macOS 10.10 及以上
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
-
 - [x] Windows 7 及以上
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
-##### Linux用户:  Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
-运行Negibox必须安装GUI,推荐GNOME或KDE.
-<div align="center" >
-                <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
-                <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
-                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"><br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/centos.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/fedora.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
-
-
+- [x] Linux Negibox用AppImage打包.理论上支持所有linux平台(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平台).
+运行Negibox必须安装GUI,推荐GNOME.
 - [ ] iOS -- 开发中
 - [ ] Android -- 开发中
 <div align="center">
@@ -102,19 +55,20 @@
 </div>
 
 ##### 非原生平台提供远程控制功能
-- [ ] 微信小程序 -- 0%
-- [ ] 支付宝小程序 -- 0%
-- [ ] 百度小程序 -- 0%
-- [ ] 字节跳动小程序 -- 0%
-- [ ] 快应用 -- 0%
-- [ ] QQ轻应用 -- 0%
-- [ ] html5 -- 0%
+- [ ] 微信小程序
+- [ ] 支付宝小程序
+- [ ] 百度小程序
+- [ ] 字节跳动小程序
+- [ ] 快应用
+- [ ] QQ轻应用
+- [ ] html5
 
 ## 浏览器插件支持
 
 - [ ] chrome，包括（UC浏览器，360浏览器，搜狗浏览器等, QQ浏览器等以chromium为核心的浏览器）
 - [ ] firefox
 - [ ] safari
+
 
 ## 下载协议支持
 
@@ -137,9 +91,9 @@
 ## 云端&后台功能
 
 - [ ] 路由器/NAS/云端文件下载，同步，
-- [ ] 云视频聚合，弹幕播放器
-- [ ] 云音乐聚合 -- 10%
-- [ ] 云软件管家，App市场聚合
+- [ ] 视频聚合，弹幕播放器
+- [ ] 音乐聚合 -- 10%
+- [ ] 软件管家，App市场聚合
 
 
 ## 众筹&赞助
@@ -148,9 +102,7 @@
 
 ## 特别鸣谢
 [aria2](https://github.com/aria2/aria2)
-
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
-
 ariang
 
 

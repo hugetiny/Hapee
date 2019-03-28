@@ -38,7 +38,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Negibox蔥蔥盒子 多协议跨平台下载工具</h4>
+<h4 align="center">Negibox蔥蔥盒子 下载工具，一个就够了</h4>
 
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
@@ -56,54 +56,15 @@
 ## 適配進度
 
 - [x] macOS 10.10 及以上
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
+
 
 
 - [x] Windows 7 及以上
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
+
 
 ##### Linux用戶:  Negibox用AppImage打包.理論上支持所有linux平臺(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平臺).
 運行Negibox必須安裝GUI,推薦GNOME或KDE.
-<div align="center" >
-                <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
-                <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
-                <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
-                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"><br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/centos.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-</div>
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/fedora.jpg" alt="Negibox" width="80%">
-  </a>
-    <br>
-    <br>
-</div>
+
 
 
 - [ ] iOS -- 開發中
@@ -117,13 +78,13 @@
 </div>
 
 ##### 非原生平臺提供遠程控制功能
-- [ ] 微信小程序 -- 0%
-- [ ] 支付寶小程序 -- 0%
-- [ ] 百度小程序 -- 0%
-- [ ] 字節跳動小程序 -- 0%
-- [ ] 快應用 -- 0%
-- [ ] QQ輕應用 -- 0%
-- [ ] html5 -- 0%
+- [ ] 微信小程序
+- [ ] 支付寶小程序
+- [ ] 百度小程序
+- [ ] 字節跳動小程序
+- [ ] 快應用
+- [ ] QQ輕應用
+- [ ] html5
 
 ## 瀏覽器插件支持
 
@@ -149,9 +110,9 @@
 
 ## 雲端&後臺功能
 
-- [ ] 路由器/NAS/雲端文件下載，同步，
-- [ ] 雲視頻聚合，彈幕播放器
-- [ ] 雲音樂聚合 -- 10%
+- [ ] 路由器/NAS/遠程控制下載，同步，
+- [ ] 彈幕播放器
+- [ ] 音樂播放器
 - [ ] 雲軟件管家，App市場聚合
 
 
