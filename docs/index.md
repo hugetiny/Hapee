@@ -65,7 +65,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 ## Engines
 - [x] aria2
-- [ ] thunder
+- [ ] thunder`
 ## Browser Extension
 - [ ] chrome/chromium
 - [ ] firefox

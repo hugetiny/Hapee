@@ -1,39 +1,41 @@
-[English](https://github.com/hugetiny/negibox/blob/master/README.md) |
-[中文简体](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
-[中文繁体](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
-[Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
-[Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
-[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
-[Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
-[Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
-[Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
-[Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
-[Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
-[ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
-[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
-[فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
-[čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
-[Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
+[English]({% link index.md %}) |
+[中文简体]({% link READMECN.md %}) |
+[中文繁体]({% link READMETW.md %}) |
+[Nederlands]({% link READMENL.md %}) |
+[Français]({% link READMEFR.md %}) |
+[Deutsch]({% link READMEDE.md %}) |
+[Italiano]({% link READMEIT.md %}) |
+[Protuguês]({% link READMEBR.md %}) |
+[Español]({% link READMEES.md %}) |
+[Russian]({% link READMERU.md %}) |
+[Polski]({% link READMEPL.md %}) |
+[ไทย]({% link READMETH.md %}) |
+[Türkçe]({% link READMETR.md %}) |
+[فارسی]({% link READMEIR.md %}) |
+[čeština]({% link READMECZ.md %}) |
+[Indonesian]({% link READMEID.md %})
 
 ## Please help us to improve translation for this page and [Negibox Français](https://github.com/hugetiny/negibox/blob/master/translate/fr_FR.js)
+#### step0:
+[Github](https://github.com/hugetiny/negibox/blob/master/READMEFR.md)
 
 #### step1:
-click the pencil in top right corner <img src="docs/imgs/pencil.png"> to fork this project and edit the file
+click the pencil in top right corner <img src="imgs/pencil.png"> to fork this project and edit the file
 
 #### step2:
 fix the text to right translation and click
-<img src="docs/imgs/propose.png">
+<img src="imgs/propose.png">
 
 #### step3:
 click
-<img src="docs/imgs/create-pull-request.png">
+<img src="imgs/create-pull-request.png">
 and
-<img src="docs/imgs/create-pull-request1.png">
+<img src="imgs/create-pull-request1.png">
 
 #### We will merge pull requests to docs and Negibox as soon as we can.
 
 <h1 align="center">
-    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="imgs/icon-gif.gif" alt="Negibox" >
   <br>
   Negibox
   <br>
@@ -59,7 +61,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 - [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="40%">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="40%">
   </a>
     <br>
     <br>

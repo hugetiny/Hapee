@@ -1,38 +1,40 @@
-[English](https://github.com/hugetiny/negibox/blob/master/README.md) |
-[中文簡體](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
-[中文繁體](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
-[Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
-[Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
-[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
-[Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
-[Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
-[Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
-[Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
-[Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
-[ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
-[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
-[فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
-[čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
-[Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
+[English]({% link index.md %}) |
+[中文簡體]({% link READMECN.md %}) |
+[中文繁體]({% link READMETW.md %}) |
+[Nederlands]({% link READMENL.md %}) |
+[Français]({% link READMEFR.md %}) |
+[Deutsch]({% link READMEDE.md %}) |
+[Italiano]({% link READMEIT.md %}) |
+[Protuguês]({% link READMEBR.md %}) |
+[Español]({% link READMEES.md %}) |
+[Russian]({% link READMERU.md %}) |
+[Polski]({% link READMEPL.md %}) |
+[ไทย]({% link READMETH.md %}) |
+[Türkçe]({% link READMETR.md %}) |
+[فارسی]({% link READMEIR.md %}) |
+[čeština]({% link READMECZ.md %}) |
+[Indonesian]({% link READMEID.md %})
 
 ## 請幫助我們改進此頁面的中文繁體和[Negibox中文繁體](https://github.com/hugetiny/negibox/blob/master/translate/zh_TW.js)
+#### step0:
+[Github](https://github.com/hugetiny/negibox/blob/master/READMETW.md)
 
 #### step1:
-點擊右上角鉛筆圖標 <img src="docs/imgs/pencil.png"> fork這個項目然後編輯
+點擊右上角鉛筆圖標 <img src="imgs/pencil.png"> fork這個項目然後編輯
 #### step2:
 改進繁體中文然後按
-<img src="docs/imgs/propose.png">按鈕
+<img src="imgs/propose.png">按鈕
 
 #### step3:
 按
-<img src="docs/imgs/create-pull-request.png">
+<img src="imgs/create-pull-request.png">
 和
-<img src="docs/imgs/create-pull-request1.png">提交修改
+<img src="imgs/create-pull-request1.png">提交修改
 
 #### 我們會盡快merge繁體中文。
 
 <h1 align="center">
-    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="imgs/icon-gif.gif" alt="Negibox" >
   <br>
   Negibox
   <br>
@@ -165,8 +167,8 @@
 
 ariang
 
-<img src="docs/imgs/wechatsponse.jpeg" width="200px" />
-<img src="docs/imgs/alipaysponse.jpeg" width="200px" />
+<img src="imgs/wechatsponse.jpeg" width="200px" />
+<img src="imgs/alipaysponse.jpeg" width="200px" />
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 <script>

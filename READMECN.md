@@ -1,23 +1,23 @@
-[English]({% link index.md %}) |
-[中文简体]({% link READMECN.md %}) |
-[中文繁体]({% link READMETW.md %}) |
-[Nederlands]({% link READMENL.md %}) |
-[Français]({% link READMEFR.md %}) |
-[Deutsch]({% link READMEDE.md %}) |
-[Italiano]({% link READMEIT.md %}) |
-[Protuguês]({% link READMEBR.md %}) |
-[Español]({% link READMEES.md %}) |
-[Russian]({% link READMERU.md %}) |
-[Polski]({% link READMEPL.md %}) |
-[ไทย]({% link READMETH.md %}) |
-[Türkçe]({% link READMETR.md %}) |
-[فارسی]({% link READMEIR.md %}) |
-[čeština]({% link READMECZ.md %}) |
-[Indonesian]({% link READMEID.md %})
+[English](https://github.com/hugetiny/negibox/blob/master/README.md) |
+[中文简体](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
+[中文繁体](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
+[Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
+[Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
+[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
+[Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
+[Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
+[Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
+[Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
+[Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
+[ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
+[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
+[فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
+[čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
+[Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
 
 
 <h1 align="center">
-    <img src="imgs/icon-gif.gif" alt="Negibox" >
+    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
   Negibox
   <br>
@@ -34,7 +34,7 @@
 
 ## Recommended Install
 抢先体验[github release](https://github.com/hugetiny/negibox/releases)下载对应平台最新版客户端
->[如果发现bug，请在github提交issue，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
+>[如果发现bug，请在issue提出，我们会及时修复](https://github.com/hugetiny/negibox/issues/new)
 
 
 
@@ -104,6 +104,10 @@
 [aria2](https://github.com/aria2/aria2)
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
 ariang
+
+
+<img src="docs/imgs/wechatsponse.jpeg" width="200px" />
+<img src="docs/imgs/alipaysponse.jpeg" width="200px" />
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 <script>

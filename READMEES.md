@@ -1,41 +1,39 @@
-[English]({% link index.md %}) |
-[中文简体]({% link READMECN.md %}) |
-[中文繁体]({% link READMETW.md %}) |
-[Nederlands]({% link READMENL.md %}) |
-[Français]({% link READMEFR.md %}) |
-[Deutsch]({% link READMEDE.md %}) |
-[Italiano]({% link READMEIT.md %}) |
-[Protuguês]({% link READMEBR.md %}) |
-[Español]({% link READMEES.md %}) |
-[Russian]({% link READMERU.md %}) |
-[Polski]({% link READMEPL.md %}) |
-[ไทย]({% link READMETH.md %}) |
-[Türkçe]({% link READMETR.md %}) |
-[فارسی]({% link READMEIR.md %}) |
-[čeština]({% link READMECZ.md %}) |
-[Indonesian]({% link READMEID.md %})
+[English](https://github.com/hugetiny/negibox/blob/master/README.md) |
+[中文简体](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
+[中文繁体](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
+[Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
+[Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
+[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
+[Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
+[Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
+[Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
+[Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
+[Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
+[ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
+[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
+[فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
+[čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
+[Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
 
 ## Please help us to improve translation for this page and [Negibox Español](https://github.com/hugetiny/negibox/blob/master/translate/es_ES.js)
-#### step0:
-[Github](https://github.com/hugetiny/negibox/blob/master/READMEES.md)
 
 #### step1:
-click the pencil in top right corner <img src="imgs/pencil.png"> to fork this project and edit the file
+click the pencil in top right corner <img src="docs/imgs/pencil.png"> to fork this project and edit the file
 
 #### step2:
 fix the text to right translation and click
-<img src="imgs/propose.png">
+<img src="docs/imgs/propose.png">
 
 #### step3:
 click
-<img src="imgs/create-pull-request.png">
+<img src="docs/imgs/create-pull-request.png">
 and
-<img src="imgs/create-pull-request1.png">
+<img src="docs/imgs/create-pull-request1.png">
 
 #### We will merge pull requests to docs and Negibox as soon as we can.
 
 <h1 align="center">
-    <img src="imgs/icon-gif.gif" alt="Negibox" >
+    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
   Negibox
   <br>
