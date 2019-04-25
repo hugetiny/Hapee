@@ -1,7 +1,3 @@
----
-layout: default
----
-
 [English]({% link index.md %}) |
 [中文简体]({% link READMECN.md %}) |
 [中文繁体]({% link READMETW.md %}) |

@@ -1,19 +1,4 @@
-[English]({% link index.md %}) |
-[中文简体]({% link READMECN.md %}) |
-[中文繁体]({% link READMETW.md %}) |
-[Nederlands]({% link READMENL.md %}) |
-[Français]({% link READMEFR.md %}) |
-[Deutsch]({% link READMEDE.md %}) |
-[Italiano]({% link READMEIT.md %}) |
-[Protuguês]({% link READMEBR.md %}) |
-[Español]({% link READMEES.md %}) |
-[Russian]({% link READMERU.md %}) |
-[Polski]({% link READMEPL.md %}) |
-[ไทย]({% link READMETH.md %}) |
-[Türkçe]({% link READMETR.md %}) |
-[فارسی]({% link READMEIR.md %}) |
-[čeština]({% link READMECZ.md %}) |
-[Indonesian]({% link READMEID.md %})
+
 
 ## Please help us to improve translation for this page and [Negibox Protuguês](https://github.com/hugetiny/negibox/blob/master/translate/pt_BR.js)
 #### step0:
