@@ -1,38 +1,40 @@
-[English](https://github.com/hugetiny/negibox/blob/master/README.md) |
-[中文簡體](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
-[中文繁體](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
-[Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
-[Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
-[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
-[Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
-[Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
-[Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
-[Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
-[Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
-[ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
-[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
-[فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
-[čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
-[Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
+[English]({% link index.md %}) |
+[中文簡體]({% link READMECN.md %}) |
+[中文繁體]({% link READMETW.md %}) |
+[Nederlands]({% link READMENL.md %}) |
+[Français]({% link READMEFR.md %}) |
+[Deutsch]({% link READMEDE.md %}) |
+[Italiano]({% link READMEIT.md %}) |
+[Protuguês]({% link READMEBR.md %}) |
+[Español]({% link READMEES.md %}) |
+[Russian]({% link READMERU.md %}) |
+[Polski]({% link READMEPL.md %}) |
+[ไทย]({% link READMETH.md %}) |
+[Türkçe]({% link READMETR.md %}) |
+[فارسی]({% link READMEIR.md %}) |
+[čeština]({% link READMECZ.md %}) |
+[Indonesian]({% link READMEID.md %})
 
 ## 請幫助我們改進此頁面的中文繁體和[Negibox中文繁體](https://github.com/hugetiny/negibox/blob/master/translate/zh_TW.js)
+#### step0:
+[Github](https://github.com/hugetiny/negibox/blob/master/READMETW.md)
 
 #### step1:
-點擊右上角鉛筆圖標 <img src="docs/imgs/pencil.png"> fork這個項目然後編輯
+點擊右上角鉛筆圖標 <img src="imgs/pencil.png"> fork這個項目然後編輯
 #### step2:
 改進繁體中文然後按
-<img src="docs/imgs/propose.png">按鈕
+<img src="imgs/propose.png">按鈕
 
 #### step3:
 按
-<img src="docs/imgs/create-pull-request.png">
+<img src="imgs/create-pull-request.png">
 和
-<img src="docs/imgs/create-pull-request1.png">提交修改
+<img src="imgs/create-pull-request1.png">提交修改
 
 #### 我們會盡快merge繁體中文。
 
 <h1 align="center">
-    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="imgs/icon-gif.gif" alt="Negibox" >
   <br>
   Negibox
   <br>
@@ -56,22 +58,61 @@
 ## 適配進度
 
 - [x] macOS 10.10 及以上
-
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/MacScreenShot.png" alt="Negibox" width="80%">
+  </a>
+    <br>
+    <br>
+</div>
 
 
 - [x] Windows 7 及以上
-
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/WindowsScreenShot.png" alt="Negibox" width="80%">
+  </a>
+    <br>
+    <br>
+</div>
 
 ##### Linux用戶:  Negibox用AppImage打包.理論上支持所有linux平臺(Debian|Ubuntu|Gentoo|Fedora|RHEL 6|OpenSUSE|OpenELEC|CentOS|RHEL 7|SLES10|SLES11|FreeBSD|Fedora|RHEL|NetBSD和其他衍生平臺).
 運行Negibox必須安裝GUI,推薦GNOME或KDE.
-
+<div align="center" >
+                <img src="https://appimage.org/images/distributions/arch.svg" alt="Arch Linux" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/centos.svg" alt="CentOS" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/debian.svg" alt="debian" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/fedora.svg" alt="Fedora" height="48" width="48">
+                <img src="https://appimage.org/images/distributions/opensuse.svg" alt="openSUSE" height="64" width="64">
+                <img src="https://appimage.org/images/distributions/rh.svg" alt="Red Hat" height="48" width="128">
+                <img src="https://appimage.org/images/distributions/ubuntu.svg" alt="Ubuntu" height="48" width="48"><br>
+</div>
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/UbuntuScreenShot.png" alt="Negibox" width="80%">
+  </a>
+    <br>
+</div>
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/centos.jpg" alt="Negibox" width="80%">
+  </a>
+    <br>
+</div>
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="imgs/fedora.jpg" alt="Negibox" width="80%">
+  </a>
+    <br>
+    <br>
+</div>
 
 
 - [ ] iOS -- 開發中
 - [ ] Android -- 開發中
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/mobile.png" alt="Negibox" width="40%">
+    <img src="imgs/mobile.png" alt="Negibox" width="40%">
   </a>
     <br>
     <br>
@@ -103,16 +144,15 @@
 - [x] magnet
 - [x] BitTorrent
 - [x] MetaLink
-- [ ] Baidu网盘
 - [x] thunder 迅雷
 - [x] flashget 快車
 - [x] qqdl QQ旋風
 
 ## 雲端&後臺功能
 
-- [ ] 路由器/NAS/遠程控制下載，同步，
-- [ ] 彈幕播放器
-- [ ] 音樂播放器
+- [ ] 路由器/NAS/雲端文件下載，同步，
+- [ ] 雲視頻聚合，彈幕播放器
+- [ ] 雲音樂聚合 -- 10%
 - [ ] 雲軟件管家，App市場聚合
 
 
@@ -127,8 +167,8 @@
 
 ariang
 
-<img src="docs/imgs/wechatsponse.jpeg" width="200px" />
-<img src="docs/imgs/alipaysponse.jpeg" width="200px" />
+<img src="imgs/wechatsponse.jpeg" width="200px" />
+<img src="imgs/alipaysponse.jpeg" width="200px" />
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 <script>

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 [English]({% link index.md %}) |
 [中文简体]({% link READMECN.md %}) |
 [中文繁体]({% link READMETW.md %}) |
@@ -14,25 +18,6 @@
 [فارسی]({% link READMEIR.md %}) |
 [čeština]({% link READMECZ.md %}) |
 [Indonesian]({% link READMEID.md %})
-
-## Please help us to improve translation for this page and [Negibox ไทย](https://github.com/hugetiny/negibox/blob/master/translate/th_TH.js)
-#### step0:
-[Github](https://github.com/hugetiny/negibox/blob/master/READMETH.md)
-
-#### step1:
-click the pencil in top right corner <img src="imgs/pencil.png"> to fork this project and edit the file
-
-#### step2:
-fix the text to right translation and click
-<img src="imgs/propose.png">
-
-#### step3:
-click
-<img src="imgs/create-pull-request.png">
-and
-<img src="imgs/create-pull-request1.png">
-
-#### We will merge pull requests to docs and Negibox as soon as we can.
 
 <h1 align="center">
     <img src="imgs/icon-gif.gif" alt="Negibox" >
@@ -69,8 +54,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
     <br>
 </div>
 
-##### remote control
-- [ ] html5
+
 
 ## Engines
 - [x] aria2
@@ -109,4 +93,7 @@ thank you for your support
 
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
 
-ariang<a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+ariang
+
+<a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
