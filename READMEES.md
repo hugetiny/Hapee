@@ -59,6 +59,13 @@ Download the latest version of Negibox Desktop from [github release](https://git
 - [x] macOS 10.10 and above
 - [x] Windows 7 and above
 - [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
+<div align="center">
+  <a href="https://github.com/hugetiny/negibox/releases">
+    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="40%">
+  </a>
+    <br>
+    <br>
+</div>
 - [ ] iOS -- developing
 - [ ] Android -- developing
 <div align="center">
