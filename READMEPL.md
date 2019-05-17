@@ -39,7 +39,7 @@ and
   <br>
   <br>
 </h1>
-<h4 align="center">Negibox is a Multi-protocol cross-platform downloader</h4>
+<h4 align="center">Negibox to wieloprotokołowy downloader wielolatformowy</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
@@ -48,15 +48,15 @@ and
 
 
 
-### Recommended Install
-Download the latest version of Negibox Desktop from [github release](https://github.com/hugetiny/negibox/releases)
->[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
+### Zalecana instalacja
+Pobierz najnowszą wersję Negibox Desktop z [github release](https://github.com/hugetiny/negibox/releases)
+>[Prosimy o przesłanie problemu](https://github.com/hugetiny/negibox/issues/new)
 
-## Supported OS
+## Obsługiwane systemy operacyjne
 
-- [x] macOS 10.10 and above
-- [x] Windows 7 and above
-- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
+- [x] macOS 10.10 i powyżej
+- [x] Windows 7 i powyżej
+- [x] Dla użytkowników Linuksa:  Aplikacja jest zapakowana w AppImage i wymaga FUSE do uruchomienia. Powinna działać poprawnie na wszystkich wersjach Linux. Do uruchomienia Negibox jest wymagane GUI, zalecane jest GNOME.
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="40%">
@@ -64,8 +64,8 @@ Download the latest version of Negibox Desktop from [github release](https://git
     <br>
     <br>
 </div>
-- [ ] iOS -- developing
-- [ ] Android -- developing
+- [ ] iOS -- rozwijana
+- [ ] Android -- rozwijana
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/mobile.png" alt="Negibox" width="40%">
@@ -76,16 +76,16 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 
 
-## Engines
+## Silniki
 - [x] aria2
 - [ ] thunder
-## Browser Extension
+## Rozszerzenie przeglądarki
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari
 
 
-## Protocol
+## Protokół
 
 - [ ] ipfs
 - [x] http
@@ -97,18 +97,18 @@ Download the latest version of Negibox Desktop from [github release](https://git
 - [x] BitTorrent
 - [x] MetaLink
 
-## could & service
+## chmura & usługi
 
-- [ ] cloud files router/NAS remote control
-- [ ] cloud videos player with danmaku
-- [ ] cloud music
-- [ ] cloud cross-platform apps
+- [ ] pliki w chmurze router/NAS zdalne sterowanie
+- [ ] odtwarzacz wideo w chmurze z danmaku
+- [ ] muzyka w chmurze
+- [ ] aplikacje wieloplatformowe w chmurze
 
-## crowdfunding & sponsor
+## crowdfunding i sponsor
 
-thank you for your support
+dziękuję za Twoje wsparcie
 
-## Special Thanks
+## Szczególne podziękowania
 [aria2](https://github.com/aria2/aria2)
 
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
