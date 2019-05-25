@@ -1,16 +1,17 @@
 [English](https://github.com/hugetiny/negibox/blob/master/README.md) |
 [中文简体](https://github.com/hugetiny/negibox/blob/master/READMECN.md) |
 [中文繁体](https://github.com/hugetiny/negibox/blob/master/READMETW.md) |
+[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
+[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
+
 [Nederlands](https://github.com/hugetiny/negibox/blob/master/READMENL.md) |
 [Français](https://github.com/hugetiny/negibox/blob/master/READMEFR.md) |
-[Deutsch](https://github.com/hugetiny/negibox/blob/master/READMEDE.md) |
 [Italiano](https://github.com/hugetiny/negibox/blob/master/READMEIT.md) |
 [Protuguês](https://github.com/hugetiny/negibox/blob/master/READMEBR.md) |
 [Español](https://github.com/hugetiny/negibox/blob/master/READMEES.md) |
 [Russian](https://github.com/hugetiny/negibox/blob/master/READMERU.md) |
 [Polski](https://github.com/hugetiny/negibox/blob/master/READMEPL.md) |
 [ไทย](https://github.com/hugetiny/negibox/blob/master/READMETH.md) |
-[Türkçe](https://github.com/hugetiny/negibox/blob/master/READMETR.md) |
 [فارسی](https://github.com/hugetiny/negibox/blob/master/READMEIR.md) |
 [čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
