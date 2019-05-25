@@ -99,7 +99,7 @@ Download the latest version of Negibox Desktop from [github release](https://git
 - [x] BitTorrent
 - [x] MetaLink
 
-## could & service
+## cloud & service
 
 - [ ] cloud files router/NAS remote control
 - [ ] cloud videos player with danmaku
