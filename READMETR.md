@@ -15,22 +15,21 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
 
-## Please help us to improve translation for this page and [Negibox Türkçe](https://github.com/hugetiny/negibox/blob/master/translate/tr_TR.js)
+## Bu sayfadaki çeviriyi geliştirmek için [Negibox Türkçe](https://github.com/hugetiny/negibox/blob/master/translate/tr_TR.js)
 
-#### step1:
-click the pencil in top right corner <img src="docs/imgs/pencil.png"> to fork this project and edit the file
-
-#### step2:
-fix the text to right translation and click
+#### Aşama 1:
+Bu projeyi forklamak ve düzenlemek için <img src="docs/imgs/pencil.png"> sağ köşedeki kalem işaretine tıklayın
+#### Aşama 2:
+Çeviriyi yapın ve tıklayın.
 <img src="docs/imgs/propose.png">
 
-#### step3:
-click
+#### Aşama 3:
+Tıklayın
 <img src="docs/imgs/create-pull-request.png">
-and
+Ve
 <img src="docs/imgs/create-pull-request1.png">
 
-#### We will merge pull requests to docs and Negibox as soon as we can.
+#### Negibox ve dökümantasyona olan pull isteklerinizi en yakın zamanda ekleyeceğiz.
 
 <h1 align="center">
     <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
@@ -39,7 +38,7 @@ and
   <br>
   <br>
 </h1>
-<h4 align="center">Negibox is a Multi-protocol cross-platform downloader</h4>
+<h4 align="center">Negibox bir çoklu protokol ve çoklu platform indirme aracıdır.</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
@@ -48,15 +47,15 @@ and
 
 
 
-### Recommended Install
-Download the latest version of Negibox Desktop from [github release](https://github.com/hugetiny/negibox/releases)
->[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
+### Önerilen İndirme
+Negibox Masaüstünün en son sürümünü indirin [github release](https://github.com/hugetiny/negibox/releases)
+>[Hata Bildirimini Yapmak İçin](https://github.com/hugetiny/negibox/issues/new)
 
-## Supported OS
+## Desteklenen İşletim Sistemleri
 
-- [x] macOS 10.10 and above
-- [x] Windows 7 and above
-- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
+- [x] macOS 10.10 ve üstü
+- [x] Windows 7 ve üstü
+- [x] Linux Kullanıcıları İçin:Dosya AppImage formatında paketli ve çalıştırmak için FUSE gerekli.Bütün GNU/Linux platformlarında düzgün çalışmalı.Negibox'u çalıştırmak için grafiksel arayüz gerekli.Gnome önerilen masaüstü ortamıdır.
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="40%">
@@ -64,8 +63,8 @@ Download the latest version of Negibox Desktop from [github release](https://git
     <br>
     <br>
 </div>
-- [ ] iOS -- developing
-- [ ] Android -- developing
+- [ ] iOS -- geliştirilme aşamasında
+- [ ] Android -- geliştirilme aşamasında
 <div align="center">
   <a href="https://github.com/hugetiny/negibox/releases">
     <img src="imgs/mobile.png" alt="Negibox" width="40%">
@@ -76,16 +75,16 @@ Download the latest version of Negibox Desktop from [github release](https://git
 
 
 
-## Engines
+## Motorlar
 - [x] aria2
 - [ ] thunder
-## Browser Extension
+## Tarayıcı Eklentileri
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari
 
 
-## Protocol
+## Protokoller
 
 - [ ] ipfs
 - [x] http
@@ -97,18 +96,18 @@ Download the latest version of Negibox Desktop from [github release](https://git
 - [x] BitTorrent
 - [x] MetaLink
 
-## could & service
+## Yapılacak & servisler
 
 - [ ] cloud files router/NAS remote control
 - [ ] cloud videos player with danmaku
 - [ ] cloud music
 - [ ] cloud cross-platform apps
 
-## crowdfunding & sponsor
+## Bağış & sponsor
 
-thank you for your support
+Destekleriniz için Teşekkürler
 
-## Special Thanks
+## Özel Teşekkür
 [aria2](https://github.com/aria2/aria2)
 
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
