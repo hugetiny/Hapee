@@ -16,6 +16,8 @@
 [čeština](https://github.com/hugetiny/negibox/blob/master/READMECZ.md) |
 [Indonesian](https://github.com/hugetiny/negibox/blob/master/READMEID.md)
 
+#Negibox is refactoring，ipfs，dat,zeronet will be supported!
+
 <h1 align="center">
     <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
