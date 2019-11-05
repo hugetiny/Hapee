@@ -2,7 +2,7 @@
 
 
 <h1 align="center">
-    <img src="docs/imgs/icon-gif.gif" alt="Negibox" width="256">
+    <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
   Negibox
   <br>
@@ -26,25 +26,13 @@ New Negibox is still in developing
 
 ## Supported OS
 
-- [x] macOS 10.10 ↑
-- [x] Windows 7 ↑
-- [x] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/MacScreenShot.png" alt="Negibox" width="40%">
-  </a>
-    <br>
-    <br>
-</div>
+- [x] web
+- [ ] macOS 10.10 ↑
+- [ ] Windows 7 ↑
+- [ ] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
 - [ ] iOS -- developing
 - [ ] Android -- developing
-<div align="center">
-  <a href="https://github.com/hugetiny/negibox/releases">
-    <img src="docs/imgs/mobile.png" alt="Negibox" width="40%">
-  </a>
-    <br>
-    <br>
-</div>
+
 
 
 
