@@ -26,7 +26,7 @@ New Negibox is still in developing
 
 ## Supported OS
 
-- [x] web
+- [ ] web
 - [ ] macOS 10.10 ↑
 - [ ] Windows 7 ↑
 - [ ] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
@@ -37,7 +37,7 @@ New Negibox is still in developing
 
 
 ## Engines
-- [x] aria2
+- [ ] aria2
 - [ ] thunder
 
 ## Browser Extension
@@ -49,15 +49,15 @@ New Negibox is still in developing
 ## Protocol
 
 - [ ] ipfs
-- [x] http
-- [x] https
-- [x] ftp
-- [x] sftp
+- [ ] http
+- [ ] https
+- [ ] ftp
+- [ ] sftp
 - [ ] ftps
-- [x] magnet
-- [x] BitTorrent
-- [x] WebTorrent (for web version only)
-- [x] MetaLink
+- [ ] magnet
+- [ ] BitTorrent
+- [ ] WebTorrent (for web version only)
+- [ ] MetaLink
 
 ## cloud & service
 
@@ -71,11 +71,13 @@ New Negibox is still in developing
 <img src="https://github.com/hugetiny/quit-smoking/blob/master/wechatsponse.jpeg" width="200px" />
 
 ## Special Thanks
+[quasar](https://github.com/quasarframework/quasar)
+
+[webtorrent](https://github.com/webtorrent/webtorrent)
+
 [aria2](https://github.com/aria2/aria2)
 
 [webui-aria2](https://github.com/ziahamza/webui-aria2)
-
-ariang
 
 <a href="http://s04.flagcounter.com/more/Hb"><img src="https://s04.flagcounter.com/countxl/Hb/bg_141414/txt_EBEBEB/border_141414/columns_8/maxflags_32/viewers_Negibox/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 
