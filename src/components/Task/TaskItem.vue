@@ -1,191 +1,141 @@
 <template>
-  <li :key="task.gid" class="task-item" @click.exact="singleSelect(index)"  @click.shift.exact="shiftSelect(index)" @click.ctrl.exact="ctrlSelect(index)"  @click.meta.exact="metaSelect(index)"  @dblclick="onDbClick"  >
-    <div class="task-name" :title="taskFullName">
-      <span>{{ taskFullName }}</span>
-    </div>
-    <mo-task-item-actions mode="LIST" :task="task"/>
-    <div class="task-progress">
-      <mo-task-progress :completed="Number(task.completedLength)" :total="Number(task.totalLength)" :status="task.status"/>
-      <el-row class="task-speed">
-        <el-col :span="12" class="task-speed-left">
-          <div v-if="task.totalLength > 0">
-            {{ task.completedLength | bytesToSize }} / {{ task.totalLength | bytesToSize }}
-          </div>
-          <div v-else>
-            {{ task.errorMessage }}
-          </div>
-        </el-col>
-        <el-col :span="12" class="task-speed-right">
-          <div v-if="task.status ==='active'">
-            <span>{{ task.downloadSpeed | bytesToSize }}/s</span>
-            <span>
-              {{
-                remaining | timeFormat({
-                  prefix: $t('task.remaining-prefix'),
-                  i18n: {
-                    'gt1d': $t('app.gt1d'),
-                    'hour': $t('app.hour'),
-                    'minute': $t('app.minute'),
-                    'second': $t('app.second')
-                  }
-                })
-              }}
-            </span>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-
-  </li>
+<div>
+  <q-item :key="task.gid" class="task-item" @click.exact="singleSelect(index)"  @click.shift.exact="shiftSelect(index)" @click.ctrl.exact="ctrlSelect(index)"  @click.meta.exact="metaSelect(index)"  @dblclick="onDbClick"  >
+    <q-item-section avatar class="hidden-md-and-down">
+      <q-icon name="info" size="34px" />
+    </q-item-section>
+    <q-item-section top>
+      <q-item-label lines="1">
+        <span>{{ taskFullName }}</span>
+      </q-item-label>
+      <q-item-label caption lines="1">
+        <span>{{ task.status }}</span>
+      </q-item-label>
+      <q-item-label lines="1" class="q-mt-sm text-body2 text-weight-bold text-primary text-uppercase">
+        <q-linear-progress :value="percent" />
+      </q-item-label>
+      <q-item-label lines="1" class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
+                  <span v-if="task.totalLength > 0">
+                    {{ task.completedLength | bytesToSize }} / {{ task.totalLength | bytesToSize }}
+                  </span>
+                  <span v-else>
+                    {{ task.errorMessage }}
+                  </span>
+                  <span v-if="task.status ==='active'">-->
+                      {{ task.downloadSpeed | bytesToSize }}/s
+                        {{
+                          remaining | timeFormat({
+                            prefix: $t('remaining-prefix'),
+                            i18n: {
+                              'gt1d': $t('gt1d'),
+                              'hour': $t('hour'),
+                              'minute': $t('minute'),
+                              'second': $t('second')
+                            }
+                          })
+                        }}
+                  </span>
+      </q-item-label>
+    </q-item-section>
+  </q-item>
+  <q-separator spaced />
+</div>
 </template>
 
 <script>
-  import TaskItemActions from './TaskItemActions'
-  import TaskProgress from './TaskProgress'
-  import '@/components/Icons/task-start-line'
-  import '@/components/Icons/task-pause-line'
-  import '@/components/Icons/delete'
-  import '@/components/Icons/folder'
-  import '@/components/Icons/link'
-  import '@/components/Icons/more'
-  import {
-    getTaskName,
-    getTaskFullPath,
-    timeRemaining,
+import TaskItemActions from './TaskItemActions'
+// import TaskProgress from './TaskProgress'
+import {
+  getTaskName,
+  getTaskFullPath,
+  timeRemaining,
+  bytesToSize,
+  timeFormat,
+  calcProgress
+} from 'src/shared/utils'
+import {
+  openItem
+} from 'components/Native/utils'
+
+export default {
+  name: 'mo-task-item',
+  components: {
+    [TaskItemActions.name]: TaskItemActions
+    // [TaskProgress.name]: TaskProgress
+  },
+  props: {
+    task: {
+      type: Object
+    },
+    index: {
+      type: Number
+    }
+  },
+  computed: {
+    // selected: function () {
+    //   return this.$store.state.task.selected
+    // },
+    percent: function () {
+      // Number(task.completedLength/task.totalLength)
+      // console.log(this.task.totalLength)
+      // console.log(this.task.completedLength)
+      return calcProgress(this.task.totalLength, this.task.completedLength)
+    },
+    taskFullName: function () {
+      return getTaskName(this.task, {
+        defaultName: this.$t('get-task-name'),
+        maxLen: -1
+      })
+    },
+    taskName: function () {
+      return getTaskName(this.task, {
+        defaultName: this.$t('get-task-name')
+      })
+    },
+    remaining: function () {
+      const { totalLength, completedLength, downloadSpeed } = this.task
+      return timeRemaining(totalLength, completedLength, downloadSpeed)
+    }
+  },
+  filters: {
     bytesToSize,
     timeFormat
-  } from '@/utils'
-  import {
-    openItem
-  } from '@/components/Native/utils'
-
-  export default {
-    name: 'mo-task-item',
-    components: {
-      [TaskItemActions.name]: TaskItemActions,
-      [TaskProgress.name]: TaskProgress
+  },
+  methods: {
+    singleSelect (index) {
+      this.$store.dispatch('task/singleSelect', index)
     },
-    props: {
-      task: {
-        type: Object
-      },
-      index: {
-        type: Number
+    shiftSelect (index) {
+      this.$store.dispatch('task/shiftSelect', index)
+    },
+    ctrlSelect (index) {
+      this.$store.dispatch('task/ctrlSelect', index)
+    },
+    metaSelect (index) {
+      this.$store.dispatch('task/metaSelect', index)
+    },
+    onDbClick () {
+      const { status } = this.task
+      if (status === 'complete') {
+        this.openTask()
+      } else if (['waiting', 'paused'].includes(status) !== -1) {
+        this.toggleTask()
       }
     },
-    computed: {
-      // selected: function () {
-      //   return this.$store.state.task.selected
-      // },
-      taskFullName: function () {
-        return getTaskName(this.task, {
-          defaultName: this.$t('task.get-task-name'),
-          maxLen: -1
-        })
-      },
-      taskName: function () {
-        return getTaskName(this.task, {
-          defaultName: this.$t('task.get-task-name')
-        })
-      },
-      remaining: function () {
-        const { totalLength, completedLength, downloadSpeed } = this.task
-        return timeRemaining(totalLength, completedLength, downloadSpeed)
-      }
+    openTask () {
+      const { taskName } = this
+      console.info(this.$t('opening-task-message', { taskName }))
+      const fullPath = getTaskFullPath(this.task)
+      openItem(fullPath, {
+        errorMsg: this.$t('file-not-exist')
+      })
     },
-    filters: {
-      bytesToSize,
-      timeFormat
-    },
-    methods: {
-      singleSelect (index) {
-        this.$store.dispatch('task/singleSelect', index)
-      },
-      shiftSelect (index) {
-        this.$store.dispatch('task/shiftSelect', index)
-      },
-      ctrlSelect (index) {
-        this.$store.dispatch('task/ctrlSelect', index)
-      },
-      metaSelect (index) {
-        this.$store.dispatch('task/metaSelect', index)
-      },
-      onDbClick () {
-        const { status } = this.task
-        if (status === 'complete') {
-          this.openTask()
-        } else if (['waiting', 'paused'].includes(status) !== -1) {
-          this.toggleTask()
-        }
-      },
-      openTask () {
-        const { taskName } = this
-        this.$msg.info(this.$t('task.opening-task-message', { taskName }))
-        const fullPath = getTaskFullPath(this.task)
-        openItem(fullPath, {
-          errorMsg: this.$t('task.file-not-exist')
-        })
-      },
-      toggleTask () {
-        this.$store.dispatch('task/toggleTask', this.task)
-      }
+    toggleTask () {
+      this.$store.dispatch('task/toggleTask', this.task)
     }
   }
+}
 </script>
 
 <style lang="scss">
-  .task-item {
-    position: relative;
-    padding: 10px;
-    background-color: $--task-item-background;
-    border-bottom: 1px solid $--task-item-border-color;
-    /*border-radius: 6px;*/
-    /*margin-bottom: 10px;*/
-    transition: $--border-transition-base;
-
-    &:hover {
-      border-color: $--task-item-hover-border-color;
-    }
-
-    .task-item-actions {
-      position: absolute;
-      top: 16px;
-      right: 12px;
-    }
-  }
-
-  .task-name {
-    color: #505753;
-    margin-bottom: 32px;
-    margin-right: 240px;
-    word-break: break-all;
-
-    & > span {
-      font-size: 14px;
-      line-height: 38px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-    }
-  }
-
-  .task-speed {
-    font-size: 12px;
-    line-height: 14px;
-    min-height: 14px;
-    color: #9B9B9B;
-    margin-top: 8px;
-  }
-
-  .task-speed-left {
-    min-height: 14px;
-    text-align: left;
-  }
-
-  .task-speed-right {
-    min-height: 14px;
-    text-align: right;
-  }
 </style>

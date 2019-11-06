@@ -48,7 +48,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import mixinOtherUserDetails from 'src/mixins/mixin-other-user-details.js'
+import mixinOtherUserDetails from 'src/basic/mixins/mixin-other-user-details.js'
 
 export default {
   mixins: [mixinOtherUserDetails],
@@ -62,7 +62,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions('store', ['logoutUser'])
+    ...mapActions('chat', ['logoutUser'])
   }
 }
 </script>

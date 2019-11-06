@@ -1,6 +1,5 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
-
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
@@ -9,7 +8,8 @@ module.exports = function (ctx) {
     boot: [
       'i18n',
       'axios',
-      'firebase'
+      // 'firebase',
+      'quasar-lang-pack'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -48,7 +48,9 @@ module.exports = function (ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'LocalStorage'
+      ]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -83,7 +85,24 @@ module.exports = function (ctx) {
     devServer: {
       // https: true,
       // port: 8080,
-      open: true // opens browser window automatically
+      open: false // opens browser window automatically
+      // proxy: {
+      // '/?method': {
+      //   target: ['http://localhost:3001'],
+      //   // secure: false,
+      //   changeOrigin: true
+      // }
+      // }
+      // proxy: {
+      //   // proxy all requests starting with /api to jsonplaceholder
+      //   '/api': {
+      //     target: 'http://some.api.target.com:7070',
+      //     changeOrigin: true,
+      //     pathRewrite: {
+      //       '^/api': ''
+      //     }
+      //   }
+      // }
     },
 
     // animations: 'all', // --- includes all animations

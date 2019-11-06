@@ -1,6 +1,3 @@
-## Negibox is open source now!
-
-
 <h1 align="center">
     <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
@@ -8,33 +5,58 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Negibox is a Multi-protocol cross-platform downloader</h4>
+<h4 align="center">A Multi-protocol cross-platform downloader</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
 </p>
 
+# Negibox is open source now!
+The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
 
-
-### How to run?
+## How to run?
 New Negibox is still in developing
 1. Add your own firebase config file in src/boot/firebase.js  
+```
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from 'firebase/app'
+
+// Add the Firebase products that you want to use
+import 'firebase/auth'
+import 'firebase/database'
+
+// PUT YOUR OWN FIREBASE CONFIGURATION HERE
+var firebaseConfig = {
+  apiKey: 'xxxx',
+  authDomain: 'xxxx',
+  databaseURL: 'xxxx',
+  projectId: 'xxxx',
+  storageBucket: 'xxxx',
+  messagingSenderId: xxxx',
+  appId: 'xxxx',
+  measurementId: 'xxxx'
+}
+// Initialize Firebase
+let firebaseApp = firebase.initializeApp(firebaseConfig)
+let firebaseAuth = firebaseApp.auth()
+let firebaseDb = firebaseApp.database()
+
+export { firebaseAuth, firebaseDb }
+
+```
 2. yarn
 3. quasar dev
 >[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
 
-## Supported OS
+## Supported Platform
 
-- [ ] web
+- [ ] Web Chrome/Firefox/Safari/IE11
 - [ ] macOS 10.10 ↑
 - [ ] Windows 7 ↑
-- [ ] For Linux users:  App is packaged in AppImage and requires FUSE to run.All linux platforms should run properly.GUI is required to run Negibox ,GNOME is recommended.
-- [ ] iOS -- developing
-- [ ] Android -- developing
-
-
-
+- [ ] Linux  (App is packaged in AppImage and requires FUSE to run.GNOME is recommended.)
+- [ ] iOS -- 9.0 ↑
+- [ ] Android -- 7.0 ↑
 
 ## Engines
 - [ ] aria2
@@ -45,10 +67,9 @@ New Negibox is still in developing
 - [ ] firefox
 - [ ] safari
 
-
 ## Protocol
 
-- [ ] ipfs
+- [ ] IPFS
 - [ ] http
 - [ ] https
 - [ ] ftp

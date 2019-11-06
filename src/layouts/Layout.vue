@@ -1,38 +1,25 @@
 <template>
-  <q-layout view="hHh lpR fFf" class="bg-grey-9 text-white">
+  <q-layout view="hHh LpR fFf" class="bg-grey-9 text-white">
     <Topbar></Topbar>
-    <Subnav></Subnav>
+    <Nav></Nav>
     <q-page-container>
-      <router-view />
+      <Subnav></Subnav>
+      <router-view/>
     </q-page-container>
-    <q-footer elevated class="bg-grey-9" mobile-only>
-    <q-tabs
-      v-model="tab"
-      dense
-      class="shadow-2"
-      active-color="primary"
-      align="justify"
-    >
-      <q-tab name="mails" icon="play" :label="$t('subnav.task-list')">
-<!--        <q-badge color="primary" text-color="white" floating>2</q-badge>-->
-      </q-tab>
-      <q-tab name="alarms" icon="cloud_download" label="云端">
-
-<!--        <q-badge color="purple" text-color="white" floating>10+</q-badge>-->
-      </q-tab>
-      <q-tab  name="stop" icon="market" label="应用市场" />
-    </q-tabs>
-    </q-footer>
+    <Footer></Footer>
   </q-layout>
 </template>
 
 <script>
-import Subnav from 'components/Subnav/Subnav'
-import Topbar from 'components/Subnav/Topbar'
+import Topbar from './Topbar'
+import Nav from './Nav'
+import Footer from './Footer'
+import Subnav from './Subnav'
+
 export default {
   name: 'Layout',
   components: {
-    Subnav, Topbar
+    Topbar, Nav, Footer, Subnav
   },
   data () {
     return {
