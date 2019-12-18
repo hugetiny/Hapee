@@ -18,12 +18,18 @@ export default class Api {
     this.options = options
 
     this.client = null
-    this.init()
-  }
-
-  init () {
     this.loadConfig()
-    this.initClient()
+    const {
+      rpcListenPort: port,
+      rpcSecret: secret
+    } = this.config
+    const host = '127.0.0.1'
+    this.client = new Aria2({
+      host,
+      port,
+      secret
+    })
+    this.client.open()
   }
 
   loadConfigFromLocalStorage () {
@@ -47,20 +53,6 @@ export default class Api {
 
     result = changeKeysToCamelCase(result)
     this.config = result
-  }
-
-  initClient () {
-    const {
-      rpcListenPort: port,
-      rpcSecret: secret
-    } = this.config
-    const host = '127.0.0.1'
-    this.client = new Aria2({
-      host,
-      port,
-      secret
-    })
-    this.client.open()
   }
 
   closeClient () {
@@ -224,6 +216,11 @@ export default class Api {
     const args = compactUndefined([offset, num, keys])
     return this.client.call('tellStopped', ...args)
   }
+  fetchAllTaskList (params = {}) {
+    const { offset = 0, num = 20, keys } = params
+    const args = compactUndefined([offset, num, keys])
+    return this.client.call('tellStopped', ...args)
+  }
 
   fetchTaskList (params = {}) {
     const { type } = params
@@ -270,11 +267,8 @@ export default class Api {
   }
 
   resumeTask (gids = []) {
-    let multicall = []
-    gids.forEach((gid) => {
-      multicall.push(['unpause', gid])
-    })
-    return this.client.multicall(multicall)
+    const args = compactUndefined(gids)
+    return this.client.call('unpause', ...args)
   }
 
   resumeAllTask () {

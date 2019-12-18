@@ -3,7 +3,6 @@ import {
   getTaskFullPath,
   bytesToSize
 } from 'src/shared/utils'
-import { LIGHT_THEME, DARK_THEME } from 'src/shared/constants'
 import { Platform } from 'quasar'
 
 const remote = Platform.is.desktop ? require('electron').remote : {}
@@ -123,10 +122,10 @@ export function clearRecentTasks () {
 }
 
 export function getSystemTheme () {
-  let result = LIGHT_THEME
-  if (!Platform.is.mac) {
-    return result
-  }
-  result = remote.systemPreferences.isDarkMode() ? DARK_THEME : LIGHT_THEME
+  // if (!Platform.is.mac) {
+  //   return result
+  // }
+  let result = 'dark'
+  // let result = remote.nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
   return result
 }

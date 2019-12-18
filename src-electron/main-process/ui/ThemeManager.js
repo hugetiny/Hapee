@@ -1,7 +1,6 @@
 import { EventEmitter } from 'events'
-import { systemPreferences } from 'electron'
+import { nativeTheme, systemPreferences } from 'electron'
 import os from 'os'
-import { LIGHT_THEME, DARK_THEME } from '../../../src/shared/constants'
 
 export default class ThemeManager extends EventEmitter {
   constructor (options = {}) {
@@ -15,11 +14,13 @@ export default class ThemeManager extends EventEmitter {
   }
 
   getSystemTheme () {
-    let result = LIGHT_THEME
-    if (os.platform() !== 'darwin') {
-      return result
-    }
-    result = systemPreferences.isDarkMode() ? DARK_THEME : LIGHT_THEME
+    // let result = LIGHT_THEME
+    // if (os.platform() !== 'darwin') {
+    //   return result
+    // }
+    // 当前OS / Chromium是否正处于dark模式
+    // let result = nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
+    let result = 'dark'
     return result
   }
 
@@ -38,9 +39,9 @@ export default class ThemeManager extends EventEmitter {
   }
 
   updateAppAppearance (theme) {
-    if (os.platform() !== 'darwin' || theme !== LIGHT_THEME || theme !== DARK_THEME) {
+    if (os.platform() !== 'darwin' || os.platform() !== 'win32') {
       return
     }
-    systemPreferences.setAppLevelAppearance(theme)
+    nativeTheme.themeSource = theme
   }
 }

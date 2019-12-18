@@ -79,7 +79,7 @@ const actions = {
           }
         })
         dispatch('firebaseGetUsers')
-        this.$router.push('/')
+        this.$router.replace('/')
       } else {
         // User is logged out.
         dispatch('firebaseUpdateUser', { userId: state.userDetails.userId, updates: { online: false } })

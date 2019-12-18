@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "id": "menu.file",
+      "id": "file",
       "submenu": [
         { "id": "about", "command": "application:about", "command-before": "application:show,index" },
         { "type": "separator" },

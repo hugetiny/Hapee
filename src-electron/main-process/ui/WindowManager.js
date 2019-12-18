@@ -44,16 +44,17 @@ export default class WindowManager extends EventEmitter {
           minWidth: 840,
           minHeight: 420,
           // backgroundColor: '#FFFFFF',
-          transparent: os.platform() !== 'win32'
+          transparent: os.platform() !== 'win32',
+          autoHideMenuBar: true
         },
         bindCloseToHide: true,
         url: process.env.DEV ? `http://localhost:8080` : `file://${__dirname}/index.html`
       }
     }[page] || {}
-    const hideAppMenu = this.userConfig['hide-app-menu']
-    if (hideAppMenu) {
-      result.attrs.frame = false
-    }
+    // const hideAppMenu = this.userConfig['hide-app-menu']
+    // if (hideAppMenu) {
+    //   result.attrs.frame = false
+    // }
 
     // Optimized for small screen users
     const { width, height } = screen.getPrimaryDisplay().workAreaSize

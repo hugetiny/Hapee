@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events'
 import { join } from 'path'
-import { Tray, Menu, systemPreferences } from 'electron'
+import { Tray, Menu, systemPreferences, nativeTheme } from 'electron'
 import os from 'os'
 import {
   translateTemplate,
@@ -8,7 +8,6 @@ import {
   updateStates
 } from '../utils/menu'
 import { getI18n } from '../ui/Locale'
-import { LIGHT_THEME, DARK_THEME } from '../../../src/shared/constants'
 
 let tray = null
 
@@ -28,7 +27,8 @@ export default class TrayManager extends EventEmitter {
 
   load () {
     this.template = require(`../menus/tray.json`)
-    const theme = systemPreferences.isDarkMode() ? DARK_THEME : LIGHT_THEME
+    // let result = nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
+    let theme = 'dark'
 
     if (os.platform() === 'darwin') {
       this.normalIcon = join(__statics, `./mo-tray-${theme}-normal.png`)
@@ -107,7 +107,7 @@ export default class TrayManager extends EventEmitter {
     tray.setImage(icon)
   }
 
-  changeIconTheme (theme = LIGHT_THEME) {
+  changeIconTheme (theme = 'dark') {
     if (os.platform() !== 'darwin') {
       return
     }

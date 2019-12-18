@@ -116,10 +116,13 @@ export default {
     },
     onDbClick () {
       const { status } = this.task
+      console.log(status)
       if (status === 'complete') {
         this.openTask()
-      } else if (['waiting', 'paused'].includes(status) !== -1) {
-        this.toggleTask()
+      } else if (status === 'waiting' || status === 'paused') {
+        return this.$store.dispatch('task/resumeTask', [this.task.gid])
+      } else if (status === 'active') {
+        return this.$store.dispatch('task/pauseTask', [this.task.gid])
       }
     },
     openTask () {
@@ -129,9 +132,6 @@ export default {
       openItem(fullPath, {
         errorMsg: this.$t('file-not-exist')
       })
-    },
-    toggleTask () {
-      this.$store.dispatch('task/toggleTask', this.task)
     }
   }
 }

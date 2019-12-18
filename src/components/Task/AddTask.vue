@@ -358,7 +358,7 @@ export default {
 
         // this.$store.dispatch('app/hideAddTaskDialog')
         if (this.form.newTaskShowDownloading) {
-          this.$router.push({
+          this.$router.replace({
             path: '/task/active'
           })
         }

@@ -1,6 +1,3 @@
-export const LIGHT_THEME = 'light'
-export const DARK_THEME = 'dark'
-
 // https://github.com/ngosang/trackerslist
 export const TRACKERS_BEST_URL = 'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt'
 export const TRACKERS_BEST_IP_URL = 'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best_ip.txt'
