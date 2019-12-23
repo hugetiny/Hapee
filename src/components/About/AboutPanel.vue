@@ -1,7 +1,7 @@
 <template>
     <div class="app-info">
       <div class="app-version">
-        <span>Version {{version}}</span>
+        <span>Electron {{version}}</span>
       </div>
       <div class="app-icon"></div>
       <div class="engine-info" v-if="!!engineInfo">

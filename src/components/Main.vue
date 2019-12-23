@@ -74,12 +74,12 @@ export default {
     nav: function (status = 'active') {
       if (status === 'active' || status === 'waiting' || status === 'stopped') {
         this.changeCurrentList(status)
-        this.$router.replace({
+        this.$router.push({
           path: `/task/${status}`
         })
       } else {
         this.changeCurrentList(status)
-        this.$router.replace({
+        this.$router.push({
           path: `/preference/${status}`
         })
       }

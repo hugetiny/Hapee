@@ -4,7 +4,6 @@
   { "id": "task.open-file", "command": "application:open-file", "command-before": "application:show,index" },
   { "type": "separator" },
   { "id": "show", "command": "application:show", "command-arg": "index" },
-  { "id": "help.manual", "command": "help:manual" },
   { "id": "check-for-updates", "command": "application:check-for-updates" },
   { "type": "separator" },
   { "id": "preferences", "command": "application:preferences", "command-before": "application:show,index" },

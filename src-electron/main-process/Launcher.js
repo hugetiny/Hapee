@@ -1,4 +1,3 @@
-import { EventEmitter } from 'events'
 import { app } from 'electron'
 import os from 'os'
 import ExceptionHandler from './core/ExceptionHandler'
@@ -10,9 +9,8 @@ import {
   parseArgvAsFile
 } from './utils'
 
-export default class Launcher extends EventEmitter {
+export default class Launcher {
   constructor () {
-    super()
     this.url = ''
     this.file = ''
 
@@ -48,8 +46,7 @@ export default class Launcher extends EventEmitter {
 
   init () {
     this.exceptionHandler = new ExceptionHandler()
-
-    this.openedAtLogin = os.platform() === 'darwin'
+    this.openedAtLogin = (os.platform() === 'darwin')
       ? app.getLoginItemSettings().wasOpenedAtLogin
       : false
 
@@ -58,60 +55,55 @@ export default class Launcher extends EventEmitter {
     }
 
     logger.warn('openedAtLogin===>', this.openedAtLogin)
+    app.on('ready', () => {
+      // app.on('will-finish-launching', () => {
+      console.log('onReady')
+      global.application = new Application()
+      const { openedAtLogin } = this
+      global.application.start('index', {
+        openedAtLogin
+      })
 
-    this.handleAppEvents()
-  }
+      global.application.on('ready', () => {
+        this.sendUrlToApplication()
+        this.sendFileToApplication()
+      })
+    })
+    // macOS only start
 
-  handleAppEvents () {
-    this.handleOpenUrl()
-    this.handleOpenFile()
-
-    this.handelAppReady()
-    this.handleAppWillQuit()
-  }
-
-  /**
-   * handleOpenUrl
-   * Event 'open-url' macOS only
-   * "name": "Motrix Protocol",
-   * "schemes": ["mo", "motrix"]
-   */
-  handleOpenUrl () {
     // if (is.mas() || os.platform() !== 'darwin') {
-    if (os.platform() === 'darwin') {
+    if (os.platform() !== 'darwin') {
       return
+    } else {
+      app.on('activate', () => {
+        if (global.application) {
+          logger.info('[negibox] activate')
+          global.application.showPage('index')
+        }
+      })
+      app.on('open-url', (event, url) => {
+        logger.info(`[negibox] open-url: ${url}`)
+        event.preventDefault()
+        this.url = url
+        this.sendUrlToApplication()
+      })
+      app.on('open-file', (event, path) => {
+        logger.info(`[negibox] open-file: ${path}`)
+        event.preventDefault()
+        this.file = path
+        this.sendFileToApplication()
+      })
     }
-    app.on('open-url', (event, url) => {
-      logger.info(`[negibox] open-url: ${url}`)
-      event.preventDefault()
-      this.url = url
-      this.sendUrlToApplication()
+    // macOS only end
+
+    app.on('will-quit', () => {
+      logger.info('[negibox] will-quit')
+      if (global.application) {
+        global.application.stop()
+      }
     })
   }
 
-  /**
-   * handleOpenFile
-   * Event 'open-file' macOS only
-   * handle open torrent file
-   */
-  handleOpenFile () {
-    // if (os.platform() !== 'darwin') {
-    if (os.platform() === 'darwin') {
-      return
-    }
-    app.on('open-file', (event, path) => {
-      logger.info(`[negibox] open-file: ${path}`)
-      event.preventDefault()
-      this.file = path
-      this.sendFileToApplication()
-    })
-  }
-
-  /**
-   * handleAppLaunchArgv
-   * For Windows, Linux
-   * @param {array} argv
-   */
   handleAppLaunchArgv (argv) {
     logger.info('handleAppLaunchArgv===>', argv)
 
@@ -137,49 +129,16 @@ export default class Launcher extends EventEmitter {
   }
 
   sendUrlToApplication () {
-    if (this.url && global.application && global.application.isReady) {
+    if (this.url && global.application) {
       global.application.handleProtocol(this.url)
       this.url = ''
     }
   }
 
   sendFileToApplication () {
-    if (this.file && global.application && global.application.isReady) {
+    if (this.file && global.application) {
       global.application.handleFile(this.file)
       this.file = ''
     }
-  }
-
-  handelAppReady () {
-    app.on('ready', () => {
-      global.application = new Application()
-
-      const { openedAtLogin } = this
-      global.application.start('index', {
-        openedAtLogin
-      })
-
-      global.application.on('ready', () => {
-        this.sendUrlToApplication()
-
-        this.sendFileToApplication()
-      })
-    })
-
-    app.on('activate', () => {
-      if (global.application) {
-        logger.info('[negibox] activate')
-        global.application.showPage('index')
-      }
-    })
-  }
-
-  handleAppWillQuit () {
-    app.on('will-quit', () => {
-      logger.info('[negibox] will-quit')
-      if (global.application) {
-        global.application.stop()
-      }
-    })
   }
 }

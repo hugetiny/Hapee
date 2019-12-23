@@ -547,13 +547,13 @@ export default {
         return
       }
       this.form.userAgent = ua
-    },
-    onFactoryResetClick () {
-      let r = confirm(this.$t('factory-reset-confirm'))
-      if (r === true) {
-        this.$q.electron.ipcRenderer.send('command', 'application:reset')
-      }
     }
+    // onFactoryResetClick () {
+    //   let r = confirm(this.$t('factory-reset-confirm'))
+    //   if (r === true) {
+    //     this.$q.electron.ipcRenderer.send('command', 'application:reset')
+    //   }
+    // }
   }
 }
 </script>

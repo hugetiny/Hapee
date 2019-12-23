@@ -113,6 +113,11 @@ const routes = [
     component: () => import('components/Main'),
     children: [
       {
+        path: '/search/:search',
+        component: () => import('src/components/Search/SearchResult.vue'),
+        props: true
+      },
+      {
         path: '/about',
         alias: '/',
         component: () => import('components/About/AboutPanel')
@@ -137,10 +142,10 @@ const routes = [
         props: true
       },
       {
-        path: '/preference/:status',
+        path: '/preference',
         name: 'preference',
-        component: () => import('components/Preference/Index'),
-        props: true
+        component: () => import('components/Preference/Index')
+        // props: true
         // children: [
         //   {
         //     path: 'basic',

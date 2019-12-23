@@ -25,7 +25,7 @@ export default {
   methods: {
     searchSource: function (payload) {
       // if (this.search !== this.$route.params.search) {
-      //   this.$router.replace(`/search/${this.search}`)
+      //   this.$router.push(`/search/${this.search}`)
       console.log(this.keyword)
       this.$store.dispatch('search/search', this.keyword)
       // }

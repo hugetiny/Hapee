@@ -49,9 +49,9 @@
             </q-input>
           </q-tab-panel>
           <q-tab-panel name="torrent">
-            <!--        <mo-select-torrent-->
-            <!--          v-on:change="handleTorrentChange"-->
-            <!--        />-->
+                    <mo-select-torrent
+                      v-on:change="handleTorrentChange"
+                    />
           </q-tab-panel>
         </q-tab-panels>
         <q-checkbox dark
@@ -358,7 +358,7 @@ export default {
 
         // this.$store.dispatch('app/hideAddTaskDialog')
         if (this.form.newTaskShowDownloading) {
-          this.$router.replace({
+          this.$router.push({
             path: '/task/active'
           })
         }

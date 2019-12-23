@@ -1,5 +1,13 @@
 <template>
- <div>todo</div>
+  <q-uploader
+    dark
+    v-if="isTorrentsEmpty"
+    :label="$t('select-torrent')"
+    accept=".torrent"
+    :max-file-size="8192000"
+    hide-upload-btn
+    @added="handleChange"
+  />
 </template>
 
 <script>
@@ -14,9 +22,9 @@ import {
   buildFileList,
   listTorrentFiles,
   bytesToSize,
-  filterVideoFiles,
-  filterAudioFiles,
-  filterImageFiles,
+  // filterVideoFiles,
+  // filterAudioFiles,
+  // filterImageFiles,
   getAsBase64,
   removeExtensionDot
 } from 'src/shared/utils'
@@ -111,7 +119,7 @@ export default {
       }
       this.$emit('change', '', NONE_SELECTED_FILES)
     },
-    handleChange (file, fileList) {
+    handleChange (fileList) {
       this.$store.dispatch('app/addTaskAddTorrents', { fileList })
     },
     handleExceed (files) {
@@ -131,18 +139,19 @@ export default {
         })
       }
     },
-    toggleVideoSelection () {
-      const filtered = filterVideoFiles(this.files)
-      this.toggleSelection(filtered)
-    },
-    toggleAudioSelection () {
-      const filtered = filterAudioFiles(this.files)
-      this.toggleSelection(filtered)
-    },
-    toggleImageSelection () {
-      const filtered = filterImageFiles(this.files)
-      this.toggleSelection(filtered)
-    },
+    // TODO filtering file types
+    // toggleVideoSelection () {
+    //   const filtered = filterVideoFiles(this.files)
+    //   this.toggleSelection(filtered)
+    // },
+    // toggleAudioSelection () {
+    //   const filtered = filterAudioFiles(this.files)
+    //   this.toggleSelection(filtered)
+    // },
+    // toggleImageSelection () {
+    //   const filtered = filterImageFiles(this.files)
+    //   this.toggleSelection(filtered)
+    // },
     handleRowDbClick (row, column, event) {
       this.$refs.torrentTable.toggleRowSelection(row)
     },
@@ -154,4 +163,7 @@ export default {
 </script>
 
 <style lang="scss">
+  .q-uploader{
+    width:100%
+  }
 </style>

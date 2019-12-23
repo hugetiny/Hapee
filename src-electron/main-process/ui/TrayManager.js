@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events'
 import { join } from 'path'
-import { Tray, Menu, systemPreferences, nativeTheme } from 'electron'
+import { Tray, Menu, nativeTheme } from 'electron'
 import os from 'os'
 import {
   translateTemplate,
@@ -27,7 +27,7 @@ export default class TrayManager extends EventEmitter {
 
   load () {
     this.template = require(`../menus/tray.json`)
-    // let result = nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
+    // let theme = nativeTheme.shouldUseDarkColors ? 'dark' : 'light'
     let theme = 'dark'
 
     if (os.platform() === 'darwin') {
@@ -66,7 +66,7 @@ export default class TrayManager extends EventEmitter {
 
   init () {
     tray = new Tray(this.normalIcon)
-    tray.setToolTip('Motrix')
+    tray.setToolTip('Negibox')
   }
 
   handleEvents () {

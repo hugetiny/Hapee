@@ -1,11 +1,11 @@
 <template>
     <q-btn-group spread>
-      <q-btn  icon="add" @click="showAddTask('uri')">
+      <q-btn icon="add" @click="showAddTask('uri')">
         <q-tooltip>
           {{$t('new-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn  icon="refresh" @click="onRefreshClick">
+      <q-btn icon="refresh" @click="onRefreshClick">
         <q-tooltip>
           {{$t('refresh-list')}}
         </q-tooltip>
@@ -38,11 +38,6 @@ import {
 export default {
   name: 'mo-task-actions',
   props: ['task'],
-  data: function () {
-    return {
-      refreshing: false
-    }
-  },
   computed: {
     ...mapState('task', {
       currentList: state => state.currentList
@@ -56,18 +51,9 @@ export default {
     showAddTask (taskType = 'uri') {
       console.log('addtask')
       // this.$store.dispatch('app/showAddTaskDialog', taskType)
-      this.$router.replace('/addtask')
-    },
-    refreshSpin: function () {
-      this.t && clearTimeout(this.t)
-
-      this.refreshing = true
-      this.t = setTimeout(() => {
-        this.refreshing = false
-      }, 500)
+      this.$router.push('/addtask')
     },
     onRefreshClick: function () {
-      this.refreshSpin()
       this.$store.dispatch('task/fetchList')
     },
     onRemoveSelectedClick: function () {

@@ -18,15 +18,17 @@ import TouchBarManager from './ui/TouchBarManager'
 import TrayManager from './ui/TrayManager'
 import ThemeManager from './ui/ThemeManager'
 import { AUTO_CHECK_UPDATE_INTERVAL } from '../../src/shared/constants'
+import suffix from '../../src/shared/suffix'
 
 export default class Application extends EventEmitter {
   constructor () {
     super()
-    this.isReady = false
+    // this.isReady = false
     this.init()
   }
 
   init () {
+    console.log('init application')
     this.configManager = new ConfigManager()
 
     this.locale = this.configManager.getLocale()
@@ -116,14 +118,16 @@ export default class Application extends EventEmitter {
   }
 
   showPage (page, options = {}) {
+    console.log('showPage')
     const { openedAtLogin } = options
     const win = this.windowManager.openWindow(page, {
       hidden: openedAtLogin
     })
     win.once('ready-to-show', () => {
-      this.isReady = true
+      // this.isReady = true
       this.emit('ready')
     })
+    // MacOs only
     if (os.platform() === 'darwin') {
       this.touchBarManager.setup(page, win)
     }
@@ -164,19 +168,19 @@ export default class Application extends EventEmitter {
     }
   }
 
-  sendCommandToAll (command, ...args) {
-    if (!this.emit(command, ...args)) {
-      this.windowManager.getWindowList().forEach(window => {
-        this.windowManager.sendCommandTo(window, command, ...args)
-      })
-    }
-  }
-
-  sendMessageToAll (channel, ...args) {
-    this.windowManager.getWindowList().forEach(window => {
-      this.windowManager.sendMessageTo(window, channel, ...args)
-    })
-  }
+  // sendCommandToAll (command, ...args) {
+  //   if (!this.emit(command, ...args)) {
+  //     this.windowManager.getWindowList().forEach(window => {
+  //       this.windowManager.sendCommandTo(window, command, ...args)
+  //     })
+  //   }
+  // }
+  //
+  // sendMessageToAll (channel, ...args) {
+  //   this.windowManager.getWindowList().forEach(window => {
+  //     this.windowManager.sendMessageTo(window, channel, ...args)
+  //   })
+  // }
 
   initThemeManager () {
     this.themeManager = new ThemeManager()
@@ -195,6 +199,7 @@ export default class Application extends EventEmitter {
 
   initProtocolManager () {
     // if (process.env.DEV || is.mas()) {
+    console.log(process.env)
     if (os.platform() === 'darwin') {
       return
     }
@@ -206,6 +211,7 @@ export default class Application extends EventEmitter {
 
   handleProtocol (url) {
     // if (process.env.DEV || is.mas()) {
+    console.log(process.env)
     if (os.platform() === 'darwin') {
       return
     }
@@ -293,23 +299,23 @@ export default class Application extends EventEmitter {
     })
   }
 
-  relaunch (page = 'index') {
-    this.stop()
-    app.relaunch()
-    app.exit()
-    // this.closePage(page)
-    // if (page === 'index') {
-    //   this.engine.restart()
-    // }
-    // setTimeout(() => {
-    //   this.showPage(page)
-    // }, 500)
-  }
+  // relaunch (page = 'index') {
+  //   this.stop()
+  //   app.relaunch()
+  //   app.exit()
+  //   // this.closePage(page)
+  //   // if (page === 'index') {
+  //   //   this.engine.restart()
+  //   // }
+  //   // setTimeout(() => {
+  //   //   this.showPage(page)
+  //   // }, 500)
+  // }
 
   handleCommands () {
-    this.on('application:relaunch', () => {
-      this.relaunch()
-    })
+    // this.on('application:relaunch', () => {
+    //   this.relaunch()
+    // })
 
     this.on('application:exit', () => {
       this.stop()
@@ -318,7 +324,7 @@ export default class Application extends EventEmitter {
 
     this.on('application:open-at-login', (openAtLogin) => {
       console.log('application:open-at-login===>', openAtLogin)
-      if (os.platform() !== 'win32' && os.platform() !== 'darwin') {
+      if (os.platform() === 'linux') {
         return
       }
 
@@ -337,10 +343,10 @@ export default class Application extends EventEmitter {
       this.hide(page)
     })
 
-    this.on('application:reset', () => {
-      this.configManager.reset()
-      this.relaunch()
-    })
+    // this.on('application:reset', () => {
+    //   this.configManager.reset()
+    //   this.relaunch()
+    // })
 
     this.on('application:check-for-updates', () => {
       this.updateManager.check()
@@ -385,31 +391,12 @@ export default class Application extends EventEmitter {
 
     this.on('application:setup-protocols-client', (protocols) => {
       // if (process.env.DEV || is.mas()) {
+
       if (os.platform() === 'darwin') {
         return
       }
       console.log('this.protocolManager', protocols)
       this.protocolManager.setup(protocols)
-    })
-
-    this.on('help:official-website', () => {
-      const url = 'https://motrix.app/'
-      shell.openExternal(url)
-    })
-
-    this.on('help:manual', () => {
-      const url = 'https://motrix.app/manual'
-      shell.openExternal(url)
-    })
-
-    this.on('help:release-notes', () => {
-      const url = 'https://motrix.app/release'
-      shell.openExternal(url)
-    })
-
-    this.on('help:report-problem', () => {
-      const url = 'https://motrix.app/report'
-      shell.openExternal(url)
     })
   }
 

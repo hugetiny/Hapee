@@ -25,6 +25,7 @@ export default class Engine {
 
   getStartSh () {
     const { platform } = process
+    const { arch } = process
     let basePath = resolve(app.getAppPath(), '..')
 
     if (process.env.DEV) {

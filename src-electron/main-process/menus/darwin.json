@@ -63,12 +63,6 @@
       "role": "help",
       "id": "menu.help",
       "submenu": [
-        { "id": "help.official-website", "command": "help:official-website" },
-        { "id": "help.manual", "command": "help:manual" },
-        { "id": "help.release-notes", "command": "help:release-notes" },
-        { "type": "separator" },
-        { "id": "help.report-problem", "command": "help:report-problem" },
-        { "type": "separator" },
         { "id": "help.toggle-dev-tools", "role": "toggledevtools" }
       ]
     }

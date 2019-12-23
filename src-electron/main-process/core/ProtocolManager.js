@@ -10,8 +10,6 @@ export default class ProtocolManager extends EventEmitter {
     // package.json:build.protocols[].schemes[]
     // options.protocols: { 'magnet': true, 'thunder': false }
     this.protocols = {
-      mo: true,
-      motrix: true,
       ...options.protocols
     }
 
@@ -44,13 +42,6 @@ export default class ProtocolManager extends EventEmitter {
       url.toLowerCase().startsWith('thunder:')
     ) {
       return this.handleMagnetAndThunderProtocol(url)
-    }
-
-    if (
-      url.toLowerCase().startsWith('mo:') ||
-      url.toLowerCase().startsWith('motrix:')
-    ) {
-      return this.handleMoProtocol(url)
     }
   }
 

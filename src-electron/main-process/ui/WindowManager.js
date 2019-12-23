@@ -4,19 +4,11 @@ import { app, shell, screen, BrowserWindow } from 'electron'
 import os from 'os'
 import logger from '../core/Logger'
 import { debounce } from 'lodash'
-
-const defaultBrowserOptions = {
-  titleBarStyle: 'hiddenInset',
-  show: false,
-  width: 1024,
-  height: 768,
-  webPreferences: {
-    nodeIntegration: true
-  }
-}
+// import suffix from 'src/shared/suffix'
 
 export default class WindowManager extends EventEmitter {
   constructor (options = {}) {
+    console.log('init windowmanager')
     super()
     this.userConfig = options.userConfig || {}
 
@@ -24,9 +16,44 @@ export default class WindowManager extends EventEmitter {
 
     this.willQuit = false
 
-    this.handleBeforeQuit()
+    app.on('before-quit', () => {
+      this.setWillQuit(true)
+    })
 
-    this.handleAllWindowClosed()
+    app.on('window-all-closed', (event) => {
+      event.preventDefault()
+    })
+
+    // handle copyToClipboard only app,archive,video will trigger the window
+    // TODO Linux not tested
+    // if (process.platform === 'win32' || process.platform === 'darwin') {
+    //   const clipboard = require('./clipboard')
+    //   clipboard.startWatching()
+    //   clipboard.on('text-changed', () => {
+    //     const watchingSuffixs = [...suffix.video, ...suffix.application, ...suffix.archive]
+    //     let readText = clipboard.readText()
+    //     const httpLinkMatch = watchingSuffixs.some(function (suffix){
+    //       const reg =  RegExp(`^(http|https):\\/\\/.+\\${suffix}(\\?.+)*$`)
+    //       return reg.test(readText)
+    //     }
+    //     const archiveMatch = /^(ftp|sftp|magnet):\/\/.+$/.test(readText)
+    //     const chinaLinkMatch = /^\s*(?:thunder|flashget|qqdl|fs2you):\/\/([^'"\s]*)/i.test(readText)
+    //     if (archiveMatch || httpLinkMatch || chinaLinkMatch) {
+    //       const win = this.getWindow(page)
+    //       // if (win === null) {
+    //       //   global.application.show('index', {
+    //       //     openedAtLogin
+    //       //   })
+    //       // }
+    //       if (win.isMinimized()) {
+    //         win.restore()
+    //       }
+    //       mainWindow.focus()
+    //       readText = base64.encodeURI(readText)
+    //       mainWindow.loadURL(`file://${__dirname}/negibox/index.html#!/new?clipboard=${readText}`)
+    //     }
+    //   })
+    // }
   }
 
   setWillQuit (flag) {
@@ -35,6 +62,7 @@ export default class WindowManager extends EventEmitter {
 
   getPageOptions (page) {
     // const result = pageConfig[page] || {}
+    console.log('getPageOptions')
     const result = {
       index: {
         attrs: {
@@ -44,7 +72,7 @@ export default class WindowManager extends EventEmitter {
           minWidth: 840,
           minHeight: 420,
           // backgroundColor: '#FFFFFF',
-          transparent: os.platform() !== 'win32',
+          // transparent: os.platform() !== 'win32',
           autoHideMenuBar: true
         },
         bindCloseToHide: true,
@@ -84,8 +112,9 @@ export default class WindowManager extends EventEmitter {
   }
 
   openWindow (page, options = {}) {
+    console.log('open')
     const pageOptions = this.getPageOptions(page)
-    const { hidden } = options
+    // const { hidden } = options
 
     let window = this.windows[page] || null
     if (window) {
@@ -95,7 +124,17 @@ export default class WindowManager extends EventEmitter {
     }
 
     window = new BrowserWindow({
-      ...defaultBrowserOptions,
+      ...{
+        // titleBarStyle: 'hiddenInset',
+        show: true,
+        width: 1024,
+        height: 768,
+        webPreferences: {
+          // Macos bounce
+          scrollBounce: true,
+          nodeIntegration: true
+        }
+      },
       ...pageOptions.attrs
     })
 
@@ -115,9 +154,9 @@ export default class WindowManager extends EventEmitter {
     }
 
     window.once('ready-to-show', () => {
-      if (!hidden) {
-        window.show()
-      }
+      // if (!hidden) {
+      window.show()
+      // }
     })
 
     this.handleWindowState(page, window)
@@ -131,16 +170,17 @@ export default class WindowManager extends EventEmitter {
   }
 
   getWindow (page) {
+    console.log(this.windows)
     return this.windows[page]
   }
 
-  getWindows () {
-    return this.windows || {}
-  }
-
-  getWindowList () {
-    return Object.values(this.getWindows())
-  }
+  // getWindows () {
+  //   return this.windows || {}
+  // }
+  //
+  // getWindowList () {
+  //   return Object.values(this.getWindows())
+  // }
 
   addWindow (page, window) {
     this.windows[page] = window
@@ -204,11 +244,11 @@ export default class WindowManager extends EventEmitter {
     window.hide()
   }
 
-  hideAllWindow () {
-    this.getWindowList().forEach((window) => {
-      window.hide()
-    })
-  }
+  // hideAllWindow () {
+  //   this.getWindowList().forEach((window) => {
+  //     window.hide()
+  //   })
+  // }
 
   toggleWindow (page) {
     const window = this.getWindow(page)
@@ -224,18 +264,6 @@ export default class WindowManager extends EventEmitter {
 
   getFocusedWindow () {
     return BrowserWindow.getFocusedWindow()
-  }
-
-  handleBeforeQuit () {
-    app.on('before-quit', () => {
-      this.setWillQuit(true)
-    })
-  }
-
-  handleAllWindowClosed () {
-    app.on('window-all-closed', (event) => {
-      event.preventDefault()
-    })
   }
 
   sendCommandTo (window, command, ...args) {

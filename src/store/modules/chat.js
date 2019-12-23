@@ -79,12 +79,12 @@ const actions = {
           }
         })
         dispatch('firebaseGetUsers')
-        this.$router.replace('/')
+        this.$router.push('/')
       } else {
         // User is logged out.
         dispatch('firebaseUpdateUser', { userId: state.userDetails.userId, updates: { online: false } })
         commit('setUserDetails', {})
-        this.$router.replace('/auth')
+        this.$router.push('/auth')
       }
     })
   },

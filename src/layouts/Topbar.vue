@@ -17,14 +17,14 @@
       <!--        </q-toolbar-title>-->
 
       <q-space />
-      <q-input class="fit" outlined dense v-model="keyword" bg-color="grey" @keyup.enter="searchSource()">
+      <q-input class="fit" outlined dense v-model="keyword" bg-color="grey" @keyup.enter="searchSource">
         <!--          <template v-slot:after>-->
         <!--&lt;!&ndash;            <q-icon name="search" />&ndash;&gt;-->
         <!--            <q-icon name="clear" class="cursor-pointer" />-->
         <!--          </template>-->
         <template v-slot:append>
           <!--            <q-icon name="search" />-->
-          <q-icon name="search" class="cursor-pointer"  @click="searchSource()"/>
+          <q-icon name="search" class="cursor-pointer"  @click="searchSource"/>
         </template>
       </q-input>
 
@@ -33,7 +33,7 @@
       <!--          <q-btn v-if="$q.screen.gt.sm" round dense flat color="text-grey-7" icon="apps">-->
       <!--            <q-tooltip>Market</q-tooltip>-->
       <!--          </q-btn>-->
-      <q-btn round flat icon="g_translate" class="q-ml-sm">
+      <q-btn round flat icon="g_translate" class="q-ml-sm" @click="toPreference">
         <q-tooltip>{{$t('change-language')}}</q-tooltip>
       </q-btn>
 
@@ -47,13 +47,17 @@ export default {
   data () {
     return { keyword: '' }
   },
-  name: 'Subnav',
+  name: 'Topbar',
   methods: {
-    searchSource: function (payload) {
+    toPreference: function () {
+      this.$router.push('/preference')
+    },
+    searchSource: function () {
       // if (this.search !== this.$route.params.search) {
-      //   this.$router.replace(`/search/${this.search}`)
-      console.log(this.keyword)
-      this.$store.dispatch('search/search', this.keyword)
+      //   this.$router.push(`/search/${this.search}`)
+      // console.log(this.keyword)
+      // this.$store.dispatch('search/search', this.keyword)
+      this.$router.push(`/search/${this.keyword}`)
       // }
     }
   }

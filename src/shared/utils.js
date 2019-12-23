@@ -29,7 +29,7 @@ export function calcProgress (totalLength, completedLength) {
   if (total === 0 || completed === 0) {
     return 0
   }
-  const percentage = completed / total * 100
+  const percentage = completed / total
   const result = parseFloat(percentage.toFixed(2))
   return result
 }
@@ -348,82 +348,41 @@ export function convertLineToComma (text = '') {
   return result
 }
 
-export const imageSuffix = [
-  '.ai',
-  '.bmp',
-  '.eps',
-  '.gif',
-  '.icn',
-  '.ico',
-  '.jpeg',
-  '.jpg',
-  '.png',
-  '.psd',
-  '.raw',
-  '.sketch',
-  '.svg',
-  '.tif',
-  '.webp',
-  '.xd'
-]
-export const audioSuffix = [
-  '.aac',
-  '.ape',
-  '.flac',
-  '.flav',
-  '.m4a',
-  '.mp3',
-  '.ogg',
-  '.wav',
-  '.wma'
-]
-export const videoSuffix = [
-  '.avi',
-  '.m4a',
-  '.mkv',
-  '.mov',
-  '.mp4',
-  '.mpg',
-  '.rmvb',
-  '.vob',
-  '.wmv'
-]
+// export function filterVideoFiles (files = []) {
+//   return files.filter((item) => {
+//     return videoSuffix.includes(item.extension)
+//   })
+// }
+//
+// export function filterAudioFiles (files = []) {
+//   return files.filter((item) => {
+//     return audioSuffix.includes(item.extension)
+//   })
+// }
+//
+// export function filterImageFiles (files = []) {
+//   return files.filter((item) => {
+//     return imageSuffix.includes(item.extension)
+//   })
+// }
 
-export function filterVideoFiles (files = []) {
-  return files.filter((item) => {
-    return videoSuffix.includes(item.extension)
-  })
-}
+// export function isAudioOrVideo (uri = '') {
+//   const suffixs = [...audioSuffix, ...videoSuffix]
+//   const result = suffixs.some((suffix) => {
+//     return uri.includes(suffix)
+//   })
+//   return result
+// }
 
-export function filterAudioFiles (files = []) {
-  return files.filter((item) => {
-    return audioSuffix.includes(item.extension)
-  })
-}
-
-export function filterImageFiles (files = []) {
-  return files.filter((item) => {
-    return imageSuffix.includes(item.extension)
-  })
-}
-
-export function isAudioOrVideo (uri = '') {
-  const suffixs = [...audioSuffix, ...videoSuffix]
-  const result = suffixs.some((suffix) => {
-    return uri.includes(suffix)
-  })
-  return result
-}
-
-export function needCheckCopyright (links = '') {
-  const uris = splitTaskLinks(links)
-  const avs = uris.filter(uri => {
-    return isAudioOrVideo(uri)
-  })
-
-  const result = avs.length > 0
-  return result
-}
+// export function needCheckCopyright (links = '') {
+//   const uris = splitTaskLinks(links)
+//   const avs = uris.filter(uri => {
+//     return isAudioOrVideo(uri)
+//   })
+//
+//   const result = avs.length > 0
+//   return result
+// }
 
 export function decodeChinaLink (url = '') {
   if (!url.match(/^\s*(?:thunder|flashget|qqdl|fs2you):\/\/([^'"\s]*)/i)) {
