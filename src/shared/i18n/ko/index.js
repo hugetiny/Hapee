@@ -1,18 +1,18 @@
 export default {
-  // about: {
+  // about: {{
   'engine-version': '엔진 버전',
   license: '라이선스',
   about: '정보',
   release: '배포',
   support: '지원',
-  // app: {
+  // app: {{
   'task-list': '작업 목록',
   'add-task': '작업 추가',
   'check-for-updates': '업데이트 확인...',
   'check-updates-now': '지금 확인',
   'checking-for-updates': '업데이트 확인 중 ...',
   'check-for-updates-title': '업데이트 확인',
-  'update-available-message': '새 버전의 DownloadBox를 사용할 수 있습니다, 지금 업데이트 하시겠습니까?',
+  'update-available-message': '새 버전의를 사용할 수 있습니다, 지금 업데이트 하시겠습니까?',
   'update-not-available-message': '최신 버전을 사용 중입니다!',
   'update-downloaded-message': '설치 준비 완료...',
   'update-error-message': '업데이트 오류',
@@ -20,11 +20,11 @@ export default {
   'engine-missing-message': '엔진이 누락되었으므로 다시 설치하십시오 : (',
   'system-error-title': '시스템 오류',
   'system-error-message': '응용 프로그램 시작 실패 : {{message}}',
-  hide: 'DownloadBox 숨기기',
+  hide: '숨기기',
   'hide-others': '다른 항목 숨기기',
   showAll: '모두 보기',
-  show: 'DownloadBox 보기',
-  quit: 'DownloadBox 종료',
+  show: '보기',
+  quit: '종료',
   'under-development-message': '죄송합니다, 이 기능은 개발 중입니다...',
   yes: '예',
   no: '아니요',
@@ -34,7 +34,7 @@ export default {
   hour: '시간',
   minute: '분',
   second: '초',
-  // edit: {
+  // edit: {{
   undo: '실행 취소',
   redo: '재실행',
   cut: '잘라내기',
@@ -42,20 +42,20 @@ export default {
   paste: '붙여넣기',
   delete: '삭제',
   'select-all': '모두 선택',
-  //   help: {
-  'official-website': 'DownloadBox 웹사이트',
+  //   help: {{
+  'official-website': '웹사이트',
   manual: '메뉴얼',
   'release-notes': '배포 정보...',
   'report-problem': '문제 보고',
   'toggle-dev-tools': '개발자 도구',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: '파일',
   task: '작업',
   edit: '편집',
   window: '창',
   help: '?',
-  // preferences: {
+  // preferences: {{
   basic: '기본',
   advanced: '고급',
   lab: '실험실',
@@ -115,15 +115,15 @@ export default {
   'auto-update': '자동 업데이트',
   'auto-check-update': '업데이트 자동 확인',
   'last-check-update-time': '마지막 업데이트 확인 시간',
-  // subnav: {
+  // subnav: {{
   preferences: '설정',
-  // task: {
+  // task: {{
   active: '다운로드 중',
   waiting: '대기 중',
   stopped: '중단됨',
   'new-task': '새 작업',
   'new-bt-task': '새 BT 작업',
-  'open-file': '토렌트 파일 열기...',
+  'open-file': '파일 열기',
   'uri-task': 'URL',
   'torrent-task': '토렌트',
   'uri-task-tips': '한 줄의 하나의 작업 URL (마그넷 지원)',
@@ -204,7 +204,7 @@ export default {
   'bt-download-complete-tips': '팁 : 당신은 시딩 작업을 중지할 수 있습니다.',
   'download-fail-message': '{{taskName}} 다운로드 실패',
   'download-fail-notify': '다운로드 실패',
-  // window: {
+  // window: {{
   reload: '다시 불러오기',
   close: '닫기',
   minimize: '최소화',

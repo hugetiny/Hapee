@@ -148,13 +148,13 @@ export default {
   "Uzak RPC aracılığıyla Aria2'ye başarıyla bağlandı ancak bağlantı hala güvende değil. Tam güvenlik için, Aria2'yi başlatırken (--rpc-secret bayrağını kullanın) ve bir yetkilendirme gizli simgesi eklemeyi deneyin.",
   'Trying to connect to aria2 using the new connection configuration':
   "Yeni bağlantı yapılandırmasını kullanarak aria2'ye bağlanmaya çalışılıyor",
-  // about: {
+  // about: {{
   'engine-version': 'Engine Versiyonu',
   license: 'Lisans',
   about: 'Hakkında',
   release: 'Sürüm',
   support: 'Destek',
-  //  app: {
+  //  app: {{
   'task-list': 'Görev Listesi',
   'add-task': 'Görev Ekle',
   'check-for-updates': 'Güncellemeleri kontrol et...',
@@ -183,7 +183,7 @@ export default {
   hour: 'S',
   minute: 'd',
   second: 's',
-  //  edit: {
+  //  edit: {{
   undo: 'Geri al',
   redo: 'Yinele',
   cut: 'Kes',
@@ -191,20 +191,20 @@ export default {
   paste: 'Yapıştır',
   delete: 'Sil',
   'select-all': 'Hepsini seç',
-  //  help: {
-  'official-website': 'DownloadBox Web Sitesi',
+  //  help: {{
+  'official-website': 'Web Sitesi',
   manual: 'Kılavuz',
   'release-notes': 'Sürüm Notları...',
   'report-problem': 'Sorun bildir',
   'toggle-dev-tools': 'Geliştirici Aracına geçiş yap',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'Dosya',
   task: 'Görev',
   edit: 'Düzenle',
   window: 'Pencere',
   help: 'Yardım',
-  // preferences: {
+  // preferences: {{
   basic: 'Temel',
   advanced: 'Gelişmiş',
   lab: 'Deneysel',
@@ -264,15 +264,15 @@ export default {
   'auto-update': 'Otomatik güncelleme',
   'auto-check-update': 'Otomatik Kontrol Güncellemesi',
   'last-check-update-time': 'Son Kontrol Güncelleme Saati',
-  // subnav: {
+  // subnav: {{
   preferences: 'Ayarlar',
-  // task: {
+  // task: {{
   active: 'İndiriliyor',
   waiting: 'Bekleniyor',
   stopped: 'Durdu',
   'new-task': 'Yeni Görev',
   'new-bt-task': 'Yeni BT Görevi',
-  'open-file': 'Torrent Dosyasını Aç...',
+  'open-file': 'Dosyayı Aç',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'Her bir satır için bir görev (magnet destekli)',
@@ -353,12 +353,12 @@ export default {
   'bt-download-complete-tips': 'Ipuçları: Eğer tohumlama sona erdirmek için görev durdurabilirsiniz',
   'download-fail-message': '{{taskName}} görevi indirilemedi',
   'download-fail-notify': 'İndirme başarısız',
-  // window: {
+  // window: {{
   reload: 'Yenile',
   close: 'Kapat',
   minimize: 'Küçült',
   zoom: 'Yakınlaştır',
   'toggle-fullscreen': 'Tam ekran yap',
   front: 'Tümünü Öne Getir'
-  // }
+  // }}
 }

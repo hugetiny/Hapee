@@ -154,13 +154,13 @@ export default {
   'با موفقیت به Aria2 از طریق RPC راه دور متصل شد، اما اتصال هنوز ناامن است. برای امنیت کامل سعی کنید مجوز نشانه مجوز را در هنگام شروع Aria2 (از طریق پرچم --rpc-secret)',
   'Trying to connect to aria2 using the new connection configuration': 'تلاش برای اتصال به aria2 با استفاده از پیکربندی اتصال جدید',
   'Remove {{name}} and associated meta-data?': 'حذف {{name}} و متا داده های مرتبط',
-  // about: {
+  // about: {{
   'engine-version': 'نسخه‌ی موتور',
   license: 'مجوز منبع باز',
   about: 'درباره ما',
   release: 'نسخه‌های منتشر شده',
   support: 'حمایت',
-  //  app: {
+  //  app: {{
   'task-list': 'لیست تسک‌ها',
   'add-task': 'اضافه کردن تسک',
   'check-for-updates': 'چک کردن آپدیت...',
@@ -189,7 +189,7 @@ export default {
   hour: 'ساعت',
   minute: 'دقیقه',
   second: 'ثانیه',
-  //  edit: {
+  //  edit: {{
   undo: 'برگردان',
   redo: 'دوباره انجام بده',
   cut: 'کات',
@@ -197,20 +197,20 @@ export default {
   paste: 'پیست',
   delete: 'حذف',
   'select-all': 'انتخاب همه',
-  //  help: {
+  //  help: {{
   'official-website': 'سایت ماتریکس',
   manual: 'راهنما',
   'release-notes': 'نکات نسخه...',
   'report-problem': 'گزارش مشکل',
   'toggle-dev-tools': 'رفتن به ابزارهای توسعه‌دهندگان',
-  // menu: {
+  // menu: {{
   app: 'ماتریکس',
   file: 'فایل',
   task: 'تسک',
   edit: 'ویرایش',
   window: 'پنجره',
   help: 'راهنما',
-  // preferences: {
+  // preferences: {{
   basic: 'ساده',
   advanced: 'پیشرفته',
   lab: 'آزمایشگاه',
@@ -270,15 +270,15 @@ export default {
   'auto-update': 'به روز رسانی خودکار',
   'auto-check-update': 'اتوماتیک برای آپدیت چک کن',
   'last-check-update-time': 'آخرین باری که برای آپدیت چک شده',
-  // subnav: {
+  // subnav: {{
   preferences: 'تنظیمات دلخواه',
-  // task: {
+  // task: {{
   active: 'درحال دانلود',
   waiting: 'صبرکردن',
   stopped: 'متوقف شده',
   'new-task': 'تسک جدید',
   'new-bt-task': 'تسک BT جدید',
-  'open-file': 'بازکردن فایل تورنت...',
+  'open-file': 'گشودن پرونده',
   'uri-task': 'آدرس اینترنتی',
   'torrent-task': 'تورنت',
   'uri-task-tips': 'یک آدرس دانلود در هر خط',
@@ -359,7 +359,7 @@ export default {
   'bt-download-complete-tips': 'Tips: You can stop the task to end the seeding',
   'download-fail-message': '{{taskName}} دانلود شکست خورد',
   'download-fail-notify': 'دانلود شکست خورد',
-  // window: {
+  // window: {{
   reload: 'ریلود',
   close: 'بستن',
   minimize: 'کوچک کردن',

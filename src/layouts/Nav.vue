@@ -1,13 +1,13 @@
 <template>
 <q-drawer
   show-if-above
+  side="left"
   content-class="bg-grey-10"
   :width="200"
   :breakpoint="700"
   elevated
-  side="left"
+  v-if=this.$q.screen.gt.sm
 >
-  <q-scroll-area class="fit">
   <q-list dark padding>
     <q-item class="download" v-ripple clickable to="/task/active" replace>
       <q-item-section avatar>
@@ -64,7 +64,7 @@
     </q-item>
     <q-item class="preferences" v-ripple  clickable to="/about" replace>
       <q-item-section avatar>
-        <q-icon name="settings_ethernet" />
+        <q-icon name="info" />
       </q-item-section>
       <q-item-section>
         <q-item-label>{{ $t('about') }}</q-item-label>
@@ -83,7 +83,6 @@
 <!--    <q-separator inset class="q-my-sm" />-->
 
   </q-list>
-  </q-scroll-area>
 </q-drawer>
 </template>
 <script>

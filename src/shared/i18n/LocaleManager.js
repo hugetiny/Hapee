@@ -5,11 +5,15 @@ export const availableLanguages = [
     label: 'Català'
   },
   {
+    value: 'cs',
+    label: 'Česky'
+  },
+  {
     value: 'de',
     label: 'Deutsch'
   },
   {
-    value: 'en-US',
+    value: 'en',
     label: 'English'
   },
   {
@@ -25,6 +29,14 @@ export const availableLanguages = [
     label: 'Français'
   },
   {
+    value: 'id',
+    label: 'Indonesia'
+  },
+  {
+    value: 'it',
+    label: 'Italia'
+  },
+  {
     value: 'ja',
     label: '日本語'
   },
@@ -33,7 +45,15 @@ export const availableLanguages = [
     label: '한국어'
   },
   {
-    value: 'pt-BR',
+    value: 'nl',
+    label: 'Nederlands'
+  },
+  {
+    value: 'pl',
+    label: 'Polski'
+  },
+  {
+    value: 'pt',
     label: 'Português (Brasil)'
   },
   {
@@ -41,8 +61,16 @@ export const availableLanguages = [
     label: 'Русский'
   },
   {
+    value: 'th',
+    label: 'ไทย'
+  },
+  {
     value: 'tr',
     label: 'Türkçe'
+  },
+  {
+    value: 'uk',
+    label: 'Українська'
   },
   {
     value: 'zh-CN',
@@ -63,8 +91,7 @@ export function getLocale (locale = 'en-US') {
    * @param { String } locale
    * https://electronjs.org/docs/api/locales
    *
-   * Only these locales need to add a `startsWith` fallback
-   * when there are with the same prefix
+   * Need your help!
    *
    * de, de-AT, de-CH, de-DE
    * en, en-AU, en-CA, en-GB, en-NZ, en-US, en-ZA
@@ -83,7 +110,7 @@ export function getLocale (locale = 'en-US') {
   }
 
   if (locale.startsWith('en')) {
-    return 'en-US'
+    return 'en'
   }
 
   if (locale.startsWith('es')) {
@@ -93,7 +120,7 @@ export function getLocale (locale = 'en-US') {
   // If there is a pt-PT translation in the future,
   // here will fallback to pt-PT.
   if (locale.startsWith('pt')) {
-    return 'pt-BR'
+    return 'pt'
   }
 
   if (locale.startsWith('fr')) {
@@ -104,6 +131,7 @@ export function getLocale (locale = 'en-US') {
     return 'zh-CN'
   }
 }
+
 export class LocaleManager {
   constructor (options = {}) {
     this.options = options

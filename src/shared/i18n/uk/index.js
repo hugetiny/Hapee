@@ -1,18 +1,18 @@
 export default {
-  // about: {
+  // about: {{
   'engine-version': 'Версія двигуна',
   license: 'Ліцензія',
   about: 'Інформація',
   release: 'Реліз',
   support: 'Підтримка',
-  //  app: {
+  //  app: {{
   'task-list': 'Список завдань',
   'add-task': 'Додати завдання',
   'check-for-updates': 'Перевірити оновлення...',
   'check-updates-now': 'Перевірити зараз',
   'checking-for-updates': 'Перевірка оновлень ...',
   'check-for-updates-title': 'Перевірити оновлення',
-  'update-available-message': 'Нова версія DownloadBox доступна для завантаження, завантажити зараз?',
+  'update-available-message': 'Нова версія доступна для завантаження, завантажити зараз?',
   'update-not-available-message': 'У вас вже є остання версія!',
   'update-downloaded-message': 'Готово для встановлення...',
   'update-error-message': 'Помилка оновлення',
@@ -20,11 +20,11 @@ export default {
   'engine-missing-message': 'Двигун загублено, будь ласка переінсталюйте : (',
   'system-error-title': 'Системна помилка',
   'system-error-message': 'Помилка запуску додатка: {{message}}',
-  hide: 'Сховати DownloadBox',
+  hide: 'Сховати',
   'hide-others': 'Сховати інше',
   showAll: 'Відобразити все',
-  show: 'Відобразити DownloadBox',
-  quit: 'Закрити DownloadBox',
+  show: 'Відобразити',
+  quit: 'Закрити',
   'under-development-message': 'На жаль, ця функція розробляється...',
   yes: 'Так',
   no: 'Ні',
@@ -34,7 +34,7 @@ export default {
   hour: 'г',
   minute: 'х',
   second: 'с',
-  //  edit: {
+  //  edit: {{
   undo: 'Відміна',
   redo: 'Повторити',
   cut: 'Вирізати',
@@ -42,20 +42,20 @@ export default {
   paste: 'Вставити',
   delete: 'Видалити',
   'select-all': 'Обрати все',
-  //  help: {
-  'official-website': 'Сайт DownloadBox',
+  //  help: {{
+  'official-website': 'Сайт',
   manual: 'Інструкція',
   'release-notes': 'Примітки до релизу...',
   'report-problem': 'Повідомити про проблему',
   'toggle-dev-tools': 'Переключити інстрменти розробника',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'Файл',
   task: 'Завдання',
   edit: 'Редагування',
   window: 'Вікно',
   help: 'Допомога',
-  // preferences: {
+  // preferences: {{
   basic: 'Основні',
   advanced: 'Розширені',
   lab: 'Лабораторія',
@@ -115,15 +115,15 @@ export default {
   'auto-update': 'Автоматичне оновлення',
   'auto-check-update': 'Автоматично перевіряти оновлення',
   'last-check-update-time': 'В останнє оновлення перевірялось',
-  // subnav: {
+  // subnav: {{
   preferences: 'Налаштування',
-  // task: {
+  // task: {{
   active: 'Завантаження',
   waiting: 'Очікування',
   stopped: 'Зупинено',
   'new-task': 'Нове завдання',
   'new-bt-task': 'Нове BT завдання',
-  'open-file': 'Відкрити Torrent файл...',
+  'open-file': 'Відкрити файл',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'Одне URL-задання на рядок (підтримуе magnet)',
@@ -204,12 +204,12 @@ export default {
   'bt-download-complete-tips': 'Порада: Ви можите зупинити завдання щоб зупинити роздачу',
   'download-fail-message': 'Не вдалося завантажити {{taskName}}',
   'download-fail-notify': 'Помилка завантаження',
-  // window: {
+  // window: {{
   reload: 'Перезавнтажити',
   close: 'Закрити',
   minimize: 'Згорнути',
   zoom: 'Збільшення',
   'toggle-fullscreen': 'Перейти до повноекранного режиму',
   front: 'Поверх всіх вікон'
-  // }
+  // }}
 }

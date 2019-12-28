@@ -1,11 +1,11 @@
 export default {
-  // about: {
+  // about: {{
   'engine-version': 'バージョンを確認',
   license: 'ライセンス',
   about: '私たちについて',
   release: 'リリースノート',
   support: 'サポート',
-  // app: {
+  // app: {{
   'task-list': 'タスクリスト',
   'add-task': 'タスクを追加',
   'check-for-updates': '更新を確認...',
@@ -20,10 +20,10 @@ export default {
   'engine-missing-message': 'エンジンが見つかりません。再インストールしてください : (',
   'system-error-title': 'システムエラー',
   'system-error-message': 'アプリケーションの起動に失敗しました：{{message}}',
-  hide: 'DownloadBox を隠す',
+  hide: 'を隠す',
   'hide-others': 'ほかを隠す',
   showAll: 'すべてを表示',
-  quit: 'DownloadBox を終了',
+  quit: 'を終了',
   'under-development-message': 'この機能は開発中です...',
   yes: 'はい',
   no: 'いいえ',
@@ -33,7 +33,7 @@ export default {
   hour: '時',
   minute: '分',
   second: '秒',
-  //  edit: {
+  //  edit: {{
   undo: '元に戻す',
   redo: 'やり直す',
   cut: '切り取り',
@@ -41,20 +41,20 @@ export default {
   paste: '貼り付け',
   delete: '削除',
   'select-all': 'すべてを選択',
-  // help: {
-  'official-website': 'DownloadBox 公式サイト',
+  // help: {{
+  'official-website': '公式サイト',
   manual: '使用説明',
   'release-notes': 'リリースノート...',
   'report-problem': '問題を報告',
   'toggle-dev-tools': '開発者ツール',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'ファイル',
   task: 'タスク',
   edit: '編集',
   window: 'ウィンドウ',
   help: 'ヘルプ',
-  // preferences: {
+  // preferences: {{
   basic: '基本設定',
   advanced: '詳細設定',
   lab: '実験室',
@@ -114,15 +114,15 @@ export default {
   'auto-update': '自動更新',
   'auto-check-update': '更新を自動で確認する',
   'last-check-update-time': '前回更新確認時間',
-  // subnav: {
+  // subnav: {{
   preferences: '環境設定',
-  // task: {
+  // task: {{
   active: 'ダウンロード中',
   waiting: '待機中',
   stopped: '一時停止中',
   'new-task': '新規タスク',
   'new-bt-task': '新規torrentタスク',
-  'open-file': 'torrentファイルを開く...',
+  'open-file': 'ファイルを開く',
   'uri-task': 'URLタスク',
   'torrent-task': 'torrentタスク',
   'uri-task-tips': 'URLを複数追加したとき、一行につき一つのリンクとなります(マグネットリンクをサポート)',
@@ -203,7 +203,7 @@ export default {
   'bt-download-complete-tips': 'ヒント：タスクを停止しseedの作成を終了することができます',
   'download-fail-message': '{{taskName}} のダウンロードに失敗',
   'download-fail-notify': 'ダウンロード失敗',
-  // window: {
+  // window: {{
   reload: 'リロード',
   close: '閉じる',
   minimize: '最小化',

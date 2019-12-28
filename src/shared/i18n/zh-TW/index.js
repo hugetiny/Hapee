@@ -114,7 +114,7 @@ export default {
   '如果指定該選項，將會建立可以直接從 Aria2 伺服器上下載檔案的連結。',
   '(Requires appropriate webserver to be configured.)': '（需要 WEB 伺服器配置正確）',
   'Save Connection configuration': '儲存連線配置',
-  Filter: '過濾',
+  Filter: '篩選',
   // server info modal
   'Aria2 server info': 'Aria2 伺服器資訊',
   'Aria2 Version': 'Aria2 版本',
@@ -152,13 +152,13 @@ export default {
   'Trying to connect to aria2 using the new connection configuration':
   '正在嘗試使用新的連線配置來連線到 Aria2 ……',
   'Remove {{name}} and associated meta-data?': '是否刪除 {{name}} 和關聯的元資料？',
-  // about: {
+  // about: {{
   'engine-version': '引擎版本',
   license: '開源許可',
   about: '關於',
   release: '版本資訊',
   support: '支援',
-  // app: {
+  // app: {{
   'task-list': '任務列表',
   'add-task': '新增任務',
   'check-for-updates': '檢查更新...',
@@ -173,11 +173,11 @@ export default {
   'engine-missing-message': '引擎缺失，請重新安裝 : (',
   'system-error-title': '系統錯誤',
   'system-error-message': '應用啟動失敗: {{message}}',
-  hide: '隱藏 DownloadBox',
+  hide: '隱藏',
   'hide-others': '隱藏其它',
   showAll: '全部顯示',
-  show: '顯示 DownloadBox',
-  quit: '結束 DownloadBox',
+  show: '顯示',
+  quit: '結束',
   'under-development-message': '該功能開發中...',
   yes: '是',
   no: '否',
@@ -187,21 +187,21 @@ export default {
   hour: '時',
   minute: '分',
   second: '秒',
-  //  edit: { undo: '復原', redo: '取消復原', cut: '剪下', copy: '複製', paste: '貼上', delete: '刪除', 'select-all': '全選' },
-  //   help: {
-  'official-website': 'DownloadBox 官網',
+  //  edit: {{ undo: '復原', redo: '取消復原', cut: '剪下', copy: '複製', paste: '貼上', delete: '刪除', 'select-all': '全選' }},
+  //   help: {{
+  'official-website': '官網',
   manual: '使用說明',
   'release-notes': '版本資訊...',
   'report-problem': '回報問題',
   'toggle-dev-tools': '開發者工具',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: '檔案',
   task: '任務',
   edit: '編輯',
   window: '視窗',
   help: '說明',
-  // preferences: {
+  // preferences: {{
   basic: '基本設定',
   advanced: '進階設定',
   lab: '實驗性功能',
@@ -261,15 +261,15 @@ export default {
   'auto-update': '自動更新',
   'auto-check-update': '自動檢查更新',
   'last-check-update-time': '上次檢查更新時間',
-  // subnav: {
+  // subnav: {{
   preferences: '偏好設定',
-  // task: {
+  // task: {{
   active: '下載中',
   waiting: '等待中',
   stopped: '已停止',
   'new-task': '新增任務',
   'new-bt-task': '新增 BT 任務',
-  'open-file': '開啟種子檔案...',
+  'open-file': '開啟檔案',
   'uri-task': '連結任務',
   'torrent-task': '種子任務',
   'uri-task-tips': '新增多個下載連結時，請確保每行只有一個連結（支援磁力連結）',
@@ -350,7 +350,7 @@ export default {
   'bt-download-complete-tips': '提示：你可以停止任務結束做種',
   'download-fail-message': '{{taskName}} 下載失敗',
   'download-fail-notify': '下載失敗',
-  // window: {
+  // window: {{
   reload: '重新載入',
   close: '關閉',
   minimize: '最小化',

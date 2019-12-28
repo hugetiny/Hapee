@@ -148,20 +148,20 @@ export default {
   'Успешное подключение к Aria2 через удаленный RPC, однако соединение все еще небезопасно. Для обеспечения лучшей безопасности добавьте секретный токен авторизации при запуске aria2 (через флаг --rpc-secret)',
   'Trying to connect to aria2 using the new connection configuration':
   'Попытка подключиться к aria2 с использованием новой конфигурации',
-  // about: {
+  // about: {{
   'engine-version': 'Версия движка',
   license: 'Лицензия',
   about: 'Информация',
   release: 'Релиз',
   support: 'Поддержка',
-  //  app: {
+  //  app: {{
   'task-list': 'Список заданий',
   'add-task': 'Добавить задание',
   'check-for-updates': 'Проверить обновление...',
   'check-updates-now': 'Проверить сейчас',
   'checking-for-updates': 'Проверка обновлений ...',
   'check-for-updates-title': 'Проверить обновления',
-  'update-available-message': 'Новая версия DownloadBox доступна для скачивания, скачать сейчас?',
+  'update-available-message': 'Новая версия доступна для скачивания, скачать сейчас?',
   'update-not-available-message': 'Вы уже используете самую последнюю версию!',
   'update-downloaded-message': 'Готово к установке...',
   'update-error-message': 'Ошибка обновления',
@@ -169,11 +169,11 @@ export default {
   'engine-missing-message': 'Движек потерян, пожалуйста переустановите : (',
   'system-error-title': 'Системная ошибка',
   'system-error-message': 'Ошибка запуска приложения: {{message}}',
-  hide: 'Спрятать DownloadBox',
+  hide: 'Спрятать',
   'hide-others': 'Спрятать все остальное',
   showAll: 'Отобразить все',
-  show: 'Отобразить DownloadBox',
-  quit: 'Закрыть DownloadBox',
+  show: 'Отобразить',
+  quit: 'Закрыть',
   'under-development-message': 'К сожалению, эта функция все еще в разработке...',
   yes: 'Да',
   no: 'Нет',
@@ -183,7 +183,7 @@ export default {
   hour: 'ч',
   minute: 'м',
   second: 'с',
-  //  edit: {
+  //  edit: {{
   undo: 'Отмена',
   redo: 'Повторить',
   cut: 'Вырезать',
@@ -191,20 +191,20 @@ export default {
   paste: 'Вставить',
   delete: 'Удалить',
   'select-all': 'Выбрать все',
-  //  help: {
-  'official-website': 'Сайт DownloadBox',
+  //  help: {{
+  'official-website': 'Сайт',
   manual: 'Инструкция',
   'release-notes': 'Пометки к релизу...',
   'report-problem': 'Сообщить о проблеме',
   'toggle-dev-tools': 'Переключить инструменты разработчика',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'Файл',
   task: 'Задания',
   edit: 'Редктировать',
   window: 'Окно',
   help: 'Помощь',
-  // preferences: {
+  // preferences: {{
   basic: 'Основные',
   advanced: 'Расширенные',
   lab: 'Лаборатория',
@@ -264,15 +264,15 @@ export default {
   'auto-update': 'Автоматическое обновление',
   'auto-check-update': 'Автоматически проверять обновления',
   'last-check-update-time': 'В последний раз обновление проверялось',
-  // subnav: {
+  // subnav: {{
   preferences: 'Настройки',
-  // task: {
+  // task: {{
   active: 'Загрузки',
   waiting: 'Ожидание',
   stopped: 'Остановленно',
   'new-task': 'Нове задание',
   'new-bt-task': 'Нове BT задание',
-  'open-file': 'Открыть Torrent файл...',
+  'open-file': 'Открытый файл',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'Один URL-задания в строку (поддержка magnet)',
@@ -353,12 +353,12 @@ export default {
   'bt-download-complete-tips': 'Совет: Вы можете остановить задачу, чтобы остановить раздачу',
   'download-fail-message': 'Не удалось загрузить {{taskName}}',
   'download-fail-notify': 'Ошибка загрузки',
-  // window: {
+  // window: {{
   reload: 'Перезагрузить',
   close: 'Закрыть',
   minimize: 'Свернуть',
   zoom: 'Увеличение',
   'toggle-fullscreen': 'Перейти в полноэкранный режим',
   front: 'Поверх всех окон'
-  // }
+  // }}
 }

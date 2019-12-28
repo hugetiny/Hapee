@@ -1,20 +1,19 @@
 <template>
   <div>
-    <mo-task-actions />
     <mo-task-list />
   </div>
 </template>
 
 <script>
 // import TaskSubnav from 'components/Subnav/TaskSubnav'
-import TaskActions from 'components/Task/TaskActions'
+// import TaskActions from 'components/Task/TaskActions'
 import TaskList from 'components/Task/TaskList'
 
 export default {
   name: 'mo-content-task',
   components: {
     // [TaskSubnav.name]: TaskSubnav,
-    [TaskActions.name]: TaskActions,
+    // [TaskActions.name]: TaskActions,
     [TaskList.name]: TaskList
   },
   props: {

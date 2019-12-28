@@ -277,7 +277,7 @@ export default class Api {
 
   removeTask (gids = []) {
     let multicall = []
-    gids.forEach((gid) => {
+    compactUndefined(gids).forEach((gid) => {
       multicall.push(['remove', gid])
     })
     return this.client.multicall(multicall)

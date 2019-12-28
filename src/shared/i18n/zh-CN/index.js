@@ -45,7 +45,7 @@ export default {
   'Quick Access Settings': '快速访问设置',
   Save: '保存',
   'Save settings': '保存设置',
-  'Currently no download in line to display, use the': '当前没有可显示的下载项，使用',
+  'Currently no download in line to display, use the': '没有可显示的下载项，使用',
   'download button to start downloading files!': '按钮来开始下载！',
   Peers: 'Peers',
   'More Info': '更多信息',
@@ -114,7 +114,7 @@ export default {
   '如果指定该选项，将会创建可以直接从 Aria2 服务器上下载文件的链接。',
   '(Requires appropriate webserver to be configured.)': '（需要 WEB 服务器配置正确）',
   'Save Connection configuration': '保存连接配置',
-  Filter: '过滤',
+  Filter: '筛选',
   // server info modal
   'Aria2 server info': 'Aria2 服务器信息',
   'Aria2 Version': 'Aria2 版本',
@@ -125,13 +125,13 @@ export default {
   'Or you can open the latest version in the browser through': '直接在浏览器中使用最新版本，请访问',
   Close: '关闭',
   // labels
-  'Download status': '当前下载状态',
-  'Download Speed': '当前下载速度',
-  'Upload Speed': '当前上传速度',
+  'Download status': '下载状态',
+  'Download Speed': '下载速度',
+  'Upload Speed': '上传速度',
   'Estimated time': '预计剩余时间',
   'Download Size': '下载总大小',
   Downloaded: '已下载大小',
-  Progress: '当前下载进度',
+  Progress: '下载进度',
   'Download Path': '文件下载路径',
   Uploaded: '已上传大小',
   'Download GID': '下载的 GID',
@@ -152,13 +152,13 @@ export default {
   'Trying to connect to aria2 using the new connection configuration':
   '正在尝试使用新的连接配置来连接到 Aria2 ……',
   'Remove {{name}} and associated meta-data?': '是否删除 {{name}} 和关联的元数据？',
-  // about: {
+  // about: {{
   'engine-version': '引擎版本',
   license: '开源许可',
   about: '关于我们',
   release: '更新日志',
   support: '帮助支持',
-  // app: {
+  // app: {{
   'task-list': '任务列表',
   'add-task': '新建任务',
   'check-for-updates': '检查更新...',
@@ -173,11 +173,11 @@ export default {
   'engine-missing-message': '引擎缺失，请重新安装 : (',
   'system-error-title': '系统错误',
   'system-error-message': '应用启动失败: {{message}}',
-  hide: '隐藏 DownloadBox',
+  hide: '隐藏',
   'hide-others': '隐藏其他',
   showAll: '显示全部',
-  show: '显示 DownloadBox',
-  quit: '退出 DownloadBox',
+  show: '显示',
+  quit: '退出',
   'under-development-message': '该功能开发中...',
   yes: '是',
   no: '否',
@@ -187,7 +187,7 @@ export default {
   hour: '时',
   minute: '分',
   second: '秒',
-  // edit: {
+  // edit: {{
   undo: '撤销',
   redo: '重做',
   cut: '剪切',
@@ -195,20 +195,20 @@ export default {
   paste: '黏贴',
   delete: '删除',
   'select-all': '全选',
-  //   help: {
-  'official-website': 'DownloadBox 官网',
+  //   help: {{
+  'official-website': '官网',
   manual: '使用手册',
   'release-notes': '发行说明...',
   'report-problem': '报告问题',
   'toggle-dev-tools': '开发者工具',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: '文件',
   task: '任务',
   edit: '编辑',
   window: '窗口',
   help: '帮助',
-  // preferences: {
+  // preferences: {{
   basic: '基础设置',
   advanced: '进阶设置',
   lab: '实验室',
@@ -268,15 +268,15 @@ export default {
   'auto-update': '自动更新',
   'auto-check-update': '自动检查更新',
   'last-check-update-time': '上次检查更新时间',
-  // subnav: {
+  // subnav: {{
   preferences: '偏好设置',
-  // task: {
+  // task: {{
   active: '下载中',
   waiting: '等待中',
   stopped: '已停止',
   'new-task': '新建任务',
   'new-bt-task': '新建 BT 任务',
-  'open-file': '打开种子文件...',
+  'open-file': '打开文件',
   'uri-task': '链接任务',
   'torrent-task': '种子任务',
   'uri-task-tips': '添加多个下载链接时，请确保每行只有一个链接（支持磁力链）',
@@ -330,7 +330,7 @@ export default {
   'purge-record-success': '清除下载记录成功',
   'purge-record-fail': '清除下载记录失败',
   'refresh-list': '刷新任务列表',
-  'no-task': '当前没有下载任务',
+  'no-task': '没有下载任务',
   'copy-link': '拷贝链接',
   'copy-link-success': '拷贝链接成功',
   'remove-record': '移除下载记录',
@@ -357,8 +357,9 @@ export default {
   'bt-download-complete-tips': '提示：你可以停止任务结束做种',
   'download-fail-message': '{{taskName}} 下载失败',
   'download-fail-notify': '下载失败',
-  // window: {
+  // window: {{
   reload: '重新加载',
+  restart: '重新开始任务',
   close: '关闭',
   minimize: '最小化',
   zoom: '放大',

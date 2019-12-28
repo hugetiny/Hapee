@@ -3,13 +3,14 @@
     <q-toolbar>
       <q-btn round flat class="q-mr-sm">
         <q-icon name="account_box"></q-icon>
-        <q-badge color="red" text-color="white" floating>
-          2
-        </q-badge>
+<!--        <q-badge color="red" text-color="white" floating>-->
+<!--          2-->
+<!--        </q-badge>-->
         <!--            <q-avatar size="26px">-->
         <!--              <img src="https://cdn.quasar.dev/img/boy-avatar.png">-->
         <!--            </q-avatar>-->
-        <q-tooltip>Account</q-tooltip>
+        <q-tooltip content-style="font-size: 12px" transition-show="scale"
+          transition-hide="scale">Account</q-tooltip>
       </q-btn>
 
       <!--        <q-toolbar-title>-->
@@ -31,10 +32,12 @@
       <q-space />
 
       <!--          <q-btn v-if="$q.screen.gt.sm" round dense flat color="text-grey-7" icon="apps">-->
-      <!--            <q-tooltip>Market</q-tooltip>-->
+      <!--            <q-tooltip content-style="font-size: 12px" transition-show="scale"
+          transition-hide="scale">Market</q-tooltip>-->
       <!--          </q-btn>-->
       <q-btn round flat icon="g_translate" class="q-ml-sm" @click="toPreference">
-        <q-tooltip>{{$t('change-language')}}</q-tooltip>
+        <q-tooltip content-style="font-size: 12px" transition-show="scale"
+          transition-hide="scale">{{$t('change-language')}}</q-tooltip>
       </q-btn>
 
     </q-toolbar>

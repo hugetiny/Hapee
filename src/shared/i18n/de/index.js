@@ -137,20 +137,20 @@ export default {
   'Download GID': 'Download GID',
   'Number of Pieces': 'Anzahl der Stücken',
   'Piece Length': 'Größe der Stücken',
-  // about: {
+  // about: {{
   'engine-version': 'Engine Version',
   license: 'Lizenz',
   about: 'Über',
   release: 'Versionen',
   support: 'Unterstützung anfordern',
-  //  app: {
+  //  app: {{
   'task-list': 'Aufgabenliste',
   'add-task': 'Aufgabe hinzufügen',
   'check-for-updates': 'Nach Updates suchen...',
   'check-updates-now': 'Jetzt prüfen',
   'checking-for-updates': 'Nach Updates suchen ...',
   'check-for-updates-title': 'Nach Updates suchen',
-  'update-available-message': 'Eine neue Version von DownloadBox ist verfügbar, jetzt aktualisieren?',
+  'update-available-message': 'Eine neue Version ist verfügbar, jetzt aktualisieren?',
   'update-not-available-message': 'Sie sind auf dem neuesten Stand!',
   'update-downloaded-message': 'Bereit zur Installation...',
   'update-error-message': 'Aktualisierungsfehler',
@@ -158,11 +158,11 @@ export default {
   'engine-missing-message': 'Der Motor fehlt, bitte neu installieren : (',
   'system-error-title': 'Systemfehler',
   'system-error-message': 'Die Anwendung konnte nicht gestartet werden: {{message}}',
-  hide: 'DownloadBox verbergen',
+  hide: 'verbergen',
   'hide-others': 'Andere verbergen',
   showAll: 'Alles anzeigen',
-  show: 'DownloadBox anzeigen',
-  quit: 'DownloadBox beenden',
+  show: 'anzeigen',
+  quit: 'beenden',
   'under-development-message': 'Entschuldigung, diese Funktion befindet sich in der Entwicklung...',
   yes: 'Ja',
   no: 'Nein',
@@ -172,7 +172,7 @@ export default {
   hour: 'h',
   minute: 'm',
   second: 's',
-  //  edit: {
+  //  edit: {{
   undo: 'Rückgängig',
   redo: 'Wiederholen',
   cut: 'Ausschneiden',
@@ -180,20 +180,20 @@ export default {
   paste: 'Einfügen',
   delete: 'Löschen',
   'select-all': 'Alles auswählen',
-  //  help: {
-  'official-website': 'DownloadBox Website',
+  //  help: {{
+  'official-website': 'Website',
   manual: 'Handbuch',
   'release-notes': 'Versionshinweise...',
   'report-problem': 'Problem melden',
   'toggle-dev-tools': 'Entwicklerwerkzeuge umschalten',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'Datei',
   task: 'Aufgabe',
   edit: 'Bearbeiten',
   window: 'Fenster',
   help: 'Hilfe',
-  // preferences: {
+  // preferences: {{
   basic: 'Standard',
   advanced: 'Erweitert',
   lab: 'Experimentell',
@@ -253,15 +253,15 @@ export default {
   'auto-update': 'Auto-Update',
   'auto-check-update': 'Automatische Updates überprüfen',
   'last-check-update-time': 'letzte kontrolle update - zeit',
-  // subnav: {
+  // subnav: {{
   preferences: 'Präferenzen',
-  // task: {
+  // task: {{
   active: 'Aktiv',
   waiting: 'Warteschlange',
   stopped: 'Gestoppt',
   'new-task': 'Neue Aufgabe',
   'new-bt-task': 'Neue BT Aufgabe',
-  'open-file': 'Torrent-Datei öffnen...',
+  'open-file': 'Öffnen der Datei',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'Eine Download URL pro Zeile (magnet wird unterstützt)',
@@ -342,7 +342,7 @@ export default {
   'bt-download-complete-tips': 'Tipps: Sie können die Aufgabe stoppen, die aussaat zu beenden',
   'download-fail-message': 'Download von {{taskName}} fehlgeschlagen',
   'download-fail-notify': 'Download fehlgeschlagen',
-  // window: {
+  // window: {{
   reload: 'Neu laden',
   close: 'Schließen',
   minimize: 'Minimieren',

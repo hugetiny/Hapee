@@ -101,7 +101,7 @@ export function ellipsis (str = '', maxLen = 64) {
 export function getTaskName (task, options = {}) {
   const o = {
     defaultName: '',
-    maxLen: 64, // -1: No limit length
+    maxLen: -1, // -1: No limit length
     ...options
   }
   const { defaultName, maxLen } = o

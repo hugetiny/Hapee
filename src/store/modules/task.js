@@ -146,18 +146,18 @@ const actions = {
     return api.changeOption({ gid, options })
   },
   removeTask ({ dispatch }, gids) {
-    console.log(gids)
-    return api.forcePauseTask(gids)
-      .catch((e) => {
-        console.log(`[negibox] removeTask.forcePauseTask#[${gids}] fail`, e.message)
-      })
+    // console.log(gids)
+    // return api.forcePauseTask(gids)
+    //   .catch((e) => {
+    //     console.log(`[negibox] removeTask.forcePauseTask#[${gids}] fail`, e.message)
+    //   })
+    //   .finally(() => {
+    return api.removeTask(gids)
       .finally(() => {
-        return api.removeTask(gids)
-          .finally(() => {
-            dispatch('fetchList')
-            dispatch('saveSession')
-          })
+        dispatch('fetchList')
+        dispatch('saveSession')
       })
+      // })
   },
   pauseTask ({ dispatch }, gids) {
     return api.pauseTask(gids)

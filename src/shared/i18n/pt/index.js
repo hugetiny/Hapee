@@ -157,20 +157,20 @@ export default {
   'Tentando conectar-se ao aria2 utilizando a nova configuração de conexão',
   // {{name}} refers to the download name, do not modify.
   'Remove {{name}} and associated meta-data?': 'Remover {{name}} e os metadados associados?',
-  // about: {
+  // about: {{
   'engine-version': 'Versão da Engine',
   license: 'Licença',
   about: 'Sobre',
   release: 'Release',
   support: 'Suporte',
-  //  app: {
+  //  app: {{
   'task-list': 'Lista de Tarefas',
   'add-task': 'Adicionar Tarefa',
   'check-for-updates': 'Verificar por Atualizações...',
   'check-updates-now': 'Verificar agora',
   'checking-for-updates': 'Verificar atualizações ...',
   'check-for-updates-title': 'Verificar por Atualizações',
-  'update-available-message': 'Uma nova versão do DownloadBox está disponível, atualize agora?',
+  'update-available-message': 'Uma nova versão está disponível, atualize agora?',
   'update-not-available-message': 'Você esta atualizado!',
   'update-downloaded-message': 'Pronto para instalar...',
   'update-error-message': 'Atualizar erro',
@@ -178,11 +178,11 @@ export default {
   'engine-missing-message': 'O motor está faltando, por favor, reinstale : (',
   'system-error-title': 'Erro do sistema',
   'system-error-message': 'O aplicativo falhou ao iniciar: {{message}}',
-  hide: 'Ocultar DownloadBox',
+  hide: 'Ocultar',
   'hide-others': 'Ocultar Outros',
   showAll: 'Exibir Todos',
-  show: 'Exibir DownloadBox',
-  quit: 'Sair do DownloadBox',
+  show: 'Exibir',
+  quit: 'Sair do',
   'under-development-message': 'Desculpe, essa funcionalidade está em desenvolvimento...',
   yes: 'Sim',
   no: 'Não',
@@ -192,7 +192,7 @@ export default {
   hour: 'h',
   minute: 'm',
   second: 's',
-  //  edit: {
+  //  edit: {{
   undo: 'Desfazer',
   redo: 'Refazer',
   cut: 'Recortar',
@@ -200,20 +200,20 @@ export default {
   paste: 'Copiar',
   delete: 'Apagar',
   'select-all': 'Selecionar Tudo',
-  //  help: {
-  'official-website': 'DownloadBox Website',
+  //  help: {{
+  'official-website': 'Website',
   manual: 'Manual',
   'release-notes': 'Notas de Lançamento...',
   'report-problem': 'Reportar um Problema',
   'toggle-dev-tools': 'Alternar Developer Tools',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'Arquivo',
   task: 'Tarefa',
   edit: 'Editar',
   window: 'Janela',
   help: 'Ajuda',
-  // preferences: {
+  // preferences: {{
   basic: 'Básico',
   advanced: 'Avançado',
   lab: 'Lab',
@@ -273,15 +273,15 @@ export default {
   'auto-update': 'Atualização automática',
   'auto-check-update': 'A verificação automática de atualizações',
   'last-check-update-time': 'última verificação do tempo de atualização',
-  // subnav: {
+  // subnav: {{
   preferences: 'Preferências',
-  // task: {
+  // task: {{
   active: 'Baixando',
   waiting: 'Aguardando',
   stopped: 'Cancelado',
   'new-task': 'Nova Tarefa',
   'new-bt-task': 'Nova Tarefa BT',
-  'open-file': 'Abra o arquivo Torrent...',
+  'open-file': 'Arquivo aberto',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'Uma url por linha (magnet links são aceitos)',
@@ -362,7 +362,7 @@ export default {
   'bt-download-complete-tips': 'Dicas: você pode parar a tarefa para terminar a propagação',
   'download-fail-message': '{{taskName}} falha no download',
   'download-fail-notify': 'Falha no Download',
-  // window: {
+  // window: {{
   reload: 'Recarregar',
   close: 'Fechar',
   minimize: 'Minimizar',

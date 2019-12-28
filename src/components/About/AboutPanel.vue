@@ -1,8 +1,8 @@
 <template>
     <div class="app-info">
-      <div class="app-version">
-        <span>Electron {{version}}</span>
-      </div>
+<!--      <div class="app-version">-->
+<!--        <span>Electron {{version}}</span>-->
+<!--      </div>-->
       <div class="app-icon"></div>
       <div class="engine-info" v-if="!!engineInfo">
         <h4>{{ $t('engine-version') }}</h4>

@@ -28,7 +28,8 @@
 <!--            <q-popup-edit dark v-model="props.row.name">-->
 <!--              <q-input :placeholder="props.row.name" label="Local file name" autofocus counter />-->
 <!--            </q-popup-edit>-->
-            <q-tooltip>
+            <q-tooltip content-style="font-size: 12px" transition-show="scale"
+          transition-hide="scale">
               {{ props.row.name }}
             </q-tooltip>
           </q-td>
@@ -103,20 +104,20 @@ export default {
         }
       ],
       data: [
-        {
-          name: 'building',
-          size: 159,
-          popularity: 6.0,
-          time: 24,
-          source: 'av'
-        },
-        {
-          name: 'test long Y1111111111111111111111ogu11111111111112',
-          size: 159,
-          popularity: 6.0,
-          time: 24,
-          source: 'av'
-        }
+        // {
+        //   name: 'building',
+        //   size: 159,
+        //   popularity: 6.0,
+        //   time: 24,
+        //   source: 'av'
+        // },
+        // {
+        //   name: 'test long Y1111111111111111111111ogu11111111111112',
+        //   size: 159,
+        //   popularity: 6.0,
+        //   time: 24,
+        //   source: 'av'
+        // }
       ]
     }
   }

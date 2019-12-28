@@ -1,5 +1,5 @@
 <template>
-  <q-footer elevated class="bg-grey-9" >
+  <q-footer elevated class="bg-grey-9" v-if="$q.screen.lt.md">
     <q-tabs
       dense
       class="shadow-2"

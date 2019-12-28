@@ -19,12 +19,6 @@
   <br>
   <br>
 </h3>
-<h4 align="center">A Multi-protocol cross-platform downloader</h4>
-<p align="center">
-  <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
-</p>
 
 # Negibox is open source now!
 The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
@@ -40,9 +34,12 @@ New Negibox is still in developing
 - [ ] Web Chrome/Firefox/Safari/IE11
 - [x] macOS 10.10 ↑
 - [x] Windows 7 ↑
-- [x] Linux  (App is packaged in AppImage and requires FUSE to run.GNOME is recommended.)
 - [ ] iOS -- 9.0 ↑
 - [ ] Android -- 7.0 ↑
+- [x] Ubuntu 12.04 ↑
+- [x] Fedora 21
+- [x] Debian 8
+####(On Linux platform ，app is packaged in AppImage and requires FUSE to run.KDE and GNOME is recommended.)
 
 ## Engines
 - [x] aria2
@@ -56,7 +53,6 @@ New Negibox is still in developing
 
 ## Protocol
 
-- [ ] IPFS
 - [x] http
 - [x] https
 - [x] ftp
@@ -65,6 +61,10 @@ New Negibox is still in developing
 - [x] magnet
 - [x] BitTorrent
 - [x] MetaLink
+
+## decentrailize support
+
+- [ ] IPFS
 
 ## cloud & service
 

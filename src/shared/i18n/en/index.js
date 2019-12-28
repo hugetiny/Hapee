@@ -156,20 +156,20 @@ export default {
   'Trying to connect to aria2 using the new connection configuration':
     'Trying to connect to aria2 using the new connection configuration',
   'Remove {{name}} and associated meta-data?': 'Remove {{name}} and associated meta-data?',
-  // about: {
+  // about: {{
   'engine-version': 'Engine Version',
   license: 'License',
   about: 'About',
   release: 'Releases',
   support: 'Support',
-  //  app: {
+  //  app: {{
   'task-list': 'Task List',
   'add-task': 'Add Task',
   'check-for-updates': 'Check for Updates...',
   'check-updates-now': 'Check now',
   'checking-for-updates': 'Checking for updates ...',
   'check-for-updates-title': 'Check for Updates',
-  'update-available-message': 'A newer version of DownloadBox is available, update now?',
+  'update-available-message': 'A newer version is available, update now?',
   'update-not-available-message': 'You are up-to-date!',
   'update-downloaded-message': 'Ready to install...',
   'update-error-message': 'Update Error',
@@ -177,11 +177,11 @@ export default {
   'engine-missing-message': 'The engine is missing, please reinstall : (',
   'system-error-title': 'System Error',
   'system-error-message': 'Application startup failed: {{message}}',
-  hide: 'Hide DownloadBox',
+  hide: 'Hide',
   'hide-others': 'Hide Others',
   showAll: 'Show All',
-  show: 'Show DownloadBox',
-  quit: 'Quit DownloadBox',
+  show: 'Show',
+  quit: 'Quit',
   'under-development-message': 'Sorry, this feature is under development...',
   yes: 'Yes',
   no: 'No',
@@ -191,7 +191,7 @@ export default {
   hour: 'h',
   minute: 'm',
   second: 's',
-  //  edit: {
+  //  edit: {{
   undo: 'Undo',
   redo: 'Redo',
   cut: 'Cut',
@@ -199,20 +199,20 @@ export default {
   paste: 'Paste',
   delete: 'Delete',
   'select-all': 'Select All',
-  //  help: {
-  'official-website': 'DownloadBox Website',
+  //  help: {{
+  'official-website': 'Website',
   manual: 'Manual',
   'release-notes': 'Release Notes...',
   'report-problem': 'Report Problem',
   'toggle-dev-tools': 'Toggle Developer Tools',
-  // menu: {
+  // menu: {{
   app: 'DownloadBox',
   file: 'File',
   task: 'Task',
   edit: 'Edit',
   window: 'Window',
   help: 'Help',
-  // preferences: {
+  // preferences: {{
   basic: 'Basic',
   advanced: 'Advanced',
   lab: 'Lab',
@@ -272,15 +272,15 @@ export default {
   'auto-update': 'Auto Update',
   'auto-check-update': 'Automatically check for update',
   'last-check-update-time': 'Last Time Checking for Update',
-  // subnav: {
+  // subnav: {{
   preferences: 'Preferences',
-  // task: {
+  // task: {{
   active: 'Downloading',
   waiting: 'Waiting',
   stopped: 'Stopped',
   'new-task': 'New Task',
   'new-bt-task': 'New BT Task',
-  'open-file': 'Open Torrent File...',
+  'open-file': 'Open File',
   'uri-task': 'URL',
   'torrent-task': 'Torrent',
   'uri-task-tips': 'One task url per line (supports magnet)',
@@ -361,8 +361,9 @@ export default {
   'bt-download-complete-tips': 'Tips: You can stop a task to end its seeding',
   'download-fail-message': 'Failed to download {{taskName}}',
   'download-fail-notify': 'Download Failed',
-  // window: {
+  // window: {{
   reload: 'Reload',
+  restart: 'Restart',
   close: 'Close',
   minimize: 'Minimize',
   zoom: 'Zoom',
