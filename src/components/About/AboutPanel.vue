@@ -6,13 +6,7 @@
       <div class="app-icon"></div>
       <div class="engine-info" v-if="!!engineInfo">
         <h4>{{ $t('engine-version') }}</h4>
-        <ul v-if="!$q.platform.is.mac">
-          <li
-            v-for="(feature, index) in engineInfo.enabledFeatures"
-            v-bind:key="`feature-${index}`">
-            {{ feature }}
-          </li>
-        </ul>
+        <h6>{{engineInfo}}</h6>
       </div>
     </div>
 </template>
@@ -22,7 +16,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'mo-about-panel',
+  name: 'about-panel',
   props: {
     visible: {
       type: Boolean,

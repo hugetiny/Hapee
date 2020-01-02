@@ -9,12 +9,11 @@
           borderless
           hide-dropdown-icon
           behavior="dialog"
-          v-model="form.locale"
+          v-model="locale"
           :options="locales"
           stack-label
           :label="$t('change-language')"
-          :display-value="form.locale.label"
-          @input="handleLocaleChange"
+          :display-value="locale.label"
         >
           <template v-slot:append>
             <q-icon name="g_translate"/>
@@ -22,20 +21,20 @@
         </q-select>
       </q-item-section>
     </q-item>
-    <q-item v-ripple>
-      <q-item-section>
-        {{$t('appearance')}}
-      </q-item-section>
-      <q-item-section side>
-        <q-btn-toggle
-          v-model="form.theme"
-          :options="[{label: $t('theme-light'), value: 'light'},
-        {label: $t('theme-auto'), value: 'auto'},
-        {label: $t('theme-dark'), value: 'dark'}]"
-          @input ="handleThemeChange(form.theme)"
-        />
-      </q-item-section>
-    </q-item>
+    <!--    TODO waiting for Quasar electron7 fix-->
+<!--    <q-item v-ripple>-->
+<!--      <q-item-section>-->
+<!--        {{$t('appearance')}}-->
+<!--      </q-item-section>-->
+<!--      <q-item-section side>-->
+<!--        <q-btn-toggle-->
+<!--          v-model="form.theme"-->
+<!--          :options="[{label: $t('theme-light'), value: 'light'},-->
+<!--        {label: $t('theme-auto'), value: 'auto'},-->
+<!--        {label: $t('theme-dark'), value: 'dark'}]"-->
+<!--        />-->
+<!--      </q-item-section>-->
+<!--    </q-item>-->
 <!--    desktop-->
 <!--    <q-item v-if="$q.platform.is.win || $q.platform.is.linux" tag="label" v-ripple>-->
 <!--      <q-item-section>-->
@@ -54,66 +53,58 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.openAtLogin" @input="changeOpenAtLogin"/>
+        <q-toggle v-model="openAtLogin"/>
       </q-item-section>
     </q-item>
-    <q-item tag="label" v-ripple>
-      <q-item-section>
-        <q-item-label>
-          {{ $t('keep-window-state') }}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side>
-        <q-toggle v-model="form.keepWindowState"  @input="changekeepWindowState"/>
-      </q-item-section>
-    </q-item>
-    <q-item tag="label" v-ripple>
-      <q-item-section>
-        <q-item-label>
-          {{ $t('auto-resume-all') }}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side>
-        <q-toggle v-model="form.resumeAllWhenAppLaunched"/>
-      </q-item-section>
-    </q-item>
+<!--    <q-item tag="label" v-ripple>-->
+<!--      <q-item-section>-->
+<!--        <q-item-label>-->
+<!--          {{ $t('keep-window-state') }}-->
+<!--        </q-item-label>-->
+<!--      </q-item-section>-->
+<!--      <q-item-section side>-->
+<!--        <q-toggle v-model="keepWindowState"/>-->
+<!--      </q-item-section>-->
+<!--    </q-item>-->
+<!--    <q-item tag="label" v-ripple>-->
+<!--      <q-item-section>-->
+<!--        <q-item-label>-->
+<!--          {{ $t('auto-resume-all') }}-->
+<!--        </q-item-label>-->
+<!--      </q-item-section>-->
+<!--      <q-item-section side>-->
+<!--        <q-toggle v-model="form.resumeAllWhenAppLaunched"/>-->
+<!--      </q-item-section>-->
+<!--    </q-item>-->
     <q-item-label header>{{ $t('advanced') }}</q-item-label>
     <q-item v-if="$q.platform.is.desktop" clickable v-ripple>
-      <q-input dark
-               v-if="$q.platform.is.desktop"
-               v-model="downloadDir"
-               :readonly="$q.platform.is.mac"
-               :label="$t('default-dir')"
-      />
-        <template v-slot:append>
-          <mo-select-directory
-            @selected="onDirectorySelected"
-          />
-        </template>
-    </q-item>
-    <q-item tag="label" v-ripple>
       <q-item-section>
-        <q-item-label>
-          {{$t('transfer-speed-upload')}}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side>
-        <q-toggle v-model="form.isMaxOverallUploadLimit"/>
+       <select-directory/>
       </q-item-section>
     </q-item>
-    <q-item v-if="form.isMaxOverallUploadLimit" tag="label" v-ripple>
-      <q-item-section>
-        <q-slider
-          dark
-          v-model="form.maxOverallUploadLimit"
-          :min="1"
-          :max="100"
-          :label-value="form.maxOverallUploadLimit + 'M/s'"
-          label-always
-          @change="changeMaxOverallUploadLimit(form.maxOverallUploadLimit)"
-        />
-      </q-item-section>
-    </q-item>
+<!--    <q-item tag="label" v-ripple>-->
+<!--      <q-item-section>-->
+<!--        <q-item-label>-->
+<!--          {{$t('transfer-speed-upload')}}-->
+<!--        </q-item-label>-->
+<!--      </q-item-section>-->
+<!--      <q-item-section side>-->
+<!--        <q-toggle v-model="isMaxOverallUploadLimit"/>-->
+<!--      </q-item-section>-->
+<!--    </q-item>-->
+<!--    <q-item v-if="config.maxOverallUploadLimit !== 0" tag="label" v-ripple>-->
+<!--      <q-item-section>-->
+<!--        <q-slider-->
+<!--          dark-->
+<!--          v-model="form.maxOverallUploadLimit"-->
+<!--          :min="1"-->
+<!--          :max="100"-->
+<!--          :label-value="form.maxOverallUploadLimit + 'M/s'"-->
+<!--          label-always-->
+<!--          @change="changeMaxOverallUploadLimit(form.maxOverallUploadLimit)"-->
+<!--        />-->
+<!--      </q-item-section>-->
+<!--    </q-item>-->
     <q-item tag="label" v-ripple>
       <q-item-section>
         <q-item-label>
@@ -121,22 +112,22 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.isMaxOverallDownloadLimit"/>
+        <q-toggle v-model="isMaxOverallDownloadLimit"/>
       </q-item-section>
     </q-item>
-    <q-item v-if="form.isMaxOverallDownloadLimit" tag="label" v-ripple>
+    <q-item v-if="isMaxOverallDownloadLimit" tag="label" v-ripple>
       <q-item-section>
         <q-slider
           dark
-          v-model="form.maxOverallDownloadLimit"
+          v-model="maxOverallDownloadLimit"
           :min="1"
           :max="100"
-          :label-value="form.maxOverallDownloadLimit + 'M/s'"
+          :label-value="maxOverallDownloadLimit + 'MB/s'"
           label-always
+          @change="maxOverallDownloadLimit=>updateDownloadLimit(maxOverallDownloadLimit)"
         />
       </q-item-section>
     </q-item>
-
     <q-item-label header>
       {{$t('max-concurrent-downloads')}}
     </q-item-label>
@@ -147,15 +138,16 @@
       <q-item-section>
         <q-slider
           dark
-          v-model="form.maxConcurrentDownloads"
+          v-model="maxConcurrentDownloads"
           :min="1"
-          :max="10"
+          :max="100"
           label
           label-always
+          @change="val=>lazyUpdate({maxConcurrentDownloads:val})"
         />
       </q-item-section>
       <q-item-section side>
-        10
+        100
       </q-item-section>
     </q-item>
     <q-item-label header>
@@ -168,15 +160,16 @@
       <q-item-section>
         <q-slider
           dark
-          v-model="form.split"
+          v-model="split"
           :min="1"
-          :max="form.maxConnectionPerServer"
+          :max="64"
           label
           label-always
+          @change="val=>lazyUpdate({split:val})"
         />
       </q-item-section>
       <q-item-section side>
-        {{form.maxConnectionPerServer}}
+        64
       </q-item-section>
     </q-item>
     <q-item tag="label" v-ripple>
@@ -186,17 +179,7 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.continue"/>
-      </q-item-section>
-    </q-item>
-    <q-item tag="label" v-ripple>
-      <q-item-section>
-        <q-item-label>
-          {{ $t('new-task-show-downloading') }}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side>
-        <q-toggle v-model="form.newTaskShowDownloading"/>
+        <q-toggle v-model="continueFlag"/>
       </q-item-section>
     </q-item>
     <q-item tag="label" v-ripple>
@@ -206,11 +189,9 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.taskNotification"/>
+        <q-toggle v-model="taskNotification"/>
       </q-item-section>
     </q-item>
-
-    <q-item-label header>{{ $t('advanced') }}</q-item-label>
     <q-item tag="label" v-ripple>
       <q-item-section>
         <q-item-label>
@@ -218,19 +199,18 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.autoCheckUpdate" val="$t('auto-check-update')"/>
+        <q-toggle v-model="autoCheckUpdate"/>
       </q-item-section>
     </q-item>
-    <q-item tag="label" v-if="form.lastCheckUpdateTime !== 0" v-ripple>
+    <q-item tag="label" v-if="config.lastCheckUpdateTime !== 0" v-ripple>
       <q-item-section>
         <q-item-label>
-          {{ $t('last-check-update-time') + ': ' + (form.lastCheckUpdateTime !== 0 ? new
-          Date(form.lastCheckUpdateTime).toLocaleString() : new Date().toLocaleString()) }}
+          {{ $t('last-check-update-time') + ': ' + (config.lastCheckUpdateTime !== 0 ? new
+          Date(config.lastCheckUpdateTime).toLocaleString() : new Date().toLocaleString()) }}
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-btn class="gt-xs" size="12px" flat dense round icon="delete">
-          {{ $t('check-updates-now') }}
+        <q-btn icon="system_update_alt" @click.stop="onCheckUpdateClick" :label="$t('check-updates-now')">
         </q-btn>
       </q-item-section>
     </q-item>
@@ -241,22 +221,25 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.useProxy" @input="onUseProxyChange" val="$t('auto-check-update')"/>
+        <q-toggle v-model="useProxy" @input="onUseProxyChange" val="$t('auto-check-update')"/>
       </q-item-section>
     </q-item>
-    <q-item tag="label" v-if="form.useProxy" v-ripple>
+    <q-item tag="label" v-if="useProxy" v-ripple>
       <q-item-section>
-        <q-input dark v-model="form.allProxyBackup" @input="onUseProxyChange"
-                 placeholder="[http://][USER:PASSWORD@]HOST[:PORT]"/>
+        <q-input dark v-model="allProxyBackup" @input="onUseProxyChange"
+                 placeholder="http(s)://USER:PASSWORD@HOST:PORT"/>
       </q-item-section>
     </q-item>
-    <q-item tag="label" v-if="form.useProxy" v-ripple>
+    <q-item tag="label" v-ripple>
       <q-item-section>
-        <q-input dark v-model="form.btTracker" @input="onUseProxyChange" auto-complete="off"
-                 :placeholder="`${$t('preferences.bt-tracker-input-tips')}`"/>
-      </q-item-section>
-      <q-item-section side>
-        <q-icon name="sync" @click="syncTrackerFromGitHub"/>
+        <q-input dark v-model="btTracker" @input="onUseProxyChange"
+                 :placeholder="$t('bt-tracker-input-tips')">
+        <template v-slot:append>
+          <q-icon
+            name="refresh"
+            @click.stop="syncTrackerFromGitHub"/>
+        </template>
+        </q-input>
       </q-item-section>
     </q-item>
 
@@ -306,13 +289,10 @@
 <script>
 import { mapState } from 'vuex'
 import { cloneDeep } from 'lodash'
-import SelectDirectory from 'components/Native/SelectDirectory'
 import ThemeSwitcher from 'components/Preference/ThemeSwitcher'
-import { availableLanguages } from 'src/shared/i18n/LocaleManager'
-import { prettifyDir } from 'components/Native/utils'
+import { locales } from 'src/shared/i18n/LocaleManager'
 import {
   buildRpcUrl,
-  convertCommaToLine,
   convertLineToComma,
   diffConfig
 } from 'src/shared/utils'
@@ -320,10 +300,11 @@ import {
 import * as clipboard from 'clipboard-polyfill'
 import ShowInFolder from 'components/Native/ShowInFolder'
 import userAgentMap from 'src/shared/ua'
-import { i18n } from 'boot/i18n'
+import { i18n } from 'boot/platform'
+import SelectDirectory from 'components/Native/SelectDirectory.vue'
 
 export default {
-  name: 'mo-content-preference',
+  name: 'content-preference',
   components: {
     [SelectDirectory.name]: SelectDirectory,
     [ThemeSwitcher.name]: ThemeSwitcher,
@@ -335,14 +316,12 @@ export default {
       dir,
       // hideAppMenu,
       keepWindowState,
-      locale,
       maxConcurrentDownloads,
       maxConnectionPerServer,
       isMaxOverallUploadLimit,
       maxOverallUploadLimit,
       isMaxOverallDownloadLimit,
       maxOverallDownloadLimit,
-      newTaskShowDownloading,
       openAtLogin,
       resumeAllWhenAppLaunched,
       split,
@@ -364,17 +343,12 @@ export default {
       dir,
       // hideAppMenu: hideAppMenu,
       keepWindowState,
-      locale: availableLanguages.filter(obj => obj.value.includes(locale.substr(0, 2))) ? availableLanguages.filter(obj => obj.value.includes(locale.substr(0, 2)))[0] : {
-        value: 'en-US',
-        label: 'English'
-      },
       maxConcurrentDownloads,
       maxConnectionPerServer,
       isMaxOverallUploadLimit,
       maxOverallUploadLimit,
       isMaxOverallDownloadLimit,
       maxOverallDownloadLimit,
-      newTaskShowDownloading,
       openAtLogin,
       resumeAllWhenAppLaunched,
       split,
@@ -383,7 +357,7 @@ export default {
       allProxy,
       allProxyBackup,
       autoCheckUpdate,
-      btTracker: convertCommaToLine(btTracker),
+      btTracker: btTracker,
       lastCheckUpdateTime,
       protocols: {
         ...protocols
@@ -397,27 +371,161 @@ export default {
     const formOriginal = cloneDeep(form)
     console.log(form)
     return {
+      locales: locales,
       form,
       formLabelWidth: '28%',
       formOriginal,
-      locales: availableLanguages,
       rules: {},
       hideRpcSecret: true,
       trackerSyncing: false
     }
   },
   computed: {
-    title () {
-      return this.$t('preference')
-    },
-    downloadDir () {
-      return prettifyDir(this.form.dir)
-    },
     ...mapState('preference', {
       config: state => state.config,
       logPath: state => state.config.logPath,
       sessionPath: state => state.config.sessionPath
-    })
+    }),
+    locale: {
+      get: function () {
+        if (this.config.locale === 'en') {
+          this.config.locale = 'en-US'
+        }
+        for (let l of locales) {
+          if (l.value === this.config.locale) {
+            console.log(l)
+            return { value: this.config.locale, label: l.label }
+          }
+        }
+      },
+      set: function (locale) {
+        this.updateAll({ locale: locale.value })
+        i18n.locale = locale.value
+        if (this.$q.platform.is.desktop) {
+          this.$q.electron.ipcRenderer.send('command', 'application:change-locale', locale.value)
+        }
+      }
+    },
+    theme: {
+      get: function () {
+        return this.config.theme
+      },
+      set: function (theme) {
+        this.updateALL({ theme: theme })
+        if (this.$q.platform.is.desktop) {
+          this.$q.electron.ipcRenderer.send('command', 'application:change-theme', theme)
+        }
+      }
+    },
+    openAtLogin: {
+      get: function () {
+        return this.config.openAtLogin
+      },
+      set: function (openAtLogin) {
+        this.updateALL({ openAtLogin: openAtLogin })
+        if (this.$q.platform.is.desktop) {
+          this.$q.electron.ipcRenderer.send('command', 'application:open-at-login', openAtLogin)
+        }
+      }
+    },
+    // keepWindowState: {
+    //   get: function () {
+    //     return this.config.keepWindowState
+    //   },
+    //   set: function (openAtLogin) {
+    //     this.updateLocal({ keepWindowState: keepWindowState })
+    //     if (this.$q.platform.is.desktop) {
+    //       this.$q.electron.ipcRenderer.send('command', 'application:open-at-login', openAtLogin)
+    //     }
+    //   }
+    // },
+    // electron
+    isMaxOverallDownloadLimit: {
+      get: function () {
+        if (this.config.maxOverallDownloadLimit === 0) {
+          return false
+        } else {
+          return true
+        }
+      },
+      set: function (value) {
+        this.updateAll({ maxOverallDownloadLimit: value ? '1M' : 0 })
+      }
+    },
+    maxOverallDownloadLimit: {
+      get: function () {
+        let limit = this.config.maxOverallDownloadLimit
+        return parseInt(limit.substring(0, limit.length - 1))
+      },
+      set: function (value) {
+        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxOverallDownloadLimit: value + 'M' })
+      }
+    },
+    maxConcurrentDownloads: {
+      get: function () {
+        return this.config.maxConcurrentDownloads
+      },
+      set: function (value) {
+        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxConcurrentDownloads: value })
+      }
+    },
+    split: {
+      get: function () {
+        return this.config.split
+      },
+      set: function (value) {
+        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { split: value })
+      }
+    },
+    continueFlag: {
+      get: function () {
+        return this.config.continue
+      },
+      set: function (value) {
+        this.updateAll({ continue: value })
+      }
+    },
+    taskNotification: {
+      get: function () {
+        return this.config.taskNotification
+      },
+      set: function (value) {
+        this.updateAll({ taskNotification: value })
+      }
+    },
+    autoCheckUpdate: {
+      get: function () {
+        return this.config.autoCheckUpdate
+      },
+      set: function (value) {
+        this.updateAll({ autoCheckUpdate: value })
+      }
+    },
+    useProxy: {
+      get: function () {
+        return this.config.useProxy
+      },
+      set: function (value) {
+        this.updateAll({ useProxy: value })
+      }
+    },
+    allProxyBackup: {
+      get: function () {
+        return this.config.allProxyBackup
+      },
+      set: function (value) {
+        this.updateAll({ allProxyBackup: value })
+      }
+    },
+    btTracker: {
+      get: function () {
+        return this.config.btTracker
+      },
+      set: function (value) {
+        this.updateAll({ btTracker: value })
+      }
+    }
+
   },
   watch: {
     'form.rpcSecret' (val) {
@@ -429,38 +537,23 @@ export default {
     }
   },
   methods: {
-    changeSingle (data = {}) {
-      this.$store.dispatch('preference/save', data)
-        .then(() => {
-          this.$store.dispatch('app/fetchEngineOptions')
-          this.syncFormConfig()
-          console.log(this.$t('save-success-message'))
-        })
-        .catch((err) => {
-          console.error(err)
-        })
+    updateLocal (config = {}) {
+      this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
     },
-    // 非引擎
-    handleLocaleChange (locale) {
-      console.log(locale)
-      i18n.locale = locale.value
-      this.$q.electron.ipcRenderer.send('command', 'application:change-locale', locale.value)
-    },
-    handleThemeChange (theme) {
-      // this.form.theme = theme
-      this.$q.electron.ipcRenderer.send('command', 'application:change-theme', theme)
-    },
-    changeOpenAtLogin () {
-      if (this.$q.platform.is.desktop) {
-        this.$q.electron.ipcRenderer.send('command', 'application:open-at-login', this.form.openAtLogin)
-      }
-    },
-    changekeepWindowState () {
-      this.changeSingle({ keepWindowState: !this.form.keepWindowState })
-      this.$q.electron.ipcRenderer.send('command', 'application:relaunch')
-    },
-    // 引擎
 
+    // 引擎
+    updateAll (config = {}) {
+      this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
+      this.$store.dispatch('preference/save', config)
+    },
+    updateDownloadLimit (value) {
+      // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxOverallDownloadLimit: value + 'K' })
+      this.$store.dispatch('preference/save', { maxOverallDownloadLimit: value + 'K' })
+    },
+    lazyUpdate (config = {}) {
+      // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
+      this.$store.dispatch('preference/save', config)
+    },
     onDirectorySelected (dir) {
       this.form.dir = dir
     },
@@ -505,28 +598,22 @@ export default {
       // }
       // )
     },
-    resetForm (formName) {
-      this.syncFormConfig()
-    },
+
     onCheckUpdateClick () {
       this.$q.electron.ipcRenderer.send('command', 'application:check-for-updates')
-      console.info(this.$t('checking-for-updates'))
-      this.$store.dispatch('preference/fetchPreference')
-        .then((config) => {
-          const { lastCheckUpdateTime } = config
-          this.form.lastCheckUpdateTime = lastCheckUpdateTime
-        })
     },
     syncTrackerFromGitHub () {
-      this.trackerSyncing = true
-      this.$store.dispatch('preference/fetchBtTracker')
-        .then((data) => {
-          console.log('syncTrackerFromGitHub data====>', data)
-          this.form.btTracker = data
-        })
-        .finally(() => {
-          this.trackerSyncing = false
-        })
+      // this.trackerSyncing = true
+      // this.$store.dispatch('preference/fetchBtTracker')
+      //   .then((data) => {
+      //     console.log('syncTrackerFromGitHub data====>', data)
+      //     this.updateAll({ btTracker: data })
+      //   }).catch(err => {
+      //     console.error(err)
+      //   })
+      //   .finally(() => {
+      //     this.trackerSyncing = false
+      //   })
     },
     onProtocolsChange (protocol, enabled) {
       const { protocols } = this.form

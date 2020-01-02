@@ -1,5 +1,5 @@
 import i18next from 'i18next'
-export const availableLanguages = [
+export const locales = [
   {
     value: 'ca',
     label: 'Català'
@@ -9,11 +9,11 @@ export const availableLanguages = [
     label: 'Česky'
   },
   {
-    value: 'de',
+    value: 'de-DE',
     label: 'Deutsch'
   },
   {
-    value: 'en',
+    value: 'en-US',
     label: 'English'
   },
   {
@@ -25,7 +25,7 @@ export const availableLanguages = [
     label: 'فارسی'
   },
   {
-    value: 'fr',
+    value: 'fr-FR',
     label: 'Français'
   },
   {
@@ -33,7 +33,7 @@ export const availableLanguages = [
     label: 'Indonesia'
   },
   {
-    value: 'it',
+    value: 'it-IT',
     label: 'Italia'
   },
   {
@@ -53,7 +53,7 @@ export const availableLanguages = [
     label: 'Polski'
   },
   {
-    value: 'pt',
+    value: 'pt-BR',
     label: 'Português (Brasil)'
   },
   {
@@ -79,13 +79,19 @@ export const availableLanguages = [
   {
     value: 'zh-TW',
     label: '繁體中文'
-  },
-  {
-    value: 'uk',
-    label: 'Українська'
   }
 ]
-export function getLocale (locale = 'en-US') {
+// export const locale = require('../../../src/store').state.preference.config.locale || getLocale(navigator.language)
+// function getLocaleLabel () {
+//   for (let l of locales) {
+//     if (l.value === locale) {
+//       return l.label
+//     }
+//   }
+// }
+// export const localeLabel = getLocaleLabel()
+
+export function fixLocale (locale = 'en-US') {
   /**
    * getLanguage
    * @param { String } locale
@@ -101,30 +107,32 @@ export function getLocale (locale = 'en-US') {
    * pt, pt-BR, pt-PT
    * zh, zh-CN, zh-TW
    */
-  if (availableLanguages.some(availableLanguage => availableLanguage.value === locale)) {
+  if (locales.some(availableLanguage => availableLanguage.value === locale)) {
     return locale
   }
 
   if (locale.startsWith('de')) {
-    return 'de'
+    return 'de-DE'
   }
 
   if (locale.startsWith('en')) {
-    return 'en'
+    return 'en-US'
   }
 
   if (locale.startsWith('es')) {
     return 'es'
   }
-
+  if (locale.startsWith('it')) {
+    return 'it-IT'
+  }
   // If there is a pt-PT translation in the future,
   // here will fallback to pt-PT.
   if (locale.startsWith('pt')) {
-    return 'pt'
+    return 'pt-BR'
   }
 
   if (locale.startsWith('fr')) {
-    return 'fr'
+    return 'fr-FR'
   }
 
   if (locale === 'zh') {
@@ -147,7 +155,7 @@ export class LocaleManager {
   }
 
   changeLanguageByLocale (locale) {
-    const lng = getLocale(locale)
+    const lng = fixLocale(locale)
     return this.changeLanguage(lng)
   }
   getI18n () {

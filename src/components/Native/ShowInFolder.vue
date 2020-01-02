@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'mo-show-in-folder',
+  name: 'show-in-folder',
   props: {
     path: {
       type: String

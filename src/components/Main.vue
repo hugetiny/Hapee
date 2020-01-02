@@ -8,14 +8,14 @@
     </q-page-container>
     <Footer></Footer>
 
-<!--    <mo-speedometer />-->
-<!--    <mo-add-task/>-->
-<!--    <mo-add-task/>-->
-<!--    <mo-about-panel :visible="aboutPanelVisible" />-->
-<!--    <mo-task-item-info :visible="taskItemInfoVisible" :task="currentTaskItem" />-->
+<!--    <speedometer />-->
+<!--    <add-task/>-->
+<!--    <add-task/>-->
+<!--    <about-panel :visible="aboutPanelVisible" />-->
+<!--    <task-item-info :visible="taskItemInfoVisible" :task="currentTaskItem" />-->
 
 <!--    for drag and drop-->
-    <mo-dragger />
+    <dragger />
   </q-layout>
 </template>
 
@@ -33,7 +33,7 @@ import Footer from 'src/layouts/Footer'
 // import Subnav from 'src/layouts/Subnav'
 
 export default {
-  name: 'mo-main',
+  name: 'index',
   components: {
     // [AboutPanel.name]: AboutPanel,
     // [Aside.name]: Aside,

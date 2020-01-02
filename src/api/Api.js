@@ -11,7 +11,10 @@ import {
   changeKeysToKebabCase
 } from 'src/shared/utils'
 
-const application = remote.getGlobal('application')
+let application
+if (Platform.is.desktop) {
+  application = remote.getGlobal('application')
+}
 
 export default class Api {
   constructor (options = {}) {
@@ -75,10 +78,9 @@ export default class Api {
   savePreference (params = {}) {
     const kebabParams = changeKeysToKebabCase(params)
     if (Platform.is.desktop) {
-      return this.savePreferenceToNativeStore(kebabParams)
-    } else {
-      return this.savePreferenceToLocalStorage(kebabParams)
+      this.savePreferenceToNativeStore(kebabParams)
     }
+    this.savePreferenceToLocalStorage(kebabParams)
   }
 
   savePreferenceToLocalStorage () {

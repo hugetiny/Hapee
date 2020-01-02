@@ -12,7 +12,7 @@ export default {
   'check-updates-now': '今すぐチェック',
   'checking-for-updates': 'アップデートをチェックしています...',
   'check-for-updates-title': 'アップデートをチェック',
-  'update-available-message': '新しいバージョンのDownloadBoxが利用可能です、今すぐ更新しますか？',
+  'update-available-message': '新しいバージョンのNegiboxが利用可能です、今すぐ更新しますか？',
   'update-not-available-message': 'あなたは最新です！',
   'update-downloaded-message': 'インストールする準備ができています...',
   'update-error-message': '更新エラー',
@@ -48,7 +48,7 @@ export default {
   'report-problem': '問題を報告',
   'toggle-dev-tools': '開発者ツール',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'Negibox',
   file: 'ファイル',
   task: 'タスク',
   edit: '編集',

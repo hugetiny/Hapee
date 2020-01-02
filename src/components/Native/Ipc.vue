@@ -9,7 +9,7 @@ import {
 } from 'components/Command/index'
 
 export default {
-  name: 'mo-ipc',
+  name: 'ipc',
   computed: {
     ...mapState('preference', {
       enableEggFeatures: state => state.config.enableEggFeatures

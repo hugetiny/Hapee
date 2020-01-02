@@ -1,12 +1,4 @@
 <template>
-<!--  <q-list dark v-if="taskList.length > 0">-->
-<!--    <mo-task-item v-for="(task,index) in taskList" :key="task.gid" :task="task" :index="index" :class="{selected: selectedList.includes(index)}"/>-->
-<!--  </q-list>-->
-<!--  <div class="no-task" v-else>-->
-<!--    <div class="no-task-inner">-->
-<!--      {{ $t('no-task') }}-->
-<!--    </div>-->
-<!--  </div>-->
   <q-table
     dark
     :loading="loading"
@@ -25,10 +17,10 @@
           {{$t('new-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn icon="refresh" @click="onRefreshClick">
+      <q-btn icon="refresh" @click="onRestartALL">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
-          {{$t('refresh-list')}}
+          {{$t('restart-all')}}
         </q-tooltip>
       </q-btn>
 <!--      <q-btn  icon="arrow_downward" @click="onRemoveSelectedClick">-->
@@ -113,7 +105,7 @@
               {{$t('restart')}}
             </q-tooltip>
           </q-btn>
-          <q-btn  icon="delete" @click="onDeleteClick(props.row.task,props.row.name)">
+          <q-btn  icon="delete" @click="onDeleteClick([props.row.task],[props.row.name])">
             <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
               {{$t('delete-task')}}
@@ -192,7 +184,6 @@ import {
   getTaskFullPath,
   timeRemaining,
   bytesToSize,
-  timeFormat,
   calcProgress,
   parseHeader,
   getTaskUri
@@ -201,6 +192,7 @@ import {
   openItem,
   moveTaskFilesToTrash
 } from 'components/Native/utils'
+import { date } from 'quasar'
 // import suffix from 'src/shared/suffix'
 
 export default {
@@ -217,10 +209,7 @@ export default {
       loading: true
     }
   },
-  name: 'mo-task-list',
-  // components: {
-  //   [TaskItem.name]: TaskItem
-  // },
+  name: 'task-list',
   computed: {
     columns: function () {
       let cols = [
@@ -267,15 +256,7 @@ export default {
               defaultName: this.$t('get-task-name')
             }),
             'size': `${bytesToSize(task.completedLength)}/${bytesToSize(task.totalLength)}`,
-            'remain': task.status === 'active' ? timeFormat(timeRemaining(task.totalLength, task.completedLength, task.downloadSpeed), {
-              // prefix: this.$t('remaining-prefix'),
-              i18n: {
-                'gt1d': this.$t('gt1d'),
-                'hour': this.$t('hour'),
-                'minute': this.$t('minute'),
-                'second': this.$t('second')
-              }
-            }) : task.errorMessage,
+            'remain': task.status === 'active' ? timeRemaining(task.totalLength, task.completedLength, task.downloadSpeed, this.$t('gt1d')) : task.errorMessage,
             'speed': task.status === 'active' ? bytesToSize(task.downloadSpeed) + '/s' : '',
             'color': this.progressColor(task.status),
             'percent': this.percent(task.totalLength, task.completedLength),
@@ -295,10 +276,7 @@ export default {
       return this.$store.state.task.selectedList.includes(this.index)
     }
   },
-  filters: {
-    // bytesToSize,
-    timeFormat
-  },
+
   methods: {
     ...mapActions('task', [
       'resumeTask', 'pauseTask', 'removeTask'
@@ -351,9 +329,7 @@ export default {
       const { taskName } = this
       console.info(this.$t('opening-task-message', { taskName }))
       const fullPath = getTaskFullPath(task)
-      openItem(fullPath, {
-        errorMsg: this.$t('file-not-exist')
-      })
+      openItem(fullPath)
     },
     // taskactions
     showAddTask (taskType = 'uri') {
@@ -361,44 +337,8 @@ export default {
       // this.$store.dispatch('app/showAddTaskDialog', taskType)
       this.$router.push('/addtask')
     },
-    onRefreshClick: function () {
-      this.$store.dispatch('task/fetchList')
-    },
-    // onRemoveSelectedClick: function () {
-    //   let tasks = []
-    //   this.$store.state.task.selectedList.forEach((i) => {
-    //     tasks.push(this.$store.state.task.taskList[i].gid)
-    //   })
-    //   this.removeTask(tasks)
-    //     .catch(({ code }) => {
-    //       if (code === 1) {
-    //         console.error(this.$t('remove-selected-task-fail'))
-    //       }
-    //     })
-    // },
-    // onResumeSelectedClick: function () {
-    //   let tasks = []
-    //   this.$store.state.task.selectedList.forEach((i) => {
-    //     tasks.push(this.$store.state.task.taskList[i].gid)
-    //   })
-    //   this.$store.dispatch('task/resumeTask', tasks)
-    //     .catch(({ code }) => {
-    //       if (code === 1) {
-    //         console.error(this.$t('resume-selected-task-fail'))
-    //       }
-    //     })
-    // },
-    // onPauseSelectedClick: function () {
-    //   let tasks = []
-    //   this.$store.state.task.selectedList.forEach((i) => {
-    //     tasks.push(this.$store.state.task.taskList[i].gid)
-    //   })
-    //   this.$store.dispatch('task/pauseTask', tasks)
-    //     .catch(({ code }) => {
-    //       if (code === 1) {
-    //         console.error(this.$t('resume-selected-task-fail'))
-    //       }
-    //     })
+    // onRefreshClick: function () {
+    //   this.$store.dispatch('task/fetchList')
     // },
     onResumeAllClick: function () {
       this.$store.dispatch('task/resumeAllTask')
@@ -441,28 +381,10 @@ export default {
         delConfigFailMsg: this.$t('remove-task-config-file-fail')
       })
     },
-    removeTaskRecord (task, isRemoveWithFiles) {
-      this.$store.dispatch('task/removeTaskRecord', this.task)
-        .then(() => {
-          if (isRemoveWithFiles) {
-            this.deleteTaskFiles(task)
-          }
-          console.log(this.$t('remove-record-success', {
-            taskName: this.taskName
-          }))
-        })
-        .catch(({ code }) => {
-          if (code === 1) {
-            console.error(this.$t('remove-record-fail', {
-              taskName: this.taskName
-            }))
-          }
-        })
-    },
     onRestartClick (task, taskName) {
       const { gid } = task
       const uri = getTaskUri(task)
-      // const isNeedShowDialog = (status === 'complete' || status === 'error')
+      const isNeedShowDialog = task.status === 'complete'
       this.$store.dispatch('task/getTaskOption', gid)
         .then((data) => {
           console.log('getTaskOption===>', data)
@@ -474,13 +396,17 @@ export default {
             out: taskName
           }
 
-          // if (isNeedShowDialog) {
-          this.showAddTaskDialog(uri, options)
-          // } else {
-          //   this.directAddTask(uri, options)
-          //   this.$store.dispatch('task/removeTaskRecord', task)
-          // }
+          if (isNeedShowDialog) {
+            this.showAddTaskDialog(uri, options)
+          } else {
+            this.directAddTask(uri, options)
+            this.$store.dispatch('task/removeTaskRecord', [task.gid])
+            this.$router.push('/task')
+          }
         })
+    },
+    onRestartALL () {
+      // TODO
     },
     directAddTask (uri, options = {}) {
       const uris = [uri]
@@ -518,24 +444,37 @@ export default {
           console.error(this.$t('pause-task-fail', code))
         })
     },
-    onDeleteClick (task, taskName) {
+    onDeleteClick (tasks, taskNames) {
       // const self = this
       // const { task } = this
-      let r = confirm(this.$t('delete-task-confirm', { taskName: taskName }))
+      let r = confirm(this.$t('delete-task-confirm', { taskName: taskNames.toString() }))
       if (r === true) {
-        if (task.status === 'active' || task.status === 'paused' || task.status === 'waiting') {
-          this.$store.dispatch('task/removeTask', task)
+        let removeGids = [],
+          removeGidRecords = []
+        for (let i = 0; i < tasks.length; i++) {
+          if (tasks[i].status === 'active' || tasks[i].status === 'paused' || tasks[i].status === 'waiting') {
+            removeGids.push(tasks[i].gid)
+          } else if (tasks[i].status === 'error' || tasks[i].status === 'complete' || tasks[i].status === 'removed') {
+            removeGidRecords.push(tasks[i].gid)
+          }
+        }
+        if (removeGids) {
+          this.$store.dispatch('task/removeTask', removeGids)
             .then(() => {
-              this.deleteTaskFiles(task)
+              removeGids.forEach(gid =>
+                this.deleteTaskFiles(gid)
+              )
               console.log(this.$t('delete-task-success'))
             })
             .catch(({ code }) => {
               console.error(this.$t('delete-task-fail'), code)
             })
-        } else if (task.status === 'error' || task.status === 'complete' || task.status === 'removed') {
-          this.$store.dispatch('task/removeTaskRecord', task)
+        } else if (removeGidRecords) {
+          this.$store.dispatch('task/removeTaskRecord', removeGidRecords)
             .then(() => {
-              this.deleteTaskFiles(task)
+              removeGidRecords.forEach(gid =>
+                this.deleteTaskFiles(gid)
+              )
               console.log(this.$t('task.remove-record-success'))
             })
             .catch(({ code }) => {
@@ -543,36 +482,6 @@ export default {
             })
         }
       }
-    },
-    // onTrashClick () {
-    //   // const self = this
-    //   // const { task } = this
-    //   let r = confirm(this.$t('remove-record-confirm', { taskName: this.taskName }))
-    //   if (r === true) {
-    //     this.removeTaskRecord(this.task, true)
-    //   }
-    // },
-    // onFolderClick () {
-    //   showItemInFolder(this.path, {
-    //     errorMsg: this.$t('file-not-exist')
-    //   })
-    // },
-    // onLinkClick () {
-    //   this.$store.dispatch('app/fetchEngineOptions')
-    //     .then((data) => {
-    //       const { btTracker } = data
-    //       const uri = getTaskUri(this.task, btTracker)
-    //       clipboard.writeText(uri)
-    //         .then(() => {
-    //           console.log(this.$t('copy-link-success'))
-    //         })
-    //     })
-    // },
-    // onInfoClick () {
-    //   this.$store.dispatch('task/showTaskItemInfoDialog', this.task)
-    // },
-    onMoreClick () {
-      console.log('onMoreClick===>')
     }
   }
 }
@@ -580,22 +489,19 @@ export default {
 
 <style lang="scss">
   table tr.task {
-    /*height: 70px;*/
-    /*<!--transform: translateY(-70px);-->*/
     td {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      /*max-width: 1vw;*/
       /*max-width: 4vw;*/
       &.name {
         max-width: 20vw;
       }
       &.size {
-        width: 10vw;
+        width: 12vw;
       }
       &.remain {
-        width: 12vw;
+        width: 10vw;
       }
       &.speed {
         width: 6vw;
@@ -603,9 +509,6 @@ export default {
       &.actions {
         width: 6vw;
       }
-      /*&.action{*/
-      /*  max-width: 20vw;*/
-      /*}*/
     }
   }
   .progress {

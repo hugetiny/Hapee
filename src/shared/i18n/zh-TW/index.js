@@ -195,7 +195,7 @@ export default {
   'report-problem': '回報問題',
   'toggle-dev-tools': '開發者工具',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'Negibox',
   file: '檔案',
   task: '任務',
   edit: '編輯',

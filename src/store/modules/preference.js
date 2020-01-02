@@ -7,37 +7,36 @@ const state = {
 }
 
 const mutations = {
-  UPDATE_PREFERENCE_DATA (state, config) {
+  UPDATE_PREFERENCE_LOCAL (state, config) {
     state.config = { ...state.config, ...config }
   }
 }
 
 const actions = {
-  fetchPreference ({ commit }) {
-    return new Promise((resolve) => {
-      api.fetchPreference()
-        .then((config) => {
-          commit('UPDATE_PREFERENCE_DATA', config)
-          resolve(config)
-        })
-    })
+  async fetchPreference ({ commit }) {
+    const config = await api.fetchPreference()
+    commit('UPDATE_PREFERENCE_LOCAL', config)
+    return config
   },
+  updateLocal ({ commit }, config) {
+    commit('UPDATE_PREFERENCE_LOCAL', { config })
+  },
+  fetchBtTracker ({ state }) {
+    return api.fetchBtTrackerFromGitHub(state.config.trackerSource)
+  },
+  // save ({ commit, dispatch }, config) {
+  //   dispatch('task/saveSession', null, { root: true })
+  //   if (isEmpty(config)) {
+  //     return
+  //   }
+  //   return api.savePreference(config)
+  // },
   save ({ commit, dispatch }, config) {
     dispatch('task/saveSession', null, { root: true })
     if (isEmpty(config)) {
       return
     }
     return api.savePreference(config)
-  },
-  changeThemeConfig ({ commit }, theme) {
-    commit('UPDATE_PREFERENCE_DATA', { theme })
-  },
-  fetchBtTracker ({ state }) {
-    const { trackerSource = [] } = state.config
-    return api.fetchBtTrackerFromGitHub(trackerSource)
-  },
-  toggleEngineMode () {
-
   }
 }
 

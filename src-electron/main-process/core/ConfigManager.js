@@ -10,7 +10,8 @@ import {
 import {
   TRACKERS_ALL_URL,
   TRACKERS_ALL_IP_URL
-} from '../../../src/shared/constants'
+} from 'src/shared/constants'
+import { fixLocale } from 'src/shared/i18n/LocaleManager'
 
 export default class ConfigManager {
   constructor () {
@@ -24,6 +25,16 @@ export default class ConfigManager {
     this.initSystemConfig()
     this.initUserConfig()
   }
+  // detectUA () {
+  //   if (os.platform() === 'win32') {
+  //     // return 'netdisk;6.0.0.12;PC;PC-Windows;10.0.16299;WindowsBaiduYunGuanJia'
+  //     return 'netdisk;2.2.3;pc;pc-mac;10.14.6;macbaiduyunguanjia'
+  //   } else if (os.platform() === 'darwin') {
+  //     return 'netdisk;2.2.3;pc;pc-mac;10.14.6;macbaiduyunguanjia'
+  //   } else {
+  //     return 'Transmission/2.94'
+  //   }
+  // }
 
   /**
    * Some aria2 conf
@@ -86,17 +97,18 @@ export default class ConfigManager {
         'dht-file-path6': getDhtPath(6),
         'dir': getUserDownloadsPath(),
         'max-concurrent-downloads': 5,
-        'max-connection-per-server': os.platform() === 'darwin' ? 64 : 16,
+        // 'max-connection-per-server': os.platform() === 'darwin' ? 64 : 16,
+        'max-connection-per-server': 64,
         'max-download-limit': 0,
         'max-overall-download-limit': 0,
-        'max-overall-upload-limit': '128K',
+        'max-overall-upload-limit': 0,
         'min-split-size': '1M',
         'pause': true,
         'rpc-listen-port': 16800,
         'rpc-secret': '',
         'seed-time': 60,
-        'split': 16,
-        'user-agent': 'Transmission/2.94'
+        'split': 64,
+        'user-agent': 'netdisk;2.2.3;pc;pc-mac;10.14.6;macbaiduyunguanjia'
       }
     })
   }
@@ -117,7 +129,8 @@ export default class ConfigManager {
         'auto-check-update': os.platform() === 'darwin',
         'hide-app-menu': os.platform() !== 'darwin',
         'last-check-update-time': 0,
-        'locale': app.getLocale(),
+        // 'locale': app.getLocale(),
+        'locale': fixLocale(app.getLocale()),
         'log-path': getLogPath(),
         'new-task-show-downloading': true,
         'open-at-login': false,

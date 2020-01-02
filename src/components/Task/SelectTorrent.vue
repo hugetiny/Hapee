@@ -30,7 +30,7 @@ import {
 } from 'src/shared/utils'
 
 export default {
-  name: 'mo-select-torrent',
+  name: 'select-torrent',
   components: {
   },
   filters: {

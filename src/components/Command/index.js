@@ -12,7 +12,7 @@ function updateSystemTheme (theme) {
 }
 
 function updateTheme (theme) {
-  store.dispatch('preference/changeThemeConfig', theme)
+  store.dispatch('preference/updateLocal', theme)
 }
 
 function showAboutPanel () {

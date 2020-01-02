@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'mo-title-bar',
+  name: 'title-bar',
   props: {
     showActions: {
       type: Boolean

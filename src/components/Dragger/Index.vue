@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'mo-dragger',
+  name: 'dragger',
   mounted () {
     this.preventDefault = ev => ev.preventDefault()
     let count = 0

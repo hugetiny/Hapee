@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'mo-theme-switcher',
+  name: 'theme-switcher',
   components: {
   },
   props: {

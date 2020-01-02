@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'mo-logo-mini',
+  name: 'logo-mini',
   components: {
   },
   methods: {

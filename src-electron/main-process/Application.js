@@ -168,19 +168,19 @@ export default class Application extends EventEmitter {
     }
   }
 
-  // sendCommandToAll (command, ...args) {
-  //   if (!this.emit(command, ...args)) {
-  //     this.windowManager.getWindowList().forEach(window => {
-  //       this.windowManager.sendCommandTo(window, command, ...args)
-  //     })
-  //   }
-  // }
-  //
-  // sendMessageToAll (channel, ...args) {
-  //   this.windowManager.getWindowList().forEach(window => {
-  //     this.windowManager.sendMessageTo(window, channel, ...args)
-  //   })
-  // }
+  sendCommandToAll (command, ...args) {
+    if (!this.emit(command, ...args)) {
+      this.windowManager.getWindowList().forEach(window => {
+        this.windowManager.sendCommandTo(window, command, ...args)
+      })
+    }
+  }
+
+  sendMessageToAll (channel, ...args) {
+    this.windowManager.getWindowList().forEach(window => {
+      this.windowManager.sendMessageTo(window, channel, ...args)
+    })
+  }
 
   initThemeManager () {
     this.themeManager = new ThemeManager()

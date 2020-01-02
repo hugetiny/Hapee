@@ -119,17 +119,17 @@ const routes = [
       },
       {
         path: '/about',
-        alias: '/',
+        // alias: '/',
         component: () => import('components/About/AboutPanel')
       },
       {
         path: '/addtask',
-        alias: '/',
+        // alias: '/',
         component: () => import('components/Task/AddTask')
       },
       {
         path: '/task',
-        alias: '/',
+        // alias: '/',
         component: () => import('components/Task/Index'),
         props: {
           status: 'active'

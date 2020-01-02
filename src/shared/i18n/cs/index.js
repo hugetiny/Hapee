@@ -205,7 +205,7 @@ export default {
   'report-problem': 'Report Problem',
   'toggle-dev-tools': 'Toggle Developer Tools',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'negibox',
   file: 'File',
   task: 'Task',
   edit: 'Edit',

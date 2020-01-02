@@ -202,7 +202,7 @@ export default {
   'report-problem': '报告问题',
   'toggle-dev-tools': '开发者工具',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'Negibox',
   file: '文件',
   task: '任务',
   edit: '编辑',
@@ -360,6 +360,7 @@ export default {
   // window: {{
   reload: '重新加载',
   restart: '重新开始任务',
+  'restart-all': '重新开始所有错误任务',
   close: '关闭',
   minimize: '最小化',
   zoom: '放大',

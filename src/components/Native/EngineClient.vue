@@ -17,7 +17,7 @@ import {
 } from 'src/shared/utils'
 
 export default {
-  name: 'mo-engine-client',
+  name: 'engine-client',
   data: function () {
     return {
       downloading: false

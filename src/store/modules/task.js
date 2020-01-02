@@ -200,12 +200,8 @@ const actions = {
     }
     return dispatch('changeTaskOption', { gid, options })
   },
-  removeTaskRecord ({ dispatch }, task) {
-    const { gid, status } = task
-    if (['error', 'complete', 'removed'].indexOf(status) === -1) {
-      return
-    }
-    return api.removeTaskRecord({ gid })
+  removeTaskRecord ({ dispatch }, gids) {
+    return api.removeTaskRecord(gids)
       .finally(() => dispatch('fetchList'))
   },
   saveSession () {

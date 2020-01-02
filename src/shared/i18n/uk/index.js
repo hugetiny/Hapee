@@ -49,7 +49,7 @@ export default {
   'report-problem': 'Повідомити про проблему',
   'toggle-dev-tools': 'Переключити інстрменти розробника',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'Negibox',
   file: 'Файл',
   task: 'Завдання',
   edit: 'Редагування',

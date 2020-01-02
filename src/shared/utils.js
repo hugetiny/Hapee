@@ -13,7 +13,8 @@ import {
 } from 'lodash'
 import { resolve } from 'path'
 import { userKeys, systemKeys } from './configKeys'
-import { decodechina } from './decodeChina'
+import { date } from 'quasar'
+// import { decodechina } from './decodeChina'
 export function bytesToSize (bytes) {
   const b = parseInt(bytes, 10)
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
@@ -34,54 +35,30 @@ export function calcProgress (totalLength, completedLength) {
   return result
 }
 
-export function timeRemaining (totalLength, completedLength, downloadSpeed) {
+export function timeRemaining (totalLength, completedLength, downloadSpeed, gt1d) {
   const remainingLength = totalLength - completedLength
-  return Math.ceil(remainingLength / downloadSpeed)
-}
-
-/**
- * timeFormat
- * @param {int} seconds
- * @param {string} prefix
- * @param {string} suffix
- * @param {object} i18n
- * i18n: {
- *  gt1d: 'More than one day',
- *  hour: 'h',
- *  minute: 'm',
- *  second: 's'
- * }
- */
-export function timeFormat (seconds, { prefix = '', suffix = '', i18n }) {
-  let result = ''
-  let hours = ''
-  let minutes = ''
-  let secs = seconds || 0
-  const i = {
-    gt1d: '> 1 day',
-    hour: 'h',
-    minute: 'm',
-    second: 's',
-    ...i18n
-  }
-
+  let secs = Math.ceil(remainingLength / downloadSpeed)
   if (secs <= 0) {
     return ''
+  } else if (secs > 86400) {
+    return gt1d
+  } else {
+    return date.formatDate(secs, 'HH:mm:ss')
   }
-  if (secs > 86400) {
-    return `${prefix} ${i.gt1d} ${suffix}`
-  }
-  if (secs > 3600) {
-    hours = `${Math.floor(secs / 3600)}${i.hour} `
-    secs %= 3600
-  }
-  if (secs > 60) {
-    minutes = `${Math.floor(secs / 60)}${i.minute} `
-    secs %= 60
-  }
-  secs += i.second
-  result = hours + minutes + secs
-  return result ? `${prefix} ${result} ${suffix}` : result
+  // if (secs > 86400) {
+  //   return `${prefix} ${i.gt1d} ${suffix}`
+  // }
+  // if (secs > 3600) {
+  //   hours = `${Math.floor(secs / 3600)}:`
+  //   secs %= 3600
+  //   minutes = `${Math.floor(secs / 60)}:`
+  //   secs %= 60
+  //   return
+  // }
+  // if (secs > 60) {
+  //   minutes = `${Math.floor(secs / 60)}:`
+  //   secs %= 60
+  // }
 }
 
 export function ellipsis (str = '', maxLen = 64) {
@@ -336,12 +313,12 @@ export function splitTextRows (text = '') {
   return result
 }
 
-export function convertCommaToLine (text = '') {
-  let arr = text.split(',')
-  arr = arr.map((row) => row.trim())
-  const result = arr.join('\n')
-  return result
-}
+// export function convertCommaToLine (text = '') {
+//   let arr = text.split(',')
+//   arr = arr.map((row) => row.trim())
+//   const result = arr.join('\n')
+//   return result
+// }
 
 export function convertLineToComma (text = '') {
   const result = text.trim().replace(/(?:\r\n|\r|\n)/g, ',')

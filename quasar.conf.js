@@ -1,5 +1,6 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
+const path = require('path')
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
@@ -8,8 +9,9 @@ module.exports = function (ctx) {
     boot: [
       'i18n',
       'axios',
+      'platform'
       // 'firebase',
-      'quasar-lang-pack'
+      // 'quasar-lang-pack'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -60,7 +62,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       rtl: true,
-      scopeHoisting: true,
+      // scopeHoisting: true,
       // vueRouterMode: 'history',
       // showProgress: false,
       // gzip: true,
@@ -70,30 +72,36 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
-          }
-        })
+        // cfg.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /node_modules/,
+        //   options: {
+        //     formatter: require('eslint').CLIEngine.getFormatter('stylish')
+        //   }
+        // })
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing alias
+
+          // Add your own alias like this
+          'src': path.resolve(__dirname, './src')
+        }
       }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       // https: true,
-      // port: 8080,
-      open: false // opens browser window automatically
-      // proxy: {
-      // '/?method': {
-      //   target: ['http://localhost:3001'],
-      //   // secure: false,
-      //   changeOrigin: true
-      // }
-      // }
+      port: 8081,
+      open: false, // opens browser window automatically
+      proxy: {
+        '/ngosang': {
+          target: ['https://github.com'],
+          secure: false,
+          changeOrigin: true
+        }
+      }
       // proxy: {
       //   // proxy all requests starting with /api to jsonplaceholder
       //   '/api': {
@@ -165,25 +173,38 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      // bundler: 'builder', // or 'packager'
+      bundler: 'builder', // or 'packager'
 
       extendWebpack (cfg) {
-        // do something with Electron main process Webpack cfg
-        // chainWebpack also available besides this extendWebpack
+        // cfg.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /node_modules/,
+        //   options: {
+        //     formatter: require('eslint').CLIEngine.getFormatter('stylish')
+        //   }
+        // })
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing alias
+
+          // Add your own alias like this
+          'src': path.resolve(__dirname, './src')
+        }
       },
 
-      packager: {
-        // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+      // packager: {
+      // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
 
-        // OS X / Mac App Store
-        // appBundleId: '',
-        // appCategoryType: '',
-        // osxSign: '',
-        // protocol: 'myapp://path',
+      // OS X / Mac App Store
+      // appBundleId: '',
+      // appCategoryType: '',
+      // osxSign: '',
+      // protocol: 'myapp://path',
 
-        // Windows only
-        // win32metadata: { ... }
-      },
+      // Windows only
+      // win32metadata: { ... }
+      // },
 
       builder: {
         // https://www.electron.build/configuration/configuration

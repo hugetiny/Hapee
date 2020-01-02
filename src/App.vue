@@ -1,14 +1,14 @@
 <template>
   <div id="q-app">
-<!--    <mo-title-bar-->
+<!--    <title-bar-->
 <!--      v-if="isRenderer()"-->
 <!--      :showActions="hideAppMenu"-->
 <!--    />-->
     <router-view />
-    <mo-engine-client
+    <engine-client
       :secret="rpcSecret"
     />
-    <mo-ipc v-if="$q.platform.is.desktop" />
+    <ipc v-if="$q.platform.is.desktop" />
   </div>
 </template>
 

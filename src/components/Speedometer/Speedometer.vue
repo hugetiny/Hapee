@@ -23,7 +23,7 @@ import {
 } from 'src/shared/utils'
 
 export default {
-  name: 'mo-speedometer',
+  name: 'speedometer',
   components: {
   },
   computed: {

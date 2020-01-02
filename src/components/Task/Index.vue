@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mo-task-list />
+    <task-list />
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import TaskList from 'components/Task/TaskList'
 
 export default {
-  name: 'mo-content-task',
+  name: 'content-task',
   components: {
     // [TaskSubnav.name]: TaskSubnav,
     // [TaskActions.name]: TaskActions,

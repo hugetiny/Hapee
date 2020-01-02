@@ -198,7 +198,7 @@ export default {
   'report-problem': 'Сообщить о проблеме',
   'toggle-dev-tools': 'Переключить инструменты разработчика',
   // menu: {{
-  app: 'DownloadBox',
+  app: 'Negibox',
   file: 'Файл',
   task: 'Задания',
   edit: 'Редктировать',

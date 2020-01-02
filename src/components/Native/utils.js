@@ -7,12 +7,6 @@ import { Platform } from 'quasar'
 
 const remote = Platform.is.desktop ? require('electron').remote : {}
 
-export function prettifyDir (dir) {
-  const downloads = remote.app.getPath('downloads')
-  const result = dir === downloads ? 'Downloads' : dir
-  return result
-}
-
 export function showItemInFolder (fullPath, { errorMsg }) {
   if (!fullPath) {
     return
@@ -24,16 +18,16 @@ export function showItemInFolder (fullPath, { errorMsg }) {
   return result
 }
 
-export function openItem (fullPath, { errorMsg }) {
+export function openItem (fullPath) {
   if (!fullPath) {
     return
   }
   const result = remote.shell.openItem(fullPath)
-  if (!result && errorMsg) {
-    console.error(errorMsg)
+  if (!result) {
+    remote.shell.showItemInFolder(fullPath)
   }
-  return result
 }
+// return result
 
 export function moveTaskFilesToTrash (task, messages = {}) {
   /**

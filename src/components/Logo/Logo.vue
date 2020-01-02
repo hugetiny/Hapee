@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'mo-logo',
+  name: 'logo',
   props: {
     width: {
       type: Number,

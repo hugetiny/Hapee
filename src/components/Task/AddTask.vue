@@ -42,14 +42,14 @@
               :label="$t('task-dir')"
             >
               <template v-slot:append>
-                <mo-select-directory
+                <select-directory
                   @selected="onDirectorySelected"
                 />
               </template>
             </q-input>
           </q-tab-panel>
           <q-tab-panel name="torrent">
-                    <mo-select-torrent
+                    <select-torrent
                       v-on:change="handleTorrentChange"
                     />
           </q-tab-panel>
@@ -78,11 +78,6 @@
             :placeholder="$t('task-cookie')"
             v-model="form.cookie">
           </q-input>
-          <q-checkbox dark
-            v-model="form.newTaskShowDownloading"
-            :label="$t('navigate-to-downloading')"
-          >
-          </q-checkbox>
         </div>
         <q-btn @click="handleCancel('taskForm')">{{$t('cancel')}}</q-btn>
         <q-btn @click="submitForm('taskForm')">{{$t('submit')}}</q-btn>
@@ -94,7 +89,6 @@ import { mapState } from 'vuex'
 import { isEmpty } from 'lodash'
 import SelectDirectory from 'components/Native/SelectDirectory'
 import SelectTorrent from 'components/Task/SelectTorrent'
-import { prettifyDir } from 'components/Native/utils'
 import {
   NONE_SELECTED_FILES,
   SELECTED_ALL_FILES
@@ -107,7 +101,7 @@ import {
 
 const initialForm = (state) => {
   const { addTaskUrl, addTaskOptions } = state.app
-  const { dir, split, newTaskShowDownloading } = state.preference.config
+  const { dir, split } = state.preference.config
   const result = {
     uris: addTaskUrl,
     torrent: '',
@@ -118,14 +112,13 @@ const initialForm = (state) => {
     cookie: '',
     dir,
     split,
-    newTaskShowDownloading,
     ...addTaskOptions
   }
   return result
 }
 
 export default {
-  name: 'mo-add-task',
+  name: 'add-task',
   created: function () {
     this.form = initialForm(this.$store.state)
     if (this.addTaskType === 'uri') {
@@ -187,9 +180,7 @@ export default {
         this.$store.commit('app/CHANGE_ADD_TASK_TYPE', value)
       }
     },
-    downloadDir: function () {
-      return prettifyDir(this.form.dir)
-    },
+
     ...mapState('app', {
       // addTaskVisible: state => state.addTaskVisible,
       taskList: state => state.taskList
