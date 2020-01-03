@@ -35,18 +35,7 @@
               :value="config.split"
               :label="$t('task-split')">
             </q-input>
-            <q-input dark
-                     v-if="$q.platform.is.desktop"
-                     v-model="downloadDir"
-                     :readonly="$q.platform.is.mac"
-              :label="$t('task-dir')"
-            >
-              <template v-slot:append>
-                <select-directory
-                  @selected="onDirectorySelected"
-                />
-              </template>
-            </q-input>
+            <select-directory></select-directory>
           </q-tab-panel>
           <q-tab-panel name="torrent">
                     <select-torrent

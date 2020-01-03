@@ -139,23 +139,24 @@ export default {
       const message = isBT
         ? this.$t('bt-download-complete-message', { taskName })
         : this.$t('download-complete-message', { taskName })
-      const tips = isBT
-        ? '\n' + this.$t('bt-download-complete-tips')
-        : ''
+      // const tips = isBT
+      //   ? '\n' + this.$t('bt-download-complete-tips')
+      //   : ''
 
-      console.log(`${message}${tips}`)
+      console.log(message)
 
       if (!this.taskNotification) {
         return
       }
 
       /* eslint-disable no-new */
-      const notifyMessage = isBT
-        ? this.$t('bt-download-complete-notify')
-        : this.$t('download-complete-notify')
+      // const notifyMessage = isBT
+      //   ? this.$t('bt-download-complete-notify')
+      //   : this.$t('download-complete-notify')
+      const notifyMessage = this.$t('download-complete-notify')
 
       const notify = new Notification(notifyMessage, {
-        body: `${taskName}${tips}`
+        body: `${taskName}`
       })
       notify.onclick = () => {
         showItemInFolder(path, {

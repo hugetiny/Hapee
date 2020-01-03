@@ -1,3 +1,4 @@
+[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
 <h1 align="center">
     <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>

@@ -221,18 +221,18 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="useProxy" @input="onUseProxyChange" val="$t('auto-check-update')"/>
+        <q-toggle v-model="useProxy"/>
       </q-item-section>
     </q-item>
     <q-item tag="label" v-if="useProxy" v-ripple>
       <q-item-section>
-        <q-input dark v-model="allProxyBackup" @input="onUseProxyChange"
+        <q-input dark v-model="allProxyBackup"
                  placeholder="http(s)://USER:PASSWORD@HOST:PORT"/>
       </q-item-section>
     </q-item>
     <q-item tag="label" v-ripple>
       <q-item-section>
-        <q-input dark v-model="btTracker" @input="onUseProxyChange"
+        <q-input dark v-model="btTracker"
                  :placeholder="$t('bt-tracker-input-tips')">
         <template v-slot:append>
           <q-icon
@@ -247,11 +247,11 @@
     <q-item tag="label" v-ripple>
       <q-item-section>
         <q-item-label>
-          {{$t('protocols-default-client')}}
+          {{$t('protocols-magnet')}}
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle v-model="form.protocols.magnet" @change="(val) => onProtocolsChange('magnet', val)"
+        <q-toggle v-model="protocolMagnet"
         />
       </q-item-section>
     </q-item>
@@ -262,25 +262,26 @@
         </q-item-label>
       </q-item-section>
       <q-item-section side>
-        <q-toggle dark v-model="form.protocols.thunder" @change="(val) => onProtocolsChange('thunder', val)"
+        <q-toggle dark v-model="protocolThunder"
         />
       </q-item-section>
     </q-item>
-    <q-item-label header>{{ $t('security')}}</q-item-label>
+
     <q-item>
       <q-item-section>
-        <q-input dark v-model="form.userAgent" @change="onUseProxyChange" auto-complete="off"
-                 placeholder="User-Agent"/>
+        <q-input dark v-model="userAgent" placeholder="User-Agent"/>
       </q-item-section>
     </q-item>
+
+    <q-item-label header>{{ $t('security')}}</q-item-label>
+
     <q-item>
       <q-item-section>
         <q-input
           dark
-          :show-password="hideRpcSecret"
           placeholder="RPC Secret"
           :maxlength="24"
-          v-model="form.rpcSecret"/>
+          v-model="rpcSecret"/>
       </q-item-section>
     </q-item>
   </q-list>
@@ -311,72 +312,8 @@ export default {
     [ShowInFolder.name]: ShowInFolder
   },
   data () {
-    // const { locale } = this.$store.state.preference.config
-    const {
-      dir,
-      // hideAppMenu,
-      keepWindowState,
-      maxConcurrentDownloads,
-      maxConnectionPerServer,
-      isMaxOverallUploadLimit,
-      maxOverallUploadLimit,
-      isMaxOverallDownloadLimit,
-      maxOverallDownloadLimit,
-      openAtLogin,
-      resumeAllWhenAppLaunched,
-      split,
-      taskNotification,
-      theme,
-      allProxy,
-      allProxyBackup,
-      autoCheckUpdate,
-      btTracker,
-      lastCheckUpdateTime,
-      protocols,
-      rpcListenPort,
-      rpcSecret,
-      useProxy,
-      userAgent
-    } = this.$store.state.preference.config
-    const form = {
-      continue: this.$store.state.preference.config.continue,
-      dir,
-      // hideAppMenu: hideAppMenu,
-      keepWindowState,
-      maxConcurrentDownloads,
-      maxConnectionPerServer,
-      isMaxOverallUploadLimit,
-      maxOverallUploadLimit,
-      isMaxOverallDownloadLimit,
-      maxOverallDownloadLimit,
-      openAtLogin,
-      resumeAllWhenAppLaunched,
-      split,
-      taskNotification,
-      theme: theme,
-      allProxy,
-      allProxyBackup,
-      autoCheckUpdate,
-      btTracker: btTracker,
-      lastCheckUpdateTime,
-      protocols: {
-        ...protocols
-      },
-      rpcListenPort,
-      rpcSecret,
-      useProxy,
-      userAgent
-    }
-
-    const formOriginal = cloneDeep(form)
-    console.log(form)
     return {
       locales: locales,
-      form,
-      formLabelWidth: '28%',
-      formOriginal,
-      rules: {},
-      hideRpcSecret: true,
       trackerSyncing: false
     }
   },
@@ -388,9 +325,9 @@ export default {
     }),
     locale: {
       get: function () {
-        if (this.config.locale === 'en') {
-          this.config.locale = 'en-US'
-        }
+        // if (this.config.locale === 'en') {
+        //   this.config.locale = 'en-US'
+        // }
         for (let l of locales) {
           if (l.value === this.config.locale) {
             console.log(l)
@@ -524,18 +461,50 @@ export default {
       set: function (value) {
         this.updateAll({ btTracker: value })
       }
+    },
+    protocolMagnet: {
+      get: function () {
+        return this.config.protocols.magnet
+      },
+      set: function (value) {
+        this.updateAll({ protocols: { magnet: value, thunder: this.config.protocols.thunder } })
+      }
+    },
+    protocolThunder: {
+      get: function () {
+        return this.config.protocols.thunder
+      },
+      set: function (value) {
+        this.updateAll({ protocols: { magnet: this.config.protocols.magnet, thunder: value } })
+      }
+    },
+    userAgent: {
+      get: function () {
+        return this.config.userAgent
+      },
+      set: function (value) {
+        this.updateAll({ userAgent: value })
+      }
+    },
+    rpcSecret:{
+      get: function () {
+        return this.config.rpcSecret
+      },
+      set: function (value) {
+        this.updateAll({ rpcSecret: value })
+      }
     }
 
   },
-  watch: {
-    'form.rpcSecret' (val) {
-      const url = buildRpcUrl({
-        port: this.form.rpcListenPort,
-        secret: val
-      })
-      clipboard.writeText(url)
-    }
-  },
+  // watch: {
+  //   'form.rpcSecret' (val) {
+  //     const url = buildRpcUrl({
+  //       port: this.form.rpcListenPort,
+  //       secret: val
+  //     })
+  //     clipboard.writeText(url)
+  //   }
+  // },
   methods: {
     updateLocal (config = {}) {
       this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
@@ -543,12 +512,12 @@ export default {
 
     // 引擎
     updateAll (config = {}) {
-      this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
+      updateLocal(config)
       this.$store.dispatch('preference/save', config)
     },
     updateDownloadLimit (value) {
       // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxOverallDownloadLimit: value + 'K' })
-      this.$store.dispatch('preference/save', { maxOverallDownloadLimit: value + 'K' })
+      this.$store.dispatch('preference/save', { maxOverallDownloadLimit: value + 'M' })
     },
     lazyUpdate (config = {}) {
       // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
@@ -557,90 +526,23 @@ export default {
     onDirectorySelected (dir) {
       this.form.dir = dir
     },
-    syncFormConfig () {
-      this.$store.dispatch('preference/fetchPreference')
-        .then((config) => {
-          // this.form = initialForm(config)
-          this.formOriginal = cloneDeep(this.form)
-        })
-    },
-    submitForm (formName) {
-      // this.$refs[formName].validate((valid) => {
-      //   if (!valid) {
-      //     console.log('error submit!!')
-      //     return false
-      //   }
-      const { openAtLogin } = this.form
-      const changed = diffConfig(this.formOriginal, this.form)
-      const data = {
-        ...changed,
-        btTracker: convertLineToComma(this.form.btTracker),
-        protocols: {
-          ...this.form.protocols
-        }
-      }
-      console.log('changed====》', data)
-
-      this.$store.dispatch('preference/save', data)
-        .then(() => {
-          this.$store.dispatch('app/fetchEngineOptions')
-          this.syncFormConfig()
-          console.log(this.$t('save-success-message'))
-        })
-        .catch(() => {
-          console.log(this.$t('save-fail-message'))
-        })
-
-      this.$q.electron.ipcRenderer.send('command', 'application:setup-protocols-client', data.protocols)
-      if (this.$q.platform.is.desktop) {
-        this.$q.electron.ipcRenderer.send('command', 'application:open-at-login', openAtLogin)
-      }
-      // }
-      // )
-    },
 
     onCheckUpdateClick () {
       this.$q.electron.ipcRenderer.send('command', 'application:check-for-updates')
     },
     syncTrackerFromGitHub () {
-      // this.trackerSyncing = true
-      // this.$store.dispatch('preference/fetchBtTracker')
-      //   .then((data) => {
-      //     console.log('syncTrackerFromGitHub data====>', data)
-      //     this.updateAll({ btTracker: data })
-      //   }).catch(err => {
-      //     console.error(err)
-      //   })
-      //   .finally(() => {
-      //     this.trackerSyncing = false
-      //   })
-    },
-    onProtocolsChange (protocol, enabled) {
-      const { protocols } = this.form
-      this.form.protocols = {
-        ...protocols,
-        [protocol]: enabled
-      }
-    },
-    onUseProxyChange (flag) {
-      this.form.allProxy = flag ? this.form.allProxyBackup : ''
-    },
-    onAllProxyBackupChange (value) {
-      this.form.allProxy = value
-    },
-    changeUA (type) {
-      const ua = userAgentMap[type]
-      if (!ua) {
-        return
-      }
-      this.form.userAgent = ua
+      this.trackerSyncing = true
+      this.$store.dispatch('preference/fetchBtTracker')
+        .then((data) => {
+          console.log('syncTrackerFromGitHub data====>', data)
+          this.updateAll({ btTracker: data })
+        }).catch(err => {
+          console.error(err)
+        })
+        .finally(() => {
+          this.trackerSyncing = false
+        })
     }
-    // onFactoryResetClick () {
-    //   let r = confirm(this.$t('factory-reset-confirm'))
-    //   if (r === true) {
-    //     this.$q.electron.ipcRenderer.send('command', 'application:reset')
-    //   }
-    // }
   }
 }
 </script>

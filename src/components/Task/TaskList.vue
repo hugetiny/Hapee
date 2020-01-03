@@ -17,7 +17,7 @@
           {{$t('new-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn icon="refresh" @click="onRestartALL">
+      <q-btn icon="refresh" v-if="$router." @click="onRestartALL">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('restart-all')}}
@@ -198,9 +198,7 @@ import { date } from 'quasar'
 export default {
   mounted () {
     this.loading = false
-  },
-  beforeRouteLeave () {
-    console.log('unoumt')
+    console.log(this.$router.param)
   },
   data () {
     return {
@@ -322,7 +320,7 @@ export default {
       } else if (status === 'active') {
         return this.pauseTask([gid])
       } else if (status === 'error' || status === 'removed') {
-        return this.onRestartClick(task, taskName)
+        return this.onRestartClick(task)
       }
     },
     openTask (task) {
@@ -337,9 +335,35 @@ export default {
       // this.$store.dispatch('app/showAddTaskDialog', taskType)
       this.$router.push('/addtask')
     },
-    // onRefreshClick: function () {
-    //   this.$store.dispatch('task/fetchList')
-    // },
+
+    onRestartClick (task) {
+      const { gid } = task
+      const taskName = getTaskName(task)
+      const uri = getTaskUri(task)
+      const isNeedShowDialog = task.status === 'complete'
+      this.$store.dispatch('task/getTaskOption', gid)
+        .then((data) => {
+          console.log('getTaskOption===>', data)
+          const { dir, header, split } = data
+          const options = {
+            dir,
+            header,
+            split,
+            out: taskName
+          }
+
+          if (isNeedShowDialog) {
+            this.showAddTaskDialog(uri, options)
+          } else {
+            this.directAddTask(uri, options)
+            this.$store.dispatch('task/removeTaskRecord', [task.gid])
+            this.$router.push('/task')
+          }
+        })
+    },
+    onRestartALL () {
+      // TODO
+    },
     onResumeAllClick: function () {
       this.$store.dispatch('task/resumeAllTask')
         .then(() => {
@@ -381,33 +405,7 @@ export default {
         delConfigFailMsg: this.$t('remove-task-config-file-fail')
       })
     },
-    onRestartClick (task, taskName) {
-      const { gid } = task
-      const uri = getTaskUri(task)
-      const isNeedShowDialog = task.status === 'complete'
-      this.$store.dispatch('task/getTaskOption', gid)
-        .then((data) => {
-          console.log('getTaskOption===>', data)
-          const { dir, header, split } = data
-          const options = {
-            dir,
-            header,
-            split,
-            out: taskName
-          }
 
-          if (isNeedShowDialog) {
-            this.showAddTaskDialog(uri, options)
-          } else {
-            this.directAddTask(uri, options)
-            this.$store.dispatch('task/removeTaskRecord', [task.gid])
-            this.$router.push('/task')
-          }
-        })
-    },
-    onRestartALL () {
-      // TODO
-    },
     directAddTask (uri, options = {}) {
       const uris = [uri]
       const payload = {

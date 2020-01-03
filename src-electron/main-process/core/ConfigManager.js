@@ -134,12 +134,14 @@ export default class ConfigManager {
         'log-path': getLogPath(),
         'new-task-show-downloading': true,
         'open-at-login': false,
-        'protocols': { 'magnet': true, 'thunder': false },
+        'protocols': { 'magnet': true, 'thunder': true },
+        'magnet': true,
+        'thunder': true,
         'resume-all-when-app-launched': false,
         'keep-window-state': false,
         'session-path': getSessionPath(),
         'task-notification': true,
-        'theme': 'auto',
+        'theme': 'dark',
         'tracker-source': [
           TRACKERS_ALL_IP_URL,
           TRACKERS_ALL_URL
