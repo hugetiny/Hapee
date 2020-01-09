@@ -227,7 +227,8 @@
     <q-item tag="label" v-if="useProxy" v-ripple>
       <q-item-section>
         <q-input dark v-model="allProxyBackup"
-                 placeholder="http(s)://USER:PASSWORD@HOST:PORT"/>
+                 placeholder="http(s)://(USER:PASSWORD@)HOST:PORT"
+        />
       </q-item-section>
     </q-item>
     <q-item tag="label" v-ripple>
@@ -237,7 +238,12 @@
         <template v-slot:append>
           <q-icon
             name="refresh"
-            @click.stop="syncTrackerFromGitHub"/>
+            @click.stop="syncTrackerFromGitHub">
+            <q-tooltip content-style="font-size: 12px" transition-show="scale"
+                       transition-hide="scale">
+              {{$t('sync-tracker-tips')}}
+            </q-tooltip>
+          </q-icon>
         </template>
         </q-input>
       </q-item-section>
@@ -289,19 +295,19 @@
 
 <script>
 import { mapState } from 'vuex'
-import { cloneDeep } from 'lodash'
+// import { cloneDeep } from 'lodash'
 import ThemeSwitcher from 'components/Preference/ThemeSwitcher'
 import { locales } from 'src/shared/i18n/LocaleManager'
-import {
-  buildRpcUrl,
-  convertLineToComma,
-  diffConfig
-} from 'src/shared/utils'
+// import {
+//   buildRpcUrl,
+//   convertLineToComma,
+//   diffConfig
+// } from 'src/shared/utils'
 
-import * as clipboard from 'clipboard-polyfill'
+// import * as clipboard from 'clipboard-polyfill'
 import ShowInFolder from 'components/Native/ShowInFolder'
-import userAgentMap from 'src/shared/ua'
-import { i18n } from 'boot/platform'
+// import userAgentMap from 'src/shared/ua'
+import { getLocaleManager } from 'boot/platform'
 import SelectDirectory from 'components/Native/SelectDirectory.vue'
 
 export default {
@@ -324,6 +330,7 @@ export default {
       sessionPath: state => state.config.sessionPath
     }),
     locale: {
+      // eslint-disable-next-line vue/return-in-computed-property
       get: function () {
         // if (this.config.locale === 'en') {
         //   this.config.locale = 'en-US'
@@ -337,7 +344,7 @@ export default {
       },
       set: function (locale) {
         this.updateAll({ locale: locale.value })
-        i18n.locale = locale.value
+        getLocaleManager().changeLanguage(locale.value)
         if (this.$q.platform.is.desktop) {
           this.$q.electron.ipcRenderer.send('command', 'application:change-locale', locale.value)
         }
@@ -348,7 +355,7 @@ export default {
         return this.config.theme
       },
       set: function (theme) {
-        this.updateALL({ theme: theme })
+        this.updateAll({ theme: theme })
         if (this.$q.platform.is.desktop) {
           this.$q.electron.ipcRenderer.send('command', 'application:change-theme', theme)
         }
@@ -359,7 +366,7 @@ export default {
         return this.config.openAtLogin
       },
       set: function (openAtLogin) {
-        this.updateALL({ openAtLogin: openAtLogin })
+        this.updateAll({ openAtLogin: openAtLogin })
         if (this.$q.platform.is.desktop) {
           this.$q.electron.ipcRenderer.send('command', 'application:open-at-login', openAtLogin)
         }
@@ -486,7 +493,7 @@ export default {
         this.updateAll({ userAgent: value })
       }
     },
-    rpcSecret:{
+    rpcSecret: {
       get: function () {
         return this.config.rpcSecret
       },
@@ -512,7 +519,7 @@ export default {
 
     // 引擎
     updateAll (config = {}) {
-      updateLocal(config)
+      this.updateLocal(config)
       this.$store.dispatch('preference/save', config)
     },
     updateDownloadLimit (value) {
@@ -535,7 +542,11 @@ export default {
       this.$store.dispatch('preference/fetchBtTracker')
         .then((data) => {
           console.log('syncTrackerFromGitHub data====>', data)
-          this.updateAll({ btTracker: data })
+          if (data.indexOf('!DOCTYPE') === -1) {
+            this.updateAll({ btTracker: data })
+          } else {
+            alert(this.$t('download-fail-message'))
+          }
         }).catch(err => {
           console.error(err)
         })

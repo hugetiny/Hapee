@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events'
-import { app, shell, dialog, ipcMain } from 'electron'
+import { app, dialog, ipcMain } from 'electron'
 import os from 'os'
 import { readFile } from 'fs'
 import { extname, basename } from 'path'
@@ -18,7 +18,7 @@ import TouchBarManager from './ui/TouchBarManager'
 import TrayManager from './ui/TrayManager'
 import ThemeManager from './ui/ThemeManager'
 import { AUTO_CHECK_UPDATE_INTERVAL } from '../../src/shared/constants'
-import suffix from '../../src/shared/suffix'
+// import suffix from '../../src/shared/suffix'
 
 export default class Application extends EventEmitter {
   constructor () {

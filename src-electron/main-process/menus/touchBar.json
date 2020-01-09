@@ -1,13 +1,13 @@
 [
   {
-    "type": "button", "icon": "new-task", "id": "task.new-task", "command": "application:new-task", "command-arg": "uri", "command-after": "application:show,index"
+    "type": "button", "icon": "new-task", "id": "new-task", "command": "application:new-task", "command-arg": "uri", "command-after": "application:show,index"
   },
   {
     "type": "spacer", "size": "small"
   },
   {
     "type": "group",
-    "id": "task.task-list",
+    "id": "task-list",
     "items": [
       {
         "type": "button", "icon": "task-active", "command": "application:task-list", "command-arg": "active"

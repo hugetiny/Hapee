@@ -1,7 +1,7 @@
 [
-  { "id": "task.new-task", "command": "application:new-task", "command-after": "application:show,index" },
-  { "id": "task.new-bt-task", "command": "application:new-bt-task", "command-arg": "torrent", "command-after": "application:show,index" },
-  { "id": "task.open-file", "command": "application:open-file", "command-before": "application:show,index" },
+  { "id": "new-task", "command": "application:new-task", "command-after": "application:show,index" },
+  { "id": "new-bt-task", "command": "application:new-bt-task", "command-arg": "torrent", "command-after": "application:show,index" },
+  { "id": "open-file", "command": "application:open-file", "command-before": "application:show,index" },
   { "type": "separator" },
   { "id": "show", "command": "application:show", "command-arg": "index" },
   { "id": "check-for-updates", "command": "application:check-for-updates" },

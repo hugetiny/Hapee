@@ -78,9 +78,9 @@ export default class Api {
   savePreference (params = {}) {
     const kebabParams = changeKeysToKebabCase(params)
     if (Platform.is.desktop) {
-      this.savePreferenceToNativeStore(kebabParams)
+      return this.savePreferenceToNativeStore(kebabParams)
     }
-    this.savePreferenceToLocalStorage(kebabParams)
+    return this.savePreferenceToLocalStorage(kebabParams)
   }
 
   savePreferenceToLocalStorage () {

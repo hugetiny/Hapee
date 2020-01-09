@@ -20,4 +20,4 @@ src/boot/firebase.js
 *.sln
 
 #for webstorm jumping
-fake.webpack.config.js
+fakeWebpackConfig.js

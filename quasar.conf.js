@@ -28,7 +28,7 @@ module.exports = function (ctx) {
       // 'themify',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-      'roboto-font', // optional, you are not bound to it
+      // 'roboto-font', // optional, you are not bound to it
       'material-icons' // optional, you are not bound to it
     ],
 
@@ -62,7 +62,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       rtl: true,
-      // scopeHoisting: true,
+      scopeHoisting: true,
       // vueRouterMode: 'history',
       // showProgress: false,
       // gzip: true,
@@ -72,36 +72,37 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
-          }
-        })
-        cfg.resolve.alias = {
-          ...cfg.resolve.alias, // This adds the existing alias
-
-          // Add your own alias like this
-          'src': path.resolve(__dirname, './src')
-        }
+        // cfg.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /node_modules/,
+        //   options: {
+        //     formatter: require('eslint').CLIEngine.getFormatter('stylish')
+        //   }
+        // })
       }
+      //   cfg.resolve.alias = {
+      //     ...cfg.resolve.alias, // This adds the existing alias
+      //
+      //     // Add your own alias like this
+      //     'src': path.resolve(__dirname, './src')
+      //   }
+      // }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      // https: true,
-      port: 8081,
-      open: false, // opens browser window automatically
-      proxy: {
-        '/ngosang': {
-          target: ['https://github.com'],
-          secure: false,
-          changeOrigin: true
-        }
-      }
+      https: ctx.mode.pwa === true,
+      port: 8080,
+      open: true // opens browser window automatically
+      // proxy: {
+      //   '/ngosang': {
+      //     target: ['https://github.com'],
+      //     secure: false,
+      //     changeOrigin: true
+      //   }
+      // }
       // proxy: {
       //   // proxy all requests starting with /api to jsonplaceholder
       //   '/api': {
@@ -128,9 +129,9 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Downloadbox',
-        // short_name: 'Downloadbox',
-        // description: 'cross-platform downloader',
+        name: 'negibox',
+        short_name: 'negibox',
+        description: 'cross-platform downloader',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -173,8 +174,33 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      bundler: 'builder', // or 'packager'
+      // bundler: 'builder', // or 'packager'
 
+      packager: {
+      // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+
+        // OS X / Mac App Store
+        // appBundleId: '',
+        // appCategoryType: '',
+        // osxSign: '',
+        // protocol: 'myapp://path',
+
+      // Windows only
+      // win32metadata: { ... }
+      },
+
+      builder: {
+        // https://www.electron.build/configuration/configuration
+
+        // appId: 'downloadbox'
+      },
+      // unPackagedInstallParams: [],
+
+      // Requires: @quasar/app v1.3.0+
+      // Keep in sync with /src-electron/main-process/electron-main
+      // > BrowserWindow > webPreferences > nodeIntegration
+      // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
+      // nodeIntegration: true
       extendWebpack (cfg) {
         // cfg.module.rules.push({
         //   enforce: 'pre',
@@ -191,25 +217,6 @@ module.exports = function (ctx) {
           // Add your own alias like this
           'src': path.resolve(__dirname, './src')
         }
-      },
-
-      // packager: {
-      // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-
-      // OS X / Mac App Store
-      // appBundleId: '',
-      // appCategoryType: '',
-      // osxSign: '',
-      // protocol: 'myapp://path',
-
-      // Windows only
-      // win32metadata: { ... }
-      // },
-
-      builder: {
-        // https://www.electron.build/configuration/configuration
-
-        // appId: 'downloadbox'
       }
     }
   }

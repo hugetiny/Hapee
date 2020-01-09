@@ -76,7 +76,7 @@ export default class WindowManager extends EventEmitter {
           autoHideMenuBar: true
         },
         bindCloseToHide: true,
-        url: process.env.DEV ? `http://localhost:8081` : `file://${__dirname}/index.html`
+        url: process.env.DEV ? `http://localhost:8080` : `file://${__dirname}/index.html`
       }
     }[page] || {}
     // const hideAppMenu = this.userConfig['hide-app-menu']

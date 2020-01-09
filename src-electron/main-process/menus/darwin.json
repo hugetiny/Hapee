@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "id": "menu.app",
+      "id": "app",
       "submenu": [
         { "id": "about", "command": "application:about", "command-before": "application:show,index" },
         { "type": "separator" },
@@ -15,55 +15,55 @@
       ]
     },
     {
-      "id": "menu.task",
+      "id": "task",
       "submenu": [
-        { "id": "task.new-task", "command": "application:new-task", "command-after": "application:show,index" },
-        { "id": "task.new-bt-task", "command": "application:new-bt-task", "command-arg": "torrent", "command-after": "application:show,index" },
-        { "id": "task.open-file", "command": "application:open-file", "command-before": "application:show,index" },
+        { "id": "new-task", "command": "application:new-task", "command-after": "application:show,index" },
+        { "id": "new-bt-task", "command": "application:new-bt-task", "command-arg": "torrent", "command-after": "application:show,index" },
+        { "id": "open-file", "command": "application:open-file", "command-before": "application:show,index" },
         { "type": "separator" },
-        { "id": "task.pause-task", "command": "application:pause-task" },
-        { "id": "task.resume-task", "command": "application:resume-task" },
-        { "id": "task.delete-task", "command": "application:delete-task" },
-        { "id": "task.move-task-up", "command": "application:move-task-up" },
-        { "id": "task.move-task-down", "command": "application:move-task-down" },
+        { "id": "pause-task", "command": "application:pause-task" },
+        { "id": "resume-task", "command": "application:resume-task" },
+        { "id": "delete-task", "command": "application:delete-task" },
+        { "id": "move-task-up", "command": "application:move-task-up" },
+        { "id": "move-task-down", "command": "application:move-task-down" },
         { "type": "separator" },
-        { "id": "task.pause-all-task", "command": "application:pause-all-task" },
-        { "id": "task.resume-all-task", "command": "application:resume-all-task" },
+        { "id": "pause-all-task", "command": "application:pause-all-task" },
+        { "id": "resume-all-task", "command": "application:resume-all-task" },
         { "type": "separator" },
-        { "id": "task.clear-recent-tasks", "command": "application:clear-recent-tasks" }
+        { "id": "clear-recent-tasks", "command": "application:clear-recent-tasks" }
       ]
     },
     {
-      "id": "menu.edit",
+      "id": "edit",
       "submenu": [
-        { "id": "edit.undo", "role": "undo" },
-        { "id": "edit.redo", "role": "redo" },
+        { "id": "undo", "role": "undo" },
+        { "id": "redo", "role": "redo" },
         { "type": "separator" },
-        { "id": "edit.cut", "role": "cut" },
-        { "id": "edit.copy", "role": "copy" },
-        { "id": "edit.paste", "role": "paste" },
-        { "id": "edit.delete", "role": "delete" },
-        { "id": "edit.select-all", "role": "selectall" }
+        { "id": "cut", "role": "cut" },
+        { "id": "copy", "role": "copy" },
+        { "id": "paste", "role": "paste" },
+        { "id": "delete", "role": "delete" },
+        { "id": "select-all", "role": "selectall" }
       ]
     },
     {
       "role": "window",
-      "id": "menu.window",
+      "id": "window",
       "submenu": [
-        { "id": "window.reload", "role": "reload" },
-        { "id": "window.close", "role": "close" },
-        { "id": "window.minimize", "role": "minimize" },
-        { "id": "window.zoom", "role": "zoom" },
-        { "id": "window.toggle-fullscreen", "role": "togglefullscreen" },
+        { "id": "reload", "role": "reload" },
+        { "id": "close", "role": "close" },
+        { "id": "minimize", "role": "minimize" },
+        { "id": "zoom", "role": "zoom" },
+        { "id": "toggle-fullscreen", "role": "togglefullscreen" },
         { "type": "separator" },
-        { "id": "window.front", "role": "front" }
+        { "id": "front", "role": "front" }
       ]
     },
     {
       "role": "help",
-      "id": "menu.help",
+      "id": "help",
       "submenu": [
-        { "id": "help.toggle-dev-tools", "role": "toggledevtools" }
+        { "id": "toggle-dev-tools", "role": "toggledevtools" }
       ]
     }
   ]

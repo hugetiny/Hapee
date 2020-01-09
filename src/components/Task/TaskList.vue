@@ -17,28 +17,28 @@
           {{$t('new-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn icon="refresh" v-if="$router." @click="onRestartALL">
-        <q-tooltip content-style="font-size: 12px" transition-show="scale"
-          transition-hide="scale">
-          {{$t('restart-all')}}
-        </q-tooltip>
-      </q-btn>
 <!--      <q-btn  icon="arrow_downward" @click="onRemoveSelectedClick">-->
 <!--        <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">-->
 <!--          {{$t('resume-task')}}-->
 <!--        </q-tooltip>-->
 <!--      </q-btn>-->
-      <q-btn  icon="pause" @click="onPauseAllClick">
+      <q-btn v-if="$route.path ==='/task'" icon="pause" @click="onPauseAllClick">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('pause-all-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn  icon="play_arrow" @click="onResumeAllClick">
+      <q-btn v-if="$route.path ==='/task'" icon="play_arrow" @click="onResumeAllClick">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('resume-all-task')}}
+        </q-tooltip>
+      </q-btn>
+      <q-btn icon="refresh" v-if="$route.path === '/task/stopped'" @click="onRestartALL">
+        <q-tooltip content-style="font-size: 12px" transition-show="scale"
+                   transition-hide="scale">
+          {{$t('restart-all')}}
         </q-tooltip>
       </q-btn>
 <!--      <q-btn icon="delete" @click="onDeleteClick">-->
@@ -192,13 +192,13 @@ import {
   openItem,
   moveTaskFilesToTrash
 } from 'components/Native/utils'
-import { date } from 'quasar'
+// import { date } from 'quasar'
 // import suffix from 'src/shared/suffix'
 
 export default {
   mounted () {
     this.loading = false
-    console.log(this.$router.param)
+    console.log(this.$route.path)
   },
   data () {
     return {
@@ -445,6 +445,7 @@ export default {
     onDeleteClick (tasks, taskNames) {
       // const self = this
       // const { task } = this
+      console.log(taskNames)
       let r = confirm(this.$t('delete-task-confirm', { taskName: taskNames.toString() }))
       if (r === true) {
         let removeGids = [],
@@ -459,8 +460,8 @@ export default {
         if (removeGids) {
           this.$store.dispatch('task/removeTask', removeGids)
             .then(() => {
-              removeGids.forEach(gid =>
-                this.deleteTaskFiles(gid)
+              tasks.forEach(task =>
+                this.deleteTaskFiles(task)
               )
               console.log(this.$t('delete-task-success'))
             })
@@ -470,8 +471,8 @@ export default {
         } else if (removeGidRecords) {
           this.$store.dispatch('task/removeTaskRecord', removeGidRecords)
             .then(() => {
-              removeGidRecords.forEach(gid =>
-                this.deleteTaskFiles(gid)
+              tasks.forEach(task =>
+                this.deleteTaskFiles(task)
               )
               console.log(this.$t('task.remove-record-success'))
             })

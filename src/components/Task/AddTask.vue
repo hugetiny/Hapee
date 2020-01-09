@@ -90,7 +90,7 @@ import {
 
 const initialForm = (state) => {
   const { addTaskUrl, addTaskOptions } = state.app
-  const { dir, split } = state.preference.config
+  const { dir, split, newTaskShowDownloading } = state.preference.config
   const result = {
     uris: addTaskUrl,
     torrent: '',
@@ -101,6 +101,7 @@ const initialForm = (state) => {
     cookie: '',
     dir,
     split,
+    newTaskShowDownloading,
     ...addTaskOptions
   }
   return result
@@ -338,9 +339,10 @@ export default {
 
         // this.$store.dispatch('app/hideAddTaskDialog')
         if (this.form.newTaskShowDownloading) {
-          this.$router.push({
-            path: '/task/active'
-          })
+          // this.$router.push({
+          //   path: '/task/active'
+          // })
+          this.$router.push('/task')
         }
       } catch (err) {
         console.error(err.message)

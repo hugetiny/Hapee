@@ -109,7 +109,6 @@ const routes = [
   // },
   {
     path: '/',
-    name: 'main',
     component: () => import('components/Main'),
     children: [
       {
@@ -137,13 +136,11 @@ const routes = [
       },
       {
         path: '/task/:status',
-        name: 'task',
         component: () => import('components/Task/Index'),
         props: true
       },
       {
         path: '/preference',
-        name: 'preference',
         component: () => import('components/Preference/Index')
         // props: true
         // children: [
