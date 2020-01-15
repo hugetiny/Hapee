@@ -11,7 +11,7 @@
   >
     <template v-slot:top-left>
       <!--      <q-btn-group spread>-->
-      <q-btn icon="add" @click="showAddTask('uri')">
+      <q-btn icon="add" @click.stop="showAddTask('uri')">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('new-task')}}
@@ -23,19 +23,19 @@
 <!--          {{$t('resume-task')}}-->
 <!--        </q-tooltip>-->
 <!--      </q-btn>-->
-      <q-btn v-if="$route.path ==='/task'" icon="pause" @click="onPauseAllClick">
+      <q-btn icon="pause" @click.stop="onPauseAllClick">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('pause-all-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn v-if="$route.path ==='/task'" icon="play_arrow" @click="onResumeAllClick">
+      <q-btn icon="play_arrow" @click.stop="onResumeAllClick">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
           {{$t('resume-all-task')}}
         </q-tooltip>
       </q-btn>
-      <q-btn icon="refresh" v-if="$route.path === '/task/stopped'" @click="onRestartALL">
+      <q-btn icon="refresh" v-if="$route.path === '/task/stopped'" @click.stop="restartErrorTasks">
         <q-tooltip content-style="font-size: 12px" transition-show="scale"
                    transition-hide="scale">
           {{$t('restart-all')}}
@@ -99,7 +99,7 @@
               {{$t('resume-task')}}
             </q-tooltip>
           </q-btn>
-          <q-btn  v-else-if="props.row.task.status === 'error' || props.row.task.status === 'complete'" icon="refresh" @click="onRestartClick(props.row.task,props.row.name)">
+          <q-btn  v-else-if="props.row.task.status === 'error' || props.row.task.status === 'complete'" icon="refresh" @click="restartTask(props.row.task,props.row.name)">
             <q-tooltip content-style="font-size: 12px" transition-show="scale"
           transition-hide="scale">
               {{$t('restart')}}
@@ -114,61 +114,6 @@
         </q-td>
 
       </q-tr>
-<!--      <q-menu dark-->
-<!--              touch-position-->
-<!--              context-menu-->
-<!--              auto-close-->
-<!--      >-->
-<!--        <q-list dense>-->
-<!--          <q-item clickable>-->
-<!--            <q-item-section v-if="props.row.task.status === 'complete'" @click="openTask(props.row.task)">{{$t('open-file')}}</q-item-section>-->
-<!--            <q-item-section v-else-if="props.row.task.status === 'active'" @click="pauseTask([props.row.task.gid])">{{$t('pause-task')}}</q-item-section>-->
-<!--            <q-item-section v-else-if="props.row.task.status === 'paused' || props.row.task.status === 'waiting'" @click="resumeTask([props.row.task.gid])" >{{$t('resume-task')}}</q-item-section>-->
-<!--            <q-item-section v-else-if="props.row.task.status === 'error'" @click="onRestartClick(props.row.task,props.row.name)">{{$t('restart')}}</q-item-section>-->
-<!--          </q-item>-->
-<!--          <q-separator/>-->
-<!--          <q-item @click="onPauseAllClick" clickable>-->
-<!--            <q-item-section>{{$t('pause-all-task')}}</q-item-section>-->
-<!--          </q-item>-->
-<!--          <q-item @click="onResumeAllClick" clickable>-->
-<!--            <q-item-section>{{$t('resume-all-task')}}</q-item-section>-->
-<!--          </q-item>-->
-<!--&lt;!&ndash;          <q-item clickable>&ndash;&gt;-->
-<!--&lt;!&ndash;            <q-item-section>Preferences</q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;            <q-item-section side>&ndash;&gt;-->
-<!--&lt;!&ndash;              <q-icon name="keyboard_arrow_right"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;            <q-menu anchor="top right" self="top left">&ndash;&gt;-->
-<!--&lt;!&ndash;              <q-list>&ndash;&gt;-->
-<!--&lt;!&ndash;                <q-item&ndash;&gt;-->
-<!--&lt;!&ndash;                  v-for="n in 3"&ndash;&gt;-->
-<!--&lt;!&ndash;                  :key="n"&ndash;&gt;-->
-<!--&lt;!&ndash;                  dense&ndash;&gt;-->
-<!--&lt;!&ndash;                  clickable&ndash;&gt;-->
-<!--&lt;!&ndash;                >&ndash;&gt;-->
-<!--&lt;!&ndash;                  <q-item-section>Submenu Label</q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <q-item-section side>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <q-icon name="keyboard_arrow_right"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <q-menu auto-close anchor="top right" self="top left">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <q-list>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <q-item&ndash;&gt;-->
-<!--&lt;!&ndash;                        v-for="n in 3"&ndash;&gt;-->
-<!--&lt;!&ndash;                        :key="n"&ndash;&gt;-->
-<!--&lt;!&ndash;                        dense&ndash;&gt;-->
-<!--&lt;!&ndash;                        clickable&ndash;&gt;-->
-<!--&lt;!&ndash;                      >&ndash;&gt;-->
-<!--&lt;!&ndash;                        <q-item-section>3rd level Label</q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;                      </q-item>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </q-list>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </q-menu>&ndash;&gt;-->
-<!--&lt;!&ndash;                </q-item>&ndash;&gt;-->
-<!--&lt;!&ndash;              </q-list>&ndash;&gt;-->
-<!--&lt;!&ndash;            </q-menu>&ndash;&gt;-->
-<!--&lt;!&ndash;          </q-item>&ndash;&gt;-->
-
-<!--        </q-list>-->
-<!--      </q-menu>-->
     </template>
     <template v-slot:bottom>
 <!--      <br/>-->
@@ -190,6 +135,7 @@ import {
 } from 'src/shared/utils'
 import {
   openItem,
+  showItemInFolder,
   moveTaskFilesToTrash
 } from 'components/Native/utils'
 // import { date } from 'quasar'
@@ -198,7 +144,7 @@ import {
 export default {
   mounted () {
     this.loading = false
-    console.log(this.$route.path)
+    console.log(this.currentList)
   },
   data () {
     return {
@@ -209,6 +155,9 @@ export default {
   },
   name: 'task-list',
   computed: {
+    ...mapState('task', {
+      currentList: state => state.currentList
+    }),
     columns: function () {
       let cols = [
         {
@@ -247,7 +196,13 @@ export default {
       return cols
     },
     taskList: function () {
-      return this.$store.state.task.taskList.map(
+      let tasklist
+      if (this.$route.path !== '/task/stopped') {
+        tasklist = this.$store.state.task.taskList.filter(task => task.totalLength === '0' ? true : task.completedLength !== task.totalLength)
+      } else {
+        tasklist = this.$store.state.task.taskList
+      }
+      return tasklist.map(
         task => {
           return {
             'name': getTaskName(task, {
@@ -263,11 +218,6 @@ export default {
           }
         })
     },
-    ...mapState('task', {
-      // taskList: state => state.taskList,
-      // selectedList: state => state.selectedList
-      currentList: state => state.currentList
-    }),
     selected: function () {
       console.log(this.$store.state.task.selectedList)
       console.log(this.index)
@@ -276,6 +226,44 @@ export default {
   },
 
   methods: {
+    // TODO context menu
+    // SINGLE_SELECT (state, index) {
+    //   if (state.selectedList.includes(index) && state.selectedList.length === 1) {
+    //     state.selectedList = []
+    //   } else {
+    //     state.selectedList = [index]
+    //   }
+    // },
+    // SHIFT_SELECT (state, index) {
+    //   if (state.selectedList.length !== 0) {
+    //     let min, max
+    //     min = Math.min(Math.min(...state.selectedList), index)
+    //     max = Math.max(Math.min(...state.selectedList), index)
+    //
+    //     state.selectedList = []
+    //     for (let i = min; i <= max; i++) {
+    //       state.selectedList.push(i)
+    //     }
+    //   } else {
+    //     state.selectedList = [index]
+    //   }
+    // },
+    // CTRL_SELECT (state, index) {
+    //   if (state.selectedList.includes(index)) {
+    //     state.selectedList.splice(state.selectedList.indexOf(index), 1)
+    //   } else {
+    //     state.selectedList.push(index)
+    //   }
+    //   // console.log(state.selectedList)
+    // },
+    // META_SELECT (state, index) {
+    //   if (state.selectedList.includes(index)) {
+    //     state.selectedList.splice(state.selectedList.indexOf(index), 1)
+    //   } else {
+    //     state.selectedList.push(index)
+    //   }
+    //   // console.log(state.selectedList)
+    // },
     ...mapActions('task', [
       'resumeTask', 'pauseTask', 'removeTask'
     ]),
@@ -314,20 +302,26 @@ export default {
       const { status, gid } = task
       console.log(task)
       if (status === 'complete') {
-        this.openTask(task)
+        const fullPath = getTaskFullPath(task)
+        //TODO other types?
+        if (task.bittorrent) {
+          showItemInFolder(fullPath)
+        } else {
+          openItem(fullPath)
+        }
       } else if (status === 'waiting' || status === 'paused') {
-        return this.resumeTask([gid])
+        return this.$store.dispatch('task/resumeTask', [gid])
+          .catch(({ code }) => {
+            console.error(this.$t('resume-task-fail', code))
+          })
       } else if (status === 'active') {
-        return this.pauseTask([gid])
+        return this.$store.dispatch('task/pauseTask', [gid])
+          .catch(({ code }) => {
+            console.error(this.$t('pause-task-fail', code))
+          })
       } else if (status === 'error' || status === 'removed') {
-        return this.onRestartClick(task)
+        return this.restartTask(task)
       }
-    },
-    openTask (task) {
-      const { taskName } = this
-      console.info(this.$t('opening-task-message', { taskName }))
-      const fullPath = getTaskFullPath(task)
-      openItem(fullPath)
     },
     // taskactions
     showAddTask (taskType = 'uri') {
@@ -336,11 +330,10 @@ export default {
       this.$router.push('/addtask')
     },
 
-    onRestartClick (task) {
+    restartTask (task) {
       const { gid } = task
       const taskName = getTaskName(task)
       const uri = getTaskUri(task)
-      const isNeedShowDialog = task.status === 'complete'
       this.$store.dispatch('task/getTaskOption', gid)
         .then((data) => {
           console.log('getTaskOption===>', data)
@@ -352,7 +345,7 @@ export default {
             out: taskName
           }
 
-          if (isNeedShowDialog) {
+          if (task.status === 'complete') {
             this.showAddTaskDialog(uri, options)
           } else {
             this.directAddTask(uri, options)
@@ -361,8 +354,12 @@ export default {
           }
         })
     },
-    onRestartALL () {
-      // TODO
+    restartErrorTasks () {
+      this.$store.state.task.taskList.forEach(task => {
+        if (task.status === 'error') {
+          this.restartTask(task)
+        }
+      })
     },
     onResumeAllClick: function () {
       this.$store.dispatch('task/resumeAllTask')
@@ -435,12 +432,6 @@ export default {
       this.$store.dispatch('app/updateAddTaskOptions', newOptions)
       // this.$store.dispatch('app/showAddTaskDialog', 'uri')
       this.$router.push('/addtask')
-    },
-    pauseTask (gids) {
-      this.$store.dispatch('task/pauseTask', gids)
-        .catch(({ code }) => {
-          console.error(this.$t('pause-task-fail', code))
-        })
     },
     onDeleteClick (tasks, taskNames) {
       // const self = this

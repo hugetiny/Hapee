@@ -7,14 +7,11 @@ import { Platform } from 'quasar'
 
 const remote = Platform.is.desktop ? require('electron').remote : {}
 
-export function showItemInFolder (fullPath, { errorMsg }) {
+export function showItemInFolder (fullPath) {
   if (!fullPath) {
     return
   }
   const result = remote.shell.showItemInFolder(fullPath)
-  if (!result && errorMsg) {
-    console.error(errorMsg)
-  }
   return result
 }
 
@@ -23,6 +20,7 @@ export function openItem (fullPath) {
     return
   }
   const result = remote.shell.openItem(fullPath)
+  console.log(result)
   if (!result) {
     remote.shell.showItemInFolder(fullPath)
   }

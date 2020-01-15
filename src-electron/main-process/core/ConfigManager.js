@@ -127,6 +127,7 @@ export default class ConfigManager {
       defaults: {
         'all-proxy-backup': '',
         'auto-check-update': os.platform() === 'darwin',
+        'finished-list': [],
         'hide-app-menu': os.platform() !== 'darwin',
         'last-check-update-time': 0,
         // 'locale': app.getLocale(),

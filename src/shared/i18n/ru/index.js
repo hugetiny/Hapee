@@ -54,7 +54,7 @@ export default {
   '- Вы можете добавить несколько загрузок (файлов) одновременно, помещая URL-адреса для каждого файла на отдельной строке.',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- Можно также добавить несколько URL-адресов (зеркал) для *одного* файла. Для этого отделите URL-адреса пробелом.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.':
+  'uris-can-be':
   '- URL-адрес может быть HTTP(S)/FTP/BitTorrent-Magnet.',
   'Download settings': 'Настройки загрузки',
   'Advanced settings': 'Расширенные настройки',

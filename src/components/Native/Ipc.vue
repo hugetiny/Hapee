@@ -11,7 +11,7 @@ import {
 export default {
   name: 'ipc',
   computed: {
-    ...mapState('preference', {
+    ...mapState('task', {
       enableEggFeatures: state => state.config.enableEggFeatures
     })
   },

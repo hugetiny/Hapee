@@ -33,7 +33,7 @@ export default {
       taskItemInfoVisible: state => state.taskItemInfoVisible,
       currentTaskItem: state => state.currentTaskItem
     }),
-    ...mapState('preference', {
+    ...mapState('task', {
       taskNotification: state => state.config.taskNotification
     })
   },
@@ -128,31 +128,17 @@ export default {
     },
     handleDownloadComplete (task, isBT) {
       const path = getTaskFullPath(task)
-
+      this.$store.commit('task/ADD_FINISHED_TASK', task)
       addToRecentTask(task)
       openDownloadDock(path)
 
-      this.showTaskCompleteNotify(task, isBT, path)
+      this.showTaskCompleteNotify(task, path)
     },
-    showTaskCompleteNotify (task, isBT, path) {
+    showTaskCompleteNotify (task, path) {
       const taskName = getTaskName(task)
-      const message = isBT
-        ? this.$t('bt-download-complete-message', { taskName })
-        : this.$t('download-complete-message', { taskName })
-      // const tips = isBT
-      //   ? '\n' + this.$t('bt-download-complete-tips')
-      //   : ''
-
-      console.log(message)
-
       if (!this.taskNotification) {
         return
       }
-
-      /* eslint-disable no-new */
-      // const notifyMessage = isBT
-      //   ? this.$t('bt-download-complete-notify')
-      //   : this.$t('download-complete-notify')
       const notifyMessage = this.$t('download-complete-notify')
 
       const notify = new Notification(notifyMessage, {

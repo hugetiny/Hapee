@@ -17,7 +17,7 @@ export function getLocaleManager () {
 const i18n = new VueI18Next(i18next);
 
 if (Platform.is.desktop) {
-  store.dispatch('preference/fetchPreference')
+  store.dispatch('task/fetchPreference')
     .then((config) => {
       console.info('[negibox] fetchPreference===>', config)
       localeManager.changeLanguageByLocale(config.locale)

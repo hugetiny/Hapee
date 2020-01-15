@@ -13,13 +13,6 @@
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
 </p>
 
-<h3 align="center">
-    <img src="./rurushu.jpg" alt="rurushu" width="80%">
-  <br>
-    If I die young, don't forget that you are the ones who can make human beings truly equal and free.
-  <br>
-  <br>
-</h3>
 
 # Negibox is open source now!
 The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
@@ -74,9 +67,13 @@ New Negibox is still in developing
 - [ ] cloud music
 - [ ] cloud cross-platform apps
 
-## crowdfunding & sponsor
-<img src="https://raw.githubusercontent.com/hugetiny/quit-smoking/master/alipaysponse.jpeg" width="200px" /> 
-<img src="https://github.com/hugetiny/quit-smoking/blob/master/wechatsponse.jpeg" width="200px" />
+<h3 align="center">
+    <img src="./rurushu.jpg" alt="rurushu" width="80%">
+  <br>
+    If I die young, don't forget that you are the ones who can make human beings truly equal and free.
+  <br>
+  <br>
+</h3>
 
 ## Special Thanks
 

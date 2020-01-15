@@ -54,7 +54,7 @@ export default {
   '- Możesz dodać wiele pobrań (plików) w tym samym czasie przez wprowadzenie URI dla każdego w oddzielnej linii.',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- Możesz także dodać wiele URI (luster) dla tego *samego* pliku. Zrób to, poprzez oddzielenie URI od siebie spacją.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.': '- URI może być HTTP(S)/FTP/BitTorrent-Magnet.',
+  'uris-can-be': '- URI może być HTTP(S)/FTP/BitTorrent-Magnet.',
   'Download settings': 'Ustawienia pobierania',
   'Advanced settings': 'Zaawansowane ustawienia',
   Cancel: 'Anuluj',

@@ -58,7 +58,7 @@ export default {
   '- 你可以同时添加多个文件下载任务，每行下载一个文件；',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- 你也可以给同一个下载任务添加多个镜像链接，写在一行并用空格分隔每条链接；',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.': '- 链接可以是 HTTP(S)、FTP 和磁力链接。',
+  'uris-can-be': '- 链接可以是 HTTP(S)、FTP 和磁力链接。',
   'Download settings': '下载设置',
   'Advanced settings': '高级设置',
   Cancel: '取消',

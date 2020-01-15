@@ -18,6 +18,5 @@ src/boot/firebase.js
 *.ntvs*
 *.njsproj
 *.sln
-
-#for webstorm jumping
+quasar.conf.js
 fakeWebpackConfig.js

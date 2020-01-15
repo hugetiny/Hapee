@@ -60,7 +60,7 @@ export default {
     '- Anda dapat menambah banyak unduhan (berkas) sekali waktu dg menaruh URI setiap berkas dlm baris terpisah.',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
     '- Anda juga dapat menambah banyak URI (cermin) untuk berkas yang *sama*. Pisahkan URI dengan spasi.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.':
+  'uris-can-be':
     '- URI dapat berbentuk HTTP(S)/FTP/BitTorrent-Magnet.',
   'Download settings': 'Pengaturan unduhan',
   'Advanced settings': 'Pengaturan mahir',

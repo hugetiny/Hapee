@@ -10,7 +10,9 @@ export default {
     let count = 0
     this.onDragEnter = (ev) => {
       if (count === 0) {
-        this.$store.dispatch('app/showAddTaskDialog', 'torrent')
+        // this.$store.dispatch('app/showAddTaskDialog', 'torrent')
+        console.log(ev)
+        this.$router.push('/addTask')
       }
       count++
     }
@@ -18,7 +20,8 @@ export default {
     this.onDragLeave = (ev) => {
       count--
       if (count === 0) {
-        this.$store.dispatch('app/hideAddTaskDialog')
+        // this.$store.dispatch('app/hideAddTaskDialog')
+        console.log('dont add file')
       }
     }
 

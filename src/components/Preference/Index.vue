@@ -324,7 +324,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('preference', {
+    ...mapState('task', {
       config: state => state.config,
       logPath: state => state.config.logPath,
       sessionPath: state => state.config.sessionPath
@@ -402,7 +402,7 @@ export default {
         return parseInt(limit.substring(0, limit.length - 1))
       },
       set: function (value) {
-        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxOverallDownloadLimit: value + 'M' })
+        this.$store.commit('task/UPDATE_LOCAL', { maxOverallDownloadLimit: value + 'M' })
       }
     },
     maxConcurrentDownloads: {
@@ -410,7 +410,7 @@ export default {
         return this.config.maxConcurrentDownloads
       },
       set: function (value) {
-        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxConcurrentDownloads: value })
+        this.$store.commit('task/UPDATE_LOCAL', { maxConcurrentDownloads: value })
       }
     },
     split: {
@@ -418,7 +418,7 @@ export default {
         return this.config.split
       },
       set: function (value) {
-        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { split: value })
+        this.$store.commit('task/UPDATE_LOCAL', { split: value })
       }
     },
     continueFlag: {
@@ -513,22 +513,18 @@ export default {
   //   }
   // },
   methods: {
-    updateLocal (config = {}) {
-      this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
-    },
-
     // 引擎
     updateAll (config = {}) {
-      this.updateLocal(config)
-      this.$store.dispatch('preference/save', config)
+      this.$store.commit('task/UPDATE_LOCAL', config)
+      this.$store.dispatch('task/save', config)
     },
     updateDownloadLimit (value) {
-      // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { maxOverallDownloadLimit: value + 'K' })
-      this.$store.dispatch('preference/save', { maxOverallDownloadLimit: value + 'M' })
+      // this.$store.commit('task/UPDATE_LOCAL', { maxOverallDownloadLimit: value + 'K' })
+      this.$store.dispatch('task/save', { maxOverallDownloadLimit: value + 'M' })
     },
     lazyUpdate (config = {}) {
-      // this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', config)
-      this.$store.dispatch('preference/save', config)
+      // this.$store.commit('task/UPDATE_LOCAL', config)
+      this.$store.dispatch('task/save', config)
     },
     onDirectorySelected (dir) {
       this.form.dir = dir
@@ -539,7 +535,7 @@ export default {
     },
     syncTrackerFromGitHub () {
       this.trackerSyncing = true
-      this.$store.dispatch('preference/fetchBtTracker')
+      this.$store.dispatch('task/fetchBtTracker')
         .then((data) => {
           console.log('syncTrackerFromGitHub data====>', data)
           if (data.indexOf('!DOCTYPE') === -1) {

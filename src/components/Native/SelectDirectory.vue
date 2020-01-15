@@ -18,13 +18,13 @@ export default {
   computed: {
     dir: {
       get: function () {
-        console.log(this.$store.state.preference.config.dir)
-        return this.$store.state.preference.config.dir
+        console.log(this.$store.state.task.config.dir)
+        return this.$store.state.task.config.dir
       },
       set: function (dir) {
         console.log(dir)
-        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { dir: dir })
-        this.$store.dispatch('preference/save', { dir: dir })
+        this.$store.commit('task/UPDATE_LOCAL', { dir: dir })
+        this.$store.dispatch('task/save', { dir: dir })
       }
     }
   },
@@ -36,7 +36,7 @@ export default {
         if (!directory) {
           return
         }
-        this.$store.commit('preference/UPDATE_PREFERENCE_LOCAL', { dir: directory })
+        this.$store.commit('task/UPDATE_LOCAL', { dir: directory })
       })
     }
   }

@@ -31,7 +31,7 @@ export default {
     ...mapState('app', {
       systemTheme: state => state.systemTheme
     }),
-    ...mapState('preference', {
+    ...mapState('task', {
       // hideAppMenu: state => {
       //   return (this.$q.platform.is.win || this.$q.platform.is.linux) && state.config.hideAppMenu
       // },

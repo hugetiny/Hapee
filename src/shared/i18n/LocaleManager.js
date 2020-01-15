@@ -81,7 +81,7 @@ export const locales = [
     label: '繁體中文'
   }
 ]
-// export const locale = require('../../../src/store').state.preference.config.locale || getLocale(navigator.language)
+// export const locale = require('../../../src/store').state.task.config.locale || getLocale(navigator.language)
 // function getLocaleLabel () {
 //   for (let l of locales) {
 //     if (l.value === locale) {

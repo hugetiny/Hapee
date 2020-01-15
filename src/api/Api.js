@@ -21,7 +21,7 @@ export default class Api {
     this.options = options
 
     this.client = null
-    this.loadConfig()
+    this.loadStorage()
     const {
       rpcListenPort: port,
       rpcSecret: secret
@@ -49,7 +49,7 @@ export default class Api {
     return result
   }
 
-  loadConfig () {
+  loadStorage () {
     let result = Platform.is.desktop
       ? this.loadConfigFromNativeStore()
       : this.loadConfigFromLocalStorage()
@@ -70,12 +70,12 @@ export default class Api {
 
   fetchPreference () {
     return new Promise((resolve) => {
-      this.loadConfig()
+      this.loadStorage()
       resolve(this.config)
     })
   }
 
-  savePreference (params = {}) {
+  saveToLocal (params = {}) {
     const kebabParams = changeKeysToKebabCase(params)
     if (Platform.is.desktop) {
       return this.savePreferenceToNativeStore(kebabParams)

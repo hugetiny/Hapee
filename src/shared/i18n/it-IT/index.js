@@ -54,7 +54,7 @@ export default {
     "- Puoi aggungere più download(files) allo stesso tempo mettendo un'URI per riga.",
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
     '- Puoi anche aggiungere più URI di download(mirror) per uno *stesso* file separando i vari mirror da uno spazio.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.':
+  'uris-can-be':
     '- Un URI può essere un indirizzo HTTP(S)/FTP o un BitTorrent Magnet link.',
   'Download settings': 'Impostazioni download',
   'Advanced settings': 'Impostazioni avanzate',

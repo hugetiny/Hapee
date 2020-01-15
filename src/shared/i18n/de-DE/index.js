@@ -55,7 +55,7 @@ export default {
   '- Es können mehrere Downloads (Dateien) gleichzeitig hinzugefügt werden, indem jede URI in eine separate Zeile eingegeben wird.',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- Es können auch mehrere URIs (Spiegelserver) für *dieselbe* Datei durch Leerzeichen getrennt angegeben werden.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.':
+  'uris-can-be':
   '- Eine URI kann folgende Protokolle besitzen: HTTP(S)/FTP/BitTorrent-Magnet.',
   'Download settings': 'Download Einstellungen',
   'Advanced settings': 'Erweiterte Einstellungen',

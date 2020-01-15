@@ -54,7 +54,7 @@ export default {
   '- Ayrı bir satıra her dosya için URI koyarak aynı anda birden fazla dosya indirebilirsiniz.',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- Aynı dosyalar için birden fazla URI (ayna) da ekleyebilirsiniz. Bunu yapmak için URIları bir boşlukla ayırın.',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.':
+  'uris-can-be':
   '- Bir URI, HTTP(S)/FTP/BitTorrent-Magnet olabilir.',
   'Download settings': 'İndirme ayarları',
   'Advanced settings': 'Gelişmiş Ayarlar',

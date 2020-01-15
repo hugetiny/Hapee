@@ -30,7 +30,7 @@ export default {
     ...mapState('app', [
       'stat'
     ]),
-    ...mapState('preference', [
+    ...mapState('task', [
       'engineMode'
     ])
   },
@@ -38,7 +38,7 @@ export default {
     bytesToSize
   },
   methods: {
-    ...mapActions('preference', [
+    ...mapActions('task', [
       'toggleEngineMode'
     ])
   }

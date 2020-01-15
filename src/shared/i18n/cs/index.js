@@ -58,7 +58,7 @@ export default {
   '- Můžete začít stahovat více souborů v jeden okamžik, tak že na každý řádek dáte jinou URI',
   '- You can also add multiple URIs (mirrors) for the *same* file. To do this, separate the URIs by a space.':
   '- Také můžete přidat více URI (Zrcadel) pro *stejný* soubor, tak že je dáte na jeden řádek oddělené mezerou ',
-  '- A URI can be HTTP(S)/FTP/BitTorrent-Magnet.': '- URI může být HTTP(S)/FTP/BitTorrent-Magnet.',
+  'uris-can-be': '- URI může být HTTP(S)/FTP/BitTorrent-Magnet.',
   'Download settings': 'Nastavení stahování',
   'Advanced settings': 'Pokročilé nastavení',
   Cancel: 'Zrušit',

@@ -1,59 +1,35 @@
 import api from 'src/api'
+import { isEmpty } from 'lodash'
 
 const state = {
   currentList: 'active',
   taskItemInfoVisible: false,
   currentTaskItem: null,
   taskList: [],
-  finishedList: [],
-  selectedList: []
+  selectedList: [],
+  engineMode: 'MAX',
+  config: {}
 }
 
 const getters = {}
 
 const mutations = {
-  SINGLE_SELECT (state, index) {
-    if (state.selectedList.includes(index) && state.selectedList.length === 1) {
-      state.selectedList = []
-    } else {
-      state.selectedList = [index]
-    }
-  },
-  SHIFT_SELECT (state, index) {
-    if (state.selectedList.length !== 0) {
-      let min, max
-      min = Math.min(Math.min(...state.selectedList), index)
-      max = Math.max(Math.min(...state.selectedList), index)
-
-      state.selectedList = []
-      for (let i = min; i <= max; i++) {
-        state.selectedList.push(i)
-      }
-    } else {
-      state.selectedList = [index]
-    }
-  },
-  CTRL_SELECT (state, index) {
-    if (state.selectedList.includes(index)) {
-      state.selectedList.splice(state.selectedList.indexOf(index), 1)
-    } else {
-      state.selectedList.push(index)
-    }
-    // console.log(state.selectedList)
-  },
-  META_SELECT (state, index) {
-    if (state.selectedList.includes(index)) {
-      state.selectedList.splice(state.selectedList.indexOf(index), 1)
-    } else {
-      state.selectedList.push(index)
-    }
-    // console.log(state.selectedList)
+  UPDATE_LOCAL (state, config = {}) {
+    state.config = { ...state.config, ...config }
   },
   UPDATE_TASK_LIST (state, taskList) {
     // console.log(taskList)
     // taskList.forEach(task => { task.selected = false })
     // eslint-disable-next-line standard/array-bracket-even-spacing
-    state.taskList = [...new Set([...taskList, ...state.finishedList])]
+    state.taskList = [...new Set([...taskList, ...state.config.finishedList])]
+  },
+  ADD_FINISHED_TASK (state, task = {}) {
+    // console.log(taskList)
+    // taskList.forEach(task => { task.selected = false })
+    // eslint-disable-next-line standard/array-bracket-even-spacing
+    state.config.finishedList = [...state.config.finishedList, task]
+
+    return api.saveToLocal({ finishedList: state.config.finishedList })
   },
   CHANGE_CURRENT_LIST (state, currentList) {
     state.currentList = currentList
@@ -68,17 +44,24 @@ const mutations = {
 }
 
 const actions = {
-  singleSelect ({ commit }, index) {
-    commit('SINGLE_SELECT', index)
+  async fetchPreference ({ commit }) {
+    const config = await api.fetchPreference()
+    commit('UPDATE_LOCAL', config)
+    return config
   },
-  shiftSelect ({ commit }, index) {
-    commit('SHIFT_SELECT', index)
+  fetchBtTracker ({ state }) {
+    const trackerSource = [
+      'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt',
+      'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt'
+    ]
+    return api.fetchBtTrackerFromGitHub(trackerSource)
   },
-  ctrlSelect ({ commit }, index) {
-    commit('CTRL_SELECT', index)
-  },
-  metaSelect ({ commit }, index) {
-    commit('META_SELECT', index)
+  save ({ commit, dispatch }, config) {
+    dispatch('task/saveSession', null, { root: true })
+    if (isEmpty(config)) {
+      return
+    }
+    return api.saveToLocal(config)
   },
   changeCurrentList ({ commit, dispatch }, currentList) {
     commit('CHANGE_CURRENT_LIST', currentList)

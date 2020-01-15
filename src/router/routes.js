@@ -112,27 +112,25 @@ const routes = [
     component: () => import('components/Main'),
     children: [
       {
+        path: '/task',
+        alias: '/',
+        component: () => import('components/Task/Index'),
+        props: {
+          status: 'active'
+        }
+      },
+      {
         path: '/search/:search',
         component: () => import('src/components/Search/SearchResult.vue'),
         props: true
       },
       {
         path: '/about',
-        // alias: '/',
         component: () => import('components/About/AboutPanel')
       },
       {
         path: '/addtask',
-        // alias: '/',
         component: () => import('components/Task/AddTask')
-      },
-      {
-        path: '/task',
-        // alias: '/',
-        component: () => import('components/Task/Index'),
-        props: {
-          status: 'active'
-        }
       },
       {
         path: '/task/:status',
@@ -185,7 +183,7 @@ const routes = [
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',
-    component: () => import('components/Main')
+    redirect: '/'
   })
 }
 
