@@ -17,7 +17,6 @@ export default class ConfigManager {
   constructor () {
     this.systemConfig = {}
     this.userConfig = {}
-
     this.init()
   }
 
@@ -97,8 +96,8 @@ export default class ConfigManager {
         'dht-file-path6': getDhtPath(6),
         'dir': getUserDownloadsPath(),
         'max-concurrent-downloads': 5,
-        // 'max-connection-per-server': os.platform() === 'darwin' ? 64 : 16,
-        'max-connection-per-server': 64,
+        'max-connection-per-server': os.platform() === 'darwin' ? 16 : 64,
+        // 'max-connection-per-server': 64,
         'max-download-limit': 0,
         'max-overall-download-limit': 0,
         'max-overall-upload-limit': 0,
