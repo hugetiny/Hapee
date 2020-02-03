@@ -303,7 +303,7 @@ export default {
       console.log(task)
       if (status === 'complete') {
         const fullPath = getTaskFullPath(task)
-        //TODO other types?
+        // TODO other types?
         if (task.bittorrent) {
           showItemInFolder(fullPath)
         } else {

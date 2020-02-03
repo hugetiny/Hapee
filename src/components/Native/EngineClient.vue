@@ -95,6 +95,7 @@ export default {
         .then((task) => {
           // const taskName = getTaskName(task)
           const { errorCode, errorMessage } = task
+          alert(errorMessage)
           console.error(`[negibox] download error===> Gid: ${gid}, #${errorCode}, ${errorMessage}`)
           // const message = this.$t('download-error-message', { taskName })
           // const link = ``

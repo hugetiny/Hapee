@@ -175,26 +175,113 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      // bundler: 'builder', // or 'packager'
-
-      packager: {
-      // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-
-        // OS X / Mac App Store
-        // appBundleId: '',
-        // appCategoryType: '',
-        // osxSign: '',
-        // protocol: 'myapp://path',
-
-      // Windows only
-      // win32metadata: { ... }
-      },
-
+      bundler: 'builder',
       builder: {
-        // https://www.electron.build/configuration/configuration
-
-        // appId: 'downloadbox'
+        'productName': 'Negibox',
+        'appId': 'com.wefrees.Negibox',
+        'fileAssociations': [
+          {
+            'ext': 'torrent',
+            'mimeType': 'application/x-bittorrent',
+            'name': 'Torrent',
+            // macOS-only
+            'role': 'Viewer'
+          }
+        ],
+        'asar': false,
+        // 'directories': {
+        //   'output': 'release'
+        // },
+        // 'files': [
+        //   // './dist/electron/**/*'
+        //   './src-electron/main-process/electron-main.js'
+        // ],
+        'protocols': [
+          {
+            'name': 'Magnet Protocol',
+            'schemes': [
+              'magnet'
+            ]
+          },
+          {
+            'name': 'Thunder Protocol',
+            'schemes': [
+              'thunder'
+            ]
+          }
+        ],
+        'mac': {
+          'target': [
+            'dmg'
+          ],
+          'type': 'distribution',
+          'darkModeSupport': true,
+          'extraResources': {
+            'from': './src-electron/main-process/extra/darwin',
+            'to': './',
+            'filter': [
+              '**/*'
+            ]
+          },
+          'binaries': [
+            './release/mac/Negibox.app/Contents/Resources/engine/aria2c'
+          ],
+          'category': 'public.app-category.utilities'
+        },
+        'win': {
+          'target': [
+            {
+              'target': 'nsis',
+              'arch': [
+                'x64',
+                'ia32'
+              ]
+            }
+          ],
+          'extraResources': {
+            'from': './src-electron/main-process/extra/win32',
+            'to': './',
+            'filter': [
+              '**/*'
+            ]
+          }
+        },
+        'nsis': {
+          'oneClick': false,
+          'allowToChangeInstallationDirectory': true
+        },
+        'linux': {
+          'category': 'Network',
+          'target': [
+            'AppImage'
+          ],
+          'extraResources': {
+            'from': './src-electron/main-process/extra/linux',
+            'to': './',
+            'filter': [
+              '**/*'
+            ]
+          }
+        },
+        'appImage': {
+          'desktop': {
+            'Name': 'Negibox',
+            'Encoding': 'UTF-8',
+            'Icon': 'build/icon_256x256.png',
+            'Comment': 'The only downloader you need',
+            'Terminal': 'false',
+            'Categories': 'Utility'
+          }
+        },
+        'publish': [
+          {
+            'provider': 'github',
+            'owner': 'hugetiny',
+            'repo': 'negibox'
+          }
+        ]
       },
+
       // unPackagedInstallParams: [],
 
       // Requires: @quasar/app v1.3.0+
