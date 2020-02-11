@@ -132,6 +132,10 @@ export default class WindowManager extends EventEmitter {
         webPreferences: {
           // Macos bounce
           scrollBounce: true,
+          //   If you turn off the node integration, then in the renderer thread you won’t be able to:
+          //   Import Node.js packages (like “fs”, “path”, “electron”). Using “require” will trigger an error.
+          //   Use __statics (more info).
+          // Use this.$q.electron (as an alias to electron Object) in your .vue files.
           nodeIntegration: true
         }
       },

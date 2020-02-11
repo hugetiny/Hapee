@@ -72,7 +72,7 @@ import { mapState } from 'vuex'
 import { isEmpty } from 'lodash'
 import SelectDirectory from 'components/Native/SelectDirectory'
 // import SelectTorrent from 'components/Task/SelectTorrent'
-import TorrentDetail from 'components/Task/TorrentDetail'
+import TorrentDetail from 'components/Task/torrentDetail'
 import {
   NONE_SELECTED_FILES,
   SELECTED_ALL_FILES

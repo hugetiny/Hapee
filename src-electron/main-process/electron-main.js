@@ -2,6 +2,7 @@ import { app } from 'electron'
 import os from 'os'
 // import pjson from 'package.json'
 import Launcher from './Launcher'
+// import registerIPC from './search'
 /**
  * Set `__staticss` path to static files in production;
  * The reason we are setting it here is that the path needs to be evaluated at runtime
@@ -62,4 +63,5 @@ if (os.platform() === 'win32') {
 }
 
 global.launcher = new Launcher()
+// registerIPC()
 // // console.log(global)

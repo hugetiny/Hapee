@@ -188,7 +188,7 @@ module.exports = function (ctx) {
             'role': 'Viewer'
           }
         ],
-        'asar': false,
+        // 'asar': false,
         // 'directories': {
         //   'output': 'release'
         // },

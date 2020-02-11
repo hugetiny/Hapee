@@ -20,3 +20,4 @@ src/boot/firebase.js
 *.sln
 quasar.conf.js
 fakeWebpackConfig.js
+/src-electron/main-process/search/

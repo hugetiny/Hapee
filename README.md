@@ -6,22 +6,19 @@
   <br>
   <br>
 </h1>
-<h4 align="center">A Multi-protocol cross-platform downloader</h4>
+<h4 align="center">Download Everything</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
 </p>
 
-
-# Negibox is open source now!
 The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
 
 ## How to run?
-New Negibox is still in developing
+
 1. yarn
 2. quasar dev -m electron
->[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
 
 ## Supported Platform
 
