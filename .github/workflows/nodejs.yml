@@ -35,11 +35,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install && ./node_modules/.bin/quasar build -m electron -P always
+    - run: npm install
+    - run: ./node_modules/.bin/quasar build -m electron -P always
       env:
         CI: true
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
-        GH_TOKEN: ${{ secrets.GH_TOKEN }} 
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
   buildw:
 
     runs-on: macos-latest
