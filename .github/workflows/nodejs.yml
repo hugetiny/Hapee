@@ -20,6 +20,7 @@ jobs:
       env:
         CI: true
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
   buildm:
 
     runs-on: windows-latest
@@ -38,6 +39,7 @@ jobs:
       env:
         CI: true
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }} 
   buildw:
 
     runs-on: macos-latest
@@ -56,3 +58,4 @@ jobs:
       env:
         CI: true
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
