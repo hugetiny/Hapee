@@ -1,68 +1,94 @@
 <template>
   <div>
-    <q-uploader
-      dark
-      square
-      :label="$t('uri-task-tips')"
-      accept=".torrent"
-      :max-file-size="8192000"
-      hide-upload-btn
-      @added="added"
-      multiple
-    >
-      <template v-slot:list="scope">
-        <q-input dark
-                 ref="uri"
-                 type="textarea"
-                 auto-complete="off"
-                 :placeholder="$t('uris-can-be')"
-                 @paste.native="handleUriPaste"
-                 v-model="form.uris"
-        ></q-input>
-      </template>
-    </q-uploader>
-      <q-input dark
-               :placeholder="$t('task-out-tips')"
-               v-model="form.out"
-               :label="$t('task-out')">
-      </q-input>
-      <q-input dark
-               v-model="form.split"
-               @change="handleSplitChange"
-               controls-position="right"
-               :min="1"
-               :max="config.maxConnectionPerServer"
-               :value="config.split"
-               :label="$t('task-split')">
-      </q-input>
-      <select-directory></select-directory>
-      <q-checkbox dark
-                  :label="$t('show-advanced-options')"
-                  v-model="showAdvanced">
-      </q-checkbox>
-      <div v-if="showAdvanced">
-        <q-input dark
-                 :label="$t('task-user-agent')"
-                 :autosize="{ minRows: 2, maxRows: 3 }"
-                 auto-complete="off"
-                 :placeholder="$t('task-user-agent')"
-                 v-model="form.userAgent">
-        </q-input>
-        <q-input dark
-                 :label="`${$t('task-referer')}: `"
-                 auto-complete="off"
-                 :placeholder="$t('task-referer')"
-                 v-model="form.referer">
-        </q-input>
-        <q-input dark
-                 :label="`${$t('task-cookie')}: `"
-                 auto-complete="off"
-                 :placeholder="$t('task-cookie')"
-                 v-model="form.cookie">
-        </q-input>
-      </div>
-      <q-btn @click="handleCancel('taskForm')">{{$t('cancel')}}</q-btn>
-      <q-btn @click="submitForm('taskForm')">{{$t('submit')}}</q-btn>
+    <q-list dark class="q-pa-sm">
+      <q-item>
+        <q-item-section>
+          <q-uploader
+            dark
+            square
+            :label="$t('By Torrents')"
+            accept=".torrent"
+            :max-file-size="8192000"
+            hide-upload-btn
+            @added="added"
+            multiple
+          >
+            <template v-slot:list="scope">
+              <q-input dark
+                       ref="uri"
+                       type="textarea"
+                       auto-complete="off"
+                       :placeholder="$t('uri-task-tips')"
+                       @paste.native="handleUriPaste"
+                       v-model="form.uris"
+              ></q-input>
+            </template>
+          </q-uploader>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-input dark
+                   :placeholder="$t('task-out-tips')"
+                   v-model="form.out"
+                   :label="$t('task-out')">
+          </q-input>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-input dark
+                   v-model="form.split"
+                   @change="handleSplitChange"
+                   controls-position="right"
+                   :min="1"
+                   :max="config.maxConnectionPerServer"
+                   :value="config.split"
+                   :label="$t('task-split')">
+          </q-input>
+          <select-directory></select-directory>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-checkbox dark
+                      :label="$t('show-advanced-options')"
+                      v-model="showAdvanced">
+          </q-checkbox>
+          <div v-if="showAdvanced">
+            <q-input dark
+                     :label="$t('task-user-agent')"
+                     :autosize="{ minRows: 2, maxRows: 3 }"
+                     auto-complete="off"
+                     :placeholder="$t('task-user-agent')"
+                     v-model="form.userAgent">
+            </q-input>
+            <q-input dark
+                     :label="`${$t('task-referer')}: `"
+                     auto-complete="off"
+                     :placeholder="$t('task-referer')"
+                     v-model="form.referer">
+            </q-input>
+            <q-input dark
+                     :label="`${$t('task-cookie')}: `"
+                     auto-complete="off"
+                     :placeholder="$t('task-cookie')"
+                     v-model="form.cookie">
+            </q-input>
+          </div>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-btn @click="handleCancel('taskForm')">{{$t('cancel')}}</q-btn>
+        </q-item-section>
+      </q-item>
+      <q-item>
+        <q-item-section>
+          <q-btn color="primary" @click="submitForm('taskForm')">{{$t('submit')}}</q-btn>
+        </q-item-section>
+      </q-item>
+    </q-list>
   </div>
 </template>
 
@@ -145,6 +171,7 @@ export default {
   },
   data () {
     return {
+      torrentsAmount: 0,
       showAdvanced: false,
       form: {},
       rules: {}
@@ -192,10 +219,15 @@ export default {
   methods: {
     added (torrents) {
       // TODO show dialog table,
+      // console.log(torrents)
+
       if (torrents.length === 0) {
         // this.reset()
+        console.log('no torrents')
         return
       }
+      this.torrentsAmount = (torrents.length)
+      console.log(this.torrentsAmount)
       console.log(torrents)
       torrents.forEach(torrent => {
         parseTorrent.remote(torrent.path, (err, parsedTorrent) => {
@@ -231,7 +263,6 @@ export default {
               console.log('Called on OK or Cancel')
             })
           })
-
         })
       })
     },
@@ -267,6 +298,7 @@ export default {
       this.form = initialForm(this.$store.state)
     },
     handleCancel (formName) {
+      this.torrentsAmount = this.torrentsAmount - 1
       this.$store.dispatch('app/hideAddTaskDialog')
     },
     buildHeader (form) {
@@ -342,7 +374,7 @@ export default {
       const { torrent } = form
       console.log(torrent)
       if (isEmpty(torrent)) {
-        throw new Error(this.$t('new-task-torrent-required'))
+        throw new Error(this.$t('new-task-uris-required'))
       }
       const options = this.buildOption('torrent', form)
       const result = {
@@ -371,23 +403,28 @@ export default {
         console.error('addTask fail', form)
       }
     },
+    dialogClose () {
+      this.torrentsAmount = this.torrentsAmount - 1
+      // console.log(this.torrentsAmount)
+    },
     submitForm () {
       try {
         this.addTask(this.addTaskType, this.form)
+        console.log(this.torrentsAmount)
+        if (this.torrentsAmount === 0) {
+          this.$router.push('/task')
+        }
       } catch (err) {
-        console.error(err.message)
+        alert(err.message)
       }
-      // if (this.form.newTaskShowDownloading) {
-      //   this.$router.push('/task')
-      // }
     }
   }
 }
 </script>
 
 <style lang="scss">
-  .q-uploader{
-    width:100%;
-    max-height:max-content
+  .q-uploader {
+    width: 100%;
+    max-height: max-content
   }
 </style>

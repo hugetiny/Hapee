@@ -150,7 +150,9 @@ export default {
       console.log(this.torrentBase64)
       this.$store.commit('app/CHANGE_ADD_TASK_TYPE', 'torrent')
       this.$parent.$parent.handleTorrentChange(this.torrentBase64, this.selectedFileIndex)
+      this.$parent.$parent.dialogClose()
       this.$parent.$parent.submitForm()
+
       // this.$parent.submitForm()
       // on OK, it is REQUIRED to
       // emit "ok" event (with optional payload)
@@ -169,6 +171,7 @@ export default {
 
     onCancelClick () {
       // we just need to hide dialog
+      this.$parent.$parent.dialogClose()
       this.hide()
     }
   }

@@ -6,22 +6,22 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Download Everything</h4>
+<h4 align="center">干 翻 迅 雷</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
 </p>
 
-The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
+多平台，多协议下载器(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink)(Mac,Windows,Linux,Android,iOS)
 
-[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
-## How to run?
+[欢迎提issue](https://github.com/hugetiny/negibox/issues/new)
+## 怎么跑
 
 1. yarn
 2. quasar dev -m electron
 
-## Supported Platform
+## 支持平台
 
 - [ ] Web Chrome/Firefox/Safari/IE11
 - [x] macOS 10.10 ↑
@@ -31,14 +31,13 @@ The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorren
 - [x] Ubuntu 12.04 ↑
 - [x] Fedora 21
 - [x] Debian 8
-####(On Linux platform ，app is packaged in AppImage and requires FUSE to run.KDE and GNOME is recommended.)
-
-## Engines
+#### (Linux平台打包为AppImage格式，以Electron支持的平台为准)
+## 引擎
 - [x] aria2
-- [ ] thunder
-- [ ] WebTorrent (for web version only)
+- [ ] thunder（我记得mydmplus能调用迅雷引擎，不知道怎么实现的，望指教）
+- [ ] WebTorrent (web版下载引擎)
 
-## Browser Extension
+## 浏览器扩展
 - [ ] chrome/chromium
 - [ ] firefox
 - [ ] safari
@@ -54,11 +53,11 @@ The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorren
 - [x] BitTorrent
 - [x] MetaLink
 
-## decentrailize support
+## 去中心化支持
 
 - [ ] IPFS
 
-## cloud & service
+## 云功能
 
 - [ ] cloud files router/NAS remote control
 - [ ] cloud videos player with danmaku
@@ -70,7 +69,11 @@ The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorren
   <br>
 </h3>
 
-## Special Thanks
+## 感谢开源项目
+
+迅雷真的越来越难用了，各种限制+限速。
+整个Electron项目参考Motrix比较多，前端UI用Quasar重写了一边做到各端UI体验一致，桌面版完善好就开始做手机版和web版。
+干翻迅雷离不开你的支持。
 
 [aria2](https://github.com/aria2/aria2)
 [quasar](https://github.com/quasarframework/quasar)

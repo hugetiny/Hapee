@@ -45,12 +45,23 @@
 
 </template>
 <script>
-
+import { ipcRenderer } from 'electron'
 export default {
   data () {
     return { keyword: '' }
   },
   name: 'Topbar',
+  created () {
+    ipcRenderer.on('on-search-response', (event, rsp) => {
+      this.loading.table = false
+      if (rsp.success) {
+        this.page = rsp.data
+      } else {
+        console.err(rsp)
+      }
+    })
+  },
+
   methods: {
     toPreference: function () {
       this.$router.push('/preference')
@@ -62,6 +73,15 @@ export default {
       // this.$store.dispatch('search/search', this.keyword)
       this.$router.push(`/search/${this.keyword}`)
       // }
+    },
+
+    handleSearch () {
+      if (this.keyword) {
+        this.loading.table = true
+        console.info('搜索', JSON.stringify(this.page.current, '/t', 2))
+        ipcRenderer.send('search', this.page.current, this.settings.getLocal())
+
+      }
     }
   }
 }
