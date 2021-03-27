@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/hugetiny/negibox/workflows/Node.js%20CI/badge.svg)
+[English](https://github.com/hugetiny/negibox)
 <h1 align="center">
     <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
@@ -6,7 +7,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">干 翻 迅 雷</h4>
+<h4 align="center">做一个好用的下载器，就当给自己用的</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
@@ -71,9 +72,13 @@
 
 ## 感谢开源项目
 
-迅雷真的越来越难用了，各种限制+限速。
-整个Electron项目参考Motrix比较多，前端UI用Quasar重写了一边做到各端UI体验一致，桌面版完善好就开始做手机版和web版。
-干翻迅雷离不开你的支持。
+迅雷真的越来越难用了，各种版权限制+限速。
+整个Electron项目参考Motrix比较多，前端UI用Quasar重写了一边做到各端UI体验一致，手机版目前无解。
+
+
+2021/3/27过了很长时间不知道为什么还要更新这个项目，其他优秀的项目比如mydm plus做的也很好，不过好像会被360报病毒，可能这些项目的确没法盈利，不够来养活作者或者给作者买杯咖啡。
+目前依旧没有一个比较符合我心目中集成全协议下载+资源搜索的真正好用的下载器。怎么说呢，没法盈利没关系，没人PR也没关系，我早已不是打工人，也没有赚钱的欲望，把github当成一个涨星星的游戏可能会让我轻松的慢慢更新下去。
+过了几年再回来我自己都要重新开始熟悉自己的项目，慢慢更新吧，对不起之前唯一帮助过我这个项目的一个会德语小伙了。
 
 [aria2](https://github.com/aria2/aria2)
 [quasar](https://github.com/quasarframework/quasar)

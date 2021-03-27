@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/hugetiny/negibox/workflows/Node.js%20CI/badge.svg)
+[中文](https://github.com/hugetiny/negibox/blob/dev/READMECN.md)
 <h1 align="center">
     <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
   <br>
