@@ -7,7 +7,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Download Everything</h4>
+<h4 align="center">Archived.This project will reopen till  <a>https://github.com/capacitor-community/proposals/issues/5</a> being solved </h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
