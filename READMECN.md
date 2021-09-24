@@ -7,7 +7,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">Motrix已经做得很好了，本项目归档了。本来试着用quasar打通手机版，做到全端互通，奈何精力不够，理论上一定是可行的。</h4>
+<h4 align="center">有可能继续</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
