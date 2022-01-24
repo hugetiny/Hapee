@@ -7,7 +7,7 @@
   <br>
   <br>
 </h1>
-<h4 align="center">有可能继续</h4>
+<h4 align="center">有可能继续。最近发现国内有拿我这个项目去hack做百度云一键下载什么的。首先我既然开源了欢迎各种hack。别忘记Pull request，干翻迅雷离不开众人的努力</h4>
 <p align="center">
   <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
   <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
