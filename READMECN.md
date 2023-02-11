@@ -1,22 +1,16 @@
 ![Node.js CI](https://github.com/hugetiny/negibox/workflows/Node.js%20CI/badge.svg)
-[English](https://github.com/hugetiny/negibox)
-<h1 align="center">
-    <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
-  <br>
-  Negibox
-  <br>
-  <br>
-</h1>
-<h4 align="center">有可能继续。最近发现国内有拿我这个项目去hack做百度云一键下载什么的。首先我既然开源了欢迎各种hack。别忘记Pull request，干翻迅雷离不开众人的努力</h4>
-<p align="center">
-  <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
-</p>
+<a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
+<a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
+<a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"/>
+[English](https://github.com/hugetiny/negibox/blob/dev/README.md)
 
-多平台，多协议下载器(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink)(Mac,Windows,Linux,Android,iOS)
+## Gopeed 是更好的跨平台全协议下载器。我也正在参与开发中。推荐下载，干翻迅雷！
+https://github.com/GopeedLab/gopeed
 
-[欢迎提issue](https://github.com/hugetiny/negibox/issues/new)
+  
+#### 多平台，多协议下载器(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink)(Mac,Windows,Linux,Android,iOS)
+
+
 ## 怎么跑
 
 1. yarn
