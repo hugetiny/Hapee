@@ -1,22 +1,15 @@
 ![Node.js CI](https://github.com/hugetiny/negibox/workflows/Node.js%20CI/badge.svg)
+<a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
+<a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
+<a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"/>
 [中文](https://github.com/hugetiny/negibox/blob/dev/READMECN.md)
-<h1 align="center">
-    <img src="https://github.com/hugetiny/negibox/blob/master/docs/imgs/icon-gif.gif" alt="Negibox" width="256">
-  <br>
-  Negibox
-  <br>
-  <br>
-</h1>
-<h4 align="center">This project will continue till  https://github.com/capacitor-community/proposals/issues/5 to be solved </h4>
-<p align="center">
-  <a href="https://gitter.im/negibox/community"><img src="https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg" alt="gitter"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/release/hugetiny/negibox.svg" alt="github release version"></a>
-  <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"></a>
-</p>
 
-The only one multi-protocol downloader(http,https,ftp,sftp,ftps,magnet,BitTorrent,MetaLink) you need for all platforms(Mac,Windows,Linux,Android,iOS)
+## Gopeed is a better (maybe the best) cross-platform downloader for all protocols and most platforms.I am working on it.
+https://github.com/GopeedLab/gopeed
 
-[Please feel free to submit issue](https://github.com/hugetiny/negibox/issues/new)
+
+
+
 ## How to run?
 
 1. yarn
