@@ -3,12 +3,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../generated/locales.g.dart';
-import '../../../../util/localeManager.dart';
 import '../../../../util/package_info.dart';
 import '../../../../util/util.dart';
 import '../../../views/views/check_list_view.dart';
@@ -39,7 +38,10 @@ class SettingView extends GetView<SettingController> {
             .then(completer.complete)
             .onError(completer.completeError);
         if (needRestart) {
-          Get.snackbar('tip'.tr, 'effectAfterRestart'.tr);
+          Get.snackbar(
+              MaterialLocalizations.of(context).alertDialogLabel,
+              //TODO fix translation
+              AppLocalizations.of(context).window_reload);
         }
       });
       return completer.future;
@@ -69,7 +71,8 @@ class SettingView extends GetView<SettingController> {
     // http config items start
     final httpConfig = downloaderCfg.value.protocolConfig.http;
     final buildHttpConnections = _buildConfigItem(
-        'connections'.tr, () => httpConfig.connections.toString(), (Key key) {
+        AppLocalizations.of(context).task_task_connections,
+        () => httpConfig.connections.toString(), (Key key) {
       final connectionsController =
           TextEditingController(text: httpConfig.connections.toString());
       connectionsController.addListener(() async {
@@ -97,10 +100,8 @@ class SettingView extends GetView<SettingController> {
     final btExtConfig = downloaderCfg.value.extra.bt;
 
     final buildBtTrackerSubscribeUrls = _buildConfigItem(
-        'subscribeTracker'.tr,
-        () => 'items'.trParams(
-            {'count': btExtConfig.trackerSubscribeUrls.length.toString()}),
-        (Key key) {
+        AppLocalizations.of(context).preferences_bt_subscribeTracker,
+        () => btExtConfig.trackerSubscribeUrls.length.toString(), (Key key) {
       final trackerUpdateController = OutlinedButtonLoadingController();
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,37 +127,40 @@ class SettingView extends GetView<SettingController> {
                   try {
                     await appController.trackerUpdate();
                   } catch (e) {
-                    Get.snackbar('error'.tr, 'subscribeFail'.tr);
+                    Get.snackbar(
+                        AppLocalizations.of(context).app_system_error_title,
+                        AppLocalizations.of(context)
+                            .preferences_sync_tracker_tips);
                   } finally {
                     trackerUpdateController.stop();
                   }
                 },
                 controller: trackerUpdateController,
-                child: Text('update'.tr),
+                child: Text(
+                    AppLocalizations.of(context).preferences_sync_tracker_tips),
               ),
               Expanded(
                 child: SwitchListTile(
                     controlAffinity: ListTileControlAffinity.leading,
                     value: true,
                     onChanged: (bool value) {},
-                    title: Text('updateDaily'.tr)),
+                    title: Text(AppLocalizations.of(context)
+                        .preferences_auto_sync_tracker)),
               ),
             ],
           ),
-          Text('lastUpdate'.trParams({
-            'time': btExtConfig.lastTrackerUpdateTime != null
-                ? DateFormat('yyyy-MM-dd HH:mm:ss')
-                    .format(btExtConfig.lastTrackerUpdateTime!)
-                : ''
-          })),
+          Text(AppLocalizations.of(context).preferences_last_check_update_time +
+              (btExtConfig.lastTrackerUpdateTime != null
+                  ? DateFormat('yyyy-MM-dd HH:mm:ss')
+                      .format(btExtConfig.lastTrackerUpdateTime!)
+                  : ''))
+          // (
+          //   )
         ],
       );
     });
     final buildBtTrackers = _buildConfigItem(
-        'addTracker'.tr,
-        () => 'items'
-            .trParams({'count': btExtConfig.customTrackers.length.toString()}),
-        (Key key) {
+        AppLocalizations.of(context).addTracker, () => '', (Key key) {
       final trackersController = TextEditingController(
           text: btExtConfig.customTrackers.join('\r\n').toString());
       const ls = LineSplitter();
@@ -167,7 +171,8 @@ class SettingView extends GetView<SettingController> {
         keyboardType: TextInputType.multiline,
         maxLines: 5,
         decoration: InputDecoration(
-          hintText: 'addTrackerHit'.tr,
+          hintText:
+              AppLocalizations.of(context).preferences_bt_tracker_input_tips,
         ),
         onChanged: (value) async {
           btExtConfig.customTrackers = ls.convert(value);
@@ -180,8 +185,8 @@ class SettingView extends GetView<SettingController> {
 
     // ui config items start
     final buildTheme = _buildConfigItem(
-        'theme',
-        () => _getThemeName(downloaderCfg.value.extra.themeMode),
+        AppLocalizations.of(context).preferences_appearance,
+        () => _getThemeName(downloaderCfg.value.extra.themeMode, context),
         (Key key) => DropdownButton<String>(
               key: key,
               value: downloaderCfg.value.extra.themeMode,
@@ -197,52 +202,24 @@ class SettingView extends GetView<SettingController> {
               items: ThemeMode.values
                   .map((e) => DropdownMenuItem<String>(
                         value: e.name,
-                        child: Text(_getThemeName(e.name)),
-                      ))
-                  .toList(),
-            ));
-    final buildLocale = _buildConfigItem(
-        'locale',
-        () => AppTranslation
-            .translations[downloaderCfg.value.extra.locale]!['label']!,
-        (Key key) => DropdownButton<String>(
-              key: key,
-              value: downloaderCfg.value.extra.locale,
-              isDense: true,
-              onChanged: (value) async {
-                downloaderCfg.update((val) {
-                  val!.extra.locale = value!;
-                });
-                Get.updateLocale(toLocale(value!));
-                controller.clearTap();
-
-                await debounceSave();
-              },
-              items: AppTranslation.translations.keys
-                  .map((e) => DropdownMenuItem<String>(
-                        value: e,
-                        child: Text(AppTranslation.translations[e]!['label']!),
+                        child: Text(_getThemeName(e.name, context)),
                       ))
                   .toList(),
             ));
 
     // about config items start
     buildHomepage() => ListTile(
-          title: Text('homepage'.tr),
-          subtitle: const Text('https://github.com/GopeedLab/gopeed'),
+          title: Text(AppLocalizations.of(context).help_official_website),
+          subtitle: const Text('https://github.com/hugetiny/hapee'),
           onTap: () {
-            launchUrl(Uri.parse('https://github.com/GopeedLab/gopeed'),
-                mode: LaunchMode.externalApplication);
+            launchUrl(Uri.parse('https://github.com/hugetiny/hapee'),
+                mode: LaunchMode.inAppWebView);
           },
-        );
-    buildVersion() => ListTile(
-          title: Text('version'.tr),
-          subtitle: Text(packageInfo.version),
         );
 
     // advanced config items start
     final buildApiProtocol = _buildConfigItem(
-      'protocol'.tr,
+      AppLocalizations.of(context).preferences_download_protocol,
       () => startCfg.value.network == 'tcp'
           ? 'TCP ${startCfg.value.address}'
           : 'Unix',
@@ -320,7 +297,7 @@ class SettingView extends GetView<SettingController> {
               child: TextFormField(
                 controller: portController,
                 decoration: InputDecoration(
-                  labelText: 'port'.tr,
+                  labelText: AppLocalizations.of(context).preferences_port,
                   contentPadding: const EdgeInsets.all(0.0),
                 ),
                 keyboardType: TextInputType.number,
@@ -340,9 +317,7 @@ class SettingView extends GetView<SettingController> {
         );
       },
     );
-    final buildApiToken = _buildConfigItem('apiToken'.tr,
-        () => startCfg.value.apiToken.isEmpty ? 'notSet'.tr : 'seted'.tr,
-        (Key key) {
+    final buildApiToken = _buildConfigItem('Api token', () => '', (Key key) {
       final apiTokenController =
           TextEditingController(text: startCfg.value.apiToken);
       apiTokenController.addListener(() async {
@@ -370,15 +345,16 @@ class SettingView extends GetView<SettingController> {
           length: 2,
           child: Scaffold(
               appBar: PreferredSize(
-                  preferredSize: Size.fromHeight(56),
+                  preferredSize: const Size.fromHeight(56),
                   child: AppBar(
                     bottom: TabBar(
                       tabs: [
                         Tab(
-                          text: 'basic'.tr,
+                          text: AppLocalizations.of(context).preferences_basic,
                         ),
                         Tab(
-                          text: 'advanced'.tr,
+                          text:
+                              AppLocalizations.of(context).preferences_advanced,
                         ),
                       ],
                     ),
@@ -389,7 +365,8 @@ class SettingView extends GetView<SettingController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: _addPadding([
-                        Text('general'.tr),
+                        Text(AppLocalizations.of(context)
+                            .preferences_appearance),
                         Card(
                             child: Column(
                           children: _addDivider([
@@ -411,20 +388,33 @@ class SettingView extends GetView<SettingController> {
                             buildBtTrackers(),
                           ]),
                         )),
-                        Text('ui'.tr),
+                        Text(AppLocalizations.of(context).preferences_ui),
                         Card(
                             child: Column(
                           children: _addDivider([
                             buildTheme(),
-                            buildLocale(),
+                            // buildLocale(),
                           ]),
                         )),
-                        Text('about'.tr),
+                        Text(MaterialLocalizations.of(context)
+                            .aboutListTileTitle('Gopeed')),
                         Card(
                             child: Column(
                           children: _addDivider([
                             buildHomepage(),
-                            buildVersion(),
+                            ListTile(
+                              onTap: () => showAboutDialog(
+                                context: context,
+                                // applicationIcon: ,
+                                applicationName: packageInfo.appName,
+                                applicationVersion: packageInfo.version,
+                                // dialog detail text
+                                // applicationLegalese: packageInfo.packageName,
+                              ),
+                              title: Text(AppLocalizations.of(context)
+                                  .about_engine_version),
+                              subtitle: Text(packageInfo.version),
+                            ),
                           ]),
                         )),
                       ]),
@@ -514,14 +504,14 @@ class SettingView extends GetView<SettingController> {
     return result;
   }
 
-  String _getThemeName(String? themeMode) {
+  String _getThemeName(String? themeMode, BuildContext context) {
     switch (ThemeMode.values.byName(themeMode ?? ThemeMode.system.name)) {
       case ThemeMode.light:
-        return 'themeLight'.tr;
+        return AppLocalizations.of(context).preferences_theme_light;
       case ThemeMode.dark:
-        return 'themeDark'.tr;
+        return AppLocalizations.of(context).preferences_theme_dark;
       default:
-        return 'themeSystem'.tr;
+        return AppLocalizations.of(context).preferences_theme_auto;
     }
   }
 }

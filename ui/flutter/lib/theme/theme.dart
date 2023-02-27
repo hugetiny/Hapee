@@ -26,14 +26,14 @@ class GopeedTheme {
   });
 
   static final _light = ThemeData(
-      //TODO useMaterial3: true,
+      useMaterial3: true,
       brightness: Brightness.light,
       primarySwatch: _gopeedreen);
   static final light = _light.copyWith(
       colorScheme: _light.colorScheme.copyWith(secondary: _gopeedreenAccent));
 
   static final _dark = ThemeData(
-      //TODO useMaterial3: true,
+      useMaterial3: true,
       brightness: Brightness.dark,
       primarySwatch: _gopeedreen);
   static final dark = _dark.copyWith(

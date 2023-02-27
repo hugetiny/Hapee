@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckListView extends StatefulWidget {
   final List<String> items;
@@ -44,7 +44,7 @@ class _CheckListView extends State<CheckListView> {
                   widget.onChanged(_checked);
                 });
               },
-              title: Text('selectAll'.tr),
+              title: Text(AppLocalizations.of(context).edit_select_all),
             ),
             Expanded(
               child: ListView.builder(

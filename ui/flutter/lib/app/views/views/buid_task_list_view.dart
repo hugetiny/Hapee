@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,7 +27,7 @@ class BuildTaskListView extends GetView {
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.add),
-              tooltip: 'create'.tr,
+              tooltip: AppLocalizations.of(context).app_add_task,
               onPressed: () {
                 Get.rootDelegate.toNamed(Routes.CREATE);
               },
@@ -34,14 +35,14 @@ class BuildTaskListView extends GetView {
             //TODO appBar toggleALl/start selected/delete selected/
             // IconButton(
             //   icon: const Icon(Icons.pause),
-            //   tooltip: 'title'.tr,
+            //   tooltip: AppLocalizations.of(context).title,
             //   onPressed: () {
             //     // pause all
             //   },
             // ),
             // IconButton(
             //   icon: const Icon(Icons.delete),
-            //   tooltip: 'title'.tr,
+            //   tooltip: AppLocalizations.of(context).title,
             //   onPressed: () {
             //     // delete all
             //   },
@@ -80,22 +81,24 @@ class BuildTaskListView extends GetView {
           context: context,
           barrierDismissible: false,
           builder: (_) => AlertDialog(
-                title: Text('deleteTask'.tr),
+                title: Text(AppLocalizations.of(context).task_delete_task),
                 content: Obx(() => CheckboxListTile(
-                    value: keep.value,
-                    title: Text('deleteTaskTip'.tr,
+                    value: !keep.value,
+                    title: Text(
+                        AppLocalizations.of(context).task_delete_task_label,
                         style: context.textTheme.bodyLarge),
                     onChanged: (v) {
                       keep.value = v!;
                     })),
                 actions: [
                   TextButton(
-                    child: Text('cancel'.tr),
+                    child: Text(
+                        MaterialLocalizations.of(context).cancelButtonLabel),
                     onPressed: () => Get.back(),
                   ),
                   TextButton(
                     child: Text(
-                      'delete'.tr,
+                      MaterialLocalizations.of(context).deleteButtonTooltip,
                       style: const TextStyle(color: Colors.redAccent),
                     ),
                     onPressed: () async {
@@ -103,7 +106,9 @@ class BuildTaskListView extends GetView {
                         await deleteTask(id, !keep.value);
                         Get.back();
                       } catch (e) {
-                        Get.snackbar('error'.tr, e.toString());
+                        Get.snackbar(
+                            AppLocalizations.of(context).app_system_error_title,
+                            e.toString());
                       }
                     },
                   ),
@@ -203,8 +208,7 @@ class BuildTaskListView extends GetView {
               ? const Icon(FaIcons.file)
               : Icon(FaIcons.allIcons[findIcon(task.meta.res.name)]),
 
-          trailing: SizedBox(
-            width: task.status == Status.done ? 80 : 180,
+          trailing: FittedBox(
             child: Row(
               // crossAxisAlignment: CrossAxisAlignment.baseline,
               // textBaseline: DefaultTextStyle.of(context).style.textBaseline,

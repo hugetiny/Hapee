@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
@@ -44,18 +45,21 @@ class HomeView extends GetView<HomeController> {
                           icon: const Icon(Icons.format_align_left_outlined),
                           selectedIcon:
                               const Icon(Icons.format_align_left_outlined),
-                          label: Text('downloading'.tr),
+                          label:
+                              Text(AppLocalizations.of(context).app_task_list),
                         ),
                         NavigationRailDestination(
                           icon: const Icon(Icons.format_align_justify_outlined),
                           selectedIcon:
                               const Icon(Icons.format_align_justify_outlined),
-                          label: Text('downloaded'.tr),
+                          label: Text(
+                              AppLocalizations.of(context).app_task_downloaded),
                         ),
                         NavigationRailDestination(
                           icon: const Icon(Icons.settings),
                           selectedIcon: const Icon(Icons.settings),
-                          label: Text('setting'.tr),
+                          label: Text(
+                              AppLocalizations.of(context).app_preferences),
                         ),
                       ],
                       selectedIndex: controller.currentIndex.value,
@@ -79,15 +83,15 @@ class HomeView extends GetView<HomeController> {
                 items: <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: const Icon(Icons.format_align_left_outlined),
-                    label: 'downloading'.tr,
+                    label: AppLocalizations.of(context).app_task_list,
                   ),
                   BottomNavigationBarItem(
                     icon: const Icon(Icons.format_align_justify_outlined),
-                    label: 'downloaded'.tr,
+                    label: AppLocalizations.of(context).app_task_downloaded,
                   ),
                   BottomNavigationBarItem(
                     icon: const Icon(Icons.settings),
-                    label: 'setting'.tr,
+                    label: AppLocalizations.of(context).app_preferences,
                   ),
                 ],
                 currentIndex: controller.currentIndex.value,
@@ -120,15 +124,15 @@ class HomeView extends GetView<HomeController> {
             //           BottomBarItem(
             //               icon: const Icon(Icons.format_align_left_outlined),
             //               selectedColor: Get.theme.primaryColor,
-            //               title: Text('downloading'.tr)),
+            //               title: Text(AppLocalizations.of(context).app_task_list)),
             //           BottomBarItem(
             //               icon: const Icon(Icons.format_align_justify_outlined),
             //               selectedColor: Get.theme.primaryColor,
-            //               title: Text('downloaded'.tr)),
+            //               title: Text(AppLocalizations.of(context).app_task_downloaded)),
             //           BottomBarItem(
             //               icon: const Icon(Icons.settings),
             //               selectedColor: Get.theme.primaryColor,
-            //               title: Text('setting'.tr)),
+            //               title: Text(AppLocalizations.of(context).app_preferences)),
             //         ],
             //         // hasNotch: true,
             //         currentIndex: controller.currentIndex.value,

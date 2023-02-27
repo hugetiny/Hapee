@@ -1,5 +1,6 @@
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:gopeed/api/model/resolve_result.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
@@ -31,7 +32,7 @@ class CreateView extends GetView<CreateController> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Get.rootDelegate.offNamed(Routes.DOWNLOADING)),
         // actions: [],
-        title: Text('create'.tr),
+        title: Text(AppLocalizations.of(context).app_add_task),
       ),
       body: DropTarget(
         onDragDone: (details) {
@@ -50,14 +51,18 @@ class CreateView extends GetView<CreateController> {
                     minLines: 1,
                     maxLines: 30,
                     decoration: InputDecoration(
-                        hintText: _hitText(),
+                        hintText: Util.isDesktop()
+                            ? AppLocalizations.of(context).task_uri_task_tips +
+                                AppLocalizations.of(context).task_select_torrent
+                            : AppLocalizations.of(context).task_uri_task_tips,
                         hintStyle: const TextStyle(fontSize: 12),
-                        labelText: 'downloadLink'.tr,
+                        labelText: AppLocalizations.of(context).task_uri_task,
                         icon: const Icon(Icons.link)),
                     validator: (v) {
                       return v!.trim().isNotEmpty
                           ? null
-                          : 'downloadLinkValid'.tr;
+                          : AppLocalizations.of(context)
+                              .task_new_task_uris_required;
                     }),
                 Center(
                   child: Padding(
@@ -73,19 +78,23 @@ class CreateView extends GetView<CreateController> {
                             try {
                               _confirmController.start();
                               if (_resolveFormKey.currentState!.validate()) {
-                                final rr = await resolve(Request(
+                                final rr = resolve(Request(
                                   url: _urlController.text,
                                 ));
-                                await _showResolveDialog(rr);
+                                _showResolveDialog(await rr, context);
                               }
                             } catch (e) {
-                              Get.snackbar('error'.tr, e.toString());
+                              Get.snackbar(
+                                  AppLocalizations.of(context)
+                                      .app_system_error_title,
+                                  e.toString());
                             } finally {
                               _confirmController.reset();
                             }
                           },
                           controller: _confirmController,
-                          child: Text('confirm'.tr),
+                          child: Text(
+                              MaterialLocalizations.of(context).okButtonLabel),
                         ),
                       )),
                 ),
@@ -97,13 +106,7 @@ class CreateView extends GetView<CreateController> {
     );
   }
 
-  String _hitText() {
-    return 'downloadLinkHit'.trParams({
-      'append': Util.isDesktop() ? 'downloadLinkHitDesktop'.tr : '',
-    });
-  }
-
-  Future<void> _showResolveDialog(ResolveResult rr) async {
+  Future<void> _showResolveDialog(ResolveResult rr, context) {
     final files = rr.res.files;
     final appController = Get.find<AppController>();
 
@@ -153,7 +156,8 @@ class CreateView extends GetView<CreateController> {
                     onPressed: () {
                       Get.back();
                     },
-                    child: Text('cancel'.tr),
+                    child: Text(
+                        MaterialLocalizations.of(context).cancelButtonLabel),
                   ),
                 ),
                 ConstrainedBox(
@@ -167,14 +171,18 @@ class CreateView extends GetView<CreateController> {
                         try {
                           downloadController.start();
                           if (controller.selectedIndexes.isEmpty) {
-                            Get.snackbar('tip'.tr, 'noFileSelected'.tr);
+                            Get.snackbar(
+                                MaterialLocalizations.of(context)
+                                    .alertDialogLabel,
+                                AppLocalizations.of(context)
+                                    .task_select_at_least_one);
                             return;
                           }
                           if (createFormKey.currentState!.validate()) {
                             // if (Util.isAndroid()) {
                             //   if (!await Permission.storage.request().isGranted) {
-                            //     Get.snackbar('error'.tr,
-                            //         'noStoragePermission'.tr);
+                            //     Get.snackbar(AppLocalizations.of(context).app_system_error_title,
+                            //         AppLocalizations.of(context).noStoragePermission);
                             //     return;
                             //   }
                             // }
@@ -189,19 +197,22 @@ class CreateView extends GetView<CreateController> {
                             Get.rootDelegate.offNamed(Routes.DOWNLOADING);
                           }
                         } catch (e) {
-                          Get.snackbar('error'.tr, e.toString());
+                          Get.snackbar(
+                              AppLocalizations.of(context)
+                                  .app_system_error_title,
+                              e.toString());
                           rethrow;
                         } finally {
                           downloadController.reset();
                         }
                       },
                       controller: downloadController,
-                      child: Text(
-                        'download'.tr,
-                        // style: controller.selectedIndexes.isEmpty
-                        //     ? Get.textTheme.disabled
-                        //     : Get.textTheme.titleSmall
-                      )),
+                      child:
+                          Text(MaterialLocalizations.of(context).okButtonLabel
+                              // style: controller.selectedIndexes.isEmpty
+                              //     ? Get.textTheme.disabled
+                              //     : Get.textTheme.titleSmall
+                              )),
                 ),
               ],
             ));

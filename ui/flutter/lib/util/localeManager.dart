@@ -9,5 +9,30 @@ String getLocaleKey(Locale locale) {
   return '${locale.languageCode}_${locale.countryCode}';
 }
 
-const debugLocale = Locale('zh', 'CN');
-const fallbackLocale = Locale('en', 'US');
+const Map availableLanguages = {
+  'ar': 'عربي',
+  'bg': 'Българският език',
+  'ca': 'Català',
+  'de': 'Deutsch',
+  'el': 'Ελληνικά',
+  'en': 'English',
+  'es': 'Español',
+  'fa': 'فارسی',
+  'fr': 'Français',
+  'hu': 'Hungarian',
+  'id': 'Indonesia',
+  'it': 'Italiano',
+  'ja': '日本語',
+  'ko': '한국어',
+  'nb': 'Norsk Bokmål',
+  'nl': 'Nederlands',
+  'pl': 'Polski',
+  'pt': 'Português',
+  'ro': 'Română',
+  'ru': 'Русский',
+  'tr': 'Türkçe',
+  'uk': 'Українська',
+  'vi': 'Tiếng Việt',
+  'zh': '简体中文',
+  'zhTW': '繁體中文',
+};

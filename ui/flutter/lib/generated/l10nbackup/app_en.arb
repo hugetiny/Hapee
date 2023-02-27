@@ -24,12 +24,16 @@
   "downloadDir": "Download Directory",
   "downloadDirValid": "Please select the download directory",
   "connections": "Connections",
-  "items": "@count items",
   "subscribeTracker": "Subscribe Tracker",
   "subscribeFail": "Subscribe failed, please check network or try again later",
   "update": "Update",
   "updateDaily": "Update daily",
-  "lastUpdate": "Last update: @time",
+  "lastUpdate": "Last update: {time}",
+  "@lastUpdate" : {
+    "placeholders": {
+      "time": {}
+    }
+  },
   "addTracker": "Add Tracker",
   "addTrackerHit": "Please enter the tracker server url, one per line",
   "ui": "UI",

@@ -31,6 +31,7 @@
 .pub/
 build/
 .fvm/
+pubspec.lock
 
 # Web related
 

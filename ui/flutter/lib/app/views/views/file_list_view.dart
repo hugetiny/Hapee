@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:fluent_ui/fluent_ui.dart' as fluent;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -196,9 +198,8 @@ class FileListView extends GetView {
     int idNext = 0;
     List selectedFileIds = [];
     List openedFolders = [];
-    //make fileInfos list
+
     for (var i = 0; i < files.length; i++) {
-      //parentId -1 means path root
       int parentId = -1;
       List folders = path.split(files[i].path);
       for (var folder in folders) {
@@ -206,13 +207,10 @@ class FileListView extends GetView {
             fileInfo['name'] == folder && fileInfo['parentId'] == parentId);
 
         if (indexInInfos != -1) {
-          //  folder exists
           parentId = infos[indexInInfos]['id'];
-          // add size
+
           infos[indexInInfos]['size'] += files[i].size;
         } else {
-          // parent not exist
-          // create one and add index to parent's children
           infos.add({
             'level': folders.indexOf(folder),
             'id': idNext,
@@ -230,7 +228,7 @@ class FileListView extends GetView {
           idNext++;
         }
       }
-      //add one file, add index to parent
+
       infos.add({
         'id': idNext,
         'type': 'file',
@@ -258,40 +256,45 @@ class FileListView extends GetView {
   @override
   Widget build(BuildContext context) {
     return fluent.FluentTheme(
-        data: appController.downloaderConfig.value.extra.themeMode == 'dark'
-            ? fluent.ThemeData(brightness: Brightness.dark)
-            : fluent.ThemeData(brightness: Brightness.light),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(padding: EdgeInsets.only(top: 10)),
-            Text(
-              'selectFile'.tr,
-              // style: TextStyle(color: themeData.hintColor),
-            ),
-            Expanded(
-                child: Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 1),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: fluent.TreeView(
-                      selectionMode: fluent.TreeViewSelectionMode.multiple,
-                      shrinkWrap: false,
-                      // addRepaintBoundaries: false,
-                      usePrototypeItem: true,
-                      // cacheExtent: 20,
-                      // onItemInvoked: (item, reason) async => {},
-                      onSecondaryTap: (item, details) async {
-                        debugPrint(
-                            'onSecondaryTap $item at ${details.globalPosition}');
-                      },
-                      // onSelectionChanged: (selectedItems) async => {},
-                      narrowSpacing: true,
-                      items: items,
-                      // scrollPrimary: true,
-                    ))),
-          ],
-        ));
+        data: appController.downloaderConfig.value.extra.themeMode == 'system'
+            ? fluent.FluentThemeData(brightness: ui.window.platformBrightness)
+            : appController.downloaderConfig.value.extra.themeMode == 'light'
+                ? fluent.FluentThemeData(brightness: Brightness.light)
+                : fluent.FluentThemeData(brightness: Brightness.dark),
+        child:
+            // Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     const Padding(padding: EdgeInsets.only(top: 10)),
+            //     Text(
+            //       AppLocalizations.of(context).selectFile,
+            //       // style: TextStyle(color: themeData.hintColor),
+            //     ),
+            //     Expanded(
+            Container(
+                margin: const EdgeInsets.only(top: 10),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(5)),
+                child: fluent.TreeView(
+                  selectionMode: fluent.TreeViewSelectionMode.multiple,
+                  shrinkWrap: false,
+                  // addRepaintBoundaries: false,
+                  usePrototypeItem: true,
+                  // cacheExtent: 20,
+                  // onItemInvoked: (item, reason) async => {},
+                  onSecondaryTap: (item, details) async {
+                    debugPrint(
+                        'onSecondaryTap $item at ${details.globalPosition}');
+                  },
+                  // onSelectionChanged: (selectedItems) async => {},
+                  narrowSpacing: Util.isDesktop(),
+                  items: items,
+                  // scrollPrimary: true,
+                ))
+        //   ),
+        // ],
+        // ));
+        );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 
 import '../../../util/mac_secure_util.dart';
@@ -26,17 +27,20 @@ class _DirectorySelectorState extends State<DirectorySelector> {
             child: TextFormField(
           readOnly: Util.isWeb() ? false : true,
           controller: widget.controller,
+          // style: Get.textTheme.titleMedium,
           decoration: widget.showLabel
               ? InputDecoration(
-                  labelText: 'downloadDir'.tr,
+                  labelText: AppLocalizations.of(context).task_task_dir,
                 )
               : null,
           validator: (v) {
-            return v!.trim().isNotEmpty ? null : 'downloadDirValid'.tr;
+            return v!.trim().isNotEmpty
+                ? null
+                : AppLocalizations.of(context).task_file_path_error;
           },
         )),
         !Util.isDesktop()
-            ? null
+            ? const SizedBox.shrink()
             : IconButton(
                 icon: const Icon(Icons.folder_open),
                 onPressed: () async {
@@ -48,7 +52,7 @@ class _DirectorySelectorState extends State<DirectorySelector> {
                     }
                   }
                 })
-      ].where((e) => e != null).map((e) => e!).toList(),
+      ],
     );
   }
 }
