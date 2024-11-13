@@ -64,4 +64,4 @@ tools/
 
 # secrets
 .gitignore-secrets
-.push.ps1
+push.ps1
