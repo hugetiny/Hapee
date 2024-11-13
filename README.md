@@ -4,11 +4,7 @@
 <a href="https://github.com/hugetiny/negibox/releases"><img src="https://img.shields.io/github/downloads/hugetiny/negibox/total.svg" alt="github release downloads"/>
 [中文](https://github.com/hugetiny/negibox/blob/dev/READMECN.md)
 
-## Gopeed is a better (maybe the best) cross-platform downloader for all protocols and most platforms.I am working on it.
-https://github.com/GopeedLab/gopeed
-
-
-
+Deprecated
 
 ## How to run?
 
