@@ -1,11 +1,34 @@
-## 推荐开发环境
+## 开发
+开发时
+```
+dart run import_sorter:main
+dart run build_runner watch --delete-conflicting-outputs
+flutter run
+```
+
+push前
 
 ```
-flutter pub run build_runner watch --delete-conflicting-outputs
+dart run import_sorter:main
 ```
 
 
-### json widget预置插件框架要求
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 pub points = 160
 

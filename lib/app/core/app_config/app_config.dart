@@ -1,28 +1,32 @@
+// Dart imports:
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 
-// import 'package:app_links/app_links.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:launch_at_startup/launch_at_startup.dart';
+import 'package:logger/logger.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:path_provider/path_provider.dart';
+
+// Project imports:
 import 'package:hapee/app/core/database/database.dart';
 import 'package:hapee/app/core/database/entity.dart';
-
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:hapee/app/core/router/router.dart';
-import 'package:launch_at_startup/launch_at_startup.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:logger/logger.dart';
-// import 'package:uri_to_file/uri_to_file.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import '../../../gopeed_api/api.dart';
-import '../../../gopeed_api/model/downloader_config.dart';
-
 import 'package:hapee/gopeed/common/start_config.dart';
-import 'package:hapee/util/util.dart';
-
-import 'desktop_config.dart';
+import 'package:hapee/gopeed_api/api.dart';
+import 'package:hapee/shared/util.dart';
+import '../../features/main/model/gopeed_models/common/config.dart';
 import 'mobile_config.dart';
+
+// import 'package:app_links/app_links.dart';
+
+
+// import 'package:uri_to_file/uri_to_file.dart';
+// import 'package:url_launcher/url_launcher.dart';
+
+
 
 // import '../../../../database/database.dart';
 // import '../../../../database/entity.dart';
@@ -43,7 +47,7 @@ class AppConfig {
   var runningPort = 0;
   var downloaderConfig = DownloaderConfig();
 
-  Future<void> initialize() async {
+  Future<void> init() async {
     if (Util.isMobile) {
       await BackgroundServiceHelper.initializeService().onError(
           (error, stackTrace) => logger.w("initForegroundTask error",
@@ -75,16 +79,6 @@ class AppConfig {
     return _defaultStartConfig!;
   }
 
-//深度链接相关
-  // Future<void> _toCreate(Uri uri) async {
-    // final path = (uri.scheme == "magnet" ||
-    //         uri.scheme == "http" ||
-    //         uri.scheme == "https")
-    //     ? uri.toString()
-    //     : (await toFile(uri.toString())).path;
-    // router.go('/create?path=${path}');
-  // }
-
   String runningAddress() {
     if (startConfig.network == 'unix') {
       return startConfig.address;
@@ -107,7 +101,8 @@ class AppConfig {
 
   Future<DownloaderConfig> loadDownloaderConfig() async {
     try {
-      downloaderConfig = await getConfig();
+      downloaderConfig = await Api.configApi.getConfig();
+      logger.i(downloaderConfig);
     } catch (e) {
       logger.w("load downloader config fail",
           error: e, stackTrace: StackTrace.current);
@@ -172,7 +167,8 @@ class AppConfig {
           newDownloadDir = './';
         }
 
-        downloaderConfig = downloaderConfig.copyWith(downloadDir: newDownloadDir);
+        downloaderConfig =
+            downloaderConfig.copyWith(downloadDir: newDownloadDir);
       } catch (e) {
         logger.w("设置下载目录失败", error: e, stackTrace: StackTrace.current);
         downloaderConfig = downloaderConfig.copyWith(downloadDir: './');
@@ -202,6 +198,6 @@ class AppConfig {
         network: startConfig.network,
         address: startConfig.address,
         apiToken: startConfig.apiToken));
-    await putConfig(downloaderConfig);
+    await Api.configApi.putConfig(downloaderConfig);
   }
 }

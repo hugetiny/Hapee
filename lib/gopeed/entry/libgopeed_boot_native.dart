@@ -1,14 +1,16 @@
+// Dart imports:
 import 'dart:ffi';
 import 'dart:io';
 import 'dart:isolate';
 
+// Project imports:
+import 'package:hapee/shared/util.dart';
 import '../common/libgopeed_channel.dart';
 import '../common/libgopeed_ffi.dart';
 import '../common/libgopeed_interface.dart';
 import '../common/start_config.dart';
 import '../ffi/libgopeed_bind.dart';
 import '../libgopeed_boot.dart';
-import 'package:hapee/util/util.dart';
 
 LibgopeedBoot create() => LibgopeedBootNative();
 

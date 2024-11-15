@@ -1,7 +1,8 @@
+// Dart imports:
 import 'dart:async';
 
+// Project imports:
 import '../common/start_config.dart';
-
 import '../libgopeed_boot.dart';
 
 LibgopeedBoot create() => LibgopeedBootBrowser();

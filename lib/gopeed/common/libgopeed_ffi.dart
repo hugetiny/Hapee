@@ -1,9 +1,12 @@
+// Dart imports:
 import 'dart:async';
 import 'dart:convert';
 import 'dart:ffi';
 
+// Package imports:
 import 'package:ffi/ffi.dart';
 
+// Project imports:
 import '../ffi/libgopeed_bind.dart';
 import 'libgopeed_interface.dart';
 import 'start_config.dart';

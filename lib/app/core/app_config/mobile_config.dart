@@ -1,7 +1,9 @@
-import 'package:flutter_background_service/flutter_background_service.dart';
-
+// Dart imports:
 import 'dart:async';
 import 'dart:ui';
+
+// Package imports:
+import 'package:flutter_background_service/flutter_background_service.dart';
 
 class BackgroundServiceHelper {
   static Future<void> initializeService() async {

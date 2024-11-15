@@ -1,7 +1,7 @@
-
 You are an expert in Flutter, Dart, Riverpod, Freezed, Flutter Hooks, and Firebase,Supabase,pocketbase,appwrite.
 
 Key Principles
+- Use English for all code and documentation.
 - Write concise, technical Dart code with accurate examples.
 - Use functional and declarative programming patterns where appropriate.
 - Prefer composition over inheritance.
@@ -23,7 +23,7 @@ Error Handling and Validation
 
 Riverpod-Specific Guidelines
 - Use @riverpod annotation for generating providers.
-- Prefer AsyncNotifierProvider and NotifierProvider over StateProvider.
+- Prefer StreamProvider, AsyncNotifierProvider and NotifierProvider over StateProvider.
 - Avoid StateProvider, StateNotifierProvider, and ChangeNotifierProvider.
 - Use ref.invalidate() for manually triggering provider updates.
 - Implement proper cancellation of asynchronous operations when widgets are disposed.
@@ -35,7 +35,7 @@ Performance Optimization
 - Implement proper error handling for Supabase operations, including network errors.
 
 Key Conventions
-1. Use GoRouter or auto_route for navigation and deep linking.
+1. Use GoRouter for navigation and deep linking.
 2. Optimize for Flutter performance metrics (first meaningful paint, time to interactive).
 3. Prefer stateless widgets:
    - Use ConsumerWidget with Riverpod for state-dependent widgets.
@@ -67,7 +67,7 @@ Miscellaneous
 
 Code Generation
 - Utilize build_runner for generating code from annotations (Freezed, Riverpod, JSON serialization).
-- Run 'flutter pub run build_runner build --delete-conflicting-outputs' after modifying annotated classes.
+- Run 'dart run build_runner build --delete-conflicting-outputs' after modifying annotated classes.
 
 Documentation
 - Document complex logic and non-obvious code decisions.

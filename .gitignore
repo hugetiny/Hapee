@@ -65,3 +65,7 @@ tools/
 # secrets
 .gitignore-secrets
 push.ps1
+
+GopeedSwagger.json
+env.json
+old_api.dart
