@@ -141,7 +141,7 @@
     "task_task_info_hash": "해시시",
     "task_task_bittorrent_creation_date": "제작 일",
     "task_task_bittorrent_comment": "논평",
-    "task_task_progress_info": "진행",
+    "task_progress": "진행",
     "task_task_status": "상태",
     "task_task_num_seeders": "파종기",
     "task_task_connections": "사이",

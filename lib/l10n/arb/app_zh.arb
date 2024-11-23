@@ -1,4 +1,7 @@
 {
+  "table_view": "表格视图",
+  "grid_view": "网格视图",
+  "searchQuery": "搜索下载任务...",
   "about_engine_version": "引擎版本",
   "about_about": "关于我们",
   "about_release": "更新日志",
@@ -131,7 +134,7 @@
   "task_task_info_hash": "Hash",
   "task_task_bittorrent_creation_date": "发布时间",
   "task_task_bittorrent_comment": "备注",
-  "task_task_progress_info": "任务进度",
+  "task_progress": "任务进度",
   "task_task_status": "任务状态",
   "task_task_num_seeders": "种子数",
   "task_task_file_size": "文件大小",
@@ -209,6 +212,7 @@
   "task": "任务",
   "downloading": "下载中",
   "downloaded": "已完成",
+  "paused": "已暂停",
   "setting": "设置",
   "donate": "打赏",
   "exit": "退出",
@@ -283,7 +287,6 @@
   "username": "用户名",
   "password": "密码",
   "thanks": "鸣谢",
-
   "browserExtension": "浏览器扩展",
   "launchAtStartup": "开机自动运行"
 }

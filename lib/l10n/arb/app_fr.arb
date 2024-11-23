@@ -141,7 +141,7 @@
     "task_task_info_hash": "Hacher",
     "task_task_bittorrent_creation_date": "Date de création",
     "task_task_bittorrent_comment": "Commenter",
-    "task_task_progress_info": "Le progrès",
+    "task_progress": "Le progrès",
     "task_task_status": "Statut",
     "task_task_num_seeders": "Semoirs",
     "task_task_connections": "Connexions",

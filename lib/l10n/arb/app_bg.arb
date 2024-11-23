@@ -142,7 +142,7 @@
     "task_task_info_hash": "Хеш",
     "task_task_bittorrent_creation_date": "Дата на създаване",
     "task_task_bittorrent_comment": "Коментирайте",
-    "task_task_progress_info": "Напредък",
+    "task_progress": "Напредък",
     "task_task_status": "Състояние",
     "task_task_num_seeders": "Сеялки",
     "task_task_connections": "Връзки",

@@ -141,7 +141,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Data crearii",
     "task_task_bittorrent_comment": "cometariu",
-    "task_task_progress_info": "Progres",
+    "task_progress": "Progres",
     "task_task_status": "stare",
     "task_task_num_seeders": "Semănători",
     "task_task_connections": "Conexiuni",

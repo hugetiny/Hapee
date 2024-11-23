@@ -1,12 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
+
+class AppBreakpoints {
+  // 断点定义
+  static const small = Breakpoint(endWidth: smallWidth);
+  static const medium =
+      Breakpoint(beginWidth: smallWidth, endWidth: mediumWidth);
+  static const mediumLarge =
+      Breakpoint(beginWidth: mediumWidth, endWidth: mediumLargeWidth);
+  static const large =
+      Breakpoint(beginWidth: mediumLargeWidth, endWidth: largeWidth);
+  static const extraLarge = Breakpoint(beginWidth: largeWidth);
+
+  // 断点宽度
+  static const double smallWidth = 600;
+  static const double mediumWidth = 800;
+  static const double mediumLargeWidth = 1000;
+  static const double largeWidth = 1200;
+}
 
 class AppStyle {
+  // Spacing
+  static const spacingTiny = 4.0;
+  static const spacingSmall = 8.0;
+  static const spacingMedium = 16.0;
+  static const spacingLarge = 24.0;
+  static const spacingXLarge = 32.0;
+
   // Padding
-  static const defaultPadding = EdgeInsets.all(8.0);
-  static const horizontalPadding = EdgeInsets.symmetric(horizontal: 16.0);
+  static const defaultPadding = EdgeInsets.all(spacingSmall);
+  static const horizontalPadding =
+      EdgeInsets.symmetric(horizontal: spacingMedium);
   static const contentPadding = EdgeInsets.symmetric(
-    horizontal: 16.0,
-    vertical: 12.0,
+    horizontal: spacingMedium,
+    vertical: spacingMedium * 0.75,
   );
 
   // Border Radius
@@ -25,17 +52,12 @@ class AppStyle {
 
   // Grid
   static const gridMaxCrossAxisExtent = 300.0;
-  static const gridMainAxisSpacing = 8.0;
-  static const gridCrossAxisSpacing = 8.0;
+  static const gridMainAxisSpacing = spacingSmall;
+  static const gridCrossAxisSpacing = spacingSmall;
   static const gridChildAspectRatio = 1.5;
 
   // Progress Indicator
   static const progressIndicatorHeight = 4.0;
-
-  // Spacing
-  static const spacingSmall = 4.0;
-  static const spacingMedium = 8.0;
-  static const spacingLarge = 16.0;
 
   // DataGrid
   static const dataGridLineWidth = 0.5;

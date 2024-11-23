@@ -127,7 +127,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Oluşturulma tarihi",
     "task_task_bittorrent_comment": "Yorum Yap",
-    "task_task_progress_info": "İlerleme",
+    "task_progress": "İlerleme",
     "task_task_status": "Durum",
     "task_task_num_seeders": "Ekme makineleri",
     "task_task_file_size": "Boyut",

@@ -142,7 +142,7 @@
     "task_task_info_hash": "Picadillo",
     "task_task_bittorrent_creation_date": "Fecha de creación",
     "task_task_bittorrent_comment": "Comentario",
-    "task_task_progress_info": "Progreso",
+    "task_progress": "Progreso",
     "task_task_status": "Estado",
     "task_task_num_seeders": "Sembradoras",
     "task_task_connections": "Conexiones",

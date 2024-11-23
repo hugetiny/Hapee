@@ -35,17 +35,11 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.5 # Android✔ iOS✔ Web✔ Windows✔ macOS✔ Linux✔
 
-
-  cloud_firestore: ^5.4.5 # Android✔ iOS✔ Web✔ Windows✔ macOS✔
-  # firebase_auth: ^5.3.2 # Android✔ iOS✔ Web✔ Windows✔ macOS✔
-  # firebase_core: ^3.7.0 # Android✔ iOS✔ Web✔ Windows✔ macOS✔
-  # firebase_crashlytics: ^4.1.4 # Android✔ iOS✔ macOS✔
-  # firebase_storage: ^12.3.5 # Android✔ iOS✔ Web✔ Windows✔ macOS✔
-
   go_router: ^14.4.1 # Android✔ iOS✔ Web✔ Windows✔ macOS✔ Linux✔
   hive: ^2.2.3
   hive_flutter: ^1.1.0 # Android✔ iOS✔ Web✔ Windows✔ macOS✔ Linux✔
   hooks_riverpod: ^2.6.1 # Android✔ iOS✔ Web✔ Windows✔ macOS✔ Linux✔
+  flutter_hooks: ^0.20.5 # Android✔ iOS✔ Web✔ Windows✔ macOS✔ Linux✔
 
   pocketbase: ^0.18.1
   riverpod_annotation: ^2.6.1
@@ -59,14 +53,16 @@ dependencies:
   connectivity_plus: ^6.1.0
   freezed_annotation: ^2.4.4
   launch_at_startup: ^0.3.1
-  url_launcher: ^6.3.1
+  url_launcher: ^6.2.3
   upgrader: ^11.3.0
   logger: ^2.4.0
   flutter_background_service: ^5.0.10
   mix: ^1.5.2
   mockito: ^5.4.4
-  syncfusion_flutter_datagrid: ^27.2.2
-
+  syncfusion_flutter_datagrid: ^24.1.41
+  sentry_flutter: ^8.10.1
+  data_table_2: ^2.5.8
+  open_filex: ^4.3.4
 
 dev_dependencies:
   freezed: ^2.4.6
@@ -75,6 +71,7 @@ dev_dependencies:
   yaml: ^3.1.2
   flutter_test:
     sdk: flutter
+  very_good_analysis: ^5.1.0
   intl: ^0.19.0
   flutter_launcher_icons: ^0.14.1
   build_runner: ^2.4.13

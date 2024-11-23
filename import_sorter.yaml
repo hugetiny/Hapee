@@ -1,0 +1,9 @@
+import_sorter:
+  comments: false # 是否保留注释
+  ignored_files: # 忽略的文件
+    - /lib/generated/
+  sort_by_type: true # 按类型排序
+  emojis: false # 不使用表情符号
+  line_length: 80 # 行长度
+  always_specify_types: false
+  use_package_imports: true # 使用 package 导入方式

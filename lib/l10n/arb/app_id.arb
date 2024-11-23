@@ -142,7 +142,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Tanggal Pembuatan",
     "task_task_bittorrent_comment": "Komentar",
-    "task_task_progress_info": "Kemajuan",
+    "task_progress": "Kemajuan",
     "task_task_status": "Status",
     "task_task_num_seeders": "Seeders",
     "task_task_connections": "Koneksi",

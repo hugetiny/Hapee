@@ -133,7 +133,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "發佈時間",
     "task_task_bittorrent_comment": "備註",
-    "task_task_progress_info": "任務進度",
+    "task_progress": "任務進度",
     "task_task_status": "任務狀態",
     "task_task_num_seeders": "種子數",
     "task_task_connections": "連接數",

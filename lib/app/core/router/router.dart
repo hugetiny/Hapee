@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../features/main/view/main_view.dart';
-import '../../features/main/view/sync_view.dart';
+import '../../features/sync/view/sync_view.dart';
 
 ///
 /// for getting routers that are present in the app

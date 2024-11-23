@@ -146,7 +146,7 @@
     "task_task_info_hash": "تجزئة",
     "task_task_bittorrent_creation_date": "تاريخ الإنشاء",
     "task_task_bittorrent_comment": "تعليق",
-    "task_task_progress_info": "تقدم",
+    "task_progress": "تقدم",
     "task_task_status": "حالة",
     "task_task_num_seeders": "بزار",
     "task_task_connections": "روابط",

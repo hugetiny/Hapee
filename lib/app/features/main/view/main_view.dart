@@ -1,27 +1,32 @@
 // Flutter imports:
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
-import 'package:hapee/app/features/main/view/error_list_view.dart';
-import 'package:hapee/app/features/main/view/sync_view.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class MainView extends ConsumerWidget {
+// Project imports:
+import 'package:hapee/app/features/sync/view/sync_view.dart';
+import 'package:hapee/app/core/style/style.dart';
+
+class MainView extends HookConsumerWidget {
   const MainView({super.key});
   static const routeName = '/main';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isSecondaryBodyVisible = useState(true);
+
     return AdaptiveScaffold(
-      transitionDuration: Duration(milliseconds: 0),
+      transitionDuration: const Duration(milliseconds: 0),
       internalAnimations: false,
-      smallBreakpoint: const Breakpoint(endWidth: 700),
-      mediumBreakpoint: const Breakpoint(beginWidth: 700, endWidth: 1000),
-      mediumLargeBreakpoint: const Breakpoint(beginWidth: 1000, endWidth: 1200),
-      largeBreakpoint: const Breakpoint(beginWidth: 1200, endWidth: 1600),
-      extraLargeBreakpoint: const Breakpoint(beginWidth: 1600),
+      smallBreakpoint: AppBreakpoints.small,
+      mediumBreakpoint: AppBreakpoints.medium,
+      mediumLargeBreakpoint: AppBreakpoints.mediumLarge,
+      largeBreakpoint: AppBreakpoints.large,
+      extraLargeBreakpoint: AppBreakpoints.extraLarge,
       useDrawer: false,
       selectedIndex: 0,
       onSelectedIndexChange: (int index) {},
@@ -33,7 +38,7 @@ class MainView extends ConsumerWidget {
         ),
         NavigationDestination(
           icon: Icon(Icons.article_outlined),
-          selectedIcon: Icon(CupertinoIcons.cloud),
+          selectedIcon: Icon(Icons.settings),
           label: '设置',
         ),
         NavigationDestination(
@@ -42,19 +47,43 @@ class MainView extends ConsumerWidget {
           label: '视频',
         ),
       ],
-      body: (_) => Card(
-        child: const Padding(
-          padding: EdgeInsets.all(16.0),
-          child: SyncView(),
+      body: (context) => Card(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    isSecondaryBodyVisible.value
+                        ? Icons.keyboard_double_arrow_right_rounded
+                        : Icons.keyboard_double_arrow_left_rounded,
+                  ),
+                  onPressed: () {
+                    isSecondaryBodyVisible.value =
+                        !isSecondaryBodyVisible.value;
+                  },
+                ),
+              ],
+            ),
+            const Expanded(
+              child: Padding(
+                padding: AppStyle.defaultPadding,
+                child: SyncView(),
+              ),
+            ),
+          ],
         ),
       ),
       bodyRatio: 0.7,
-      secondaryBody: (_) => Card(
-        child: const Padding(
-          padding: EdgeInsets.all(16.0),
-          child: ErrorListView(),
-        ),
-      ),
+      secondaryBody: isSecondaryBodyVisible.value
+          ? (context) => const Card(
+                child: Padding(
+                  padding: AppStyle.defaultPadding,
+                  // child: ErrorListView(),
+                ),
+              )
+          : null,
     );
   }
 }

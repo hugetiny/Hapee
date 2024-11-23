@@ -142,7 +142,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Aanmaakdatum",
     "task_task_bittorrent_comment": "Opmerking",
-    "task_task_progress_info": "Voortgang",
+    "task_progress": "Voortgang",
     "task_task_status": "Status",
     "task_task_num_seeders": "Seerders",
     "task_task_connections": "Verbindingen",

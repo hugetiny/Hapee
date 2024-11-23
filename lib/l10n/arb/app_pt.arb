@@ -141,7 +141,7 @@
     "task_task_info_hash": "Cerquilha",
     "task_task_bittorrent_creation_date": "Data de criação",
     "task_task_bittorrent_comment": "Comente",
-    "task_task_progress_info": "Progresso",
+    "task_progress": "Progresso",
     "task_task_status": "Status",
     "task_task_num_seeders": "Semeadores",
     "task_task_connections": "Conexões",

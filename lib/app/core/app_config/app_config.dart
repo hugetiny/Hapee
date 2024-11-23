@@ -16,17 +16,14 @@ import 'package:hapee/app/core/database/database.dart';
 import 'package:hapee/app/core/database/entity.dart';
 import 'package:hapee/gopeed/common/start_config.dart';
 import 'package:hapee/gopeed_api/api.dart';
-import 'package:hapee/shared/util.dart';
-import '../../features/main/model/gopeed_models/common/config.dart';
+import 'package:hapee/app/core/utils/util.dart';
+import '../models/gopeed_models/common/config.dart';
 import 'mobile_config.dart';
 
 // import 'package:app_links/app_links.dart';
 
-
 // import 'package:uri_to_file/uri_to_file.dart';
 // import 'package:url_launcher/url_launcher.dart';
-
-
 
 // import '../../../../database/database.dart';
 // import '../../../../database/entity.dart';
@@ -142,33 +139,11 @@ class AppConfig {
     }
 
     if (config.downloadDir.isEmpty) {
-      String newDownloadDir;
-
       try {
-        if (Util.isDesktop) {
-          // 桌面端优先使用系统下载目录
-          newDownloadDir = (await getDownloadsDirectory())?.path ?? './';
-        } else if (Util.isAndroid) {
-          // Android 优先使用外部存储，失败则使用应用文档目录
-          newDownloadDir = (await getExternalStorageDirectory())?.path ??
-              (await getApplicationDocumentsDirectory()).path;
-
-          // 创建 Download 子目录
-          final downloadDir = Directory('$newDownloadDir/Hapee');
-          await downloadDir.create(recursive: true);
-          newDownloadDir = downloadDir.path;
-        } else if (Util.isIOS) {
-          // iOS 使用应用文档目录
-          final docDir = await getApplicationDocumentsDirectory();
-          final downloadDir = Directory('${docDir.path}/Hapee');
-          await downloadDir.create(recursive: true);
-          newDownloadDir = downloadDir.path;
-        } else {
-          newDownloadDir = './';
-        }
-
-        downloaderConfig =
-            downloaderConfig.copyWith(downloadDir: newDownloadDir);
+        final downloadDir = await getDownloadsDirectory();
+        downloaderConfig = downloaderConfig.copyWith(
+          downloadDir: downloadDir?.path ?? './',
+        );
       } catch (e) {
         logger.w("设置下载目录失败", error: e, stackTrace: StackTrace.current);
         downloaderConfig = downloaderConfig.copyWith(downloadDir: './');

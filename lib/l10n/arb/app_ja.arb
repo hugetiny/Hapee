@@ -128,7 +128,7 @@
     "task_task_info_hash": "ハッシュ",
     "task_task_bittorrent_creation_date": "作成日",
     "task_task_bittorrent_comment": "コメント",
-    "task_task_progress_info": "進捗",
+    "task_progress": "進捗",
     "task_task_status": "状態",
     "task_task_num_seeders": "シーダー",
     "task_task_file_size": "サイズ",

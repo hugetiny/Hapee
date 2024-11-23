@@ -1,0 +1,43 @@
+{
+  "flutter": {
+    "stateManagement": {
+      "hooks": {
+        "rules": [
+          {
+            "rule": "use_memo_for_persistence",
+            "description": "Use useMemoized for objects that should persist across rebuilds"
+          },
+          {
+            "rule": "effect_for_updates",
+            "description": "Use useEffect for updates instead of recreation"
+          }
+        ]
+      },
+      "riverpod": {
+        "rules": [
+          {
+            "rule": "ref_usage",
+            "description": "Proper ref method usage",
+            "methods": {
+              "watch": "Reactive dependencies in build",
+              "read": "One-time reads in callbacks"
+            }
+          }
+        ]
+      }
+    },
+    "performance": {
+      "rules": [
+        {
+          "rule": "preserve_state",
+          "description": "Maintain state during updates",
+          "checks": [
+            "Sort state",
+            "Selection state",
+            "User customizations"
+          ]
+        }
+      ]
+    }
+  }
+}

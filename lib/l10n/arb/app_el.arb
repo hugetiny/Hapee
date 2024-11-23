@@ -144,7 +144,7 @@
     "task_task_info_hash": "Χασίσι",
     "task_task_bittorrent_creation_date": "Ημερομηνία δημιουργίας",
     "task_task_bittorrent_comment": "Σχόλιο",
-    "task_task_progress_info": "Πρόοδος",
+    "task_progress": "Πρόοδος",
     "task_task_status": "Κατάσταση",
     "task_task_num_seeders": "Σπόροι",
     "task_task_connections": "Συνδέσεις",

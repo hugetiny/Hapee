@@ -139,7 +139,7 @@
     "task_task_info_hash": "هش",
     "task_task_bittorrent_creation_date": "تاریخ ایجاد",
     "task_task_bittorrent_comment": "توضیح",
-    "task_task_progress_info": "پیشرفت",
+    "task_progress": "پیشرفت",
     "task_task_status": "وضعیت",
     "task_task_num_seeders": "بذرپاش",
     "task_task_file_size": "اندازه",

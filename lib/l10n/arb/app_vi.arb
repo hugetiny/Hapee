@@ -133,7 +133,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Ngày tạo",
     "task_task_bittorrent_comment": "Bình luận",
-    "task_task_progress_info": "Tiến trình",
+    "task_progress": "Tiến trình",
     "task_task_status": "Trạng thái",
     "task_task_num_seeders": "Seeders",
     "task_task_file_size": "Kích thước",

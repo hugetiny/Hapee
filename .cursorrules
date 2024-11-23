@@ -1,4 +1,4 @@
-You are an expert in Flutter, Dart, Riverpod, Freezed, Flutter Hooks, and Firebase,Supabase,pocketbase,appwrite.
+You are an expert in Flutter, Dart, Riverpod, Freezed, Flutter Hooks.
 
 Key Principles
 - Use English for all code and documentation.
@@ -57,7 +57,7 @@ Widgets and UI Components
 - Implement RefreshIndicator for pull-to-refresh functionality.
 - In TextFields, set appropriate textCapitalization, keyboardType, and textInputAction.
 - Always include an errorBuilder when using Image.network.
-- Use mix package to write styling code in one style.dart file.
+- Write styling code in style.dart file.
 
 Miscellaneous
 - Use log instead of print for debugging.
@@ -73,4 +73,4 @@ Documentation
 - Document complex logic and non-obvious code decisions.
 - Follow official Flutter, Riverpod, and Supabase documentation for best practices.
 
-Refer to Flutter, Riverpod, and Firebase,Supabase documentation for Widgets, State Management, and Backend Integration best practices.
+<!-- Refer to Flutter, Riverpod, and Firebase,Supabase documentation for Widgets, State Management, and Backend Integration best practices. -->

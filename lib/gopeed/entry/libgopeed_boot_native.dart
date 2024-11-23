@@ -4,7 +4,7 @@ import 'dart:io';
 import 'dart:isolate';
 
 // Project imports:
-import 'package:hapee/shared/util.dart';
+import 'package:hapee/app/core/utils/util.dart';
 import '../common/libgopeed_channel.dart';
 import '../common/libgopeed_ffi.dart';
 import '../common/libgopeed_interface.dart';
@@ -25,11 +25,8 @@ class LibgopeedBootNative implements LibgopeedBoot {
   Future<int> start(StartConfig cfg) async {
     return Util.isDesktop
         ? await Isolate.run(() {
-            _libgopeed = LibgopeedFFi(LibgopeedBind(
-              DynamicLibrary.open(
-                'libgopeed.${Platform.isWindows ? 'dll' : Platform.isMacOS ? 'dylib' : 'so'}'
-              )
-            ));
+            _libgopeed = LibgopeedFFi(LibgopeedBind(DynamicLibrary.open(
+                'libgopeed.${Platform.isWindows ? 'dll' : Platform.isMacOS ? 'dylib' : 'so'}')));
             return _libgopeed.start(cfg);
           })
         : await _libgopeed.start(cfg);

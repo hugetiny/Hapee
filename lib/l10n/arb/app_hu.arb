@@ -139,7 +139,7 @@
     "task_task_info_hash": "Hash",
     "task_task_bittorrent_creation_date": "Létrehozás dátuma",
     "task_task_bittorrent_comment": "Megjegyzés",
-    "task_task_progress_info": "Előrehalad",
+    "task_progress": "Előrehalad",
     "task_task_status": "Állapot",
     "task_task_num_seeders": "Vetőgépek",
     "task_task_connections": "Kapcsolatok",

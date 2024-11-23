@@ -6,8 +6,7 @@ part of 'entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-StartConfigEntity _$StartConfigEntityFromJson(Map<String, dynamic> json) =>
-    StartConfigEntity(
+StartConfigEntity _$StartConfigEntityFromJson(Map json) => StartConfigEntity(
       network: json['network'] as String,
       address: json['address'] as String,
       apiToken: json['apiToken'] as String,
@@ -20,8 +19,7 @@ Map<String, dynamic> _$StartConfigEntityToJson(StartConfigEntity instance) =>
       'apiToken': instance.apiToken,
     };
 
-WindowStateEntity _$WindowStateEntityFromJson(Map<String, dynamic> json) =>
-    WindowStateEntity(
+WindowStateEntity _$WindowStateEntityFromJson(Map json) => WindowStateEntity(
       isMaximized: json['isMaximized'] as bool?,
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),

@@ -6,8 +6,7 @@ part of 'start_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StartConfigImpl _$$StartConfigImplFromJson(Map<String, dynamic> json) =>
-    _$StartConfigImpl(
+_$StartConfigImpl _$$StartConfigImplFromJson(Map json) => _$StartConfigImpl(
       network: json['network'] as String? ?? '',
       address: json['address'] as String? ?? '',
       storage: json['storage'] as String? ?? 'bolt',

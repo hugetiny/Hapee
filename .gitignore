@@ -65,7 +65,13 @@ tools/
 # secrets
 .gitignore-secrets
 push.ps1
-
-GopeedSwagger.json
 env.json
-old_api.dart
+
+
+#   gopeed
+gopeedswagger.json
+gopeed.db
+
+# Generated Dart files
+*.g.dart
+*.freezed.dart
