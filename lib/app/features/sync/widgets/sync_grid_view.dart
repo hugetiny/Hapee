@@ -91,10 +91,7 @@ class TaskCard extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                FileIconHelper.getIcon(
-                  task.displayName,
-                  size: 32,
-                ),
+                FileIconHelper.getIcon(task.displayName, size: 22),
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppStyle.spacingSmall,
@@ -165,7 +162,7 @@ class TaskCard extends ConsumerWidget {
                   const SizedBox(width: 8),
                   TaskActions(
                     task: task,
-                    compact: true,
+                    compact: false,
                   ),
                 ],
               ),

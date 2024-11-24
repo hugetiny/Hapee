@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hapee/l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
@@ -30,21 +31,21 @@ class MainView extends HookConsumerWidget {
       useDrawer: false,
       selectedIndex: 0,
       onSelectedIndexChange: (int index) {},
-      destinations: const <NavigationDestination>[
+      destinations: <NavigationDestination>[
         NavigationDestination(
-          icon: Icon(Icons.inbox_outlined),
-          selectedIcon: Icon(Icons.home),
-          label: '同步',
+          icon: Icon(Icons.sync_outlined),
+          selectedIcon: Icon(Icons.sync),
+          label: context.l10n.download,
         ),
         NavigationDestination(
-          icon: Icon(Icons.article_outlined),
+          icon: Icon(Icons.settings_outlined),
           selectedIcon: Icon(Icons.settings),
-          label: '设置',
+          label: context.l10n.setting,
         ),
         NavigationDestination(
-          icon: Icon(Icons.video_call_outlined),
-          selectedIcon: Icon(Icons.video_call),
-          label: '视频',
+          icon: Icon(Icons.science_outlined),
+          selectedIcon: Icon(Icons.science),
+          label: context.l10n.preferences_lab,
         ),
       ],
       body: (context) => Card(

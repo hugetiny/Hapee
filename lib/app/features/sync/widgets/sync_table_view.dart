@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:hapee/app/core/style/style.dart';
 
 // Package imports:
 import 'package:hapee/app/features/sync/extension/status_extension.dart';
@@ -184,7 +185,7 @@ class TaskDataSource extends DataGridSource {
           return Container();
         }
         return Container(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 4.0),
           alignment: _getAlignment(cell.columnName),
           child: value,
         );
@@ -196,13 +197,10 @@ class TaskDataSource extends DataGridSource {
     switch (columnName) {
       case 'name':
         return Alignment.centerLeft;
-      case 'speed':
-      case 'size':
-        return Alignment.centerRight;
       case 'actions':
         return Alignment.center;
       default:
-        return Alignment.center;
+        return Alignment.centerRight;
     }
   }
 
@@ -211,9 +209,9 @@ class TaskDataSource extends DataGridSource {
       GridColumn(
         columnName: 'name',
         columnWidthMode: ColumnWidthMode.fill,
+        autoFitPadding: const EdgeInsets.all(2.0),
         label: Container(
-          padding: const EdgeInsets.all(8.0),
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.center,
           child: Text(
             context.l10n.task_name,
             overflow: TextOverflow.ellipsis,
@@ -222,9 +220,10 @@ class TaskDataSource extends DataGridSource {
       ),
       GridColumn(
         columnName: 'speed',
-        width: 120,
+        columnWidthMode: ColumnWidthMode.auto,
+        width: 80,
+        // autoFitPadding: const EdgeInsets.all(2.0),
         label: Container(
-          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.centerRight,
           child: Text(
             context.l10n.task_speed,
@@ -234,9 +233,10 @@ class TaskDataSource extends DataGridSource {
       ),
       GridColumn(
         columnName: 'size',
-        width: 120,
+        columnWidthMode: ColumnWidthMode.auto,
+        width: 80,
+        // autoFitPadding: const EdgeInsets.all(2.0),
         label: Container(
-          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.centerRight,
           child: Text(
             context.l10n.task_size,
@@ -246,9 +246,10 @@ class TaskDataSource extends DataGridSource {
       ),
       GridColumn(
         columnName: 'actions',
-        width: 120,
+        columnWidthMode: ColumnWidthMode.auto,
+        width: 80,
+        autoFitPadding: const EdgeInsets.all(2.0),
         label: Container(
-          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.center,
           child: Text(
             context.l10n.actions,
@@ -270,9 +271,11 @@ class TaskDataSource extends DataGridSource {
               const SizedBox(width: 8),
               FileIconHelper.getIcon(task.displayName),
               const SizedBox(width: 8),
-              Text(
-                task.displayName,
-                overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Text(
+                  task.displayName,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
@@ -285,6 +288,7 @@ class TaskDataSource extends DataGridSource {
               ? '${Util.formatBytes(task.downloadSpeed)}/s'
               : '-',
           textAlign: TextAlign.right,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
       DataGridCell<Widget>(
@@ -294,6 +298,7 @@ class TaskDataSource extends DataGridSource {
               ? Util.formatBytes(task.totalSize)
               : '${Util.formatBytes(task.downloadedSize)} / ${Util.formatBytes(task.totalSize)}',
           textAlign: TextAlign.right,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
       DataGridCell<Widget>(
