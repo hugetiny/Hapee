@@ -15,7 +15,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:hapee/app/core/database/database.dart';
 import 'package:hapee/app/core/database/entity.dart';
 import 'package:hapee/gopeed/common/start_config.dart';
-import 'package:hapee/gopeed_api/api.dart';
+import 'package:hapee/app/core/api/gopeed_api/api.dart';
 import 'package:hapee/app/core/utils/util.dart';
 import '../models/gopeed_models/common/config.dart';
 import 'mobile_config.dart';

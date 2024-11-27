@@ -1,17 +1,13 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:hapee/app/core/style/style.dart';
 
 // Package imports:
 import 'package:hapee/app/features/sync/extension/status_extension.dart';
-import 'package:hapee/gopeed_api/api.dart';
 import 'package:hapee/l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
-import 'package:open_filex/open_filex.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 // Project imports:
 import '../../../core/models/gopeed_models/common/models.dart';

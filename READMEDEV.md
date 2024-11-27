@@ -2,7 +2,7 @@
 开发时
 ```
 dart run import_sorter:main
-dart run build_runner watch --delete-conflicting-outputs
+dart run build_runner watch --delete-conflicting-outputs --low-resources-mode
 flutter run
 ```
 

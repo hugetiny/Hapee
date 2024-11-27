@@ -1,5 +1,5 @@
 // Project imports:
-import '../../app/core/models/gopeed_models/common/models.dart';
+import '../../../models/gopeed_models/common/models.dart';
 import 'base_api.dart';
 
 class InfoApi extends BaseApi {

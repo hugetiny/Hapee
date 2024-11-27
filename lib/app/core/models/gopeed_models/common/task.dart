@@ -156,7 +156,7 @@ class TaskBtStats with _$TaskBtStats {
       _$TaskBtStatsFromJson(json);
 }
 
-/// 批量创建任务请求
+/// 批量创建任务请求scheme
 //"CreateTaskBatch": {
 // 	"properties": {
 // 		"reqs": {

@@ -11,6 +11,7 @@
     "delete_task": "Delete Task",
     "pause_task": "Pause",
     "resume_task": "Resume",
+    "breakpoint_continuation": "Breakpoint Continuation",
     "task_pause_all_task": "Pause All Tasks",
     "task_resume_all_task": "Resume All Tasks",
     "task_select_all_task": "Select All Tasks",

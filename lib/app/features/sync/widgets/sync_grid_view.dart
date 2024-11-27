@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hapee/app/core/utils/util.dart';
 import '../../../core/models/gopeed_models/common/models.dart';
-import '../../../core/style/style.dart';
+import '../../../core/style/app_style.dart';
 import '../../../core/utils/file_utils.dart';
-import '../provider/sync_providers.dart';
 import '../extension/status_extension.dart';
 import '../../../core/utils/file_icon_helper.dart';
 import 'task_actions.dart';
@@ -25,7 +24,7 @@ class SyncGridView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final padding = AppStyle.spacingMedium;
+        final padding = AppStyle.md;
 
         return CustomScrollView(
           slivers: [
@@ -64,7 +63,7 @@ class TaskCard extends ConsumerWidget {
     final color = task.status.getStatusColor(context);
 
     return Container(
-      padding: const EdgeInsets.all(AppStyle.spacingMedium),
+      padding: const EdgeInsets.all(AppStyle.md),
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(10),
@@ -94,8 +93,8 @@ class TaskCard extends ConsumerWidget {
                 FileIconHelper.getIcon(task.displayName, size: 22),
                 Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: AppStyle.spacingSmall,
-                    vertical: AppStyle.spacingTiny,
+                    horizontal: AppStyle.sm,
+                    vertical: AppStyle.xs,
                   ),
                   decoration: BoxDecoration(
                     color: color.withOpacity(0.1),
@@ -108,7 +107,7 @@ class TaskCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: AppStyle.spacingSmall),
+            const SizedBox(height: AppStyle.sm),
 
             // 文件名
             Text(
@@ -117,7 +116,7 @@ class TaskCard extends ConsumerWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: AppStyle.spacingMedium),
+            const SizedBox(height: AppStyle.md),
 
             // 进度条
             Column(
@@ -132,7 +131,7 @@ class TaskCard extends ConsumerWidget {
                     color: theme.textTheme.bodySmall?.color?.withOpacity(0.7),
                   ),
                 ),
-                const SizedBox(height: AppStyle.spacingSmall),
+                const SizedBox(height: AppStyle.sm),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: LinearProgressIndicator(
@@ -144,7 +143,7 @@ class TaskCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: AppStyle.spacingMedium),
+            const SizedBox(height: AppStyle.md),
 
             // 底部信息和操作
             Padding(

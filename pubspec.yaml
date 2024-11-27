@@ -45,9 +45,11 @@ dependencies:
   riverpod_annotation: ^2.6.1
   dio: ^5.7.0
   html: ^0.15.4
-  path_provider: ^2.1.5
+  # File handling
+  path_provider: ^2.1.2
   flutter_adaptive_scaffold: ^0.3.1
   json_annotation: ^4.9.0
+  fluent_ui: ^4.9.2  # Windows UI toolkit
   fluentui_system_icons: ^1.1.264
   material_file_icon: ^0.4.0
   connectivity_plus: ^6.1.0
@@ -63,6 +65,10 @@ dependencies:
   sentry_flutter: ^8.10.1
   data_table_2: ^2.5.8
   open_filex: ^4.3.4
+  file_picker: ^8.1.4
+  # Form handling
+  flutter_form_builder: ^9.1.2
+  form_builder_validators: ^11.0.0
 
 dev_dependencies:
   freezed: ^2.4.6

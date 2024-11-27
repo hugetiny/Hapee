@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../../../gopeed_api/api.dart';
+import '../../../core/api/gopeed_api/api.dart';
 import '../../../core/models/gopeed_models/common/models.dart';
 
 part 'sync_providers.g.dart';

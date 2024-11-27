@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hapee/app/core/style/style.dart';
+import 'package:hapee/app/core/style/app_style.dart';
 import 'package:hapee/l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/sync_grid_view.dart';
 import '../widgets/sync_table_view.dart';
 import '../provider/sync_providers.dart';
@@ -34,8 +35,7 @@ class SyncView extends HookConsumerWidget {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final isWideScreen =
-              constraints.maxWidth > AppBreakpoints.mediumWidth;
+          final isWideScreen = constraints.maxWidth > AppStyle.tabletWidth;
 
           final searchField = TextField(
             controller: searchController,
@@ -84,7 +84,7 @@ class SyncView extends HookConsumerWidget {
                 icon: const Icon(Icons.add),
                 tooltip: context.l10n.create,
                 onPressed: () {
-                  // TODO: Implement add task functionality
+                  GoRouter.of(context).pushNamed('create');
                 },
               ),
               IconButton(

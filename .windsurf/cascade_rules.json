@@ -1,4 +1,19 @@
 {
+  "global": {
+    "comments": {
+      "language": "english",
+      "description": "All code comments must be written in English"
+    },
+    "naming": {
+      "conventions": {
+        "variables": "lowerCamelCase",
+        "functions": "lowerCamelCase",
+        "classes": "UpperCamelCase",
+        "types": "UpperCamelCase",
+        "files": "lowercase_with_underscores"
+      }
+    }
+  },
   "flutter": {
     "stateManagement": {
       "hooks": {

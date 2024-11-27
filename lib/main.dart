@@ -9,7 +9,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:hapee/app/core/app_config/app_config.dart';
 import 'package:hapee/app/core/database/database.dart';
 import 'package:hapee/gopeed/libgopeed_boot.dart';
-import 'package:hapee/gopeed_api/api.dart';
+import 'package:hapee/app/core/api/gopeed_api/api.dart';
 import 'app/app.dart';
 
 Future<void> main() async {
